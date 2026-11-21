@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 /** Dentro da Claude só passa um "#nome" simples na barra: /hinos/hino-61  <->  #hinos-hino-61 */
-const SECOES = ['hinos', 'canticos', 'salmos', 'palavra', 'lavras'];
+const SECOES = ['hinos', 'canticos', 'caderninho', 'salmos', 'palavra', 'lavras'];
 
 export function hashParaCaminho(hash: string): string {
   const h = hash.replace(/^#/, '');

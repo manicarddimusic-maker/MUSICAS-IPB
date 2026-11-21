@@ -148,7 +148,7 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
             <input
               inputMode="numeric"
               pattern="[0-9]*"
-              placeholder={secao.id === 'salmos' ? 'Ir para o Salmo…' : 'Ir para o hino número…'}
+              placeholder={secao.id === 'salmos' ? 'Ir para o Salmo…' : secao.id === 'caderninho' ? 'Ir para o número…' : 'Ir para o hino número…'}
               value={busca}
               onChange={(e) => {
                 setBusca(e.target.value);

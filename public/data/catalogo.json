@@ -1998,6 +1998,13 @@
    ]
   },
   {
+   "id": "caderninho",
+   "titulo": "Cânticos do caderninho",
+   "subtitulo": "Do nosso caderninho",
+   "ordem": "numero",
+   "itens": []
+  },
+  {
    "id": "salmos",
    "titulo": "Salmos",
    "subtitulo": "Livro dos Salmos",

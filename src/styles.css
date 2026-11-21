@@ -846,3 +846,11 @@ body { overscroll-behavior: none; touch-action: manipulation; }
   animation: surgir 0.5s ease both;
 }
 .alerta-novas p { margin: 0 0 10px; font-size: 0.92rem; line-height: 1.4; }
+
+/* Cartão Cânticos do caderninho */
+.cartao-caderninho .cartao-fundo {
+  filter: hue-rotate(-25deg) saturate(1.1) brightness(0.95);
+}
+.cartao-caderninho .cartao-veu {
+  background: linear-gradient(180deg, rgba(34, 22, 14, 0.2) 0%, rgba(54, 34, 18, 0.6) 55%, rgba(34, 20, 10, 0.94) 100%);
+}

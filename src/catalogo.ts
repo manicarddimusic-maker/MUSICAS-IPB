@@ -18,7 +18,7 @@ export type Item = {
 };
 
 export type Secao = {
-  id: 'hinos' | 'canticos' | 'salmos' | 'palavra' | 'lavras';
+  id: 'hinos' | 'canticos' | 'caderninho' | 'salmos' | 'palavra' | 'lavras';
   titulo: string;
   subtitulo: string;
   ordem: 'numero' | 'alfabeto';
@@ -92,7 +92,7 @@ export function rotuloItem(secao: Secao, item: Item): string {
   if (item.rotulo) return secao.id === 'salmos' ? `Salmo ${item.rotulo}` : item.rotulo;
   if (secao.id === 'salmos') return `Salmo ${item.num}`;
   if (secao.id === 'palavra') return '♪';
-  if (secao.id === 'hinos') return String(item.num);
+  if (secao.id === 'hinos' || secao.id === 'caderninho') return String(item.num);
   if (secao.id === 'lavras') return item.num ? String(item.num) : '♪';
   return item.titulo;
 }

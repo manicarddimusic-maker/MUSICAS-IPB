@@ -16,6 +16,7 @@ SAIDA = RAIZ / "public" / "data" / "catalogo.json"
 SECOES = [
     ("hinos", "Hinos", "Novo Cântico", "numero"),
     ("canticos", "Cânticos espirituais", "Ordem alfabética", "alfabeto"),
+    ("caderninho", "Cânticos do caderninho", "Do nosso caderninho", "numero"),
     ("salmos", "Salmos", "Livro dos Salmos", "numero"),
     ("palavra", "Palavra de Deus Cantada", "Passagens bíblicas cantadas", "alfabeto"),
     ("lavras", "Músicas Lavras", "Canções do retiro", "alfabeto"),
@@ -42,6 +43,9 @@ def montar_item(secao: str, dado: dict) -> dict:
     elif secao == "lavras":
         ident = f"lavras-{slug(titulo)}"
         alt_base = titulo
+    elif secao == "caderninho":
+        ident = f"caderninho-{num}"
+        alt_base = f"Caderninho {num} — {titulo}"
     elif secao == "palavra":
         ident = f"palavra-{slug(titulo)}"
         alt_base = titulo
