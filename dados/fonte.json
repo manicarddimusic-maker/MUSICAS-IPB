@@ -1307,6 +1307,14 @@
      "img": "/midias/palavra/rendei-gracas-ao-senhor-i69.jpg"
     }
    ]
+  },
+  {
+   "titulo": "Cantai ao Senhor",
+   "paginas": [
+    {
+     "img": "/midias/salmos/s096.jpg"
+    }
+   ]
   }
  ],
  "salmos": [
@@ -1455,7 +1463,7 @@
   },
   {
    "num": 96,
-   "titulo": "Cantai ao Senhor (Vencedores por Cristo)",
+   "titulo": "Salmo 96",
    "paginas": [
     {
      "img": "/midias/salmos/s096.jpg"

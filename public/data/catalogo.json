@@ -2113,6 +2113,16 @@
        "alt": "Rendei Graças ao Senhor — página 2"
       }
      ]
+    },
+    {
+     "id": "cantico-cantai-ao-senhor",
+     "titulo": "Cantai ao Senhor",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s096.jpg",
+       "alt": "Cantai ao Senhor — página 1"
+      }
+     ]
     }
    ]
   },
@@ -2302,11 +2312,11 @@
     },
     {
      "id": "salmo-96",
-     "titulo": "Cantai ao Senhor (Vencedores por Cristo)",
+     "titulo": "Salmo 96",
      "paginas": [
       {
        "img": "/midias/salmos/s096.jpg",
-       "alt": "Salmo 96 — Cantai ao Senhor (Vencedores por Cristo) — página 1"
+       "alt": "Salmo 96 — Salmo 96 — página 1"
       }
      ],
      "num": 96,
