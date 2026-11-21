@@ -142,7 +142,7 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
         </section>
       )}
 
-      <nav className="secoes">
+      <nav className="secoes secoes-inicio">
         {catalogo.secoes.filter((s) => s.id !== 'salmos').map((secao, i) => {
           const itens = ordenarItens(secao);
           const total = secao.id === 'palavra' ? itens.length + (catalogo.secoes.find((s) => s.id === 'salmos')?.itens.length ?? 0) : itens.length;

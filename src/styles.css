@@ -914,3 +914,36 @@ body { overscroll-behavior: none; touch-action: manipulation; }
   width: 100%;
   box-sizing: border-box;
 }
+
+/* Tela inicial: os 5 cards sempre lado a lado em tablet e notebook */
+@media (min-width: 820px) {
+  .secoes-inicio {
+    max-width: 1500px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(10px, 1.4vw, 22px);
+  }
+  .secoes-inicio .cartao {
+    min-height: clamp(270px, 36vw, 400px);
+  }
+  .secoes-inicio .cartao-conteudo {
+    padding: clamp(12px, 1.5vw, 24px);
+    gap: 5px;
+  }
+  .secoes-inicio .cartao-sub {
+    font-size: clamp(0.5rem, 0.82vw, 0.7rem);
+    letter-spacing: 0.16em;
+  }
+  .secoes-inicio .cartao-titulo {
+    font-size: clamp(1.05rem, 2.15vw, 2rem);
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
+  .secoes-inicio .cartao-info {
+    font-size: clamp(0.68rem, 1.05vw, 0.86rem);
+  }
+  .secoes-inicio .cartao-seta {
+    width: clamp(28px, 3.2vw, 38px);
+    height: clamp(28px, 3.2vw, 38px);
+    font-size: 1.1rem;
+  }
+}
