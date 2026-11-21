@@ -1,0 +1,830 @@
+{
+ "hinos": [
+  {
+   "num": 1,
+   "titulo": "Doxologia",
+   "paginas": [
+    "/midias/h001_6363_75393e58.jpg"
+   ]
+  },
+  {
+   "num": 2,
+   "titulo": "Reverência",
+   "paginas": [
+    "/midias/h002_6363_a767ce09.jpg",
+    "/midias/h002_6380_7ddb92d2.jpg"
+   ]
+  },
+  {
+   "num": 3,
+   "titulo": "A igreja em adoração",
+   "paginas": [
+    "/midias/h003_6454_3dbbb9fc.jpg",
+    "/midias/h003_6458_v2_e78ab6e6.jpg"
+   ]
+  },
+  {
+   "num": 4,
+   "titulo": "Culto à Trindade",
+   "paginas": [
+    "/midias/h004_6488_0880f7fe.jpg"
+   ]
+  },
+  {
+   "num": 7,
+   "titulo": "Glória à Trindade",
+   "paginas": [
+    "/midias/h007_6410_6c62b0b6.jpg"
+   ]
+  },
+  {
+   "num": 8,
+   "titulo": "Adoração à Trindade",
+   "paginas": [
+    "/midias/h008_6362_58f5df04.jpg"
+   ]
+  },
+  {
+   "num": 10,
+   "titulo": "Vós, criaturas de Deus Pai",
+   "paginas": [
+    "/midias/h010_6467_6a56a3f7.jpg"
+   ]
+  },
+  {
+   "num": 11,
+   "titulo": "Trindade Santíssima",
+   "paginas": [
+    "/midias/h011_71634ca4.jpg",
+    "/midias/h011_6355_dde64eec.jpg",
+    "/midias/h011_6374_a7d31938.jpg",
+    "/midias/h011_6443_39f09d58.jpg",
+    "/midias/h011_6448_e4c6faee.jpg"
+   ]
+  },
+  {
+   "num": 12,
+   "titulo": "O Deus fiel",
+   "paginas": [
+    "/midias/h012_6444_1a9068d8.jpg"
+   ]
+  },
+  {
+   "num": 13,
+   "titulo": "Contemplação",
+   "paginas": [
+    "/midias/h013_6386_3badc8a5.jpg"
+   ]
+  },
+  {
+   "num": 14,
+   "titulo": "Louvor",
+   "paginas": [
+    "/midias/h014_6393_0e805f33.jpg"
+   ]
+  },
+  {
+   "num": 16,
+   "titulo": "Louvor a Deus",
+   "paginas": [
+    "/midias/h016_6366_bfca2d80.jpg"
+   ]
+  },
+  {
+   "num": 17,
+   "titulo": "Seja Louvado",
+   "paginas": [
+    "/midias/h017_6416_22de4e6f.jpg"
+   ]
+  },
+  {
+   "num": 18,
+   "titulo": "Deus dos Antigos",
+   "paginas": [
+    "/midias/h018_6376_b60cdcde.jpg"
+   ]
+  },
+  {
+   "num": 19,
+   "titulo": "Ó Rei Sublime",
+   "paginas": [
+    "/midias/h019_fb18d9ec.jpg",
+    "/midias/h019_6447_b7ec9132.jpg"
+   ]
+  },
+  {
+   "num": 21,
+   "titulo": "Ao Deus de Abraão",
+   "paginas": [
+    "/midias/h021_896291ad.jpg",
+    "/midias/h021_6357_c0f7be80.jpg"
+   ]
+  },
+  {
+   "num": 22,
+   "titulo": "Os Céus Proclamam",
+   "paginas": [
+    "/midias/h022_3d871492.jpg",
+    "/midias/h022_6433_b1db5547.jpg"
+   ]
+  },
+  {
+   "num": 26,
+   "titulo": "Ao Deus Grandioso",
+   "paginas": [
+    "/midias/h026_82848183.jpg",
+    "/midias/h026_6436_e07ae487.jpg"
+   ]
+  },
+  {
+   "num": 27,
+   "titulo": "Um Hino ao Senhor",
+   "paginas": [
+    "/midias/h027_9942c626.jpg",
+    "/midias/h027_6437_e0f6084c.jpg"
+   ]
+  },
+  {
+   "num": 28,
+   "titulo": "Coroação",
+   "paginas": [
+    "/midias/h028_73e79a49.jpg",
+    "/midias/h028_6446_1d462d48.jpg"
+   ]
+  },
+  {
+   "num": 32,
+   "titulo": "O Deus Fiel",
+   "paginas": [
+    "/midias/h032_bf50fecd.jpg"
+   ]
+  },
+  {
+   "num": 33,
+   "titulo": "Maravilhas Divinas",
+   "paginas": [
+    "/midias/h033_6398_a891ad48.jpg"
+   ]
+  },
+  {
+   "num": 38,
+   "titulo": "Mil Vezes Mil Louvores",
+   "paginas": [
+    "/midias/h038_f8096782.jpg",
+    "/midias/h038_6347_4cf7bdc5.jpg"
+   ]
+  },
+  {
+   "num": 39,
+   "titulo": "Exaltação e Louvor",
+   "paginas": [
+    "/midias/h039_8dbe6403.jpg",
+    "/midias/h039_6353_d706d9a0.jpg"
+   ]
+  },
+  {
+   "num": 42,
+   "titulo": "O Grande Amor de Deus",
+   "paginas": [
+    "/midias/h042_6408_637ef86e.jpg",
+    "/midias/h042_6378_c76ab491.jpg",
+    "/midias/h042_6400_8cda00ec.jpg",
+    "/midias/h042_6401_bfdc346d.jpg"
+   ]
+  },
+  {
+   "num": 47,
+   "titulo": "Louvor e Glória",
+   "paginas": [
+    "/midias/h047_5b1dec99.jpg",
+    "/midias/h047_6419_e9c8ec31.jpg"
+   ]
+  },
+  {
+   "num": 51,
+   "titulo": "Cristo Coroado",
+   "paginas": [
+    "/midias/h051_6405_06871780.jpg"
+   ]
+  },
+  {
+   "num": 55,
+   "titulo": "Alegria e Gratidão",
+   "paginas": [
+    "/midias/h055_6384_6569781b.jpg",
+    "/midias/h055_6474_08d16d17.jpg"
+   ]
+  },
+  {
+   "num": 61,
+   "titulo": "Ações de Graças",
+   "paginas": [
+    "/midias/h061a_c954ad59.jpg",
+    "/midias/h061b_add708ba.jpg",
+    "/midias/h061_6399_804b5e26.jpg",
+    "/midias/h061_6445_b431e558.jpg",
+    "/midias/h061_6449_67fc2a72.jpg"
+   ]
+  },
+  {
+   "num": 62,
+   "titulo": "Hino de gratidão",
+   "paginas": [
+    "/midias/h062_6365_f3567093.jpg",
+    "/midias/h062_6418_c988681d.jpg"
+   ]
+  },
+  {
+   "num": 63,
+   "titulo": "Conta as muitas bênçãos",
+   "paginas": [
+    "/midias/h063_6457_0799652f.jpg",
+    "/midias/h063_6478_v2_54552703.jpg"
+   ]
+  },
+  {
+   "num": 64,
+   "titulo": "Grata Memória",
+   "paginas": [
+    "/midias/h064_d0d20ca2.jpg",
+    "/midias/h064_6451_0330d1a4.jpg"
+   ]
+  },
+  {
+   "num": 67,
+   "titulo": "Coração Quebrantado",
+   "paginas": [
+    "/midias/h067_3dee2e99.jpg",
+    "/midias/h067_6434_986b3a8b.jpg"
+   ]
+  },
+  {
+   "num": 68,
+   "titulo": "Senhor, eu preciso de Ti",
+   "paginas": [
+    "/midias/h068_6489_b35ca436.jpg"
+   ]
+  },
+  {
+   "num": 71,
+   "titulo": "Perdão, Senhor",
+   "paginas": [
+    "/midias/h071_6372_4abfa7ef.jpg"
+   ]
+  },
+  {
+   "num": 74,
+   "titulo": "Sinceridade",
+   "paginas": [
+    "/midias/h074_6387_696bd57d.jpg"
+   ]
+  },
+  {
+   "num": 79,
+   "titulo": "Glória ao Salvador",
+   "paginas": [
+    "/midias/h079_6392_633651ae.jpg"
+   ]
+  },
+  {
+   "num": 88,
+   "titulo": "Amor Perene",
+   "paginas": [
+    "/midias/h088a_c14b0cda.jpg",
+    "/midias/h088b_82c9f21b.jpg",
+    "/midias/h088_6352_a38b397e.jpg",
+    "/midias/h088_6360_7b5a64a0.jpg",
+    "/midias/h088_6483_11a13187.jpg"
+   ]
+  },
+  {
+   "num": 93,
+   "titulo": "Firmeza na fé",
+   "paginas": [
+    "/midias/h093_6472_7f47877b.jpg"
+   ]
+  },
+  {
+   "num": 100,
+   "titulo": "Cristo, o fiel",
+   "paginas": [
+    "/midias/h100_6423_28114721.jpg"
+   ]
+  },
+  {
+   "num": 104,
+   "titulo": "Linda melodia",
+   "paginas": [
+    "/midias/h104_6485_58e4e932.jpg",
+    "/midias/h104_6487_3d057c96.jpg"
+   ]
+  },
+  {
+   "num": 105,
+   "titulo": "A certeza do crente",
+   "paginas": [
+    "/midias/h105_6473_33926f18.jpg"
+   ]
+  },
+  {
+   "num": 107,
+   "titulo": "Ao pé da cruz",
+   "paginas": [
+    "/midias/h107_6367_1c853feb.jpg",
+    "/midias/h107_6368_56f6913f.jpg",
+    "/midias/h107_6456_50262502.jpg"
+   ]
+  },
+  {
+   "num": 108,
+   "titulo": "Sou Feliz",
+   "paginas": [
+    "/midias/h108_51011d2b.jpg",
+    "/midias/h108_6391_727f4127.jpg"
+   ]
+  },
+  {
+   "num": 110,
+   "titulo": "A Vida com Jesus",
+   "paginas": [
+    "/midias/h110_a21c6fce.jpg",
+    "/midias/h110_6423_ae154fba.jpg",
+    "/midias/h110_6435_16f046d4.jpg"
+   ]
+  },
+  {
+   "num": 111,
+   "titulo": "Comunhão divina",
+   "paginas": [
+    "/midias/h111_6423_e6217099.jpg"
+   ]
+  },
+  {
+   "num": 113,
+   "titulo": "Achei um bom amigo",
+   "paginas": [
+    "/midias/h113_6415_1a04e53b.jpg"
+   ]
+  },
+  {
+   "num": 114,
+   "titulo": "Brilho Celeste",
+   "paginas": [
+    "/midias/h114_6371_4b93ae80.jpg",
+    "/midias/h114_6424_be7d1cd5.jpg"
+   ]
+  },
+  {
+   "num": 115,
+   "titulo": "Unido com Cristo",
+   "paginas": [
+    "/midias/h115_6388_85c2deaf.jpg"
+   ]
+  },
+  {
+   "num": 116,
+   "titulo": "Mais Perto Quero Estar",
+   "paginas": [
+    "/midias/h116_4b5c5319.jpg",
+    "/midias/h116_6359_df2e4f04.jpg",
+    "/midias/h116_6486_34a3bbe0.jpg"
+   ]
+  },
+  {
+   "num": 117,
+   "titulo": "Pastor Divino",
+   "paginas": [
+    "/midias/h117_6420_4e7838ed.jpg"
+   ]
+  },
+  {
+   "num": 120,
+   "titulo": "Dependência",
+   "paginas": [
+    "/midias/h120_1d7a266d.jpg",
+    "/midias/h120_6425_c6e51d32.jpg"
+   ]
+  },
+  {
+   "num": 128,
+   "titulo": "Comunhão preciosa",
+   "paginas": [
+    "/midias/h128_6431_d7d98928.jpg"
+   ]
+  },
+  {
+   "num": 129,
+   "titulo": "Vigilância e Oração",
+   "paginas": [
+    "/midias/h129_6407_4f842bfc.jpg"
+   ]
+  },
+  {
+   "num": 131,
+   "titulo": "Vida santificada",
+   "paginas": [
+    "/midias/h131_6465_e204c5c9.jpg"
+   ]
+  },
+  {
+   "num": 133,
+   "titulo": "Aspiração à Santidade",
+   "paginas": [
+    "/midias/h133_9c1ed220.jpg",
+    "/midias/h133_6351_9833328f.jpg"
+   ]
+  },
+  {
+   "num": 135,
+   "titulo": "Mais de Cristo",
+   "paginas": [
+    "/midias/h135_6389_ed3e79d8.jpg",
+    "/midias/h135_6403_ce70c28f.jpg"
+   ]
+  },
+  {
+   "num": 137,
+   "titulo": "Abrigo no temporal",
+   "paginas": [
+    "/midias/h137_6394_0ec84848.jpg",
+    "/midias/h137_6395_745eca85.jpg"
+   ]
+  },
+  {
+   "num": 143,
+   "titulo": "O Melhor Amigo",
+   "paginas": [
+    "/midias/h143_93c97f2e.jpg"
+   ]
+  },
+  {
+   "num": 144,
+   "titulo": "Segurança e Alegria",
+   "paginas": [
+    "/midias/h144_6406_86d147be.jpg"
+   ]
+  },
+  {
+   "num": 145,
+   "titulo": "Refúgio Verdadeiro",
+   "paginas": [
+    "/midias/h145_6409_1912b4e9.jpg",
+    "/midias/h145_6463_da1802ca.jpg"
+   ]
+  },
+  {
+   "num": 146,
+   "titulo": "Segurança do Crente",
+   "paginas": [
+    "/midias/h146_6429_a435508d.jpg"
+   ]
+  },
+  {
+   "num": 147,
+   "titulo": "Vencendo vem Jesus",
+   "paginas": [
+    "/midias/h147_6417_385455df.jpg",
+    "/midias/h147_6459_16bd6dbb.jpg"
+   ]
+  },
+  {
+   "num": 148,
+   "titulo": "Oração noturna",
+   "paginas": [
+    "/midias/h148_6402_898b9c7e.jpg"
+   ]
+  },
+  {
+   "num": 153,
+   "titulo": "Amparo Divino",
+   "paginas": [
+    "/midias/h153_6361_a2f34da3.jpg"
+   ]
+  },
+  {
+   "num": 159,
+   "titulo": "Bondoso Amigo",
+   "paginas": [
+    "/midias/h159_6396_260bff35.jpg"
+   ]
+  },
+  {
+   "num": 161,
+   "titulo": "O Melhor Amigo",
+   "paginas": [
+    "/midias/h161_6349_7c03eece.jpg"
+   ]
+  },
+  {
+   "num": 164,
+   "titulo": "Nome precioso",
+   "paginas": [
+    "/midias/h164_6462_6b0c6221.jpg"
+   ]
+  },
+  {
+   "num": 165,
+   "titulo": "Cuidado Divino",
+   "paginas": [
+    "/midias/h165_f52d84bb.jpg",
+    "/midias/h165_6350_430b7af0.jpg"
+   ]
+  },
+  {
+   "num": 167,
+   "titulo": "Cristo, Esperança Nossa",
+   "paginas": [
+    "/midias/h167_6404_3a1b2b7c.jpg"
+   ]
+  },
+  {
+   "num": 172,
+   "titulo": "Chuvas de Bênçãos",
+   "paginas": [
+    "/midias/h172_2858fca2.jpg",
+    "/midias/h172_6438_14867793.jpg"
+   ]
+  },
+  {
+   "num": 177,
+   "titulo": "Firme nas Promessas",
+   "paginas": [
+    "/midias/h177_6413_e130a70e.jpg",
+    "/midias/h177_6455_644a1e6d.jpg"
+   ]
+  },
+  {
+   "num": 178,
+   "titulo": "A excelência do amor",
+   "paginas": [
+    "/midias/h178_6413_08fea4ff.jpg",
+    "/midias/h178_6464_2a3dfb49.jpg"
+   ]
+  },
+  {
+   "num": 179,
+   "titulo": "Saudação",
+   "paginas": [
+    "/midias/h179_31fae6dd.jpg",
+    "/midias/h179_6413_2367fa45.jpg",
+    "/midias/h179_6453_4fa92b74.jpg"
+   ]
+  },
+  {
+   "num": 186,
+   "titulo": "O Lar do Céu",
+   "paginas": [
+    "/midias/h186_3a3e7c83.jpg",
+    "/midias/h186_6375_07fa12d8.jpg"
+   ]
+  },
+  {
+   "num": 201,
+   "titulo": "Manso e suave",
+   "paginas": [
+    "/midias/h201_6414_a46628df.jpg"
+   ]
+  },
+  {
+   "num": 221,
+   "titulo": "Um Vaso de Bênção",
+   "paginas": [
+    "/midias/h221_49a0b566.jpg",
+    "/midias/h221_6369_d33d56cc.jpg",
+    "/midias/h221_6450_9002da2f.jpg"
+   ]
+  },
+  {
+   "num": 222,
+   "titulo": "Mais perto da cruz",
+   "paginas": [
+    "/midias/h222_6480_cd684b12.jpg"
+   ]
+  },
+  {
+   "num": 239,
+   "titulo": "Nasce Jesus",
+   "paginas": [
+    "/midias/h239_034cc2c4.jpg",
+    "/midias/h239_6358_e2249109.jpg",
+    "/midias/h239_6373_5aa24f2f.jpg",
+    "/midias/h239_6428_c790be49.jpg"
+   ]
+  },
+  {
+   "num": 251,
+   "titulo": "Sossegai",
+   "paginas": [
+    "/midias/h251_6385_9b36f052.jpg",
+    "/midias/h251_6466_7e02f992.jpg"
+   ]
+  },
+  {
+   "num": 266,
+   "titulo": "Rude Cruz",
+   "paginas": [
+    "/midias/h266_42b80812.jpg",
+    "/midias/h266_6356_5ce8f987.jpg"
+   ]
+  },
+  {
+   "num": 267,
+   "titulo": "Precioso Sangue",
+   "paginas": [
+    "/midias/h267_6382_cc87fa04.jpg",
+    "/midias/h267_6479_7037fcad.jpg"
+   ]
+  },
+  {
+   "num": 268,
+   "titulo": "Redenção",
+   "paginas": [
+    "/midias/h268_3ffc15dc.jpg",
+    "/midias/h268_6348_211a1302.jpg"
+   ]
+  },
+  {
+   "num": 274,
+   "titulo": "Morto e Ressurreto",
+   "paginas": [
+    "/midias/h274_6377_7448c58b.jpg"
+   ]
+  },
+  {
+   "num": 286,
+   "titulo": "Colheita bendita",
+   "paginas": [
+    "/midias/h286_6370_2dbfe40c.jpg"
+   ]
+  },
+  {
+   "num": 287,
+   "titulo": "Igreja, alerta!",
+   "paginas": [
+    "/midias/h287_6421_d4b8f966.jpg",
+    "/midias/h287_6469_f647fa78.jpg"
+   ]
+  },
+  {
+   "num": 288,
+   "titulo": "A Mensagem Real",
+   "paginas": [
+    "/midias/h288_9d0be71a.jpg",
+    "/midias/h288_6442_c930dc48.jpg"
+   ]
+  },
+  {
+   "num": 292,
+   "titulo": "A Vinda do Senhor",
+   "paginas": [
+    "/midias/h292_132b2107.jpg",
+    "/midias/h292b_b281ed03.jpg",
+    "/midias/h292_6346_04c4711f.jpg"
+   ]
+  },
+  {
+   "num": 297,
+   "titulo": "A Chamada Final",
+   "paginas": [
+    "/midias/h297_3e1f37e4.jpg",
+    "/midias/h297_6452_6140ba36.jpg"
+   ]
+  },
+  {
+   "num": 299,
+   "titulo": "Renovação",
+   "paginas": [
+    "/midias/h299_6427_e530c6fa.jpg",
+    "/midias/h299_6397_35c8f2f2.jpg",
+    "/midias/h299_6468_d44c6025.jpg"
+   ]
+  },
+  {
+   "num": 303,
+   "titulo": "Pendão real",
+   "paginas": [
+    "/midias/h303_6471_f231380a.jpg"
+   ]
+  },
+  {
+   "num": 306,
+   "titulo": "Fidelidade na luta",
+   "paginas": [
+    "/midias/h306_6481_fec05492.jpg"
+   ]
+  },
+  {
+   "num": 311,
+   "titulo": "Avante, ó crentes",
+   "paginas": [
+    "/midias/h311_6476_45cc89d6.jpg"
+   ]
+  },
+  {
+   "num": 315,
+   "titulo": "Serviço do crente",
+   "paginas": [
+    "/midias/h315_6461_f13a69a5.jpg"
+   ]
+  },
+  {
+   "num": 332,
+   "titulo": "Batismo infantil",
+   "paginas": [
+    "/midias/h332_6379_555b9785.jpg",
+    "/midias/h332_6390_ee431bd4.jpg",
+    "/midias/h332_6430_d72137f4.jpg"
+   ]
+  },
+  {
+   "num": 333,
+   "titulo": "O batismo",
+   "paginas": [
+    "/midias/h333_6364_e0ebf2d4.jpg"
+   ]
+  },
+  {
+   "num": 336,
+   "titulo": "Transformação",
+   "paginas": [
+    "/midias/h336_4784ac0e.jpg",
+    "/midias/h336_6440_b02728b5.jpg"
+   ]
+  },
+  {
+   "num": 338,
+   "titulo": "Dia da profissão de fé",
+   "paginas": [
+    "/midias/h338_6411_6427aade.jpg"
+   ]
+  },
+  {
+   "num": 340,
+   "titulo": "Santa Comunhão",
+   "paginas": [
+    "/midias/h340_b1047d39.jpg",
+    "/midias/h340_6439_eb270fc3.jpg",
+    "/midias/h340_6475_a4ce9844.jpg"
+   ]
+  },
+  {
+   "num": 349,
+   "titulo": "Dia do Senhor",
+   "paginas": [
+    "/midias/h349_6412_4c947a4a.jpg"
+   ]
+  },
+  {
+   "num": 352,
+   "titulo": "Leitura bendita",
+   "paginas": [
+    "/midias/h352_6383_ad0dda8b.jpg",
+    "/midias/h352_6470_f9c8535b.jpg",
+    "/midias/h352_6477_0d9e1450.jpg"
+   ]
+  },
+  {
+   "num": 362,
+   "titulo": "Brilhando Por Jesus",
+   "paginas": [
+    "/midias/h362_6381_79e75201.jpg",
+    "/midias/h362_6482_cce9eeb3.jpg"
+   ]
+  },
+  {
+   "num": 367,
+   "titulo": "Convite aos meninos",
+   "paginas": [
+    "/midias/h367_6426_d7ce3e1d.jpg",
+    "/midias/h367_6432_5a35c4e4.jpg"
+   ]
+  },
+  {
+   "num": 382,
+   "titulo": "Mocidade Presbiteriana",
+   "paginas": [
+    "/midias/h382_ea77be9f.jpg",
+    "/midias/h382_6354_d52727ff.jpg",
+    "/midias/h382_6422_9e239a25.jpg"
+   ]
+  },
+  {
+   "num": 396,
+   "titulo": "Um ano mais de vida",
+   "paginas": [
+    "/midias/h396_6460_67915251.jpg"
+   ]
+  },
+  {
+   "num": 400,
+   "titulo": "Ofertórios e Améns",
+   "paginas": [
+    "/midias/h400_6484_ffeb8437.jpg",
+    "/midias/h400_6490_8a504c7e.jpg"
+   ]
+  }
+ ],
+ "canticos": [],
+ "salmos": [],
+ "lavras": []
+}
