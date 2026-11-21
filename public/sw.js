@@ -1,4 +1,4 @@
-const VERSAO = 'hinario-v5';
+const VERSAO = 'hinario-v6';
 const CASCA = ['/', '/index.html', '/manifest.webmanifest', '/data/catalogo.json', '/icons/icone-192.png'];
 
 self.addEventListener('install', (evento) => {
