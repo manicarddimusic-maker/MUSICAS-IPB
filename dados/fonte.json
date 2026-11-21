@@ -878,7 +878,8 @@
     {
      "img": "/midias/salmos/s029.jpg"
     }
-   ]
+   ],
+   "versiculos": "1-4,7-9"
   },
   {
    "num": 33,
@@ -887,7 +888,8 @@
     {
      "img": "/midias/salmos/s033.jpg"
     }
-   ]
+   ],
+   "versiculos": "18-22"
   },
   {
    "num": 38,
@@ -901,7 +903,8 @@
      "img": "/midias/salmos/s038-g.jpg",
      "tom": "G"
     }
-   ]
+   ],
+   "versiculos": "1-4,18-21"
   },
   {
    "num": 42,
@@ -914,7 +917,7 @@
   },
   {
    "num": 46,
-   "titulo": "Deus é o nosso refúgio · Aquietai-vos",
+   "titulo": "Deus é o nosso refúgio",
    "paginas": [
     {
      "img": "/midias/salmos/s046-g.jpg",
@@ -923,7 +926,16 @@
     {
      "img": "/midias/salmos/s046-a.jpg",
      "tom": "A"
-    },
+    }
+   ],
+   "versiculos": "1,2,4,5,8"
+  },
+  {
+   "num": 46,
+   "id": "salmo-46-aquietai",
+   "titulo": "Aquietai-vos",
+   "versiculos": "10,9,11",
+   "paginas": [
     {
      "img": "/midias/salmos/s046-aquietai.jpg",
      "tom": "A"
@@ -955,7 +967,8 @@
     {
      "img": "/midias/salmos/s062.jpg"
     }
-   ]
+   ],
+   "versiculos": "5-7"
   },
   {
    "num": 70,
@@ -978,7 +991,8 @@
     {
      "img": "/midias/salmos/s086.jpg"
     }
-   ]
+   ],
+   "versiculos": "8-10"
   },
   {
    "num": 87,
@@ -998,7 +1012,8 @@
     {
      "img": "/midias/salmos/s096.jpg"
     }
-   ]
+   ],
+   "versiculos": "1-6"
   },
   {
    "num": 103,
@@ -1021,7 +1036,8 @@
      "img": "/midias/salmos/s113-e.jpg",
      "tom": "E"
     }
-   ]
+   ],
+   "versiculos": "4-9"
   },
   {
    "num": 121,
@@ -1039,7 +1055,8 @@
      "img": "/midias/salmos/s121-cm.jpg",
      "tom": "Cm"
     }
-   ]
+   ],
+   "versiculos": "1-8"
   },
   {
    "num": 128,
@@ -1071,7 +1088,8 @@
     {
      "img": "/midias/salmos/s145.jpg"
     }
-   ]
+   ],
+   "versiculos": "5-7,10,11"
   },
   {
    "num": 147,
@@ -1080,7 +1098,8 @@
     {
      "img": "/midias/salmos/s147.jpg"
     }
-   ]
+   ],
+   "versiculos": "7-9,11-13"
   },
   {
    "num": 148,

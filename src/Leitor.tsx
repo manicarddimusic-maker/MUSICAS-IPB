@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Item, Secao, rotuloItem } from './catalogo';
+import { Item, Secao, rotuloCompleto } from './catalogo';
 
 type Props = {
   secao: Secao;
@@ -258,7 +258,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
           ‹
         </Link>
         <div className="barra-texto">
-          <p>{rotuloItem(secao, item)}</p>
+          <p>{rotuloCompleto(secao, item)}</p>
           <h1>{item.titulo}</h1>
         </div>
         <span className="barra-indice">
@@ -335,7 +335,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
       <nav className="navegacao">
         {anterior ? (
           <Link to={`/${secao.id}/${anterior.id}`} className="nav-item">
-            <span>‹ {rotuloItem(secao, anterior)}</span>
+            <span>‹ {rotuloCompleto(secao, anterior)}</span>
             <small>{anterior.titulo}</small>
           </Link>
         ) : (
@@ -344,7 +344,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
         <span className="nav-pos">{paginas.length > 1 ? `${pagina + 1} / ${paginas.length}` : ''}</span>
         {proximo ? (
           <Link to={`/${secao.id}/${proximo.id}`} className="nav-item direita">
-            <span>{rotuloItem(secao, proximo)} ›</span>
+            <span>{rotuloCompleto(secao, proximo)} ›</span>
             <small>{proximo.titulo}</small>
           </Link>
         ) : (

@@ -181,7 +181,10 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
             <li key={item.id}>
               <Link to={`/${secao.id}/${item.id}`} className="linha">
                 <span className="numero">{rotuloItem(secao, item)}</span>
-                <span className="titulo-item">{item.titulo}</span>
+                <span className="titulo-item">
+                  {item.titulo}
+                  {item.versiculos && <small className="versos"> · vers. {item.versiculos}</small>}
+                </span>
                 {item.paginas.length > 1 && <span className="selo">{item.paginas.length} págs</span>}
               </Link>
             </li>

@@ -46,7 +46,7 @@ def montar_item(secao: str, dado: dict) -> dict:
         ident = f"palavra-{slug(titulo)}"
         alt_base = titulo
     elif secao == "salmos":
-        ident = f"salmo-{num}"
+        ident = dado.get("id") or f"salmo-{num}"
         alt_base = f"Salmo {num} — {titulo}"
     else:
         ident = f"cantico-{slug(titulo)}"
@@ -67,6 +67,8 @@ def montar_item(secao: str, dado: dict) -> dict:
     item = {"id": ident, "titulo": titulo, "paginas": paginas}
     if num is not None:
         item["num"] = int(num)
+    if dado.get("versiculos"):
+        item["versiculos"] = dado["versiculos"]
     if dado.get("rotulo"):
         item["rotulo"] = dado["rotulo"]
     if dado.get("tom"):

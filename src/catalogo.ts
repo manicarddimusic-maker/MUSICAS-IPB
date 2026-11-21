@@ -10,6 +10,7 @@ export type Item = {
   id: string;
   num?: number;
   rotulo?: string;
+  versiculos?: string;
   titulo: string;
   tom?: string;
   obs?: string;
@@ -61,7 +62,8 @@ export function normalizar(texto: string): string {
 export function ordenarItens(secao: Secao): Item[] {
   const itens = [...secao.itens];
   if (secao.ordem === 'numero') {
-    itens.sort((a, b) => (a.num ?? 0) - (b.num ?? 0) || a.titulo.localeCompare(b.titulo, 'pt-BR'));
+    const primeiro = (i: Item) => parseInt(i.versiculos ?? '0', 10) || 0;
+    itens.sort((a, b) => (a.num ?? 0) - (b.num ?? 0) || primeiro(a) - primeiro(b) || a.titulo.localeCompare(b.titulo, 'pt-BR'));
   } else {
     itens.sort((a, b) => normalizar(a.titulo).localeCompare(normalizar(b.titulo), 'pt-BR'));
   }
@@ -75,4 +77,9 @@ export function rotuloItem(secao: Secao, item: Item): string {
   if (secao.id === 'hinos') return String(item.num);
   if (secao.id === 'lavras') return item.num ? String(item.num) : '♪';
   return item.titulo;
+}
+
+export function rotuloCompleto(secao: Secao, item: Item): string {
+  const base = rotuloItem(secao, item);
+  return item.versiculos ? `${base}:${item.versiculos}` : base;
 }

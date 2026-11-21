@@ -782,3 +782,9 @@ body { overscroll-behavior: none; touch-action: manipulation; }
 .cartao-palavra .cartao-veu {
   background: linear-gradient(180deg, rgba(20, 24, 34, 0.2) 0%, rgba(24, 30, 48, 0.6) 55%, rgba(14, 18, 30, 0.94) 100%);
 }
+.versos {
+  color: var(--ouro, #c9a227);
+  opacity: 0.85;
+  font-size: 0.78em;
+  white-space: nowrap;
+}
