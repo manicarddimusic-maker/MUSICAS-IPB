@@ -32,14 +32,32 @@ export type Catalogo = {
 
 let cache: Promise<Catalogo> | null = null;
 
+/** "Impressão digital" da lista de músicas carregada (para saber se chegou versão nova). */
+export let assinaturaAtual = '';
+export function assinar(texto: string): string {
+  let h = 5381;
+  for (let i = 0; i < texto.length; i++) h = ((h << 5) + h + texto.charCodeAt(i)) | 0;
+  return String(h) + ':' + texto.length;
+}
+export function idsDoCatalogo(c: Catalogo): string[] {
+  return c.secoes.flatMap((s) => s.itens.map((i) => i.id));
+}
+
 export function carregarCatalogo(): Promise<Catalogo> {
   if (!cache) {
     cache = fetch(caminho('/data/catalogo.json'), { cache: 'no-cache' })
       .then((r) => {
         if (!r.ok) throw new Error('Falha ao carregar o catálogo');
-        return r.json() as Promise<Catalogo>;
+        return r.text();
       })
-      .then((c) => {
+      .then((texto) => {
+        assinaturaAtual = assinar(texto);
+        const c = JSON.parse(texto) as Catalogo;
+        try {
+          localStorage.setItem('hinario-ids', JSON.stringify(idsDoCatalogo(c)));
+        } catch {
+          /* ok */
+        }
         for (const sec of c.secoes) for (const it of sec.itens) for (const pg of it.paginas) pg.img = caminho(pg.img);
         return c;
       })

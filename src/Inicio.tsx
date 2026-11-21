@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Catalogo, ordenarItens } from './catalogo';
 import { caminho, ARTEFATO } from './ambiente';
 import { folhasSalvas, salvarTudo, urlsDeFolhas } from './offline';
+import { atualizarApp, lerMensagemAtualizacao } from './atualizar';
 
 type PromptEvento = Event & { prompt: () => Promise<void> };
 
@@ -22,6 +23,34 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
   const [baixando, setBaixando] = useState<{ feitas: number; total: number; falhas: number } | null>(null);
   const [msgOffline, setMsgOffline] = useState<string | null>(null);
   const cancelar = useRef(false);
+  const [atualizando, setAtualizando] = useState(false);
+  const [msgAtualizar, setMsgAtualizar] = useState<string | null>(() => (ARTEFATO ? null : lerMensagemAtualizacao()));
+
+  useEffect(() => {
+    if (!msgAtualizar) return;
+    const t = window.setTimeout(() => setMsgAtualizar(null), 6000);
+    return () => window.clearTimeout(t);
+  }, [msgAtualizar]);
+
+  async function atualizar() {
+    if (atualizando) return;
+    setAtualizando(true);
+    setMsgAtualizar(null);
+    try {
+      const r = await atualizarApp();
+      if (r.recarregar) {
+        window.location.reload();
+        return;
+      }
+      setMsgAtualizar('Você já está na versão mais recente ✓');
+    } catch (e) {
+      setMsgAtualizar((e as Error).message || 'Não foi possível atualizar agora.');
+    } finally {
+      setAtualizando(false);
+    }
+  }
+
+  const faltam = salvas === null ? 0 : urls.length - salvas;
 
   useEffect(() => {
     if (ARTEFATO) return;
@@ -61,6 +90,23 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
     <div className="inicio">
       <div className="textura" aria-hidden="true" />
 
+      {!ARTEFATO && (
+        <button className={`botao-atualizar${atualizando ? ' girando' : ''}`} onClick={atualizar} disabled={atualizando} aria-label="Atualizar o aplicativo">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M20 11a8 8 0 0 0-14.4-4.8L4 8" />
+            <path d="M4 4v4h4" />
+            <path d="M4 13a8 8 0 0 0 14.4 4.8L20 16" />
+            <path d="M20 20v-4h-4" />
+          </svg>
+          <span>{atualizando ? 'Atualizando…' : 'Atualizar'}</span>
+        </button>
+      )}
+      {msgAtualizar && (
+        <p className="aviso-atualizar" role="status">
+          {msgAtualizar}
+        </p>
+      )}
+
       <header className="capa">
         <div className="ornamento" aria-hidden="true">
           <span />
@@ -71,6 +117,29 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
         <h1>Músicas do nosso culto</h1>
         <p className="capa-sub">Hinos, cânticos espirituais, salmos e músicas Lavras</p>
       </header>
+
+      {!ARTEFATO && salvas !== null && faltam > 0 && salvas > 0 && (
+        <section className="alerta-novas" role="alert">
+          <p>
+            <strong>🔔 {faltam === 1 ? 'Há 1 folha nova' : `Há ${faltam} folhas novas`} que ainda não {faltam === 1 ? 'está salva' : 'estão salvas'} neste aparelho.</strong>{' '}
+            Baixe agora, com Wi-Fi, para usar sem internet. As que já estão salvas não são baixadas de novo.
+          </p>
+          {baixando ? (
+            <>
+              <div className="offline-barra" aria-hidden="true">
+                <span style={{ width: `${(baixando.feitas / baixando.total) * 100}%` }} />
+              </div>
+              <button className="botao-offline" onClick={() => (cancelar.current = true)}>
+                Pausar ({baixando.feitas}/{baixando.total})
+              </button>
+            </>
+          ) : (
+            <button className="botao-offline" onClick={baixar}>
+              Baixar só as novas ({faltam})
+            </button>
+          )}
+        </section>
+      )}
 
       <nav className="secoes">
         {catalogo.secoes.map((secao, i) => {
