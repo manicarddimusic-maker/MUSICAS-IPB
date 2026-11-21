@@ -190,7 +190,7 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
             <input
               inputMode="numeric"
               pattern="[0-9]*"
-              placeholder={secao.id === 'salmos' ? 'Ir para o Salmo…' : secao.id === 'caderninho' ? 'Ir para o número…' : 'Ir para o hino número…'}
+              placeholder={secao.id === 'salmos' ? 'Ir para o Salmo…' : secao.id === 'caderninho' ? 'Ir para o número…' : 'Ir para o hino…'}
               value={busca}
               onChange={(e) => {
                 setBusca(e.target.value);
@@ -203,7 +203,7 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
         ) : (
           <input
             type="search"
-            placeholder="Buscar cântico pelo nome…"
+            placeholder="Buscar pelo nome…"
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
             aria-label="Buscar"
