@@ -111,11 +111,11 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
       <header className="capa">
         <div className="ornamento" aria-hidden="true">
           <span />
-          <img className="logo-app" src={caminho('/icons/icone-192.png')} alt="" width={68} height={68} />
+          <img className="logo-ipb" src={caminho('/icons/ipb-arvore.png')} alt="Igreja Presbiteriana do Brasil" width={96} height={75} />
           <span />
         </div>
-        <p className="capa-eyebrow">Hinário da Igreja</p>
-        <h1>Músicas do nosso culto</h1>
+        <p className="capa-eyebrow">Músicas do nosso culto</p>
+        <h1>Igreja Presbiteriana do Brasil</h1>
         <p className="capa-sub">Hinos, cânticos espirituais, salmos e músicas Lavras</p>
       </header>
 

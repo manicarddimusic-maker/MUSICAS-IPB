@@ -947,3 +947,13 @@ body { overscroll-behavior: none; touch-action: manipulation; }
     font-size: 1.1rem;
   }
 }
+
+.ornamento .logo-ipb {
+  display: block;
+  width: clamp(78px, 14vw, 112px);
+  height: auto;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+}
+.capa h1 {
+  text-wrap: balance;
+}
