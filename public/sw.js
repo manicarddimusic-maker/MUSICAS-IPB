@@ -1,6 +1,6 @@
 // Hinário da Igreja — funciona sem internet.
 // APP: arquivos do aplicativo (trocados a cada versão). MIDIAS: fotos das folhas (nunca apagadas numa atualização).
-const VERSAO = 'v24';
+const VERSAO = 'v25';
 const APP = 'hinario-app-' + VERSAO;
 const MIDIAS = 'hinario-midias';
 const ESPERA_REDE = 4000; // se a internet estiver lenta, usa o que já está salvo

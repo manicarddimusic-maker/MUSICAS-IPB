@@ -15,7 +15,7 @@ SAIDA = RAIZ / "public" / "data" / "catalogo.json"
 
 SECOES = [
     ("hinos", "Hinos", "Novo Cântico", "numero"),
-    ("canticos", "Cânticos espirituais", "Ordem alfabética", "alfabeto"),
+    ("canticos", "Cânticos Espirituais", "Ordem alfabética", "alfabeto"),
     ("caderninho", "Cânticos Antigos IPB", "Do nosso acervo", "numero"),
     ("salmos", "Salmos", "Livro dos Salmos", "numero"),
     ("palavra", "Palavra de Deus Cantada", "Passagens bíblicas cantadas", "alfabeto"),
