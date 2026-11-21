@@ -13,7 +13,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   const [pagina, setPagina] = useState(0);
   const [zoom, setZoom] = useState(1);
   const [desloc, setDesloc] = useState({ x: 0, y: 0 });
-  const [girado, setGirado] = useState(false);
+  const [rotacao, setRotacao] = useState(0);
   const [areaTam, setAreaTam] = useState({ w: 0, h: 0 });
   const navigate = useNavigate();
   const area = useRef<HTMLDivElement>(null);
@@ -27,8 +27,31 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     setPagina(0);
     setZoom(1);
     setDesloc({ x: 0, y: 0 });
-    setGirado(false);
   }, [item.id]);
+
+  // lembra a rotação escolhida para cada folha (por aparelho)
+  useEffect(() => {
+    let r = 0;
+    try {
+      r = Number(localStorage.getItem('rot:' + atual.img)) || 0;
+    } catch {
+      /* sem armazenamento */
+    }
+    setRotacao(r);
+  }, [atual.img]);
+
+  function girar() {
+    const nova = (rotacao + 90) % 360;
+    setRotacao(nova);
+    setZoom(1);
+    setDesloc({ x: 0, y: 0 });
+    try {
+      localStorage.setItem('rot:' + atual.img, String(nova));
+    } catch {
+      /* sem armazenamento */
+    }
+  }
+  const lateral = rotacao === 90 || rotacao === 270;
 
   useEffect(() => {
     const el = area.current;
@@ -153,16 +176,14 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
           key={atual.img}
           src={atual.img}
           alt={atual.alt}
-          className={`folha${girado ? ' folha-girada' : ''}`}
+          className="folha"
           draggable={false}
           style={{
-            width: girado && areaTam.w ? areaTam.h : undefined,
-            height: girado && areaTam.w ? areaTam.w : undefined,
-            maxWidth: girado ? 'none' : undefined,
-            maxHeight: girado ? 'none' : undefined,
+            width: lateral && areaTam.w ? areaTam.h : undefined,
+            height: lateral && areaTam.w ? areaTam.w : undefined,
             objectFit: 'contain',
-            transform: `translate(${desloc.x}px, ${desloc.y}px) scale(${zoom})${
-              girado ? ' rotate(90deg)' : ''
+            transform: `translate(-50%, -50%) translate(${desloc.x}px, ${desloc.y}px) scale(${zoom})${
+              rotacao ? ` rotate(${rotacao}deg)` : ''
             }`,
             cursor: zoom > 1 ? 'grab' : 'pointer',
           }}
@@ -174,12 +195,10 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
             onPointerUp={(e) => e.stopPropagation()}
             onClick={(e) => {
               e.stopPropagation();
-              setGirado((v) => !v);
-              setZoom(1);
-              setDesloc({ x: 0, y: 0 });
+              girar();
             }}
             aria-label="Girar a folha"
-            title={girado ? 'Ver como na foto' : 'Girar a folha'}
+            title="Girar a folha"
           >
             ⟳
           </button>
