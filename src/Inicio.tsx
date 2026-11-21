@@ -143,11 +143,11 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
       )}
 
       <nav className="secoes secoes-inicio">
-        {catalogo.secoes.filter((s) => s.id !== 'salmos').map((secao, i) => {
+        {catalogo.secoes.filter((s) => s.id !== 'salmos').map((secao) => {
           const itens = ordenarItens(secao);
           const total = secao.id === 'palavra' ? itens.length + (catalogo.secoes.find((s) => s.id === 'salmos')?.itens.length ?? 0) : itens.length;
           return (
-            <Link key={secao.id} to={`/${secao.id}`} className={`cartao cartao-${secao.id}`} style={{ animationDelay: `${i * 90}ms` }}>
+            <Link key={secao.id} to={`/${secao.id}`} className={`cartao cartao-${secao.id}`}>
               <img src={caminho(CAPAS[secao.id])} alt="" className="cartao-fundo" loading="eager" />
               <span className="cartao-veu" />
               <span className="cartao-conteudo">

@@ -56,7 +56,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     if (!im) return;
     const { z, x, y } = vista.current;
     window.clearTimeout(fimAnim.current);
-    im.style.transition = animar ? 'transform 0.16s ease-out' : 'none';
+    im.style.transition = 'none';
     im.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px) scale(${z})${rotRef.current ? ` rotate(${rotRef.current}deg)` : ''}`;
     im.style.cursor = z > 1 ? 'grab' : 'pointer';
     if (animar) fimAnim.current = window.setTimeout(() => im.style.removeProperty('transition'), 200);

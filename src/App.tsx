@@ -83,8 +83,8 @@ function Hub({ catalogo }: { catalogo: Catalogo }) {
       </header>
       <div className="inicio hub">
         <nav className="secoes">
-          {cartoes.map((c, i) => (
-            <Link key={c.para} to={c.para} className={`cartao cartao-${c.capa}`} style={{ animationDelay: `${i * 70}ms` }}>
+          {cartoes.map((c) => (
+            <Link key={c.para} to={c.para} className={`cartao cartao-${c.capa}`}>
               <img src={caminho(CAPAS[c.capa])} alt="" className="cartao-fundo" loading="eager" />
               <span className="cartao-veu" />
               <span className="cartao-conteudo">

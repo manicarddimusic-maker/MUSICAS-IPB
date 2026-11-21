@@ -71,7 +71,6 @@ a {
   color: var(--papel);
   margin: 0 auto clamp(26px, 5vw, 48px);
   max-width: 760px;
-  animation: surgir 0.7s ease both;
 }
 
 .ornamento {
@@ -144,8 +143,6 @@ a {
   border: 1px solid rgba(201, 162, 39, 0.42);
   box-shadow: var(--sombra);
   isolation: isolate;
-  animation: surgir 0.7s ease both;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .cartao:hover,
@@ -163,11 +160,10 @@ a {
   object-fit: cover;
   z-index: -2;
   transform: scale(1.02);
-  transition: transform 0.6s ease;
 }
 
 .cartao:hover .cartao-fundo {
-  transform: scale(1.08);
+  transform: none;
 }
 
 .cartao-veu {
@@ -243,7 +239,6 @@ a {
   border-radius: 999px;
   letter-spacing: 0.06em;
   cursor: pointer;
-  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .botao-instalar:hover {
@@ -334,7 +329,6 @@ a {
   background: #fffdf7;
   font-size: 1rem;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .barra-busca input:focus {
@@ -371,7 +365,6 @@ a {
   gap: 14px;
   padding: 15px 10px;
   border-radius: 12px;
-  transition: background 0.2s ease;
 }
 
 .linha:hover,
@@ -680,7 +673,6 @@ a {
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .botao-pdf:hover:not(:disabled) {
@@ -844,7 +836,6 @@ body { overscroll-behavior: none; touch-action: manipulation; }
   border: 2px solid var(--dourado, #c9a227);
   background: rgba(201, 162, 39, 0.16);
   color: var(--papel);
-  animation: surgir 0.5s ease both;
 }
 .alerta-novas p { margin: 0 0 10px; font-size: 0.92rem; line-height: 1.4; }
 
@@ -957,3 +948,7 @@ body { overscroll-behavior: none; touch-action: manipulation; }
 .capa h1 {
   text-wrap: balance;
 }
+
+/* Sem atrasos: nada aparece aos poucos nem desliza */
+*, *::before, *::after { animation-delay: 0s !important; scroll-behavior: auto !important; }
+.cartao:hover, .cartao:focus-visible { transform: none; }
