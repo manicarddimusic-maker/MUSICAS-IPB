@@ -72,6 +72,7 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
   const [busca, setBusca] = useState('');
   const [pdf, setPdf] = useState<{ feitos: number; total: number } | null>(null);
   const [erroPdf, setErroPdf] = useState<string | null>(null);
+  const [avisoNumero, setAvisoNumero] = useState<string | null>(null);
 
   if (!secao) return <NaoEncontrado />;
 
@@ -86,8 +87,13 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
   function irParaNumero(valor: string) {
     const n = parseInt(valor.replace(/\D/g, ''), 10);
     if (!n) return;
-    const alvo = itens.find((i) => i.num === n) ?? itens.find((i) => (i.num ?? 0) >= n);
-    if (alvo) navigate(`/${secao!.id}/${alvo.id}`);
+    const alvo = itens.find((i) => i.num === n);
+    if (alvo) {
+      setAvisoNumero(null);
+      navigate(`/${secao!.id}/${alvo.id}`);
+    } else {
+      setAvisoNumero(`Não há o número ${n} neste hinário.`);
+    }
   }
 
   async function exportarPdf() {
@@ -137,7 +143,6 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
             onSubmit={(e) => {
               e.preventDefault();
               irParaNumero(busca);
-              setBusca('');
             }}
           >
             <input
@@ -145,7 +150,10 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
               pattern="[0-9]*"
               placeholder={secao.id === 'salmos' ? 'Ir para o Salmo…' : 'Ir para o hino número…'}
               value={busca}
-              onChange={(e) => setBusca(e.target.value)}
+              onChange={(e) => {
+                setBusca(e.target.value);
+                setAvisoNumero(null);
+              }}
               aria-label="Número"
             />
             <button type="submit">Ir</button>
@@ -160,6 +168,8 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
           />
         )}
       </div>
+
+      {avisoNumero && <p className="pdf-erro" style={{ padding: '0 18px' }}>{avisoNumero}</p>}
 
       {filtrados.length === 0 ? (
         <p className="vazio">

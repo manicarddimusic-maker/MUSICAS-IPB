@@ -726,3 +726,51 @@ a {
   cursor: pointer;
   backdrop-filter: blur(3px);
 }
+
+/* ---------- Uso offline ---------- */
+.offline {
+  position: relative;
+  max-width: 760px;
+  margin: 26px auto 0;
+  padding: 16px 18px;
+  border: 1px solid rgba(201, 162, 39, 0.45);
+  border-radius: 16px;
+  background: rgba(16, 24, 18, 0.55);
+  color: var(--papel);
+  text-align: center;
+}
+.offline p { margin: 0 0 10px; font-size: 0.92rem; line-height: 1.4; }
+.offline-ok { color: var(--dourado-claro); font-weight: 600; margin: 0 !important; }
+.offline-aviso { margin: 10px 0 0 !important; color: #f1c9a0; }
+.offline-barra { height: 6px; border-radius: 4px; background: rgba(255, 255, 255, 0.15); overflow: hidden; margin-bottom: 12px; }
+.offline-barra span { display: block; height: 100%; background: var(--dourado); transition: width 0.2s ease; }
+.botao-offline {
+  min-height: 46px; padding: 0 22px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--dourado); background: var(--dourado); color: #1d2a22; font-weight: 600;
+}
+
+.botao-zoom {
+  position: absolute; bottom: 14px; right: 72px; min-width: 46px; height: 46px; padding: 0 10px; border-radius: 23px;
+  border: 1px solid rgba(201, 162, 39, 0.6); background: rgba(16, 18, 16, 0.72); color: var(--dourado-claro);
+  font-size: 0.95rem; cursor: pointer; backdrop-filter: blur(2px);
+}
+.barra-tom {
+  display: block; font-style: normal; font-size: 0.8rem; letter-spacing: 0.04em; color: var(--dourado-claro);
+  border: 1px solid rgba(201, 162, 39, 0.55); border-radius: 999px; padding: 2px 10px; margin-bottom: 4px; text-align: center;
+}
+.folha-erro {
+  position: absolute; inset: 0; display: grid; place-content: center; gap: 14px; text-align: center; padding: 24px;
+  background: rgba(16, 18, 16, 0.9); z-index: 2;
+}
+.folha-erro p { margin: 0; max-width: 28ch; line-height: 1.4; }
+.folha-erro button {
+  justify-self: center; min-height: 46px; padding: 0 22px; border-radius: 999px; border: 1px solid var(--dourado);
+  background: var(--dourado); color: #1d2a22; font-weight: 600; cursor: pointer;
+}
+body { overscroll-behavior: none; touch-action: manipulation; }
+.leitor { height: 100dvh; }
+
+/* setas de página no canto, para não cobrir a partitura */
+.pagina-seta { top: auto; bottom: 14px; transform: none; width: 46px; height: 46px; border-radius: 23px; font-size: 1.5rem; }
+.pagina-seta.esq { left: 14px; right: auto; }
+.pagina-seta.dir { left: 68px; right: auto; }

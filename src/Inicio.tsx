@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Catalogo, ordenarItens } from './catalogo';
-import { caminho } from './ambiente';
+import { caminho, ARTEFATO } from './ambiente';
+import { folhasSalvas, salvarTudo, urlsDeFolhas } from './offline';
 
 type PromptEvento = Event & { prompt: () => Promise<void> };
 
@@ -15,6 +16,35 @@ const CAPAS: Record<string, string> = {
 export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
   const [instalacao, setInstalacao] = useState<PromptEvento | null>(null);
   const [instalado, setInstalado] = useState(false);
+  const urls = useMemo(() => urlsDeFolhas(catalogo), [catalogo]);
+  const [salvas, setSalvas] = useState<number | null>(null);
+  const [baixando, setBaixando] = useState<{ feitas: number; total: number; falhas: number } | null>(null);
+  const [msgOffline, setMsgOffline] = useState<string | null>(null);
+  const cancelar = useRef(false);
+
+  useEffect(() => {
+    if (ARTEFATO) return;
+    folhasSalvas(urls)
+      .then((s) => setSalvas(s.size))
+      .catch(() => setSalvas(null));
+  }, [urls]);
+
+  async function baixar() {
+    cancelar.current = false;
+    setMsgOffline(null);
+    setBaixando({ feitas: salvas ?? 0, total: urls.length, falhas: 0 });
+    try {
+      const { falhas } = await salvarTudo(urls, (feitas, total, f) => setBaixando({ feitas, total, falhas: f }), () => cancelar.current);
+      const s = await folhasSalvas(urls);
+      setSalvas(s.size);
+      if (cancelar.current) setMsgOffline('Download pausado. Toque de novo para continuar de onde parou.');
+      else if (falhas > 0) setMsgOffline(`${falhas} folhas não baixaram (internet instável). Toque de novo para completar.`);
+    } catch {
+      setMsgOffline('Não foi possível baixar agora. Confira a internet e tente de novo.');
+    } finally {
+      setBaixando(null);
+    }
+  }
 
   useEffect(() => {
     const aoInstalar = (e: Event) => {
@@ -63,6 +93,37 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
           );
         })}
       </nav>
+
+      {!ARTEFATO && salvas !== null && (
+        <section className="offline">
+          {salvas >= urls.length && !baixando ? (
+            <p className="offline-ok">✓ Tudo salvo neste aparelho — funciona sem internet ({urls.length} folhas)</p>
+          ) : (
+            <>
+              <p className="offline-txt">
+                {baixando
+                  ? `Salvando para usar sem internet… ${baixando.feitas}/${baixando.total}`
+                  : `Para tocar sem depender da internet, salve tudo neste aparelho (${salvas}/${urls.length} salvas).`}
+              </p>
+              {baixando && (
+                <div className="offline-barra" aria-hidden="true">
+                  <span style={{ width: `${(baixando.feitas / baixando.total) * 100}%` }} />
+                </div>
+              )}
+              {baixando ? (
+                <button className="botao-offline" onClick={() => (cancelar.current = true)}>
+                  Pausar
+                </button>
+              ) : (
+                <button className="botao-offline" onClick={baixar}>
+                  Salvar tudo para usar sem internet
+                </button>
+              )}
+            </>
+          )}
+          {msgOffline && <p className="offline-aviso">{msgOffline}</p>}
+        </section>
+      )}
 
       <footer className="rodape">
         {instalacao && !instalado ? (
