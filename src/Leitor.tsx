@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Item, Secao, rotaLista, rotuloCompleto } from './catalogo';
+import Anotar from './Anotar';
+import { FolhaDef, Traco, achatar, apagarAnot, gravarAnot, gravarRascunho, lerAnot, novoId } from './anotacoes';
 
 type Props = {
   secao: Secao;
@@ -18,6 +20,10 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   const [rotacao, setRotacao] = useState(0);
   const [areaTam, setAreaTam] = useState({ w: 0, h: 0 });
   const [falhou, setFalhou] = useState(false);
+  const [anotUrl, setAnotUrl] = useState<Record<string, string>>({});
+  const [verOriginal, setVerOriginal] = useState(false);
+  const [anotando, setAnotando] = useState<FolhaDef[] | null>(null);
+  const [versaoAnot, setVersaoAnot] = useState(0);
   const navigate = useNavigate();
   const area = useRef<HTMLDivElement>(null);
   const imagem = useRef<HTMLImageElement>(null);
@@ -32,6 +38,60 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   const fimAnim = useRef(0);
 
   const paginas = item.paginas;
+
+  // páginas com anotações salvas neste aparelho (traços por cima da foto)
+  useEffect(() => {
+    let vivo = true;
+    const urls: string[] = [];
+    setVerOriginal(false);
+    Promise.all(item.paginas.map((p) => lerAnot(p.img).catch(() => undefined))).then((lista) => {
+      if (!vivo) return;
+      const m: Record<string, string> = {};
+      lista.forEach((a, i) => {
+        if (a) {
+          const u = URL.createObjectURL(a.flat);
+          urls.push(u);
+          m[item.paginas[i].img] = u;
+        }
+      });
+      setAnotUrl(m);
+    });
+    return () => {
+      vivo = false;
+      urls.forEach((u) => URL.revokeObjectURL(u));
+    };
+  }, [item.id, versaoAnot, item.paginas]);
+
+  async function abrirAnotacao() {
+    const folhas: FolhaDef[] = [];
+    for (const p of item.paginas) {
+      const a = await lerAnot(p.img).catch(() => undefined);
+      folhas.push({ src: p.img, tracos: (a?.tracos ?? []) as Traco[] });
+    }
+    setAnotando(folhas);
+  }
+
+  async function salvarAnotacoes(f: FolhaDef[]) {
+    for (let i = 0; i < f.length; i++) {
+      const key = item.paginas[i].img;
+      if (f[i].tracos.length) await gravarAnot({ key, tracos: f[i].tracos, flat: await achatar({ src: key, tracos: [] }, f[i].tracos), em: Date.now() });
+      else await apagarAnot(key);
+    }
+    setVersaoAnot((v) => v + 1);
+  }
+
+  async function duplicarComoRascunho(f: FolhaDef[], nome: string) {
+    const agora = Date.now();
+    await gravarRascunho({
+      id: novoId(),
+      titulo: `Cópia de ${nome}`,
+      criado: agora,
+      em: agora,
+      origem: nome,
+      folhas: f.map((x) => ({ ...x, tracos: [...x.tracos] })),
+      miniatura: await achatar(f[0], f[0].tracos, 420).catch(() => undefined),
+    });
+  }
   const atual = paginas[Math.min(pagina, paginas.length - 1)];
   const lateral = rotacao === 90 || rotacao === 270;
 
@@ -389,7 +449,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
       >
         <img
           key={atual.img}
-          src={atual.img}
+          src={anotUrl[atual.img] && !verOriginal ? anotUrl[atual.img] : atual.img}
           ref={imagem}
           alt={atual.alt}
           className="folha"
@@ -423,6 +483,14 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
         <button className="botao-zoom" onClick={ciclarZoom} aria-label="Ampliar a folha" title="Ampliar (+ / −)">
           {zoom === 1 ? '🔍' : `${Math.round(zoom * 10) / 10}×`}
         </button>
+        <button className="botao-anotar" onClick={abrirAnotacao} aria-label="Anotar nesta folha (Apple Pencil)" title="Anotar / escrever / apagar">
+          ✎
+        </button>
+        {anotUrl[atual.img] && (
+          <button className={`botao-original${verOriginal ? ' ativo' : ''}`} onClick={() => setVerOriginal(!verOriginal)} aria-label="Alternar entre a folha com anotações e a original" title={verOriginal ? 'Mostrando a original' : 'Mostrando com suas anotações'}>
+            {verOriginal ? 'Original' : 'Com notas'}
+          </button>
+        )}
         <button className="botao-girar" onClick={girar} aria-label="Girar a folha" title="Girar a folha (R)">
           ⟳
         </button>
@@ -442,6 +510,21 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
           </>
         )}
       </div>
+
+      {anotando && (
+        <Anotar
+          titulo={item.titulo}
+          folhas={anotando}
+          inicial={Math.min(pagina, anotando.length - 1)}
+          onSalvar={(f) => salvarAnotacoes(f)}
+          onDuplicar={(f, nome) => duplicarComoRascunho(f, nome)}
+          onRemoverTudo={async () => {
+            for (const p of item.paginas) await apagarAnot(p.img);
+            setVersaoAnot((v) => v + 1);
+          }}
+          onFechar={() => setAnotando(null)}
+        />
+      )}
 
       <nav className="navegacao">
         {anterior ? (

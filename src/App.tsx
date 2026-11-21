@@ -5,6 +5,7 @@ import { baixarBlob, gerarPdfSecao, nomeArquivoPdf } from './exportarPdf';
 import { caminho } from './ambiente';
 import Leitor from './Leitor';
 import Inicio, { CAPAS } from './Inicio';
+import Rascunhos from './Rascunhos';
 
 export default function App() {
   const [catalogo, setCatalogo] = useState<Catalogo | null>(null);
@@ -44,6 +45,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Inicio catalogo={catalogo} />} />
       <Route path="/livro/:livroSlug" element={<SecaoPage catalogo={catalogo} />} />
+      <Route path="/rascunhos" element={<Rascunhos />} />
       <Route path="/lavras/arquivos-pdf" element={<ArquivosPdf catalogo={catalogo} />} />
       <Route path="/:secaoId" element={<SecaoPage catalogo={catalogo} />} />
       <Route path="/:secaoId/:itemId" element={<LeitorPage catalogo={catalogo} />} />

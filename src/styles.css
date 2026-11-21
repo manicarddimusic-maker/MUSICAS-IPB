@@ -952,3 +952,67 @@ body { overscroll-behavior: none; touch-action: manipulation; }
 /* Sem atrasos: nada aparece aos poucos nem desliza */
 *, *::before, *::after { animation-delay: 0s !important; scroll-behavior: auto !important; }
 .cartao:hover, .cartao:focus-visible { transform: none; }
+
+/* ---------- Anotações / Rascunhos (estilo caderno digital) ---------- */
+.botao-anotar, .botao-original {
+  position: absolute; bottom: 14px; height: 46px; border-radius: 23px;
+  border: 1px solid rgba(201, 162, 39, 0.6); background: rgba(16, 18, 16, 0.72); color: var(--dourado-claro);
+  cursor: pointer; backdrop-filter: blur(2px);
+}
+.botao-anotar { right: 146px; width: 46px; font-size: 1.35rem; }
+.botao-original { right: 200px; padding: 0 14px; font-size: 0.85rem; }
+.botao-original.ativo { background: var(--dourado); color: #1d2a22; }
+
+.botao-rascunhos {
+  position: absolute; top: max(12px, env(safe-area-inset-top)); left: clamp(12px, 3vw, 24px); z-index: 6;
+  display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 0 14px; border-radius: 999px;
+  border: 1px solid rgba(201, 162, 39, 0.6); background: rgba(20, 28, 22, 0.55); color: var(--papel);
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em;
+}
+
+.anot { position: fixed; inset: 0; z-index: 50; display: flex; flex-direction: column; background: #161916; color: #f3eee0; }
+.anot-topo { display: flex; align-items: center; gap: 8px; padding: max(8px, env(safe-area-inset-top)) 10px 8px; background: #1f2b22; border-bottom: 1px solid rgba(201, 162, 39, 0.4); flex-wrap: wrap; }
+.anot-titulo, .anot-nome { flex: 1 1 140px; min-width: 0; font-size: 1rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.anot-nome { background: rgba(255,255,255,.08); border: 1px solid rgba(201,162,39,.4); border-radius: 10px; color: inherit; padding: 8px 10px; font: inherit; }
+.anot-grupo { display: flex; gap: 4px; }
+.anot-btn { min-width: 44px; height: 44px; padding: 0 12px; border-radius: 12px; border: 1px solid rgba(201,162,39,.5); background: rgba(255,255,255,.06); color: #f3eee0; font-size: 1.15rem; cursor: pointer; }
+.anot-btn:disabled { opacity: .35; cursor: default; }
+.anot-salvar { font-size: .95rem; font-weight: 700; }
+.anot-salvar.pendente { background: var(--dourado); color: #1d2a22; border-color: var(--dourado); }
+.anot-mais { position: relative; }
+.anot-menu { position: absolute; right: 0; top: 50px; z-index: 5; min-width: 260px; display: grid; background: #26332a; border: 1px solid rgba(201,162,39,.6); border-radius: 14px; overflow: hidden; box-shadow: 0 14px 40px rgba(0,0,0,.5); }
+.anot-menu button { text-align: left; padding: 14px 16px; background: none; border: 0; border-bottom: 1px solid rgba(255,255,255,.08); color: #f3eee0; font-size: .95rem; cursor: pointer; }
+.anot-menu button:last-child { border-bottom: 0; }
+.anot-ferr { display: flex; align-items: center; gap: 6px; padding: 8px 10px; background: #1a231d; border-bottom: 1px solid rgba(255,255,255,.08); overflow-x: auto; }
+.anot-ferr-btn { flex: none; display: grid; place-items: center; gap: 0; min-width: 62px; height: 52px; padding: 0 8px; border-radius: 12px; border: 1px solid transparent; background: transparent; color: #f3eee0; cursor: pointer; font-size: 1.25rem; line-height: 1; }
+.anot-ferr-btn small { font-size: .66rem; opacity: .85; }
+.anot-ferr-btn.ativo { background: var(--dourado); color: #1d2a22; }
+.anot-cores { display: flex; gap: 6px; padding: 0 6px; flex: none; }
+.anot-cor { width: 32px; height: 32px; border-radius: 50%; border: 2px solid rgba(255,255,255,.35); cursor: pointer; }
+.anot-cor.ativa { border-color: #fff; box-shadow: 0 0 0 3px var(--dourado); }
+.anot-tam { flex: none; display: grid; gap: 2px; min-width: 110px; padding: 0 6px; }
+.anot-tam small { font-size: .66rem; opacity: .85; text-align: center; }
+.anot-tam input { width: 110px; }
+.anot-rolagem { position: relative; flex: 1; overflow: auto; padding: 8px; background: #2a2e2a; -webkit-overflow-scrolling: touch; }
+.anot-caixa { position: relative; margin: 0 auto; }
+.anot-tela { display: block; width: 100%; height: auto; touch-action: none; background: #fff; box-shadow: 0 6px 28px rgba(0,0,0,.45); user-select: none; -webkit-user-select: none; }
+.anot-tela.ferr-borracha { cursor: cell; }
+.anot-tela.ferr-texto { cursor: text; }
+.anot-tela.ferr-caneta, .anot-tela.ferr-marca, .anot-tela.ferr-corretivo { cursor: crosshair; }
+.anot-texto { position: absolute; z-index: 3; min-width: 6ch; background: rgba(255,255,255,.85); border: 1px dashed #1565c0; outline: none; padding: 0; margin: 0; font-family: "Inter", "Helvetica Neue", Arial, sans-serif; font-weight: 600; line-height: 1.2; resize: none; overflow: hidden; }
+.anot-aviso { position: absolute; inset: 40% 0 auto; text-align: center; margin: 0; }
+.anot-aviso.erro { color: #f1c9a0; padding: 0 24px; }
+.anot-pe { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 6px 10px max(8px, env(safe-area-inset-bottom)); background: #1f2b22; font-size: .85rem; min-height: 44px; position: relative; }
+.anot-msg { position: absolute; right: 12px; font-style: normal; color: var(--dourado-claro); }
+
+.topo-rascunhos { background: linear-gradient(135deg, #3b2f4a, #2a3a4a); }
+.rasc-novo { margin: 14px clamp(14px, 4vw, 32px); padding: 14px; border-radius: 14px; background: rgba(47, 68, 54, 0.08); border: 1px solid rgba(47, 68, 54, 0.18); }
+.rasc-novo p { margin: 0 0 10px; }
+.rasc-novo div { display: flex; gap: 8px; flex-wrap: wrap; }
+.rasc-novo button { min-height: 46px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--oliva); background: var(--oliva); color: var(--papel); font-weight: 600; cursor: pointer; }
+.rasc-novo small { display: block; margin-top: 10px; opacity: .75; line-height: 1.4; }
+.rasc-item { display: flex; align-items: center; gap: 6px; }
+.rasc-abrir { flex: 1; display: flex; align-items: center; gap: 12px; padding: 10px; background: none; border: 0; text-align: left; cursor: pointer; color: inherit; font: inherit; border-radius: 12px; }
+.rasc-mini { width: 54px; height: 72px; object-fit: cover; border-radius: 6px; border: 1px solid rgba(47,68,54,.25); background: #fff; flex: none; display: grid; place-items: center; }
+.rasc-acao { width: 44px; height: 44px; border-radius: 12px; border: 1px solid rgba(47,68,54,.2); background: none; cursor: pointer; font-size: 1.1rem; }
+@media (max-width: 520px) { .botao-anotar { right: 138px; } .botao-original { right: 192px; } .anot-menu { right: -40px; } }

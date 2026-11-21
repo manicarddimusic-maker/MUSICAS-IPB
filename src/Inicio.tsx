@@ -92,6 +92,11 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
       <div className="textura" aria-hidden="true" />
 
       {!ARTEFATO && (
+        <>
+        <Link to="/rascunhos" className="botao-rascunhos" aria-label="Meus rascunhos e anotações">
+          <span aria-hidden="true">✎</span>
+          <span>Rascunhos</span>
+        </Link>
         <button className={`botao-atualizar${atualizando ? ' girando' : ''}`} onClick={atualizar} disabled={atualizando} aria-label="Atualizar o aplicativo">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M20 11a8 8 0 0 0-14.4-4.8L4 8" />
@@ -101,6 +106,7 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
           </svg>
           <span>{atualizando ? 'Atualizando…' : 'Atualizar'}</span>
         </button>
+        </>
       )}
       {msgAtualizar && (
         <p className="aviso-atualizar" role="status">
