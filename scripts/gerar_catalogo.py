@@ -17,6 +17,7 @@ SECOES = [
     ("hinos", "Hinos", "Novo Cântico", "numero"),
     ("canticos", "Cânticos espirituais", "Ordem alfabética", "alfabeto"),
     ("salmos", "Salmos", "Livro dos Salmos", "numero"),
+    ("palavra", "Palavra de Deus Cantada", "Passagens bíblicas cantadas", "alfabeto"),
     ("lavras", "Músicas Lavras", "Canções do retiro", "alfabeto"),
 ]
 
@@ -41,6 +42,9 @@ def montar_item(secao: str, dado: dict) -> dict:
     elif secao == "lavras":
         ident = f"lavras-{slug(titulo)}"
         alt_base = titulo
+    elif secao == "palavra":
+        ident = f"palavra-{slug(titulo)}"
+        alt_base = titulo
     elif secao == "salmos":
         ident = f"salmo-{num}"
         alt_base = f"Salmo {num} — {titulo}"
@@ -63,6 +67,8 @@ def montar_item(secao: str, dado: dict) -> dict:
     item = {"id": ident, "titulo": titulo, "paginas": paginas}
     if num is not None:
         item["num"] = int(num)
+    if dado.get("rotulo"):
+        item["rotulo"] = dado["rotulo"]
     if dado.get("tom"):
         item["tom"] = dado["tom"]
     if dado.get("obs"):

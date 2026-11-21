@@ -9,6 +9,7 @@ export type Pagina = {
 export type Item = {
   id: string;
   num?: number;
+  rotulo?: string;
   titulo: string;
   tom?: string;
   obs?: string;
@@ -16,7 +17,7 @@ export type Item = {
 };
 
 export type Secao = {
-  id: 'hinos' | 'canticos' | 'salmos' | 'lavras';
+  id: 'hinos' | 'canticos' | 'salmos' | 'palavra' | 'lavras';
   titulo: string;
   subtitulo: string;
   ordem: 'numero' | 'alfabeto';
@@ -68,7 +69,9 @@ export function ordenarItens(secao: Secao): Item[] {
 }
 
 export function rotuloItem(secao: Secao, item: Item): string {
+  if (item.rotulo) return secao.id === 'salmos' ? `Salmo ${item.rotulo}` : item.rotulo;
   if (secao.id === 'salmos') return `Salmo ${item.num}`;
+  if (secao.id === 'palavra') return '♪';
   if (secao.id === 'hinos') return String(item.num);
   if (secao.id === 'lavras') return item.num ? String(item.num) : '♪';
   return item.titulo;

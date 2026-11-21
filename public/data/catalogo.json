@@ -1556,7 +1556,315 @@
    "titulo": "Salmos",
    "subtitulo": "Livro dos Salmos",
    "ordem": "numero",
-   "itens": []
+   "itens": [
+    {
+     "id": "salmo-3",
+     "titulo": "Senhor, como aumentam contra mim",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s003.jpg",
+       "alt": "Salmo 3 — Senhor, como aumentam contra mim — página 1"
+      }
+     ],
+     "num": 3
+    },
+    {
+     "id": "salmo-29",
+     "titulo": "Tributai ao Senhor",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s029.jpg",
+       "alt": "Salmo 29 — Tributai ao Senhor — página 1"
+      }
+     ],
+     "num": 29
+    },
+    {
+     "id": "salmo-33",
+     "titulo": "Eis que os olhos do Senhor",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s033.jpg",
+       "alt": "Salmo 33 — Eis que os olhos do Senhor — página 1"
+      }
+     ],
+     "num": 33
+    },
+    {
+     "id": "salmo-38",
+     "titulo": "Não me repreendas, Senhor",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s038-c.jpg",
+       "alt": "Salmo 38 — Não me repreendas, Senhor — página 1",
+       "tom": "C"
+      },
+      {
+       "img": "/midias/salmos/s038-g.jpg",
+       "alt": "Salmo 38 — Não me repreendas, Senhor — página 2",
+       "tom": "G"
+      }
+     ],
+     "num": 38
+    },
+    {
+     "id": "salmo-42",
+     "titulo": "Como a corça suspira",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s042.jpg",
+       "alt": "Salmo 42 — Como a corça suspira — página 1"
+      }
+     ],
+     "num": 42
+    },
+    {
+     "id": "salmo-46",
+     "titulo": "Deus é o nosso refúgio · Aquietai-vos",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s046-g.jpg",
+       "alt": "Salmo 46 — Deus é o nosso refúgio · Aquietai-vos — página 1",
+       "tom": "G"
+      },
+      {
+       "img": "/midias/salmos/s046-a.jpg",
+       "alt": "Salmo 46 — Deus é o nosso refúgio · Aquietai-vos — página 2",
+       "tom": "A"
+      },
+      {
+       "img": "/midias/salmos/s046-aquietai.jpg",
+       "alt": "Salmo 46 — Deus é o nosso refúgio · Aquietai-vos — página 3",
+       "tom": "A"
+      }
+     ],
+     "num": 46
+    },
+    {
+     "id": "salmo-51",
+     "titulo": "Tem compaixão de mim, Senhor",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s051.jpg",
+       "alt": "Salmo 51 — Tem compaixão de mim, Senhor — página 1"
+      }
+     ],
+     "num": 51
+    },
+    {
+     "id": "salmo-54",
+     "titulo": "Partitura",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s054.jpg",
+       "alt": "Salmo 54 — Partitura — página 1"
+      }
+     ],
+     "num": 54
+    },
+    {
+     "id": "salmo-62",
+     "titulo": "Somente em Deus, ó minha alma",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s062.jpg",
+       "alt": "Salmo 62 — Somente em Deus, ó minha alma — página 1"
+      }
+     ],
+     "num": 62
+    },
+    {
+     "id": "salmo-70",
+     "titulo": "Praza-te, ó Deus, em me livrar",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s070-e.jpg",
+       "alt": "Salmo 70 — Praza-te, ó Deus, em me livrar — página 1",
+       "tom": "E"
+      },
+      {
+       "img": "/midias/salmos/s070-d.jpg",
+       "alt": "Salmo 70 — Praza-te, ó Deus, em me livrar — página 2",
+       "tom": "D"
+      }
+     ],
+     "num": 70
+    },
+    {
+     "id": "salmo-86",
+     "titulo": "Não há entre os deuses semelhante a ti",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s086.jpg",
+       "alt": "Salmo 86 — Não há entre os deuses semelhante a ti — página 1"
+      }
+     ],
+     "num": 86
+    },
+    {
+     "id": "salmo-87",
+     "titulo": "Sobre os seus santos montes",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s087b.jpg",
+       "alt": "Salmo 87 — Sobre os seus santos montes — página 1",
+       "tom": "D"
+      }
+     ],
+     "num": 87,
+     "rotulo": "87B"
+    },
+    {
+     "id": "salmo-96",
+     "titulo": "Cantai ao Senhor (Vencedores por Cristo)",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s096.jpg",
+       "alt": "Salmo 96 — Cantai ao Senhor (Vencedores por Cristo) — página 1"
+      }
+     ],
+     "num": 96
+    },
+    {
+     "id": "salmo-103",
+     "titulo": "Bendize ao Senhor, ó minha alma",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s103.jpg",
+       "alt": "Salmo 103 — Bendize ao Senhor, ó minha alma — página 1"
+      }
+     ],
+     "num": 103
+    },
+    {
+     "id": "salmo-113",
+     "titulo": "Excelso é o Senhor",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s113-c.jpg",
+       "alt": "Salmo 113 — Excelso é o Senhor — página 1",
+       "tom": "C"
+      },
+      {
+       "img": "/midias/salmos/s113-e.jpg",
+       "alt": "Salmo 113 — Excelso é o Senhor — página 2",
+       "tom": "E"
+      }
+     ],
+     "num": 113
+    },
+    {
+     "id": "salmo-121",
+     "titulo": "Elevo os olhos para os montes",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s121-bm.jpg",
+       "alt": "Salmo 121 — Elevo os olhos para os montes — página 1",
+       "tom": "Bm"
+      },
+      {
+       "img": "/midias/salmos/s121-csm.jpg",
+       "alt": "Salmo 121 — Elevo os olhos para os montes — página 2",
+       "tom": "C#m"
+      },
+      {
+       "img": "/midias/salmos/s121-cm.jpg",
+       "alt": "Salmo 121 — Elevo os olhos para os montes — página 3",
+       "tom": "Cm"
+      }
+     ],
+     "num": 121
+    },
+    {
+     "id": "salmo-128",
+     "titulo": "Bem-aventurado aquele",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s128b.jpg",
+       "alt": "Salmo 128 — Bem-aventurado aquele — página 1",
+       "tom": "D"
+      }
+     ],
+     "num": 128,
+     "rotulo": "128B"
+    },
+    {
+     "id": "salmo-142",
+     "titulo": "Com a minha voz clamo ao Senhor",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s142-a.jpg",
+       "alt": "Salmo 142 — Com a minha voz clamo ao Senhor — página 1"
+      },
+      {
+       "img": "/midias/salmos/s142-b.jpg",
+       "alt": "Salmo 142 — Com a minha voz clamo ao Senhor — página 2"
+      }
+     ],
+     "num": 142
+    },
+    {
+     "id": "salmo-145",
+     "titulo": "Meditarei no glorioso esplendor",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s145.jpg",
+       "alt": "Salmo 145 — Meditarei no glorioso esplendor — página 1"
+      }
+     ],
+     "num": 145
+    },
+    {
+     "id": "salmo-147",
+     "titulo": "Cantai ao Senhor com ações de graças",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s147.jpg",
+       "alt": "Salmo 147 — Cantai ao Senhor com ações de graças — página 1"
+      }
+     ],
+     "num": 147
+    },
+    {
+     "id": "salmo-148",
+     "titulo": "Aleluia a Deus, louvai-o",
+     "paginas": [
+      {
+       "img": "/midias/salmos/s148.jpg",
+       "alt": "Salmo 148 — Aleluia a Deus, louvai-o — página 1"
+      }
+     ],
+     "num": 148
+    }
+   ]
+  },
+  {
+   "id": "palavra",
+   "titulo": "Palavra de Deus Cantada",
+   "subtitulo": "Passagens bíblicas cantadas",
+   "ordem": "alfabeto",
+   "itens": [
+    {
+     "id": "palavra-romanos-11-33-36-o-profundidade-da-riqueza",
+     "titulo": "Romanos 11:33-36 — Ó profundidade da riqueza",
+     "paginas": [
+      {
+       "img": "/midias/palavra/p-romanos.jpg",
+       "alt": "Romanos 11:33-36 — Ó profundidade da riqueza — página 1"
+      }
+     ]
+    },
+    {
+     "id": "palavra-hebreus-1-1-3-deus-tendo-falado",
+     "titulo": "Hebreus 1:1-3 — Deus, tendo falado",
+     "paginas": [
+      {
+       "img": "/midias/palavra/p-hebreus.jpg",
+       "alt": "Hebreus 1:1-3 — Deus, tendo falado — página 1"
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "lavras",

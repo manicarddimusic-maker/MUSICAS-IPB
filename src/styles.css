@@ -774,3 +774,11 @@ body { overscroll-behavior: none; touch-action: manipulation; }
 .pagina-seta { top: auto; bottom: 14px; transform: none; width: 46px; height: 46px; border-radius: 23px; font-size: 1.5rem; }
 .pagina-seta.esq { left: 14px; right: auto; }
 .pagina-seta.dir { left: 68px; right: auto; }
+
+/* Cartão Palavra de Deus Cantada */
+.cartao-palavra .cartao-fundo {
+  filter: hue-rotate(-50deg) saturate(1.05) brightness(0.92);
+}
+.cartao-palavra .cartao-veu {
+  background: linear-gradient(180deg, rgba(20, 24, 34, 0.2) 0%, rgba(24, 30, 48, 0.6) 55%, rgba(14, 18, 30, 0.94) 100%);
+}
