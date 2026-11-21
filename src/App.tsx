@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom';
-import { Catalogo, Secao, carregarCatalogo, livrosDaPalavra, normalizar, ordenarItens, rotaLista, rotuloItem } from './catalogo';
+import { ArquivoPdf, Catalogo, Secao, carregarCatalogo, livrosDaPalavra, normalizar, ordenarItens, rotaLista, rotuloItem } from './catalogo';
 import { baixarBlob, gerarPdfSecao, nomeArquivoPdf } from './exportarPdf';
 import { caminho } from './ambiente';
 import Leitor from './Leitor';
@@ -44,6 +44,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Inicio catalogo={catalogo} />} />
       <Route path="/livro/:livroSlug" element={<SecaoPage catalogo={catalogo} />} />
+      <Route path="/lavras/arquivos-pdf" element={<ArquivosPdf catalogo={catalogo} />} />
       <Route path="/:secaoId" element={<SecaoPage catalogo={catalogo} />} />
       <Route path="/:secaoId/:itemId" element={<LeitorPage catalogo={catalogo} />} />
       <Route path="*" element={<NaoEncontrado />} />
@@ -212,6 +213,17 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
 
       {avisoNumero && <p className="pdf-erro" style={{ padding: '0 18px' }}>{avisoNumero}</p>}
 
+      {secao.arquivos && secao.arquivos.length > 0 && !termo && (
+        <Link to={`/${secao.id}/arquivos-pdf`} className="cartao-arquivos">
+          <span className="arquivos-icone" aria-hidden="true">PDF</span>
+          <span className="arquivos-texto">
+            <strong>Arquivos PDF</strong>
+            <small>Os {secao.arquivos.length} PDFs originais, do jeito que foram enviados</small>
+          </span>
+          <span aria-hidden="true">›</span>
+        </Link>
+      )}
+
       {filtrados.length === 0 ? (
         <p className="vazio">
           {itens.length === 0 ? 'Ainda não há músicas nesta seção.' : 'Nada encontrado com esse número ou nome.'}
@@ -232,6 +244,51 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
           ))}
         </ol>
       )}
+    </div>
+  );
+}
+
+function tamanhoLegivel(bytes?: number | null): string {
+  if (!bytes) return '';
+  return bytes >= 1048576 ? `${(bytes / 1048576).toFixed(1).replace('.', ',')} MB` : `${Math.round(bytes / 1024)} KB`;
+}
+
+function ArquivosPdf({ catalogo }: { catalogo: Catalogo }) {
+  const secao = acharSecao(catalogo, 'lavras');
+  const arquivos: ArquivoPdf[] = secao?.arquivos ?? [];
+  if (!secao) return <NaoEncontrado />;
+  return (
+    <div className="pagina">
+      <header className={`topo topo-${secao.id}`}>
+        <Link className="voltar" to={`/${secao.id}`} aria-label="Voltar">
+          ‹
+        </Link>
+        <div>
+          <p className="topo-sub">{secao.titulo}</p>
+          <h1>Arquivos PDF</h1>
+        </div>
+        <span className="contagem">{arquivos.length}</span>
+      </header>
+      <p className="arquivos-nota">Os PDFs originais, sem nenhuma alteração. Depois de baixar as músicas no aparelho, eles abrem também sem internet.</p>
+      <ol className="lista">
+        {arquivos.map((a) => (
+          <li key={a.url}>
+            <a className="linha linha-pdf" href={caminho(a.url)} target="_blank" rel="noopener">
+              <span className="numero">PDF</span>
+              <span className="titulo-item">
+                {a.nome}
+                <small className="versos">
+                  {' '}
+                  · {a.paginas ? `${a.paginas} págs` : ''}
+                  {a.paginas && a.bytes ? ' · ' : ''}
+                  {tamanhoLegivel(a.bytes)}
+                </small>
+              </span>
+              <span aria-hidden="true">›</span>
+            </a>
+          </li>
+        ))}
+      </ol>
     </div>
   );
 }

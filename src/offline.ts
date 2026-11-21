@@ -4,7 +4,10 @@ const MIDIAS = 'hinario-midias';
 
 export function urlsDeFolhas(catalogo: Catalogo): string[] {
   const urls = new Set<string>();
-  for (const s of catalogo.secoes) for (const i of s.itens) for (const p of i.paginas) urls.add(p.img);
+  for (const s of catalogo.secoes) {
+    for (const i of s.itens) for (const p of i.paginas) urls.add(p.img);
+    for (const a of s.arquivos ?? []) urls.add(a.url);
+  }
   return [...urls];
 }
 

@@ -24,7 +24,10 @@ export type Secao = {
   subtitulo: string;
   ordem: 'numero' | 'alfabeto';
   itens: Item[];
+  arquivos?: ArquivoPdf[];
 };
+
+export type ArquivoPdf = { nome: string; url: string; paginas?: number | null; bytes?: number | null };
 
 export type Catalogo = {
   geradoEm: string;

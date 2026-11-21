@@ -1,6 +1,6 @@
 // Hinário da Igreja — funciona sem internet.
 // APP: arquivos do aplicativo (trocados a cada versão). MIDIAS: fotos das folhas (nunca apagadas numa atualização).
-const VERSAO = 'v18';
+const VERSAO = 'v19';
 const APP = 'hinario-app-' + VERSAO;
 const MIDIAS = 'hinario-midias';
 const ESPERA_REDE = 4000; // se a internet estiver lenta, usa o que já está salvo
@@ -108,6 +108,36 @@ self.addEventListener('fetch', (evento) => {
         fetch(pedido).then((r) => guardar(APP, '/data/catalogo.json', r)),
         () => caches.match('/data/catalogo.json'),
       ).catch(() => Response.error()),
+    );
+    return;
+  }
+
+  // PDFs: o leitor de PDF pede "pedaços" (Range); entrega do arquivo salvo
+  if (url.pathname.startsWith('/midias/pdf/') && pedido.headers.get('range')) {
+    evento.respondWith(
+      (async () => {
+        let salvo = await caches.match(url.pathname, { ignoreSearch: true });
+        if (!salvo) {
+          try {
+            const r = await fetch(url.pathname);
+            salvo = await guardar(MIDIAS, url.pathname, r);
+          } catch (e) {
+            return Response.error();
+          }
+        }
+        const m = /bytes=(\d*)-(\d*)/.exec(pedido.headers.get('range'));
+        const buf = await salvo.clone().arrayBuffer();
+        const ini = m && m[1] ? parseInt(m[1], 10) : 0;
+        const fim = m && m[2] ? Math.min(parseInt(m[2], 10), buf.byteLength - 1) : buf.byteLength - 1;
+        return new Response(buf.slice(ini, fim + 1), {
+          status: 206,
+          headers: {
+            'Content-Type': 'application/pdf',
+            'Content-Range': `bytes ${ini}-${fim}/${buf.byteLength}`,
+            'Content-Length': String(fim - ini + 1),
+          },
+        });
+      })(),
     );
     return;
   }

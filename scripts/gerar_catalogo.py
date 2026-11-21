@@ -89,15 +89,31 @@ def main() -> None:
     secoes = []
     for chave, titulo, subtitulo, ordem in SECOES:
         itens = [montar_item(chave, d) for d in fonte.get(chave, [])]
-        secoes.append(
-            {
-                "id": chave,
-                "titulo": titulo,
-                "subtitulo": subtitulo,
-                "ordem": ordem,
-                "itens": itens,
-            }
-        )
+        usados: dict = {}
+        for it in itens:
+            n = usados.get(it["id"], 0) + 1
+            usados[it["id"]] = n
+            if n > 1:
+                it["id"] = f'{it["id"]}-{n}'
+        secao = {
+            "id": chave,
+            "titulo": titulo,
+            "subtitulo": subtitulo,
+            "ordem": ordem,
+            "itens": itens,
+        }
+        arqs = fonte.get("arquivos", {}).get(chave)
+        if arqs:
+            secao["arquivos"] = [
+                {
+                    "nome": a["nome"],
+                    "url": "/midias/pdf/" + a["arquivo"],
+                    "paginas": a.get("paginas"),
+                    "bytes": a.get("bytes"),
+                }
+                for a in arqs
+            ]
+        secoes.append(secao)
     SAIDA.parent.mkdir(parents=True, exist_ok=True)
     SAIDA.write_text(
         json.dumps(
