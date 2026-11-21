@@ -496,7 +496,11 @@ a {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: transform 0.08s linear;
+  transition: none;
+  -webkit-user-drag: none;
+  backface-visibility: hidden;
+}
+.folha.em-gesto {
   will-change: transform;
 }
 

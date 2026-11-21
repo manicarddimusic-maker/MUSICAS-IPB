@@ -22,7 +22,14 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   const area = useRef<HTMLDivElement>(null);
   const imagem = useRef<HTMLImageElement>(null);
   const ponteiros = useRef(new Map<number, { x: number; y: number }>());
-  const gesto = useRef({ distancia: 0, zoom: 1, x: 0, y: 0, dx: 0, dy: 0, pan: false, x0: 0, y0: 0, t0: 0 });
+  const gesto = useRef({ distancia: 0, z0: 1, p0x: 0, p0y: 0, t0x: 0, t0y: 0, x: 0, y: 0, dx: 0, dy: 0, pan: false, x0: 0, y0: 0, t0: 0, mexeu: false });
+  // posição "ao vivo" da folha: mexe direto no elemento (sem re-render), por isso acompanha o dedo na hora
+  const vista = useRef({ z: 1, x: 0, y: 0 });
+  const rotRef = useRef(0);
+  rotRef.current = rotacao;
+  const quadro = useRef(0);
+  const fimGesto = useRef(0);
+  const fimAnim = useRef(0);
 
   const paginas = item.paginas;
   const atual = paginas[Math.min(pagina, paginas.length - 1)];
@@ -44,10 +51,55 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     [areaTam, lateral],
   );
 
+  function aplicar(animar = false) {
+    const im = imagem.current;
+    if (!im) return;
+    const { z, x, y } = vista.current;
+    window.clearTimeout(fimAnim.current);
+    im.style.transition = animar ? 'transform 0.16s ease-out' : 'none';
+    im.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px) scale(${z})${rotRef.current ? ` rotate(${rotRef.current}deg)` : ''}`;
+    im.style.cursor = z > 1 ? 'grab' : 'pointer';
+    if (animar) fimAnim.current = window.setTimeout(() => im.style.removeProperty('transition'), 200);
+  }
+
+  function agendar() {
+    if (quadro.current) return;
+    quadro.current = requestAnimationFrame(() => {
+      quadro.current = 0;
+      aplicar();
+    });
+  }
+
+  // enquanto mexe, a folha fica numa camada própria (rápido); ao terminar volta a ser redesenhada nítida
+  function preparar() {
+    window.clearTimeout(fimGesto.current);
+    imagem.current?.classList.add('em-gesto');
+  }
+
+  function concluir() {
+    window.clearTimeout(fimGesto.current);
+    if (quadro.current) {
+      cancelAnimationFrame(quadro.current);
+      quadro.current = 0;
+    }
+    const v = vista.current;
+    if (v.z < 1.03) vista.current = { z: 1, x: 0, y: 0 };
+    aplicar(v.z < 1.03 && v.z !== 1);
+    const { z, x, y } = vista.current;
+    setZoom(z);
+    setDesloc({ x, y });
+    fimGesto.current = window.setTimeout(() => imagem.current?.classList.remove('em-gesto'), 180);
+  }
+
   function definirZoom(z: number) {
+    const v = vista.current;
     const novo = Math.min(5, Math.max(1, z));
-    setZoom(novo);
-    setDesloc((d) => (novo === 1 ? { x: 0, y: 0 } : limitar(d.x, d.y, novo)));
+    const k = novo / v.z;
+    const lim = novo === 1 ? { x: 0, y: 0 } : limitar(v.x * k, v.y * k, novo);
+    vista.current = { z: novo, x: lim.x, y: lim.y };
+    preparar();
+    aplicar(true);
+    concluir();
   }
 
   useEffect(() => {
@@ -55,6 +107,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   }, [item.id]);
 
   useEffect(() => {
+    vista.current = { z: 1, x: 0, y: 0 };
     setZoom(1);
     setDesloc({ x: 0, y: 0 });
     setFalhou(false);
@@ -74,6 +127,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   function girar() {
     const nova = (rotacao + 90) % 360;
     setRotacao(nova);
+    vista.current = { z: 1, x: 0, y: 0 };
     setZoom(1);
     setDesloc({ x: 0, y: 0 });
     try {
@@ -151,8 +205,8 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
         e.preventDefault();
         anteriorPagina();
       } else if (e.key === 'Escape') navigate(`/${secao.id}`);
-      else if (e.key === '+' || e.key === '=') definirZoom(zoom + 0.5);
-      else if (e.key === '-') definirZoom(zoom - 0.5);
+      else if (e.key === '+' || e.key === '=') definirZoom(vista.current.z + 0.5);
+      else if (e.key === '-') definirZoom(vista.current.z - 0.5);
       else if (e.key === 'r' || e.key === 'R') girar();
     };
     window.addEventListener('keydown', aoTeclar);
@@ -163,16 +217,37 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   useEffect(() => {
     const el = area.current;
     if (!el) return;
+    const bloquear = (e: Event) => e.preventDefault();
+    el.addEventListener('gesturestart', bloquear);
+    el.addEventListener('gesturechange', bloquear);
+    el.addEventListener('gestureend', bloquear);
     const aoRolar = (e: WheelEvent) => {
       e.preventDefault();
+      const v = vista.current;
       if (e.ctrlKey || e.metaKey) {
-        definirZoom(zoom * Math.exp(-e.deltaY * 0.01));
-      } else if (zoom > 1) {
-        setDesloc((d) => limitar(d.x - e.deltaX, d.y - e.deltaY, zoom));
-      }
+        const r = el.getBoundingClientRect();
+        const px = e.clientX - (r.left + r.width / 2);
+        const py = e.clientY - (r.top + r.height / 2);
+        const z = Math.min(5, Math.max(1, v.z * Math.exp(-e.deltaY * 0.01)));
+        const k = z / v.z;
+        const lim = z === 1 ? { x: 0, y: 0 } : limitar(px - (px - v.x) * k, py - (py - v.y) * k, z);
+        vista.current = { z, x: lim.x, y: lim.y };
+      } else if (v.z > 1) {
+        const lim = limitar(v.x - e.deltaX, v.y - e.deltaY, v.z);
+        vista.current = { z: v.z, x: lim.x, y: lim.y };
+      } else return;
+      preparar();
+      agendar();
+      window.clearTimeout(fimGesto.current);
+      fimGesto.current = window.setTimeout(concluir, 140);
     };
     el.addEventListener('wheel', aoRolar, { passive: false });
-    return () => el.removeEventListener('wheel', aoRolar);
+    return () => {
+      el.removeEventListener('wheel', aoRolar);
+      el.removeEventListener('gesturestart', bloquear);
+      el.removeEventListener('gesturechange', bloquear);
+      el.removeEventListener('gestureend', bloquear);
+    };
   });
 
   function proxima() {
@@ -187,26 +262,45 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
 
   function tocar(x: number, alvo?: Element | null) {
     if (alvo?.closest('button')) return;
-    if (zoom > 1) return;
+    if (vista.current.z > 1) return;
     const r = area.current?.getBoundingClientRect();
     const meio = (r?.left ?? 0) + (r?.width ?? window.innerWidth) / 2;
     if (x > meio) proxima();
     else anteriorPagina();
   }
 
+  function iniciarPinca() {
+    const r = area.current?.getBoundingClientRect();
+    const pts = [...ponteiros.current.values()];
+    if (!r || pts.length < 2) return;
+    const v = vista.current;
+    gesto.current = {
+      ...gesto.current,
+      distancia: Math.max(1, Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y)),
+      z0: v.z,
+      p0x: (pts[0].x + pts[1].x) / 2 - (r.left + r.width / 2),
+      p0y: (pts[0].y + pts[1].y) / 2 - (r.top + r.height / 2),
+      t0x: v.x,
+      t0y: v.y,
+      pan: false,
+    };
+  }
+
   function aoPressionar(e: React.PointerEvent) {
     if ((e.target as Element).closest('button')) return;
-    (e.target as Element).setPointerCapture?.(e.pointerId);
+    (e.currentTarget as Element).setPointerCapture?.(e.pointerId);
     ponteiros.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
-    const pts = [...ponteiros.current.values()];
-    if (pts.length === 2) {
-      const d = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
-      gesto.current = { ...gesto.current, distancia: d, zoom, pan: false };
-    } else if (pts.length === 1) {
+    const v = vista.current;
+    if (ponteiros.current.size === 2) {
+      iniciarPinca();
+      gesto.current.mexeu = true;
+      preparar();
+    } else if (ponteiros.current.size === 1) {
       gesto.current = {
-        ...gesto.current, x: e.clientX, y: e.clientY, dx: desloc.x, dy: desloc.y, pan: zoom > 1,
-        x0: e.clientX, y0: e.clientY, t0: Date.now(), distancia: 0,
+        ...gesto.current, x: e.clientX, y: e.clientY, dx: v.x, dy: v.y, pan: v.z > 1,
+        x0: e.clientX, y0: e.clientY, t0: Date.now(), distancia: 0, mexeu: false,
       };
+      if (v.z > 1) preparar();
     }
   }
 
@@ -214,38 +308,55 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     if (!ponteiros.current.has(e.pointerId)) return;
     ponteiros.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
     const pts = [...ponteiros.current.values()];
-    if (pts.length === 2 && gesto.current.distancia > 0) {
+    const g = gesto.current;
+    if (pts.length >= 2 && g.distancia > 0) {
+      const r = area.current?.getBoundingClientRect();
+      if (!r) return;
       const d = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
-      definirZoom((gesto.current.zoom * d) / gesto.current.distancia);
-    } else if (pts.length === 1 && gesto.current.pan) {
-      setDesloc(limitar(gesto.current.dx + (e.clientX - gesto.current.x), gesto.current.dy + (e.clientY - gesto.current.y), zoom));
+      const z = Math.min(5, Math.max(1, (g.z0 * d) / g.distancia));
+      const k = z / g.z0;
+      const mx = (pts[0].x + pts[1].x) / 2 - (r.left + r.width / 2);
+      const my = (pts[0].y + pts[1].y) / 2 - (r.top + r.height / 2);
+      // o ponto da folha que estava entre os dedos continua entre os dedos
+      const lim = z === 1 ? { x: 0, y: 0 } : limitar(mx - (g.p0x - g.t0x) * k, my - (g.p0y - g.t0y) * k, z);
+      vista.current = { z, x: lim.x, y: lim.y };
+      agendar();
+    } else if (pts.length === 1 && g.pan) {
+      const lim = limitar(g.dx + (e.clientX - g.x), g.dy + (e.clientY - g.y), vista.current.z);
+      vista.current = { z: vista.current.z, x: lim.x, y: lim.y };
+      g.mexeu = true;
+      agendar();
     }
   }
 
   function aoSoltar(e: React.PointerEvent) {
     const tinha = ponteiros.current.delete(e.pointerId);
+    const g = gesto.current;
     if (ponteiros.current.size === 0 && tinha) {
-      const dx = e.clientX - gesto.current.x0;
-      const dy = e.clientY - gesto.current.y0;
+      const dx = e.clientX - g.x0;
+      const dy = e.clientY - g.y0;
       const moveu = Math.abs(dx) > 12 || Math.abs(dy) > 12;
-      const usouDoisDedos = gesto.current.distancia > 0;
-      if (zoom === 1 && !usouDoisDedos) {
+      const usouDoisDedos = g.distancia > 0;
+      if (g.mexeu) concluir();
+      if (vista.current.z === 1 && !usouDoisDedos) {
         if (!moveu) tocar(e.clientX, e.target as Element);
-        else if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.4 && Date.now() - gesto.current.t0 < 900) {
+        else if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.4 && Date.now() - g.t0 < 900) {
           if (dx < 0) proxima();
           else anteriorPagina();
         }
       }
-      gesto.current.distancia = 0;
+      g.distancia = 0;
+      g.mexeu = false;
     } else if (ponteiros.current.size === 1) {
       // terminou a pinça: segue arrastando com o dedo que ficou
       const [p] = [...ponteiros.current.values()];
-      gesto.current = { ...gesto.current, x: p.x, y: p.y, dx: desloc.x, dy: desloc.y, pan: zoom > 1, distancia: 0 };
+      const v = vista.current;
+      gesto.current = { ...g, x: p.x, y: p.y, dx: v.x, dy: v.y, pan: v.z > 1, distancia: 0 };
     }
   }
 
   function ciclarZoom() {
-    const i = ZOOMS.findIndex((z) => Math.abs(z - zoom) < 0.05);
+    const i = ZOOMS.findIndex((z) => Math.abs(z - vista.current.z) < 0.05);
     definirZoom(ZOOMS[(i + 1) % ZOOMS.length]);
   }
 
