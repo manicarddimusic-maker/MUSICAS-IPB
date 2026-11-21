@@ -1559,13 +1559,23 @@
      "titulo": "Nosso Deus É Soberano",
      "paginas": [
       {
-       "img": "/midias/canticos/nosso-deus-e-soberano-1.jpg",
+       "img": "/midias/canticos/nosso-deus-e-soberano-i1.jpg",
        "alt": "Nosso Deus É Soberano — página 1",
        "tom": "A"
       },
       {
-       "img": "/midias/canticos/nosso-deus-e-soberano-2.jpg",
+       "img": "/midias/canticos/nosso-deus-e-soberano-i54.jpg",
        "alt": "Nosso Deus É Soberano — página 2",
+       "tom": "G"
+      },
+      {
+       "img": "/midias/canticos/nosso-deus-e-soberano-i63.jpg",
+       "alt": "Nosso Deus É Soberano — página 3",
+       "tom": "G"
+      },
+      {
+       "img": "/midias/canticos/nosso-deus-e-soberano-i70.jpg",
+       "alt": "Nosso Deus É Soberano — página 4",
        "tom": "G"
       }
      ]
@@ -1575,13 +1585,23 @@
      "titulo": "Em Espírito, Em Verdade",
      "paginas": [
       {
-       "img": "/midias/canticos/em-espirito-em-verdade-1.jpg",
+       "img": "/midias/canticos/em-espirito-em-verdade-i2.jpg",
        "alt": "Em Espírito, Em Verdade — página 1",
        "tom": "Em"
       },
       {
-       "img": "/midias/canticos/em-espirito-em-verdade-2.jpg",
+       "img": "/midias/canticos/em-espirito-em-verdade-i16.jpg",
        "alt": "Em Espírito, Em Verdade — página 2",
+       "tom": "Em"
+      },
+      {
+       "img": "/midias/canticos/em-espirito-em-verdade-i13.jpg",
+       "alt": "Em Espírito, Em Verdade — página 3",
+       "tom": "A"
+      },
+      {
+       "img": "/midias/canticos/em-espirito-em-verdade-i38.jpg",
+       "alt": "Em Espírito, Em Verdade — página 4",
        "tom": "A"
       }
      ]
@@ -1591,13 +1611,18 @@
      "titulo": "Ao Nosso Deus",
      "paginas": [
       {
-       "img": "/midias/canticos/ao-nosso-deus-1.jpg",
+       "img": "/midias/canticos/ao-nosso-deus-i15.jpg",
        "alt": "Ao Nosso Deus — página 1",
        "tom": "A"
       },
       {
-       "img": "/midias/canticos/ao-nosso-deus-2.jpg",
+       "img": "/midias/canticos/ao-nosso-deus-i36.jpg",
        "alt": "Ao Nosso Deus — página 2",
+       "tom": "A"
+      },
+      {
+       "img": "/midias/canticos/ao-nosso-deus-i17.jpg",
+       "alt": "Ao Nosso Deus — página 3",
        "tom": "C"
       }
      ]
@@ -1607,13 +1632,18 @@
      "titulo": "Consagração",
      "paginas": [
       {
-       "img": "/midias/canticos/consagracao-1.jpg",
+       "img": "/midias/canticos/consagracao-i28.jpg",
        "alt": "Consagração — página 1",
        "tom": "G"
       },
       {
-       "img": "/midias/canticos/consagracao-2.jpg",
+       "img": "/midias/canticos/consagracao-i51.jpg",
        "alt": "Consagração — página 2",
+       "tom": "G"
+      },
+      {
+       "img": "/midias/canticos/consagracao-i37.jpg",
+       "alt": "Consagração — página 3",
        "tom": "A"
       }
      ]
@@ -1623,12 +1653,12 @@
      "titulo": "Alfa e Ômega",
      "paginas": [
       {
-       "img": "/midias/canticos/alfa-e-omega-1.jpg",
+       "img": "/midias/canticos/alfa-e-omega-i19.jpg",
        "alt": "Alfa e Ômega — página 1",
        "tom": "G"
       },
       {
-       "img": "/midias/canticos/alfa-e-omega-2.jpg",
+       "img": "/midias/canticos/alfa-e-omega-i29.jpg",
        "alt": "Alfa e Ômega — página 2",
        "tom": "A"
       }
@@ -1639,13 +1669,18 @@
      "titulo": "É o Teu Povo",
      "paginas": [
       {
-       "img": "/midias/canticos/e-o-teu-povo-1.jpg",
+       "img": "/midias/canticos/e-o-teu-povo-i9.jpg",
        "alt": "É o Teu Povo — página 1",
        "tom": "A"
       },
       {
-       "img": "/midias/canticos/e-o-teu-povo-2.jpg",
+       "img": "/midias/canticos/e-o-teu-povo-i30.jpg",
        "alt": "É o Teu Povo — página 2",
+       "tom": "A"
+      },
+      {
+       "img": "/midias/canticos/e-o-teu-povo-i50.jpg",
+       "alt": "É o Teu Povo — página 3",
        "tom": "G"
       }
      ]
@@ -1655,12 +1690,16 @@
      "titulo": "Tú És Santo (Príncipe da Paz)",
      "paginas": [
       {
-       "img": "/midias/canticos/tu-es-santo-principe-da-paz-1.jpg",
+       "img": "/midias/canticos/tu-es-santo-principe-da-paz-i5.jpg",
        "alt": "Tú És Santo (Príncipe da Paz) — página 1"
       },
       {
-       "img": "/midias/canticos/tu-es-santo-principe-da-paz-2.jpg",
+       "img": "/midias/canticos/tu-es-santo-principe-da-paz-i3.jpg",
        "alt": "Tú És Santo (Príncipe da Paz) — página 2"
+      },
+      {
+       "img": "/midias/canticos/tu-es-santo-principe-da-paz-i4.jpg",
+       "alt": "Tú És Santo (Príncipe da Paz) — página 3"
       }
      ]
     },
@@ -1669,13 +1708,18 @@
      "titulo": "Jesus Em Tua Presença",
      "paginas": [
       {
-       "img": "/midias/canticos/jesus-em-tua-presenca-1.jpg",
+       "img": "/midias/canticos/jesus-em-tua-presenca-i7.jpg",
        "alt": "Jesus Em Tua Presença — página 1",
        "tom": "D"
       },
       {
-       "img": "/midias/canticos/jesus-em-tua-presenca-2.jpg",
+       "img": "/midias/canticos/jesus-em-tua-presenca-i82.jpg",
        "alt": "Jesus Em Tua Presença — página 2",
+       "tom": "D"
+      },
+      {
+       "img": "/midias/canticos/jesus-em-tua-presenca-i78.jpg",
+       "alt": "Jesus Em Tua Presença — página 3",
        "tom": "E"
       }
      ]
@@ -1685,8 +1729,12 @@
      "titulo": "Diante do Trono de Deus Nos Céus!",
      "paginas": [
       {
-       "img": "/midias/canticos/diante-do-trono-de-deus-nos-ceus-1.jpg",
+       "img": "/midias/canticos/diante-do-trono-de-deus-nos-ceus-i8.jpg",
        "alt": "Diante do Trono de Deus Nos Céus! — página 1"
+      },
+      {
+       "img": "/midias/canticos/diante-do-trono-de-deus-nos-ceus-i34.jpg",
+       "alt": "Diante do Trono de Deus Nos Céus! — página 2"
       }
      ]
     },
@@ -1695,8 +1743,12 @@
      "titulo": "Hino da Reforma (Cinco Solas)",
      "paginas": [
       {
-       "img": "/midias/canticos/hino-da-reforma-cinco-solas-1.jpg",
+       "img": "/midias/canticos/hino-da-reforma-cinco-solas-i10.jpg",
        "alt": "Hino da Reforma (Cinco Solas) — página 1"
+      },
+      {
+       "img": "/midias/canticos/hino-da-reforma-cinco-solas-i47.jpg",
+       "alt": "Hino da Reforma (Cinco Solas) — página 2"
       }
      ]
     },
@@ -1705,11 +1757,11 @@
      "titulo": "Tu És Soberano",
      "paginas": [
       {
-       "img": "/midias/canticos/tu-es-soberano-1.jpg",
+       "img": "/midias/canticos/tu-es-soberano-i11.jpg",
        "alt": "Tu És Soberano — página 1"
       },
       {
-       "img": "/midias/canticos/tu-es-soberano-2.jpg",
+       "img": "/midias/canticos/tu-es-soberano-i66.jpg",
        "alt": "Tu És Soberano — página 2"
       }
      ]
@@ -1719,8 +1771,12 @@
      "titulo": "Jesus, nosso Redentor",
      "paginas": [
       {
-       "img": "/midias/canticos/jesus-nosso-redentor-1.jpg",
+       "img": "/midias/canticos/jesus-nosso-redentor-i12.jpg",
        "alt": "Jesus, nosso Redentor — página 1"
+      },
+      {
+       "img": "/midias/canticos/jesus-nosso-redentor-i32.jpg",
+       "alt": "Jesus, nosso Redentor — página 2"
       }
      ]
     },
@@ -1729,8 +1785,12 @@
      "titulo": "Bom É Estarmos Aqui",
      "paginas": [
       {
-       "img": "/midias/canticos/bom-e-estarmos-aqui-1.jpg",
+       "img": "/midias/canticos/bom-e-estarmos-aqui-i14.jpg",
        "alt": "Bom É Estarmos Aqui — página 1"
+      },
+      {
+       "img": "/midias/canticos/bom-e-estarmos-aqui-i65.jpg",
+       "alt": "Bom É Estarmos Aqui — página 2"
       }
      ]
     },
@@ -1739,8 +1799,12 @@
      "titulo": "Glória Pra Sempre",
      "paginas": [
       {
-       "img": "/midias/canticos/gloria-pra-sempre-1.jpg",
+       "img": "/midias/canticos/gloria-pra-sempre-i18.jpg",
        "alt": "Glória Pra Sempre — página 1"
+      },
+      {
+       "img": "/midias/canticos/gloria-pra-sempre-i60.jpg",
+       "alt": "Glória Pra Sempre — página 2"
       }
      ]
     },
@@ -1749,8 +1813,16 @@
      "titulo": "Ajuntamento",
      "paginas": [
       {
-       "img": "/midias/canticos/ajuntamento-1.jpg",
+       "img": "/midias/canticos/ajuntamento-i20.jpg",
        "alt": "Ajuntamento — página 1"
+      },
+      {
+       "img": "/midias/canticos/ajuntamento-i21.jpg",
+       "alt": "Ajuntamento — página 2"
+      },
+      {
+       "img": "/midias/canticos/ajuntamento-i40.jpg",
+       "alt": "Ajuntamento — página 3"
       }
      ]
     },
@@ -1759,7 +1831,7 @@
      "titulo": "Oração",
      "paginas": [
       {
-       "img": "/midias/canticos/oracao-1.jpg",
+       "img": "/midias/canticos/oracao-i23.jpg",
        "alt": "Oração — página 1"
       }
      ]
@@ -1769,8 +1841,12 @@
      "titulo": "Moto da SAF",
      "paginas": [
       {
-       "img": "/midias/canticos/moto-da-saf-1.jpg",
+       "img": "/midias/canticos/moto-da-saf-i24.jpg",
        "alt": "Moto da SAF — página 1"
+      },
+      {
+       "img": "/midias/canticos/moto-da-saf-i67.jpg",
+       "alt": "Moto da SAF — página 2"
       }
      ]
     },
@@ -1779,7 +1855,7 @@
      "titulo": "Teu Melhor",
      "paginas": [
       {
-       "img": "/midias/canticos/teu-melhor-1.jpg",
+       "img": "/midias/canticos/teu-melhor-i25.jpg",
        "alt": "Teu Melhor — página 1"
       }
      ]
@@ -1789,7 +1865,7 @@
      "titulo": "Meu Jesus, Salvador",
      "paginas": [
       {
-       "img": "/midias/canticos/meu-jesus-salvador-1.jpg",
+       "img": "/midias/canticos/meu-jesus-salvador-i27.jpg",
        "alt": "Meu Jesus, Salvador — página 1"
       }
      ]
@@ -1799,7 +1875,7 @@
      "titulo": "Isaías 53",
      "paginas": [
       {
-       "img": "/midias/canticos/isaias-53-1.jpg",
+       "img": "/midias/canticos/isaias-53-i31.jpg",
        "alt": "Isaías 53 — página 1"
       }
      ]
@@ -1809,7 +1885,7 @@
      "titulo": "Porque Ele Vive",
      "paginas": [
       {
-       "img": "/midias/canticos/porque-ele-vive-1.jpg",
+       "img": "/midias/canticos/porque-ele-vive-i33.jpg",
        "alt": "Porque Ele Vive — página 1"
       }
      ]
@@ -1819,8 +1895,12 @@
      "titulo": "Meu Senhor, Tu Me Deste",
      "paginas": [
       {
-       "img": "/midias/canticos/meu-senhor-tu-me-deste-1.jpg",
+       "img": "/midias/canticos/meu-senhor-tu-me-deste-i35.jpg",
        "alt": "Meu Senhor, Tu Me Deste — página 1"
+      },
+      {
+       "img": "/midias/canticos/meu-senhor-tu-me-deste-i41.jpg",
+       "alt": "Meu Senhor, Tu Me Deste — página 2"
       }
      ]
     },
@@ -1829,8 +1909,12 @@
      "titulo": "Rei das Nações",
      "paginas": [
       {
-       "img": "/midias/canticos/rei-das-nacoes-1.jpg",
+       "img": "/midias/canticos/rei-das-nacoes-i39.jpg",
        "alt": "Rei das Nações — página 1"
+      },
+      {
+       "img": "/midias/canticos/rei-das-nacoes-i45.jpg",
+       "alt": "Rei das Nações — página 2"
       }
      ]
     },
@@ -1839,8 +1923,12 @@
      "titulo": "Jesus, Profeta, Sacerdote e Rei",
      "paginas": [
       {
-       "img": "/midias/canticos/jesus-profeta-sacerdote-e-rei-1.jpg",
+       "img": "/midias/canticos/jesus-profeta-sacerdote-e-rei-i42.jpg",
        "alt": "Jesus, Profeta, Sacerdote e Rei — página 1"
+      },
+      {
+       "img": "/midias/canticos/jesus-profeta-sacerdote-e-rei-i53.jpg",
+       "alt": "Jesus, Profeta, Sacerdote e Rei — página 2"
       }
      ]
     },
@@ -1849,12 +1937,12 @@
      "titulo": "Grande é o Senhor",
      "paginas": [
       {
-       "img": "/midias/canticos/grande-e-o-senhor-1.jpg",
+       "img": "/midias/canticos/grande-e-o-senhor-i43.jpg",
        "alt": "Grande é o Senhor — página 1",
        "tom": "G"
       },
       {
-       "img": "/midias/canticos/grande-e-o-senhor-2.jpg",
+       "img": "/midias/canticos/grande-e-o-senhor-i79.jpg",
        "alt": "Grande é o Senhor — página 2",
        "tom": "A"
       }
@@ -1865,8 +1953,12 @@
      "titulo": "Maravilhosa Graça",
      "paginas": [
       {
-       "img": "/midias/canticos/maravilhosa-graca-1.jpg",
+       "img": "/midias/canticos/maravilhosa-graca-i44.jpg",
        "alt": "Maravilhosa Graça — página 1"
+      },
+      {
+       "img": "/midias/canticos/maravilhosa-graca-i49.jpg",
+       "alt": "Maravilhosa Graça — página 2"
       }
      ]
     },
@@ -1875,11 +1967,11 @@
      "titulo": "Ele É Exaltado",
      "paginas": [
       {
-       "img": "/midias/canticos/ele-e-exaltado-1.jpg",
+       "img": "/midias/canticos/ele-e-exaltado-i46.jpg",
        "alt": "Ele É Exaltado — página 1"
       },
       {
-       "img": "/midias/canticos/ele-e-exaltado-2.jpg",
+       "img": "/midias/canticos/ele-e-exaltado-i48.jpg",
        "alt": "Ele É Exaltado — página 2"
       }
      ]
@@ -1889,7 +1981,7 @@
      "titulo": "O Cântico da Salvação",
      "paginas": [
       {
-       "img": "/midias/canticos/o-cantico-da-salvacao-1.jpg",
+       "img": "/midias/canticos/o-cantico-da-salvacao-i52.jpg",
        "alt": "O Cântico da Salvação — página 1"
       }
      ]
@@ -1899,7 +1991,7 @@
      "titulo": "És Tu Única Razão",
      "paginas": [
       {
-       "img": "/midias/canticos/es-tu-unica-razao-1.jpg",
+       "img": "/midias/canticos/es-tu-unica-razao-i55.jpg",
        "alt": "És Tu Única Razão — página 1"
       }
      ]
@@ -1909,18 +2001,23 @@
      "titulo": "Te Agradeço",
      "paginas": [
       {
-       "img": "/midias/canticos/te-agradeco-1.jpg",
+       "img": "/midias/canticos/te-agradeco-i56.jpg",
        "alt": "Te Agradeço — página 1",
        "tom": "C"
       },
       {
-       "img": "/midias/canticos/te-agradeco-2.jpg",
+       "img": "/midias/canticos/te-agradeco-i74.jpg",
        "alt": "Te Agradeço — página 2",
        "tom": "D"
       },
       {
-       "img": "/midias/canticos/te-agradeco-3.jpg",
+       "img": "/midias/canticos/te-agradeco-i58.jpg",
        "alt": "Te Agradeço — página 3",
+       "tom": "E"
+      },
+      {
+       "img": "/midias/canticos/te-agradeco-i75.jpg",
+       "alt": "Te Agradeço — página 4",
        "tom": "E"
       }
      ]
@@ -1930,8 +2027,16 @@
      "titulo": "Escolhido Fui",
      "paginas": [
       {
-       "img": "/midias/canticos/escolhido-fui-1.jpg",
+       "img": "/midias/canticos/escolhido-fui-i57.jpg",
        "alt": "Escolhido Fui — página 1"
+      },
+      {
+       "img": "/midias/canticos/escolhido-fui-i71.jpg",
+       "alt": "Escolhido Fui — página 2"
+      },
+      {
+       "img": "/midias/canticos/escolhido-fui-i72.jpg",
+       "alt": "Escolhido Fui — página 3"
       }
      ]
     },
@@ -1940,7 +2045,7 @@
      "titulo": "Louvemos Ao Senhor",
      "paginas": [
       {
-       "img": "/midias/canticos/louvemos-ao-senhor-1.jpg",
+       "img": "/midias/canticos/louvemos-ao-senhor-i61.jpg",
        "alt": "Louvemos Ao Senhor — página 1"
       }
      ]
@@ -1950,7 +2055,7 @@
      "titulo": "Ao Único",
      "paginas": [
       {
-       "img": "/midias/canticos/ao-unico-1.jpg",
+       "img": "/midias/canticos/ao-unico-i62.jpg",
        "alt": "Ao Único — página 1"
       }
      ]
@@ -1960,7 +2065,7 @@
      "titulo": "Alegria",
      "paginas": [
       {
-       "img": "/midias/canticos/alegria-1.jpg",
+       "img": "/midias/canticos/alegria-i73.jpg",
        "alt": "Alegria — página 1"
       }
      ]
@@ -1970,7 +2075,7 @@
      "titulo": "Maior Que Tudo",
      "paginas": [
       {
-       "img": "/midias/canticos/maior-que-tudo-1.jpg",
+       "img": "/midias/canticos/maior-que-tudo-i76.jpg",
        "alt": "Maior Que Tudo — página 1"
       }
      ]
@@ -1980,7 +2085,7 @@
      "titulo": "Há Somente Um Deus",
      "paginas": [
       {
-       "img": "/midias/canticos/ha-somente-um-deus-1.jpg",
+       "img": "/midias/canticos/ha-somente-um-deus-i77.jpg",
        "alt": "Há Somente Um Deus — página 1"
       }
      ]
@@ -1990,7 +2095,7 @@
      "titulo": "Renova-me",
      "paginas": [
       {
-       "img": "/midias/canticos/renova-me-1.jpg",
+       "img": "/midias/canticos/renova-me-i81.jpg",
        "alt": "Renova-me — página 1"
       }
      ]
@@ -2313,8 +2418,12 @@
      "titulo": "Rendei Graças ao Senhor",
      "paginas": [
       {
-       "img": "/midias/palavra/rendei-gracas-ao-senhor-1.jpg",
+       "img": "/midias/palavra/rendei-gracas-ao-senhor-i68.jpg",
        "alt": "Salmo 136 — Rendei Graças ao Senhor — página 1"
+      },
+      {
+       "img": "/midias/palavra/rendei-gracas-ao-senhor-i69.jpg",
+       "alt": "Salmo 136 — Rendei Graças ao Senhor — página 2"
       }
      ],
      "num": 136
@@ -2354,8 +2463,12 @@
      "titulo": "Os Dez Mandamentos",
      "paginas": [
       {
-       "img": "/midias/palavra/os-dez-mandamentos-1.jpg",
+       "img": "/midias/palavra/os-dez-mandamentos-i64.jpg",
        "alt": "Os Dez Mandamentos — página 1"
+      },
+      {
+       "img": "/midias/palavra/os-dez-mandamentos-i83.jpg",
+       "alt": "Os Dez Mandamentos — página 2"
       }
      ],
      "livro": "Êxodo"
@@ -2365,8 +2478,16 @@
      "titulo": "Buscai Primeiro o Reino",
      "paginas": [
       {
-       "img": "/midias/palavra/buscai-primeiro-o-reino-1.jpg",
+       "img": "/midias/palavra/buscai-primeiro-o-reino-i6.jpg",
        "alt": "Buscai Primeiro o Reino — página 1"
+      },
+      {
+       "img": "/midias/palavra/buscai-primeiro-o-reino-i26.jpg",
+       "alt": "Buscai Primeiro o Reino — página 2"
+      },
+      {
+       "img": "/midias/palavra/buscai-primeiro-o-reino-i80.jpg",
+       "alt": "Buscai Primeiro o Reino — página 3"
       }
      ],
      "livro": "Mateus"
@@ -2376,7 +2497,7 @@
      "titulo": "Quem Nos Separará?",
      "paginas": [
       {
-       "img": "/midias/palavra/quem-nos-separara-1.jpg",
+       "img": "/midias/palavra/quem-nos-separara-i59.jpg",
        "alt": "Quem Nos Separará? — página 1"
       }
      ],
