@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Item, Secao, rotuloCompleto } from './catalogo';
+import { Item, Secao, rotaLista, rotuloCompleto } from './catalogo';
 
 type Props = {
   secao: Secao;
@@ -204,7 +204,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
       } else if (e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'ArrowUp') {
         e.preventDefault();
         anteriorPagina();
-      } else if (e.key === 'Escape') navigate(`/${secao.id}`);
+      } else if (e.key === 'Escape') navigate(rotaLista(secao.id, item));
       else if (e.key === '+' || e.key === '=') definirZoom(vista.current.z + 0.5);
       else if (e.key === '-') definirZoom(vista.current.z - 0.5);
       else if (e.key === 'r' || e.key === 'R') girar();
@@ -365,7 +365,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   return (
     <div className="leitor">
       <header className={`barra barra-${secao.id}`}>
-        <Link to={`/${secao.id}`} className="barra-voltar" aria-label="Voltar à lista">
+        <Link to={rotaLista(secao.id, item)} className="barra-voltar" aria-label="Voltar à lista">
           ‹
         </Link>
         <div className="barra-texto">

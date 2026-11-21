@@ -1465,6 +1465,15 @@
      "img": "/midias/salmos/s148.jpg"
     }
    ]
+  },
+  {
+   "num": 136,
+   "titulo": "Rendei Graças ao Senhor",
+   "paginas": [
+    {
+     "img": "/midias/palavra/rendei-gracas-ao-senhor-1.jpg"
+    }
+   ]
   }
  ],
  "lavras": [
@@ -3831,7 +3840,8 @@
     {
      "img": "/midias/palavra/p-romanos.jpg"
     }
-   ]
+   ],
+   "livro": "Romanos"
   },
   {
    "titulo": "Hebreus 1:1-3 — Deus, tendo falado",
@@ -3839,7 +3849,8 @@
     {
      "img": "/midias/palavra/p-hebreus.jpg"
     }
-   ]
+   ],
+   "livro": "Hebreus"
   },
   {
    "titulo": "Os Dez Mandamentos",
@@ -3847,7 +3858,8 @@
     {
      "img": "/midias/palavra/os-dez-mandamentos-1.jpg"
     }
-   ]
+   ],
+   "livro": "Êxodo"
   },
   {
    "titulo": "Buscai Primeiro o Reino",
@@ -3855,7 +3867,8 @@
     {
      "img": "/midias/palavra/buscai-primeiro-o-reino-1.jpg"
     }
-   ]
+   ],
+   "livro": "Mateus"
   },
   {
    "titulo": "Quem Nos Separará?",
@@ -3863,15 +3876,8 @@
     {
      "img": "/midias/palavra/quem-nos-separara-1.jpg"
     }
-   ]
-  },
-  {
-   "titulo": "Rendei Graças ao Senhor",
-   "paginas": [
-    {
-     "img": "/midias/palavra/rendei-gracas-ao-senhor-1.jpg"
-    }
-   ]
+   ],
+   "livro": "Romanos"
   }
  ],
  "caderninho": []

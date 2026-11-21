@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link, Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom';
-import { Catalogo, Secao, carregarCatalogo, normalizar, ordenarItens, rotuloItem } from './catalogo';
+import { Catalogo, Secao, carregarCatalogo, livrosDaPalavra, normalizar, ordenarItens, rotaLista, rotuloItem } from './catalogo';
 import { baixarBlob, gerarPdfSecao, nomeArquivoPdf } from './exportarPdf';
 import { caminho } from './ambiente';
 import Leitor from './Leitor';
-import Inicio from './Inicio';
+import Inicio, { CAPAS } from './Inicio';
 
 export default function App() {
   const [catalogo, setCatalogo] = useState<Catalogo | null>(null);
@@ -43,6 +43,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Inicio catalogo={catalogo} />} />
+      <Route path="/livro/:livroSlug" element={<SecaoPage catalogo={catalogo} />} />
       <Route path="/:secaoId" element={<SecaoPage catalogo={catalogo} />} />
       <Route path="/:secaoId/:itemId" element={<LeitorPage catalogo={catalogo} />} />
       <Route path="*" element={<NaoEncontrado />} />
@@ -65,9 +66,47 @@ function acharSecao(catalogo: Catalogo, id?: string): Secao | undefined {
   return catalogo.secoes.find((s) => s.id === id);
 }
 
+function Hub({ catalogo }: { catalogo: Catalogo }) {
+  const cartoes = livrosDaPalavra(catalogo);
+  return (
+    <div className="pagina">
+      <header className="topo topo-palavra">
+        <Link className="voltar" to="/" aria-label="Voltar ao início">
+          ‹
+        </Link>
+        <div>
+          <p className="topo-sub">Passagens bíblicas cantadas</p>
+          <h1>Palavra de Deus Cantada</h1>
+        </div>
+        <span className="contagem">{cartoes.reduce((t, c) => t + c.itens.length, 0)}</span>
+      </header>
+      <div className="inicio hub">
+        <nav className="secoes">
+          {cartoes.map((c, i) => (
+            <Link key={c.para} to={c.para} className={`cartao cartao-${c.capa}`} style={{ animationDelay: `${i * 70}ms` }}>
+              <img src={caminho(CAPAS[c.capa])} alt="" className="cartao-fundo" loading="eager" />
+              <span className="cartao-veu" />
+              <span className="cartao-conteudo">
+                <span className="cartao-sub">Livro da Bíblia</span>
+                <span className="cartao-titulo">{c.nome}</span>
+                <span className="cartao-info">{c.itens.length === 1 ? '1 música' : `${c.itens.length} músicas`}</span>
+              </span>
+              <span className="cartao-seta" aria-hidden="true">
+                ›
+              </span>
+            </Link>
+          ))}
+        </nav>
+      </div>
+    </div>
+  );
+}
+
 function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
-  const { secaoId } = useParams();
+  const { secaoId: idDaRota, livroSlug } = useParams();
+  const secaoId = livroSlug ? 'palavra' : idDaRota;
   const secao = acharSecao(catalogo, secaoId);
+  const livro = livroSlug ? livrosDaPalavra(catalogo).find((l) => l.slug === livroSlug) : undefined;
   const navigate = useNavigate();
   const [busca, setBusca] = useState('');
   const [pdf, setPdf] = useState<{ feitos: number; total: number } | null>(null);
@@ -75,8 +114,10 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
   const [avisoNumero, setAvisoNumero] = useState<string | null>(null);
 
   if (!secao) return <NaoEncontrado />;
+  if (secao.id === 'palavra' && !livroSlug) return <Hub catalogo={catalogo} />;
+  if (livroSlug && !livro) return <NaoEncontrado />;
 
-  const itens = ordenarItens(secao);
+  const itens = livro ? ordenarItens({ ...secao, itens: livro.itens }) : ordenarItens(secao);
   const termo = normalizar(busca);
   const filtrados = termo
     ? itens.filter(
@@ -113,12 +154,12 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
   return (
     <div className="pagina">
       <header className={`topo topo-${secao.id}`}>
-        <Link className="voltar" to="/" aria-label="Voltar ao início">
+        <Link className="voltar" to={secao.id === 'salmos' || secao.id === 'palavra' ? '/palavra' : '/'} aria-label="Voltar">
           ‹
         </Link>
         <div>
-          <p className="topo-sub">{secao.subtitulo}</p>
-          <h1>{secao.titulo}</h1>
+          <p className="topo-sub">{livro ? 'Palavra de Deus Cantada' : secao.subtitulo}</p>
+          <h1>{livro ? livro.nome : secao.titulo}</h1>
         </div>
         <span className="contagem">{itens.length}</span>
       </header>
@@ -199,13 +240,15 @@ function LeitorPage({ catalogo }: { catalogo: Catalogo }) {
   const { secaoId, itemId } = useParams();
   const navigate = useNavigate();
   const secao = acharSecao(catalogo, secaoId);
-  const itens = secao ? ordenarItens(secao) : [];
+  const todos = secao ? ordenarItens(secao) : [];
+  const atual = todos.find((i) => i.id === itemId);
+  const itens = secao?.id === 'palavra' && atual ? todos.filter((i) => (i.livro || 'Outros') === (atual.livro || 'Outros')) : todos;
   const indice = itens.findIndex((i) => i.id === itemId);
   const item = itens[indice];
 
   useEffect(() => {
     if (!secao) return;
-    if (!item) navigate(`/${secao.id}`, { replace: true });
+    if (!item) navigate(rotaLista(secao.id), { replace: true });
   }, [secao, item, navigate]);
 
   if (!secao || !item) {

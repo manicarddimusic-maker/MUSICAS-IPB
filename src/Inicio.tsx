@@ -7,7 +7,7 @@ import { atualizarApp, lerMensagemAtualizacao } from './atualizar';
 
 type PromptEvento = Event & { prompt: () => Promise<void> };
 
-const CAPAS: Record<string, string> = {
+export const CAPAS: Record<string, string> = {
   hinos: '/midias/capas/image-1.webp',
   canticos: '/midias/capas/image-2.webp',
   caderninho: '/midias/capas/image-1.webp',
@@ -143,8 +143,9 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
       )}
 
       <nav className="secoes">
-        {catalogo.secoes.map((secao, i) => {
+        {catalogo.secoes.filter((s) => s.id !== 'salmos').map((secao, i) => {
           const itens = ordenarItens(secao);
+          const total = secao.id === 'palavra' ? itens.length + (catalogo.secoes.find((s) => s.id === 'salmos')?.itens.length ?? 0) : itens.length;
           return (
             <Link key={secao.id} to={`/${secao.id}`} className={`cartao cartao-${secao.id}`} style={{ animationDelay: `${i * 90}ms` }}>
               <img src={caminho(CAPAS[secao.id])} alt="" className="cartao-fundo" loading="eager" />
@@ -153,8 +154,8 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
                 <span className="cartao-sub">{secao.subtitulo}</span>
                 <span className="cartao-titulo">{secao.titulo}</span>
                 <span className="cartao-info">
-                  {itens.length === 0 ? 'Em breve' : itens.length === 1 ? '1 música' : `${itens.length} músicas`}
-                  {secao.ordem === 'numero' ? ' · por número' : ' · A–Z'}
+                  {total === 0 ? 'Em breve' : total === 1 ? '1 música' : `${total} músicas`}
+                  {secao.id === 'palavra' ? ' · Salmos e livros da Bíblia' : secao.ordem === 'numero' ? ' · por número' : ' · A–Z'}
                 </span>
               </span>
               <span className="cartao-seta" aria-hidden="true">

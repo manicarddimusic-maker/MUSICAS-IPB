@@ -12,6 +12,7 @@ export type Item = {
   rotulo?: string;
   versiculos?: string;
   titulo: string;
+  livro?: string;
   tom?: string;
   obs?: string;
   paginas: Pagina[];
@@ -86,6 +87,34 @@ export function ordenarItens(secao: Secao): Item[] {
     itens.sort((a, b) => normalizar(a.titulo).localeCompare(normalizar(b.titulo), 'pt-BR'));
   }
   return itens;
+}
+
+const BIBLIA = ['Gênesis','Êxodo','Levítico','Números','Deuteronômio','Josué','Juízes','Rute','1 Samuel','2 Samuel','1 Reis','2 Reis','1 Crônicas','2 Crônicas','Esdras','Neemias','Ester','Jó','Salmos','Provérbios','Eclesiastes','Cantares','Isaías','Jeremias','Lamentações','Ezequiel','Daniel','Oseias','Joel','Amós','Obadias','Jonas','Miqueias','Naum','Habacuque','Sofonias','Ageu','Zacarias','Malaquias','Mateus','Marcos','Lucas','João','Atos','Romanos','1 Coríntios','2 Coríntios','Gálatas','Efésios','Filipenses','Colossenses','1 Tessalonicenses','2 Tessalonicenses','1 Timóteo','2 Timóteo','Tito','Filemom','Hebreus','Tiago','1 Pedro','2 Pedro','1 João','2 João','3 João','Judas','Apocalipse'];
+
+export function slugLivro(nome: string): string {
+  return normalizar(nome).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+export type LivroCartao = { nome: string; slug: string; para: string; itens: Item[]; capa: 'salmos' | 'palavra' };
+
+/** Um cartão por livro da Bíblia (Salmos incluso), na ordem da Bíblia. Livro novo = cartão novo. */
+export function livrosDaPalavra(catalogo: Catalogo): LivroCartao[] {
+  const mapa = new Map<string, Item[]>();
+  for (const it of catalogo.secoes.find((s) => s.id === 'palavra')?.itens ?? []) {
+    const nome = it.livro || 'Outros';
+    mapa.set(nome, [...(mapa.get(nome) ?? []), it]);
+  }
+  const salmos = catalogo.secoes.find((s) => s.id === 'salmos')?.itens ?? [];
+  const lista: LivroCartao[] = [{ nome: 'Salmos', slug: 'salmos', para: '/salmos', itens: salmos, capa: 'salmos' }];
+  for (const [nome, itens] of mapa) lista.push({ nome, slug: slugLivro(nome), para: `/livro/${slugLivro(nome)}`, itens, capa: 'palavra' });
+  const pos = (n: string) => (BIBLIA.indexOf(n) < 0 ? 999 : BIBLIA.indexOf(n));
+  return lista.sort((a, b) => pos(a.nome) - pos(b.nome) || a.nome.localeCompare(b.nome, 'pt-BR'));
+}
+
+/** Para onde volta quem está lendo uma música (a lista em que ela aparece). */
+export function rotaLista(secaoId: string, item?: Item): string {
+  if (secaoId === 'palavra') return `/livro/${slugLivro(item?.livro || 'Outros')}`;
+  return `/${secaoId}`;
 }
 
 export function rotuloItem(secao: Secao, item: Item): string {
