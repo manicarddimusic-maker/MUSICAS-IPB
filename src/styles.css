@@ -94,10 +94,13 @@ a {
   background: linear-gradient(90deg, var(--dourado), transparent);
 }
 
-.ornamento i {
-  font-style: normal;
-  font-size: 1.15rem;
-  letter-spacing: 0.05em;
+.ornamento .logo-app {
+  display: block;
+}
+
+.logo-app {
+  border-radius: 22%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(201, 162, 39, 0.35);
 }
 
 .capa-eyebrow {

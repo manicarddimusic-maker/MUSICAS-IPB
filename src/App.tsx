@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { Catalogo, Secao, carregarCatalogo, normalizar, ordenarItens, rotuloItem } from './catalogo';
 import { baixarBlob, gerarPdfSecao, nomeArquivoPdf } from './exportarPdf';
+import { caminho } from './ambiente';
 import Leitor from './Leitor';
 import Inicio from './Inicio';
 
@@ -33,7 +34,7 @@ export default function App() {
   if (!catalogo) {
     return (
       <div className="carregando">
-        <div className="marca-carregando">✝</div>
+        <img className="marca-carregando logo-app" src={caminho('/icons/icone-192.png')} alt="" width={84} height={84} />
         <p>Abrindo o hinário…</p>
       </div>
     );
@@ -197,7 +198,7 @@ function LeitorPage({ catalogo }: { catalogo: Catalogo }) {
   if (!secao || !item) {
     return (
       <div className="carregando">
-        <div className="marca-carregando">✝</div>
+        <img className="marca-carregando logo-app" src={caminho('/icons/icone-192.png')} alt="" width={84} height={84} />
         <p>Abrindo…</p>
       </div>
     );

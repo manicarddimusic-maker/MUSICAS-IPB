@@ -33,7 +33,7 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
       <header className="capa">
         <div className="ornamento" aria-hidden="true">
           <span />
-          <i>✝</i>
+          <img className="logo-app" src={caminho('/icons/icone-192.png')} alt="" width={68} height={68} />
           <span />
         </div>
         <p className="capa-eyebrow">Hinário da Igreja</p>
