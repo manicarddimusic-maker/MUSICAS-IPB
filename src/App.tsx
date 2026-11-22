@@ -6,6 +6,7 @@ import { caminho } from './ambiente';
 import Leitor from './Leitor';
 import Inicio, { CAPAS } from './Inicio';
 import Rascunhos from './Rascunhos';
+import { BotaoVoltar, MenuIr } from './Navegar';
 
 function ehLista(caminho: string): boolean {
   const p = caminho.split('/').filter(Boolean);
@@ -98,13 +99,12 @@ function Hub({ catalogo }: { catalogo: Catalogo }) {
   return (
     <div className="pagina">
       <header className="topo topo-palavra">
-        <Link className="voltar" to="/" aria-label="Voltar ao início">
-          ‹
-        </Link>
+        <BotaoVoltar fallback="/" />
         <div>
           <p className="topo-sub">Passagens bíblicas cantadas</p>
           <h1>Palavra de Deus Cantada</h1>
         </div>
+        <MenuIr />
         <span className="contagem">{cartoes.reduce((t, c) => t + c.itens.length, 0)}</span>
       </header>
       <div className="inicio hub">
@@ -213,13 +213,12 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
   return (
     <div className="pagina">
       <header className={`topo topo-${secao.id}`}>
-        <Link className="voltar" to={secao.id === 'salmos' || secao.id === 'palavra' ? '/palavra' : '/'} aria-label="Voltar">
-          ‹
-        </Link>
+        <BotaoVoltar fallback={secao.id === 'salmos' || secao.id === 'palavra' ? '/palavra' : '/'} />
         <div>
           <p className="topo-sub">{livro ? 'Palavra de Deus Cantada' : secao.subtitulo}</p>
           <h1>{livro ? livro.nome : secao.titulo}</h1>
         </div>
+        <MenuIr />
         <span className="contagem">{itens.length}</span>
       </header>
 
@@ -326,13 +325,12 @@ function ArquivosPdf({ catalogo }: { catalogo: Catalogo }) {
   return (
     <div className="pagina">
       <header className={`topo topo-${secao.id}`}>
-        <Link className="voltar" to={`/${secao.id}`} aria-label="Voltar">
-          ‹
-        </Link>
+        <BotaoVoltar fallback={`/${secao.id}`} />
         <div>
           <p className="topo-sub">{secao.titulo}</p>
           <h1>Arquivos PDF</h1>
         </div>
+        <MenuIr />
         <span className="contagem">{arquivos.length}</span>
       </header>
       <p className="arquivos-nota">Os PDFs originais, sem nenhuma alteração. Depois de baixar as músicas no aparelho, eles abrem também sem internet.</p>

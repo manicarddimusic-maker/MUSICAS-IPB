@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Item, Secao, rotaLista, rotuloCompleto } from './catalogo';
 import Reordenar from './Reordenar';
+import { BotaoVoltar, MenuIr } from './Navegar';
 import Anotar from './Anotar';
 import { FolhaDef, Traco, achatar, apagarAnot, gravarAnot, gravarRascunho, lerAnot, novoId } from './anotacoes';
 
@@ -298,7 +299,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
       } else if (e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'ArrowUp') {
         e.preventDefault();
         anteriorPagina();
-      } else if (e.key === 'Escape') navigate(rotaLista(secao.id, item));
+      } else if (e.key === 'Escape') navigate(-1);
       else if (e.key === '+' || e.key === '=') definirZoom(vista.current.z + 0.5);
       else if (e.key === '-') definirZoom(vista.current.z - 0.5);
       else if (e.key === 'r' || e.key === 'R') girar();
@@ -346,12 +347,12 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
 
   function proxima() {
     if (pagina < paginas.length - 1) setPagina(pagina + 1);
-    else if (proximo) navigate(`/${secao.id}/${proximo.id}`);
+    else if (proximo) navigate(`/${secao.id}/${proximo.id}`, { replace: true });
   }
 
   function anteriorPagina() {
     if (pagina > 0) setPagina(pagina - 1);
-    else if (anterior) navigate(`/${secao.id}/${anterior.id}`);
+    else if (anterior) navigate(`/${secao.id}/${anterior.id}`, { replace: true });
   }
 
   function tocar(x: number, alvo?: Element | null) {
@@ -459,13 +460,12 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   return (
     <div className="leitor">
       <header className={`barra barra-${secao.id}`}>
-        <Link to={rotaLista(secao.id, item)} className="barra-voltar" aria-label="Voltar à lista">
-          ‹
-        </Link>
+        <BotaoVoltar fallback={rotaLista(secao.id, item)} />
         <div className="barra-texto">
           <p>{rotuloCompleto(secao, item)}</p>
           <h1>{item.titulo}</h1>
         </div>
+        <MenuIr />
         <span className="barra-indice">
           {tomAtual && <em className="barra-tom">Tom: {tomAtual}</em>}
           {secao.ordem === 'numero' ? `${item.num}` : ''}
@@ -596,7 +596,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
 
       <nav className="navegacao">
         {anterior ? (
-          <Link to={`/${secao.id}/${anterior.id}`} className="nav-item">
+          <Link to={`/${secao.id}/${anterior.id}`} replace className="nav-item">
             <span>‹ {rotuloCompleto(secao, anterior)}</span>
             <small>{anterior.titulo}</small>
           </Link>
@@ -605,7 +605,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
         )}
         <span className="nav-pos">{paginas.length > 1 ? `${pagina + 1} / ${paginas.length}` : ''}</span>
         {proximo ? (
-          <Link to={`/${secao.id}/${proximo.id}`} className="nav-item direita">
+          <Link to={`/${secao.id}/${proximo.id}`} replace className="nav-item direita">
             <span>{rotuloCompleto(secao, proximo)} ›</span>
             <small>{proximo.titulo}</small>
           </Link>

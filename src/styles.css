@@ -1059,3 +1059,26 @@ body { overscroll-behavior: none; touch-action: manipulation; }
 .ordem-fantasma { position: fixed; z-index: 70; pointer-events: none; border-radius: 12px; border: 2px solid var(--dourado); background: #222; padding: 6px; box-shadow: 0 18px 40px rgba(0,0,0,.6); opacity: .95; transform: scale(1.05) rotate(2deg); }
 .ordem-fantasma img { width: 100%; height: calc(100% - 52px); object-fit: contain; background: #fff; border-radius: 6px; }
 .ordem-restaurar { margin: 0 16px 24px; min-height: 46px; border-radius: 999px; border: 1px solid rgba(201,162,39,.6); background: none; color: #f3eee0; cursor: pointer; }
+
+/* Navegação explícita: Voltar + Ir para… */
+.btn-voltar, .btn-menu { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(201,162,39,.7); background: rgba(255,255,255,.08); color: inherit; font: inherit; font-size: .95rem; font-weight: 600; cursor: pointer; flex: none; }
+.btn-voltar > span:first-child { font-size: 1.5rem; line-height: 1; margin-top: -2px; }
+.btn-voltar:hover, .btn-menu:hover { background: rgba(201,162,39,.25); }
+.topo .btn-voltar, .topo .btn-menu, .barra .btn-voltar, .barra .btn-menu { color: var(--papel); }
+.btn-menu { margin-left: auto; }
+.barra .btn-menu { margin-left: 8px; margin-right: 4px; }
+.menu-ir { position: fixed; inset: 0; z-index: 80; background: rgba(0,0,0,.55); display: flex; align-items: flex-start; justify-content: center; padding: max(12px, env(safe-area-inset-top)) 12px 12px; }
+.menu-ir-folha { width: min(440px, 100%); max-height: calc(100dvh - 24px); overflow: auto; border-radius: 18px; background: #1f2b22; border: 1px solid rgba(201,162,39,.7); box-shadow: 0 24px 60px rgba(0,0,0,.6); color: #f3eee0; }
+.menu-ir-folha header { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,.12); }
+.menu-ir-folha a { display: flex; align-items: center; gap: 14px; padding: 16px 18px; font-size: 1.05rem; border-bottom: 1px solid rgba(255,255,255,.07); color: inherit; }
+.menu-ir-folha a:hover, .menu-ir-folha a.atual { background: rgba(201,162,39,.2); }
+.menu-ir-folha a span { width: 24px; text-align: center; color: var(--dourado-claro); }
+.topo { flex-wrap: wrap; gap: 8px; }
+@media (max-width: 520px) { .btn-menu span:last-child { display: none; } .btn-menu { min-width: 44px; justify-content: center; padding: 0 12px; } }
+/* cabeçalhos: Voltar | título | Ir para… | número */
+.topo, .barra { display: flex; flex-wrap: nowrap; align-items: center; gap: 10px; }
+.topo > div, .barra-texto { flex: 1 1 auto; min-width: 0; }
+.topo h1, .barra-texto h1 { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.topo .btn-menu, .barra .btn-menu { margin-left: 0; }
+.contagem, .barra-indice { flex: none; }
+@media (max-width: 520px) { .btn-voltar span:last-child { font-size: .85rem; } .btn-voltar { padding: 0 10px; } .topo, .barra { gap: 6px; } }

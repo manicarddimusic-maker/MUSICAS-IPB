@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import Anotar from './Anotar';
+import { BotaoVoltar, MenuIr } from './Navegar';
 import {
   FolhaDef,
   FundoBranco,
@@ -99,13 +99,12 @@ export default function Rascunhos() {
   return (
     <div className="pagina">
       <header className="topo topo-rascunhos">
-        <Link className="voltar" to="/" aria-label="Voltar">
-          ‹
-        </Link>
+        <BotaoVoltar fallback="/" />
         <div>
           <p className="topo-sub">Só neste aparelho</p>
           <h1>Meus Rascunhos</h1>
         </div>
+        <MenuIr />
         <span className="contagem">{lista?.length ?? 0}</span>
       </header>
 
