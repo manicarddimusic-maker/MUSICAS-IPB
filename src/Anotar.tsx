@@ -25,6 +25,49 @@ type Props = {
 const CORES = ['#111111', '#d32f2f', '#1565c0', '#2e7d32', '#ef6c00', '#6a1b9a'];
 const MARCAS = ['#ffe94d', '#9be39b', '#7fc8ff', '#ff9ec7', '#ffb766'];
 
+const MATIZES = [0, 22, 45, 90, 160, 200, 225, 265, 300, 335];
+const CLARO = [88, 74, 60, 46, 32, 20];
+const CINZAS = ['#ffffff', '#ececec', '#cfcfcf', '#a8a8a8', '#7d7d7d', '#555555', '#2e2e2e', '#000000'];
+
+function hslHex(h: number, sa: number, l: number) {
+  sa /= 100;
+  l /= 100;
+  const k = (n: number) => (n + h / 30) % 12;
+  const a = sa * Math.min(l, 1 - l);
+  const f = (n: number) => Math.round(255 * (l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)))));
+  return '#' + [f(0), f(8), f(4)].map((v) => v.toString(16).padStart(2, '0')).join('');
+}
+
+function hexHsl(hex: string): [number, number, number] {
+  const m = /^#?([0-9a-f]{6})$/i.exec(hex.trim());
+  if (!m) return [210, 80, 45];
+  const n = parseInt(m[1], 16);
+  const r = ((n >> 16) & 255) / 255;
+  const g = ((n >> 8) & 255) / 255;
+  const b = (n & 255) / 255;
+  const mx = Math.max(r, g, b);
+  const mn = Math.min(r, g, b);
+  const l = (mx + mn) / 2;
+  const d = mx - mn;
+  let h = 0;
+  let sa = 0;
+  if (d) {
+    sa = d / (1 - Math.abs(2 * l - 1));
+    h = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
+    h *= 60;
+    if (h < 0) h += 360;
+  }
+  return [Math.round(h), Math.round(sa * 100), Math.round(l * 100)];
+}
+
+function lerRecentes(): string[] {
+  try {
+    return JSON.parse(localStorage.getItem('hinario-cores') || '[]');
+  } catch {
+    return [];
+  }
+}
+
 const FERR: { id: Ferramenta; rotulo: string; icone: string; dica: string }[] = [
   { id: 'caneta', rotulo: 'Caneta', icone: '✎', dica: 'Escrever à mão (Apple Pencil)' },
   { id: 'marca', rotulo: 'Marca-texto', icone: '🖍', dica: 'Destacar' },
@@ -91,6 +134,10 @@ export default function Anotar({ titulo, folhas, inicial = 0, rascunho, onSalvar
   const [nome, setNome] = useState(titulo);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState<string | null>(null);
+  const [seletor, setSeletor] = useState(false);
+  const [recentes, setRecentes] = useState<string[]>(lerRecentes);
+  const [hsl, setHsl] = useState<[number, number, number]>([210, 80, 45]);
+  const [hex, setHex] = useState('#1565c0');
   const [editTexto, setEditTexto] = useState<{ x: number; y: number } | null>(null);
   const [zv, setZv] = useState(1);
 
@@ -489,6 +536,24 @@ export default function Anotar({ titulo, folhas, inicial = 0, rascunho, onSalvar
     onFechar();
   }
 
+  function escolherCor(c: string, fechar = false) {
+    const h = c.toLowerCase();
+    if (ferr === 'marca') setCorMarca(h);
+    else setCor(h);
+    setHex(h);
+    setHsl(hexHsl(h));
+    if (fechar) {
+      const novo = [h, ...recentes.filter((x) => x !== h)].slice(0, 12);
+      setRecentes(novo);
+      try {
+        localStorage.setItem('hinario-cores', JSON.stringify(novo));
+      } catch {
+        /* sem armazenamento */
+      }
+      setSeletor(false);
+    }
+  }
+
   const podeDesfazer = hist.current.length > 0;
   const podeRefazer = refazer.current.length > 0;
   const paleta = ferr === 'marca' ? MARCAS : CORES;
@@ -562,8 +627,21 @@ export default function Anotar({ titulo, folhas, inicial = 0, rascunho, onSalvar
         {usaCor && (
           <div className="anot-cores" role="group" aria-label="Cor">
             {paleta.map((c) => (
-              <button key={c} className={`anot-cor${corAtiva === c ? ' ativa' : ''}`} style={{ background: c }} onClick={() => (ferr === 'marca' ? setCorMarca(c) : setCor(c))} aria-label={`Cor ${c}`} />
+              <button key={c} className={`anot-cor${corAtiva === c ? ' ativa' : ''}`} style={{ background: c }} onClick={() => escolherCor(c)} aria-label={`Cor ${c}`} />
             ))}
+            {!paleta.includes(corAtiva) && <button className="anot-cor ativa" style={{ background: corAtiva }} onClick={() => setSeletor(true)} aria-label="Cor escolhida" />}
+            <button
+              className="anot-cor anot-cor-mais"
+              onClick={() => {
+                setHex(corAtiva);
+                setHsl(hexHsl(corAtiva));
+                setSeletor((v) => !v);
+              }}
+              aria-label="Mais cores"
+              title="Todas as cores"
+            >
+              🎨
+            </button>
           </div>
         )}
         <label className="anot-tam">
@@ -575,6 +653,56 @@ export default function Anotar({ titulo, folhas, inicial = 0, rascunho, onSalvar
           <small>{dedo ? 'Dedo desenha' : 'Só caneta'}</small>
         </button>
       </div>
+
+      {seletor && usaCor && (
+        <div className="anot-seletor" role="dialog" aria-label="Escolher cor">
+          <div className="sel-grade">
+            {MATIZES.map((h) => (
+              <div className="sel-col" key={h}>
+                {CLARO.map((l) => {
+                  const c = hslHex(h, 78, l);
+                  return <button key={l} className={`sel-cel${corAtiva === c ? ' ativa' : ''}`} style={{ background: c }} onClick={() => escolherCor(c, true)} aria-label={`Cor ${c}`} />;
+                })}
+              </div>
+            ))}
+          </div>
+          <div className="sel-cinzas">
+            {CINZAS.map((c) => (
+              <button key={c} className={`sel-cel cinza${corAtiva === c ? ' ativa' : ''}`} style={{ background: c }} onClick={() => escolherCor(c, true)} aria-label={c === '#ffffff' ? 'Branco' : c === '#000000' ? 'Preto' : `Cinza ${c}`} />
+            ))}
+          </div>
+          <div className="sel-custom">
+            <span className="sel-previa" style={{ background: corAtiva }} aria-hidden="true" />
+            <label>
+              <small>Tom</small>
+              <input type="range" min={0} max={360} value={hsl[0]} className="sel-matiz" onChange={(e) => { const v: [number, number, number] = [Number(e.target.value), hsl[1], hsl[2]]; setHsl(v); escolherCor(hslHex(...v)); }} />
+            </label>
+            <label>
+              <small>Intensidade</small>
+              <input type="range" min={0} max={100} value={hsl[1]} style={{ background: `linear-gradient(90deg, ${hslHex(hsl[0], 0, hsl[2])}, ${hslHex(hsl[0], 100, hsl[2])})` }} onChange={(e) => { const v: [number, number, number] = [hsl[0], Number(e.target.value), hsl[2]]; setHsl(v); escolherCor(hslHex(...v)); }} />
+            </label>
+            <label>
+              <small>Claro / escuro</small>
+              <input type="range" min={0} max={100} value={hsl[2]} style={{ background: `linear-gradient(90deg, #000, ${hslHex(hsl[0], hsl[1], 50)}, #fff)` }} onChange={(e) => { const v: [number, number, number] = [hsl[0], hsl[1], Number(e.target.value)]; setHsl(v); escolherCor(hslHex(...v)); }} />
+            </label>
+            <label className="sel-hex">
+              <small>Código</small>
+              <input value={hex} maxLength={7} onChange={(e) => { setHex(e.target.value); if (/^#[0-9a-f]{6}$/i.test(e.target.value)) escolherCor(e.target.value); }} />
+            </label>
+          </div>
+          {recentes.length > 0 && (
+            <div className="sel-recentes">
+              <small>Recentes</small>
+              <div>
+                {recentes.map((c) => (
+                  <button key={c} className="sel-cel" style={{ background: c }} onClick={() => escolherCor(c, true)} aria-label={`Cor ${c}`} />
+                ))}
+              </div>
+            </div>
+          )}
+          <button className="sel-ok" onClick={() => escolherCor(corAtiva, true)}>Usar esta cor</button>
+        </div>
+      )}
 
       <div className="anot-rolagem" ref={rolagem}>
         <div className="anot-caixa" ref={caixa} style={{ width: lado || undefined }}>
