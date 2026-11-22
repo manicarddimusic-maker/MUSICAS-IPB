@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Item, Secao, rotaLista, rotuloCompleto } from './catalogo';
+import Reordenar from './Reordenar';
 import Anotar from './Anotar';
 import { FolhaDef, Traco, achatar, apagarAnot, gravarAnot, gravarRascunho, lerAnot, novoId } from './anotacoes';
 
@@ -13,6 +14,16 @@ type Props = {
 
 const ZOOMS = [1, 2, 3.5];
 
+const chaveOrdem = (secaoId: string, itemId: string) => `hinario-ordem:${secaoId}:${itemId}`;
+function lerOrdem(secaoId: string, itemId: string): string[] | null {
+  try {
+    const v = JSON.parse(localStorage.getItem(chaveOrdem(secaoId, itemId)) || 'null');
+    return Array.isArray(v) ? v : null;
+  } catch {
+    return null;
+  }
+}
+
 export default function Leitor({ secao, item, anterior, proximo }: Props) {
   const [pagina, setPagina] = useState(0);
   const [zoom, setZoom] = useState(1);
@@ -24,6 +35,9 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   const [verOriginal, setVerOriginal] = useState(false);
   const [anotando, setAnotando] = useState<FolhaDef[] | null>(null);
   const [versaoAnot, setVersaoAnot] = useState(0);
+  const [reordenando, setReordenando] = useState(false);
+  const [ordemSalva, setOrdemSalva] = useState<string[] | null>(() => lerOrdem(secao.id, item.id));
+  useEffect(() => setOrdemSalva(lerOrdem(secao.id, item.id)), [secao.id, item.id]);
   const navigate = useNavigate();
   const area = useRef<HTMLDivElement>(null);
   const imagem = useRef<HTMLImageElement>(null);
@@ -37,7 +51,16 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   const fimGesto = useRef(0);
   const fimAnim = useRef(0);
 
-  const paginas = item.paginas;
+  const paginas = useMemo(() => {
+    const orig = item.paginas;
+    if (!ordemSalva) return orig;
+    const mapa = new Map(orig.map((p) => [p.img, p]));
+    const nova = ordemSalva.filter((u) => mapa.has(u)).map((u) => mapa.get(u)!);
+    orig.forEach((p) => {
+      if (!nova.includes(p)) nova.push(p);
+    });
+    return nova;
+  }, [item.paginas, ordemSalva]);
 
   // lembra qual música foi vista por último (a lista volta exatamente nela)
   useEffect(() => {
@@ -55,14 +78,14 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     let vivo = true;
     const urls: string[] = [];
     setVerOriginal(false);
-    Promise.all(item.paginas.map((p) => lerAnot(p.img).catch(() => undefined))).then((lista) => {
+    Promise.all(paginas.map((p) => lerAnot(p.img).catch(() => undefined))).then((lista) => {
       if (!vivo) return;
       const m: Record<string, string> = {};
       lista.forEach((a, i) => {
         if (a) {
           const u = URL.createObjectURL(a.flat);
           urls.push(u);
-          m[item.paginas[i].img] = u;
+          m[paginas[i].img] = u;
         }
       });
       setAnotUrl(m);
@@ -71,11 +94,11 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
       vivo = false;
       urls.forEach((u) => URL.revokeObjectURL(u));
     };
-  }, [item.id, versaoAnot, item.paginas]);
+  }, [item.id, versaoAnot, paginas]);
 
   async function abrirAnotacao() {
     const folhas: FolhaDef[] = [];
-    for (const p of item.paginas) {
+    for (const p of paginas) {
       const a = await lerAnot(p.img).catch(() => undefined);
       folhas.push({ src: p.img, tracos: (a?.tracos ?? []) as Traco[] });
     }
@@ -84,7 +107,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
 
   async function salvarAnotacoes(f: FolhaDef[]) {
     for (let i = 0; i < f.length; i++) {
-      const key = item.paginas[i].img;
+      const key = paginas[i].img;
       if (f[i].tracos.length) await gravarAnot({ key, tracos: f[i].tracos, flat: await achatar({ src: key, tracos: [] }, f[i].tracos), em: Date.now() });
       else await apagarAnot(key);
     }
@@ -494,6 +517,11 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
         <button className="botao-zoom" onClick={ciclarZoom} aria-label="Ampliar a folha" title="Ampliar (+ / −)">
           {zoom === 1 ? '🔍' : `${Math.round(zoom * 10) / 10}×`}
         </button>
+        {paginas.length > 1 && (
+          <button className="botao-ordem" onClick={() => setReordenando(true)} aria-label="Reordenar as folhas desta música" title="Reordenar as folhas">
+            ⇄
+          </button>
+        )}
         <button className="botao-anotar" onClick={abrirAnotacao} aria-label="Anotar nesta folha (Apple Pencil)" title="Anotar / escrever / apagar">
           ✎
         </button>
@@ -522,6 +550,35 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
         )}
       </div>
 
+      {reordenando && (
+        <Reordenar
+          titulo={item.titulo}
+          paginas={paginas}
+          personalizada={!!ordemSalva}
+          onSalvar={(ordem) => {
+            try {
+              localStorage.setItem(chaveOrdem(secao.id, item.id), JSON.stringify(ordem));
+            } catch {
+              /* sem armazenamento */
+            }
+            setOrdemSalva(ordem);
+            setPagina(0);
+            setReordenando(false);
+          }}
+          onRestaurar={() => {
+            try {
+              localStorage.removeItem(chaveOrdem(secao.id, item.id));
+            } catch {
+              /* sem armazenamento */
+            }
+            setOrdemSalva(null);
+            setPagina(0);
+            setReordenando(false);
+          }}
+          onFechar={() => setReordenando(false)}
+        />
+      )}
+
       {anotando && (
         <Anotar
           titulo={item.titulo}
@@ -530,7 +587,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
           onSalvar={(f) => salvarAnotacoes(f)}
           onDuplicar={(f, nome) => duplicarComoRascunho(f, nome)}
           onRemoverTudo={async () => {
-            for (const p of item.paginas) await apagarAnot(p.img);
+            for (const p of paginas) await apagarAnot(p.img);
             setVersaoAnot((v) => v + 1);
           }}
           onFechar={() => setAnotando(null)}
