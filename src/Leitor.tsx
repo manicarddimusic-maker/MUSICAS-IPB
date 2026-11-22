@@ -462,7 +462,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
       <header className={`barra barra-${secao.id}`}>
         <BotaoVoltar fallback={rotaLista(secao.id, item)} />
         <div className="barra-texto">
-          <p>{rotuloCompleto(secao, item)}</p>
+          <p>{rotuloCompleto(secao, item) === item.titulo ? secao.titulo : rotuloCompleto(secao, item)}</p>
           <h1>{item.titulo}</h1>
         </div>
         <MenuIr />

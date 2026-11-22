@@ -373,6 +373,9 @@ a {
 }
 
 .numero {
+  max-width: 40vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-family: var(--serif);
   font-size: 1.15rem;
   font-weight: 700;
@@ -390,6 +393,8 @@ a {
   font-size: 1rem;
   line-height: 1.35;
   color: var(--tinta);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .selo {

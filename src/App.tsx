@@ -300,7 +300,7 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
                   gravarJson(k, { ...(lerJson<object>(k) ?? {}), y: window.scrollY, id: item.id, vistoId: item.id, busca });
                 }}
               >
-                <span className="numero">{rotuloItem(secao, item)}</span>
+                <span className="numero">{rotuloItem(secao, item) === item.titulo ? '♪' : rotuloItem(secao, item)}</span>
                 <span className="titulo-item">
                   {item.titulo}
                   {item.versiculos && <small className="versos"> · vers. {item.versiculos}</small>}
