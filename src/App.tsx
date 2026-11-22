@@ -7,6 +7,7 @@ import Leitor from './Leitor';
 import Inicio, { CAPAS } from './Inicio';
 import Rascunhos from './Rascunhos';
 import { BotaoVoltar, MenuIr } from './Navegar';
+import { LeitorPdf } from './LeitorPdf';
 
 function ehLista(caminho: string): boolean {
   const p = caminho.split('/').filter(Boolean);
@@ -72,6 +73,7 @@ export default function App() {
       <Route path="/livro/:livroSlug" element={<SecaoPage catalogo={catalogo} />} />
       <Route path="/rascunhos" element={<Rascunhos />} />
       <Route path="/lavras/arquivos-pdf" element={<ArquivosPdf catalogo={catalogo} />} />
+      <Route path="/lavras/arquivos-pdf/:n" element={<LeitorPdf catalogo={catalogo} />} />
       <Route path="/:secaoId" element={<SecaoPage catalogo={catalogo} />} />
       <Route path="/:secaoId/:itemId" element={<LeitorPage catalogo={catalogo} />} />
       <Route path="*" element={<NaoEncontrado />} />
@@ -335,9 +337,9 @@ function ArquivosPdf({ catalogo }: { catalogo: Catalogo }) {
       </header>
       <p className="arquivos-nota">Os PDFs originais, sem nenhuma alteração. Depois de baixar as músicas no aparelho, eles abrem também sem internet.</p>
       <ol className="lista">
-        {arquivos.map((a) => (
+        {arquivos.map((a, i) => (
           <li key={a.url}>
-            <a className="linha linha-pdf" href={caminho(a.url)} target="_blank" rel="noopener">
+            <Link className="linha linha-pdf" to={`/lavras/arquivos-pdf/${i}`}>
               <span className="numero">PDF</span>
               <span className="titulo-item">
                 {a.nome}
@@ -349,7 +351,7 @@ function ArquivosPdf({ catalogo }: { catalogo: Catalogo }) {
                 </small>
               </span>
               <span aria-hidden="true">›</span>
-            </a>
+            </Link>
           </li>
         ))}
       </ol>

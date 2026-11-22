@@ -1082,3 +1082,50 @@ body { overscroll-behavior: none; touch-action: manipulation; }
 .topo .btn-menu, .barra .btn-menu { margin-left: 0; }
 .contagem, .barra-indice { flex: none; }
 @media (max-width: 520px) { .btn-voltar span:last-child { font-size: .85rem; } .btn-voltar { padding: 0 10px; } .topo, .barra { gap: 6px; } }
+
+/* Leitor de PDF dentro do app */
+.pagina-pdf {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  padding-bottom: 0;
+}
+.pdf-rolagem {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #3a3d3a;
+  padding: 10px 0 40px;
+}
+.pdf-folha {
+  width: min(100%, 980px);
+  margin: 0 auto 10px;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+.pdf-folha canvas {
+  display: block;
+  width: 100%;
+}
+.pdf-carregando {
+  color: #fff;
+  text-align: center;
+  padding: 40px 16px;
+}
+.pdf-rolagem .pdf-erro {
+  color: #fff;
+  padding: 24px 18px;
+}
+.pdf-contador {
+  position: fixed;
+  right: 14px;
+  bottom: calc(14px + env(safe-area-inset-bottom));
+  background: rgba(20, 24, 21, 0.85);
+  color: #fff;
+  border: 1px solid rgba(201, 162, 39, 0.6);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  pointer-events: none;
+}
