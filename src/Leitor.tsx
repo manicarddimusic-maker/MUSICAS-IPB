@@ -39,6 +39,17 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
 
   const paginas = item.paginas;
 
+  // lembra qual música foi vista por último (a lista volta exatamente nela)
+  useEffect(() => {
+    try {
+      const k = `hinario-lista:${rotaLista(secao.id, item)}`;
+      const ant = JSON.parse(sessionStorage.getItem(k) || '{}');
+      sessionStorage.setItem(k, JSON.stringify({ ...ant, vistoId: item.id }));
+    } catch {
+      /* sem armazenamento */
+    }
+  }, [secao.id, item]);
+
   // páginas com anotações salvas neste aparelho (traços por cima da foto)
   useEffect(() => {
     let vivo = true;

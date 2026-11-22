@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { ArquivoPdf, Catalogo, Secao, carregarCatalogo, livrosDaPalavra, normalizar, ordenarItens, rotaLista, rotuloItem } from './catalogo';
 import { baixarBlob, gerarPdfSecao, nomeArquivoPdf } from './exportarPdf';
@@ -6,6 +6,29 @@ import { caminho } from './ambiente';
 import Leitor from './Leitor';
 import Inicio, { CAPAS } from './Inicio';
 import Rascunhos from './Rascunhos';
+
+function ehLista(caminho: string): boolean {
+  const p = caminho.split('/').filter(Boolean);
+  if (p.length === 1) return p[0] !== 'rascunhos';
+  return p.length === 2 && p[0] === 'livro';
+}
+
+const chaveLista = (caminho: string) => `hinario-lista:${caminho}`;
+function lerJson<T>(k: string): T | null {
+  try {
+    const v = sessionStorage.getItem(k);
+    return v ? (JSON.parse(v) as T) : null;
+  } catch {
+    return null;
+  }
+}
+function gravarJson(k: string, v: unknown) {
+  try {
+    sessionStorage.setItem(k, JSON.stringify(v));
+  } catch {
+    /* sem armazenamento */
+  }
+}
 
 export default function App() {
   const [catalogo, setCatalogo] = useState<Catalogo | null>(null);
@@ -19,7 +42,8 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    window.scrollTo({ top: 0 });
+    // as listas cuidam da própria posição (voltam exatamente de onde saiu)
+    if (!ehLista(location.pathname)) window.scrollTo({ top: 0 });
   }, [location.pathname]);
 
   if (erro) {
@@ -111,10 +135,42 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
   const secao = acharSecao(catalogo, secaoId);
   const livro = livroSlug ? livrosDaPalavra(catalogo).find((l) => l.slug === livroSlug) : undefined;
   const navigate = useNavigate();
-  const [busca, setBusca] = useState('');
+  const local = useLocation();
+  const [busca, setBusca] = useState(() => lerJson<{ busca?: string }>(chaveLista(window.location.pathname))?.busca ?? '');
   const [pdf, setPdf] = useState<{ feitos: number; total: number } | null>(null);
   const [erroPdf, setErroPdf] = useState<string | null>(null);
   const [avisoNumero, setAvisoNumero] = useState<string | null>(null);
+
+  const rotaAtual = local.pathname;
+  const ultimoRestaurado = useRef('');
+
+  // guarda a busca digitada nesta lista
+  useEffect(() => {
+    const k = chaveLista(rotaAtual);
+    const ant = lerJson<{ y?: number; id?: string; busca?: string }>(k) ?? {};
+    gravarJson(k, { ...ant, busca });
+  }, [busca, rotaAtual]);
+
+  // ao chegar na lista: volta exatamente onde estava (ou ao item que acabou de ver)
+  useLayoutEffect(() => {
+    if (ultimoRestaurado.current === rotaAtual) return;
+    const k = chaveLista(rotaAtual);
+    const salvo = lerJson<{ y?: number; id?: string; vistoId?: string; busca?: string }>(k);
+    const alvo = salvo?.vistoId ? document.querySelector<HTMLElement>(`[data-item-id="${CSS.escape(salvo.vistoId)}"]`) : null;
+    if (!salvo || (salvo.y === undefined && !alvo)) {
+      window.scrollTo({ top: 0 });
+      ultimoRestaurado.current = rotaAtual;
+      return;
+    }
+    if (salvo.vistoId && salvo.vistoId === salvo.id && salvo.y !== undefined) {
+      window.scrollTo({ top: salvo.y });
+    } else if (alvo) {
+      alvo.scrollIntoView({ block: 'center' });
+    } else if (salvo.y !== undefined) {
+      window.scrollTo({ top: salvo.y });
+    }
+    ultimoRestaurado.current = rotaAtual;
+  });
 
   if (!secao) return <NaoEncontrado />;
   if (secao.id === 'palavra' && !livroSlug) return <Hub catalogo={catalogo} />;
@@ -234,7 +290,15 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
         <ol className="lista">
           {filtrados.map((item) => (
             <li key={item.id}>
-              <Link to={`/${secao.id}/${item.id}`} className="linha">
+              <Link
+                to={`/${secao.id}/${item.id}`}
+                className="linha"
+                data-item-id={item.id}
+                onClick={() => {
+                  const k = chaveLista(local.pathname);
+                  gravarJson(k, { ...(lerJson<object>(k) ?? {}), y: window.scrollY, id: item.id, vistoId: item.id, busca });
+                }}
+              >
                 <span className="numero">{rotuloItem(secao, item)}</span>
                 <span className="titulo-item">
                   {item.titulo}
