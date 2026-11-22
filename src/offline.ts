@@ -65,3 +65,23 @@ export async function salvarTudo(
   await Promise.all([trabalhador(), trabalhador(), trabalhador(), trabalhador()]);
   return { falhas };
 }
+
+/** Apaga deste aparelho as fotos antigas que não fazem mais parte do aplicativo (libera espaço e evita mostrar versões velhas). */
+export async function limparMidiasAntigas(urls: string[]): Promise<number> {
+  if (!('caches' in window)) return 0;
+  try {
+    const c = await caches.open(MIDIAS);
+    const validas = new Set(urls.map(chave));
+    let n = 0;
+    for (const req of await c.keys()) {
+      const p = new URL(req.url).pathname;
+      if (p.startsWith('/midias/') && !p.startsWith('/midias/capas/') && !validas.has(p)) {
+        await c.delete(req);
+        n++;
+      }
+    }
+    return n;
+  } catch {
+    return 0;
+  }
+}

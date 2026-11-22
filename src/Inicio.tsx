@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Catalogo, ordenarItens } from './catalogo';
 import { caminho, ARTEFATO } from './ambiente';
-import { folhasSalvas, salvarTudo, urlsDeFolhas } from './offline';
+import { folhasSalvas, limparMidiasAntigas, salvarTudo, urlsDeFolhas } from './offline';
 import { atualizarApp, lerMensagemAtualizacao } from './atualizar';
 
 type PromptEvento = Event & { prompt: () => Promise<void> };
@@ -55,7 +55,9 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
 
   useEffect(() => {
     if (ARTEFATO) return;
-    folhasSalvas(urls)
+    limparMidiasAntigas(urls)
+      .catch(() => 0)
+      .then(() => folhasSalvas(urls))
       .then((s) => setSalvas(s.size))
       .catch(() => setSalvas(null));
   }, [urls]);
