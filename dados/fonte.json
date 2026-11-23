@@ -19,6 +19,9 @@
    "num": 3,
    "titulo": "A igreja em adoração",
    "paginas": [
+    {
+     "img": "/midias/partitura2/h003-foto.jpg"
+    },
     "/midias/h003_6454_3dbbb9fc.jpg",
     "/midias/h003_6458_v2_e78ab6e6.jpg"
    ]
@@ -44,6 +47,9 @@
    "num": 8,
    "titulo": "Adoração à Trindade",
    "paginas": [
+    {
+     "img": "/midias/partitura2/h008-foto.jpg"
+    },
     "/midias/h008_6362_58f5df04.jpg"
    ]
   },
@@ -76,6 +82,9 @@
    "num": 14,
    "titulo": "Louvor",
    "paginas": [
+    {
+     "img": "/midias/partitura2/h014-foto.jpg"
+    },
     "/midias/h014_6393_0e805f33.jpg"
    ]
   },
@@ -143,6 +152,9 @@
    "num": 28,
    "titulo": "Coroação",
    "paginas": [
+    {
+     "img": "/midias/partitura2/h028-foto.jpg"
+    },
     "/midias/h028_73e79a49.jpg",
     "/midias/h028_6446_1d462d48.jpg"
    ]
@@ -346,6 +358,15 @@
    ]
   },
   {
+   "num": 109,
+   "titulo": "O Bom Pastor",
+   "paginas": [
+    {
+     "img": "/midias/partitura2/h109-foto.jpg"
+    }
+   ]
+  },
+  {
    "num": 110,
    "titulo": "A Vida com Jesus",
    "paginas": [
@@ -440,6 +461,9 @@
    "num": 135,
    "titulo": "Mais de Cristo",
    "paginas": [
+    {
+     "img": "/midias/partitura2/h135-foto.jpg"
+    },
     "/midias/h135_6389_ed3e79d8.jpg",
     "/midias/h135_6403_ce70c28f.jpg"
    ]
@@ -901,6 +925,9 @@
    "titulo": "Ao Nosso Deus",
    "paginas": [
     {
+     "img": "/midias/extras/u-cantico-ao-nosso-deus-1.jpg"
+    },
+    {
      "img": "/midias/canticos/ao-nosso-deus-i15.jpg",
      "tom": "A"
     },
@@ -934,6 +961,9 @@
   {
    "titulo": "Alfa e Ômega",
    "paginas": [
+    {
+     "img": "/midias/extras/u-cantico-alfa-e-omega-1.jpg"
+    },
     {
      "img": "/midias/canticos/alfa-e-omega-i19.jpg",
      "tom": "G"
@@ -979,6 +1009,9 @@
    "titulo": "Jesus Em Tua Presença",
    "paginas": [
     {
+     "img": "/midias/extras/u-cantico-jesus-em-tua-presenca-1.jpg"
+    },
+    {
      "img": "/midias/canticos/jesus-em-tua-presenca-i7.jpg",
      "tom": "D"
     },
@@ -1018,6 +1051,9 @@
    "titulo": "Tu És Soberano",
    "paginas": [
     {
+     "img": "/midias/extras/u-cantico-tu-es-soberano-1.jpg"
+    },
+    {
      "img": "/midias/canticos/tu-es-soberano-i11.jpg"
     },
     {
@@ -1050,6 +1086,9 @@
   {
    "titulo": "Glória Pra Sempre",
    "paginas": [
+    {
+     "img": "/midias/extras/u-cantico-gloria-pra-sempre-1.jpg"
+    },
     {
      "img": "/midias/canticos/gloria-pra-sempre-i18.jpg"
     },
@@ -1138,6 +1177,9 @@
    "titulo": "Rei das Nações",
    "paginas": [
     {
+     "img": "/midias/extras/u-cantico-rei-das-nacoes-1.jpg"
+    },
+    {
      "img": "/midias/canticos/rei-das-nacoes-i39.jpg"
     },
     {
@@ -1148,6 +1190,9 @@
   {
    "titulo": "Jesus, Profeta, Sacerdote e Rei",
    "paginas": [
+    {
+     "img": "/midias/extras/u-cantico-jesus-profeta-sacerdote-e-rei-1.jpg"
+    },
     {
      "img": "/midias/canticos/jesus-profeta-sacerdote-e-rei-i42.jpg"
     },
@@ -1172,6 +1217,9 @@
   {
    "titulo": "Maravilhosa Graça",
    "paginas": [
+    {
+     "img": "/midias/extras/u-cantico-maravilhosa-graca-1.jpg"
+    },
     {
      "img": "/midias/canticos/maravilhosa-graca-i44.jpg"
     },
@@ -1459,6 +1507,9 @@
    "titulo": "Salmo 96",
    "paginas": [
     {
+     "img": "/midias/extras/u-salmo-96-1.jpg"
+    },
+    {
      "img": "/midias/salmos/s096.jpg"
     }
    ],
@@ -1522,6 +1573,14 @@
    "num": 142,
    "titulo": "Com a minha voz clamo ao Senhor",
    "paginas": [
+    {
+     "img": "/midias/extras/u-salmo-142-C1.jpg",
+     "tom": "C"
+    },
+    {
+     "img": "/midias/extras/u-salmo-142-D1.jpg",
+     "tom": "D"
+    },
     {
      "img": "/midias/salmos/s142-a.jpg"
     },
@@ -7584,6 +7643,9 @@
    "titulo": "Quem Nos Separará?",
    "paginas": [
     {
+     "img": "/midias/extras/u-palavra-quem-nos-separara-1.jpg"
+    },
+    {
      "img": "/midias/palavra/quem-nos-separara-i59.jpg"
     }
    ],
@@ -9456,5 +9518,4368 @@
     "bytes": 126825
    }
   ]
- }
+ },
+ "hinoscifra": [
+  {
+   "num": 1,
+   "titulo": "Doxologia",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-001.jpg"
+    }
+   ]
+  },
+  {
+   "num": 2,
+   "titulo": "Reverência",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-002.jpg"
+    }
+   ]
+  },
+  {
+   "num": 3,
+   "titulo": "A Igreja em Adoração",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-003-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-003-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 4,
+   "titulo": "Culto à Trindade",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-004-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-004-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 5,
+   "titulo": "Trindade Adorada",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-005.jpg"
+    }
+   ]
+  },
+  {
+   "num": 6,
+   "titulo": "Doxologia",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-006.jpg"
+    }
+   ]
+  },
+  {
+   "num": 7,
+   "titulo": "Glória à Trindade",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-7-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-007-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-007-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 8,
+   "titulo": "Adoração à Trindade",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-008-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-008-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 9,
+   "titulo": "Aleluia ao Deus Triúno",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-009.jpg"
+    }
+   ]
+  },
+  {
+   "num": 10,
+   "titulo": "A Criação e Seu Criador",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-010-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-010-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 11,
+   "titulo": "Trindade Santíssima",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-11-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/u-11-2.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-011.jpg"
+    }
+   ]
+  },
+  {
+   "num": 12,
+   "titulo": "Glória a Deus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-012.jpg"
+    }
+   ]
+  },
+  {
+   "num": 13,
+   "titulo": "Contemplação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-13-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-013.jpg"
+    }
+   ]
+  },
+  {
+   "num": 14,
+   "titulo": "Louvor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-014-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-014-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 15,
+   "titulo": "Doxologia",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-015.jpg"
+    }
+   ]
+  },
+  {
+   "num": 16,
+   "titulo": "Louvor a Deus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-016.jpg"
+    }
+   ]
+  },
+  {
+   "num": 17,
+   "titulo": "Deus Seja Louvado",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-017.jpg"
+    }
+   ]
+  },
+  {
+   "num": 18,
+   "titulo": "Deus dos Antigos",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-18-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-018.jpg"
+    }
+   ]
+  },
+  {
+   "num": 19,
+   "titulo": "Rei Sublime",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-019.jpg"
+    }
+   ]
+  },
+  {
+   "num": 20,
+   "titulo": "Glorificação à Trindade",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-020-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-020-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 21,
+   "titulo": "Deus de Abrão",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-021-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-021-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 22,
+   "titulo": "Os Céus Proclamam",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-22-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-022-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-022-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 23,
+   "titulo": "Adoração ao Criador",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-023.jpg"
+    }
+   ]
+  },
+  {
+   "num": 24,
+   "titulo": "Convite ao Louvor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-024.jpg"
+    }
+   ]
+  },
+  {
+   "num": 25,
+   "titulo": "O Criador de Tudo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-025-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-025-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 26,
+   "titulo": "Ao Deus Grandioso",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-26-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/u-26-2.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-026-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-026-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 27,
+   "titulo": "Um Hino ao Senhor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-027-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-027-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 28,
+   "titulo": "Coroação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-028-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-028-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 29,
+   "titulo": "Louvor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-029-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-029-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 30,
+   "titulo": "Providência de Deus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-030-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-030-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 31,
+   "titulo": "Providência de Deus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-031-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-031-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 32,
+   "titulo": "O Deus Fiel",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-032.jpg"
+    }
+   ]
+  },
+  {
+   "num": 33,
+   "titulo": "Maravilhas Divinas",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-033-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-033-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 34,
+   "titulo": "Convite ao Louvor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-034.jpg"
+    }
+   ]
+  },
+  {
+   "num": 35,
+   "titulo": "Adoração e Súplica",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-035.jpg"
+    }
+   ]
+  },
+  {
+   "num": 36,
+   "titulo": "Exaltação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-036.jpg"
+    }
+   ]
+  },
+  {
+   "num": 37,
+   "titulo": "O Santo Nome",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-037-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-037-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 38,
+   "titulo": "Louvores Sem Fim",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-038.jpg"
+    }
+   ]
+  },
+  {
+   "num": 39,
+   "titulo": "Exaltação e Louvor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-39-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-039.jpg"
+    }
+   ]
+  },
+  {
+   "num": 40,
+   "titulo": "Cântico ao Salvador",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-040-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-040-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 41,
+   "titulo": "Louvor pela Graça Divina",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-041-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-041-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 42,
+   "titulo": "O Grande Amor de Deus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-042.jpg"
+    }
+   ]
+  },
+  {
+   "num": 43,
+   "titulo": "O Deus de Amor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-043-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-043-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 44,
+   "titulo": "Louvores ao Senhor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-044.jpg"
+    }
+   ]
+  },
+  {
+   "num": 45,
+   "titulo": "Grande Redenção",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-045-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-045-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 46,
+   "titulo": "Altos Louvores",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-046-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-046-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 47,
+   "titulo": "Louvor e Glória",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-47-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-047.jpg"
+    }
+   ]
+  },
+  {
+   "num": 48,
+   "titulo": "Amor e Gratidão",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-048.jpg"
+    }
+   ]
+  },
+  {
+   "num": 49,
+   "titulo": "Sempre Vencendo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-049-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-049-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 50,
+   "titulo": "Sangue Precioso",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-050.jpg"
+    }
+   ]
+  },
+  {
+   "num": 51,
+   "titulo": "Cristo Coroado",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-51-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-051.jpg"
+    }
+   ]
+  },
+  {
+   "num": 52,
+   "titulo": "Glória e Coroação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-052.jpg"
+    }
+   ]
+  },
+  {
+   "num": 53,
+   "titulo": "Honra, Poder, Majestade",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-053-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-053-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 54,
+   "titulo": "A Chegada do Messias",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-054.jpg"
+    }
+   ]
+  },
+  {
+   "num": 55,
+   "titulo": "Alegria e Gratidão",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-55-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-055.jpg"
+    }
+   ]
+  },
+  {
+   "num": 56,
+   "titulo": "Ações de Graça e Súplica",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-056.jpg"
+    }
+   ]
+  },
+  {
+   "num": 57,
+   "titulo": "Fonte de Todo Bem",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-057.jpg"
+    }
+   ]
+  },
+  {
+   "num": 58,
+   "titulo": "Ofertas",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-058-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-058-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 59,
+   "titulo": "Gratidão",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-059-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-059-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 60,
+   "titulo": "Ofertório",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-60-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-060.jpg"
+    }
+   ]
+  },
+  {
+   "num": 61,
+   "titulo": "Ações de Graça",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-061-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-061-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 62,
+   "titulo": "Hino de Gratidão",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-062-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-062-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 63,
+   "titulo": "As Muitas Bênçãos",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-063.jpg"
+    }
+   ]
+  },
+  {
+   "num": 64,
+   "titulo": "Grata Memória",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-064.jpg"
+    }
+   ]
+  },
+  {
+   "num": 65,
+   "titulo": "Louvor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-065.jpg"
+    }
+   ]
+  },
+  {
+   "num": 66,
+   "titulo": "Coração Quebrantado",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-066.jpg"
+    }
+   ]
+  },
+  {
+   "num": 67,
+   "titulo": "Coração Quebrantado",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-067.jpg"
+    }
+   ]
+  },
+  {
+   "num": 68,
+   "titulo": "Necessidade",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-068.jpg"
+    }
+   ]
+  },
+  {
+   "num": 69,
+   "titulo": "Súplica",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-069-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-069-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 70,
+   "titulo": "Descanso em Jesus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-070.jpg"
+    }
+   ]
+  },
+  {
+   "num": 71,
+   "titulo": "Perdão",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-071.jpg"
+    }
+   ]
+  },
+  {
+   "num": 72,
+   "titulo": "Purificação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-072-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-072-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 73,
+   "titulo": "Compaixão",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-073.jpg"
+    }
+   ]
+  },
+  {
+   "num": 74,
+   "titulo": "Sinceridade",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-074.jpg"
+    }
+   ]
+  },
+  {
+   "num": 75,
+   "titulo": "Arrependimento e Súplica",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-075-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-075-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 76,
+   "titulo": "Compaixão",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-076-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-076-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 77,
+   "titulo": "Divino Perdão",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-077-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-077-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 78,
+   "titulo": "Perfeita Expiação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-078.jpg"
+    }
+   ]
+  },
+  {
+   "num": 79,
+   "titulo": "Glória ao Salvador",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-79-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-079.jpg"
+    }
+   ]
+  },
+  {
+   "num": 80,
+   "titulo": "O Amor de Jesus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-080-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-080-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 81,
+   "titulo": "Súplica ao Espírito Santo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-081-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-081-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 82,
+   "titulo": "Divino Preceptor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-082.jpg"
+    }
+   ]
+  },
+  {
+   "num": 83,
+   "titulo": "Divino Instruidor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-083.jpg"
+    }
+   ]
+  },
+  {
+   "num": 84,
+   "titulo": "Santo Espírito",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-084.jpg"
+    }
+   ]
+  },
+  {
+   "num": 85,
+   "titulo": "Espírito Consolador",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-085.jpg"
+    }
+   ]
+  },
+  {
+   "num": 86,
+   "titulo": "Espírito do Trino Deus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-086.jpg"
+    }
+   ]
+  },
+  {
+   "num": 87,
+   "titulo": "Alegria Perene",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-087-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-087-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 88,
+   "titulo": "Amor Perene",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-88-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-088-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-088-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 89,
+   "titulo": "Amor Sacrificial",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-089-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-089-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 90,
+   "titulo": "Amor Insondável",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-090-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-090-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 91,
+   "titulo": "A Fé dos Antigos",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-091.jpg"
+    }
+   ]
+  },
+  {
+   "num": 92,
+   "titulo": "A Fé Contemplada",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-092.jpg"
+    }
+   ]
+  },
+  {
+   "num": 93,
+   "titulo": "Firmeza na Fé",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-093-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-093-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 94,
+   "titulo": "A Porta da Salvação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-094.jpg"
+    }
+   ]
+  },
+  {
+   "num": 95,
+   "titulo": "Somente Cristo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-095-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-095-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 96,
+   "titulo": "Redenção Suprema",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-096.jpg"
+    }
+   ]
+  },
+  {
+   "num": 97,
+   "titulo": "Súplica do Redimido",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-097.jpg"
+    }
+   ]
+  },
+  {
+   "num": 98,
+   "titulo": "Não Há Condenação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-098.jpg"
+    }
+   ]
+  },
+  {
+   "num": 99,
+   "titulo": "Louvor ao Redentor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-099.jpg"
+    }
+   ]
+  },
+  {
+   "num": 100,
+   "titulo": "Louvores a Cristo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-100.jpg"
+    }
+   ]
+  },
+  {
+   "num": 101,
+   "titulo": "A Voz da Salvação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-101-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-101-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 102,
+   "titulo": "O Céu com Cristo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-102.jpg"
+    }
+   ]
+  },
+  {
+   "num": 103,
+   "titulo": "Salvação em Cristo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-103.jpg"
+    }
+   ]
+  },
+  {
+   "num": 104,
+   "titulo": "Linda Melodia",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-104.jpg"
+    }
+   ]
+  },
+  {
+   "num": 105,
+   "titulo": "A Certeza do Crente",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-105-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-105-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 106,
+   "titulo": "Fonte Carmesim",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-106.jpg"
+    }
+   ]
+  },
+  {
+   "num": 107,
+   "titulo": "Ao Pé da Cruz",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-107.jpg"
+    }
+   ]
+  },
+  {
+   "num": 108,
+   "titulo": "Aflição e Paz",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-108-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-108-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 109,
+   "titulo": "O Bom Pastor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-109-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-109-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 110,
+   "titulo": "A Vida com Jesus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-110-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-110-2.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-110-3.jpg"
+    }
+   ]
+  },
+  {
+   "num": 110,
+   "rotulo": "110-A",
+   "titulo": "Crer e Observar",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-110-a-1.jpg"
+    }
+   ]
+  },
+  {
+   "num": 111,
+   "titulo": "Comunhão Divina",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-111-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-111-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 112,
+   "titulo": "Rica Promessa",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-112.jpg"
+    }
+   ]
+  },
+  {
+   "num": 113,
+   "titulo": "Achei um Bom Amigo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-113-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-113-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 114,
+   "titulo": "Brilho Celeste",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-114.jpg"
+    }
+   ]
+  },
+  {
+   "num": 115,
+   "titulo": "Unido com Cristo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-115-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-115-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 116,
+   "titulo": "União com Deus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-116.jpg"
+    }
+   ]
+  },
+  {
+   "num": 117,
+   "titulo": "Pastor Divino",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-117-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-117-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-117-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 118,
+   "titulo": "Esperando em Deus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-118-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-118-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 119,
+   "titulo": "Súplica pelo Culto",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-119.jpg"
+    }
+   ]
+  },
+  {
+   "num": 120,
+   "titulo": "Dependência",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-120.jpg"
+    }
+   ]
+  },
+  {
+   "num": 121,
+   "titulo": "Perfeição",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-121.jpg"
+    }
+   ]
+  },
+  {
+   "num": 122,
+   "titulo": "Necessitado",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-122-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-122-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 123,
+   "titulo": "Grande Amor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-123-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-123-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 124,
+   "titulo": "Benigna Luz",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-124-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-124-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 125,
+   "titulo": "Sempre Veraz",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-125.jpg"
+    }
+   ]
+  },
+  {
+   "num": 126,
+   "titulo": "Dependência",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-126-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-126-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 127,
+   "titulo": "Hora Bendita",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-127-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-127-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 128,
+   "titulo": "Comunhão Preciosa",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-128-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-128-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 129,
+   "titulo": "Vigilância e Oração",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-129-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-129-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-129-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 130,
+   "titulo": "Oração ao Senhor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-130-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-130-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 131,
+   "titulo": "Vida Santificada",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-131-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-131.jpg"
+    }
+   ]
+  },
+  {
+   "num": 132,
+   "titulo": "Vivificação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-132.jpg"
+    }
+   ]
+  },
+  {
+   "num": 133,
+   "titulo": "Aspiração à Santidade",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-133.jpg"
+    }
+   ]
+  },
+  {
+   "num": 134,
+   "titulo": "Riquezas do Céu",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-134-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-134-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 135,
+   "titulo": "Mais de Cristo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-135.jpg"
+    }
+   ]
+  },
+  {
+   "num": 136,
+   "titulo": "Rocha Eterna",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-136-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-136-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 137,
+   "titulo": "Abrigo no Temporal",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-137-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-137-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 138,
+   "titulo": "Refúgio",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-138-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-138-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 139,
+   "titulo": "O Socorro do Crente",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-139-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-139-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 140,
+   "titulo": "Jornada do Crente",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-140.jpg"
+    }
+   ]
+  },
+  {
+   "num": 141,
+   "titulo": "Guia Divino",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-141.jpg"
+    }
+   ]
+  },
+  {
+   "num": 142,
+   "titulo": "O Fiel Pastor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-142.jpg"
+    }
+   ]
+  },
+  {
+   "num": 143,
+   "titulo": "Salmo 23",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-143-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-143-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 144,
+   "titulo": "Segurança e Alegria",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-144-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-144.jpg"
+    }
+   ]
+  },
+  {
+   "num": 145,
+   "titulo": "Refúgio Verdadeiro",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-145-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-145-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 146,
+   "titulo": "Segurança do Crente",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-146-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-146-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-146-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 147,
+   "titulo": "Vencendo Vem Jesus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-147-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-147-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 148,
+   "titulo": "Oração Noturna",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-148.jpg"
+    }
+   ]
+  },
+  {
+   "num": 149,
+   "titulo": "Verdadeira Redenção",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-149-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-149-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 150,
+   "titulo": "Salvação Perfeita",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-150-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-150-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 151,
+   "titulo": "O Bom Pastor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-151-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-151-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 152,
+   "titulo": "Onisciência Divina",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-152.jpg"
+    }
+   ]
+  },
+  {
+   "num": 153,
+   "titulo": "Amparo Divino",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-153.jpg"
+    }
+   ]
+  },
+  {
+   "num": 154,
+   "titulo": "Segurança e Paz",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-154.jpg"
+    }
+   ]
+  },
+  {
+   "num": 155,
+   "titulo": "Castelo Forte",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-155-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-155-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-155-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 156,
+   "titulo": "Confiança em Deus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-156.jpg"
+    }
+   ]
+  },
+  {
+   "num": 157,
+   "titulo": "Segurança em Cristo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-157-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-157-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 158,
+   "titulo": "Conforto e Luz",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-158.jpg"
+    }
+   ]
+  },
+  {
+   "num": 159,
+   "titulo": "Bondoso Amigo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-159.jpg"
+    }
+   ]
+  },
+  {
+   "num": 160,
+   "titulo": "Cristo É Tudo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-160-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-160-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 161,
+   "titulo": "O Melhor Amigo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-161-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-161-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 162,
+   "titulo": "A Voz de Deus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-162-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-162-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 163,
+   "titulo": "Direção Divina",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-163.jpg"
+    }
+   ]
+  },
+  {
+   "num": 164,
+   "titulo": "Nome Precioso",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-164.jpg"
+    }
+   ]
+  },
+  {
+   "num": 165,
+   "titulo": "Cuidado Divino",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-165-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-165-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-165-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 166,
+   "titulo": "Luz e Vida",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-166.jpg"
+    }
+   ]
+  },
+  {
+   "num": 167,
+   "titulo": "Cristo, Esperança Nossa",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-167-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-167-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 168,
+   "titulo": "Jesus Amado",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-168.jpg"
+    }
+   ]
+  },
+  {
+   "num": 169,
+   "titulo": "Grata Confiança",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-169-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-169-2.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-169-3.jpg"
+    }
+   ]
+  },
+  {
+   "num": 170,
+   "titulo": "Redentor Onipotente",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-170-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-170-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 171,
+   "titulo": "Deus Proverá",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-171.jpg"
+    }
+   ]
+  },
+  {
+   "num": 172,
+   "titulo": "Chuvas de Bênçãos",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-172.jpg"
+    }
+   ]
+  },
+  {
+   "num": 173,
+   "titulo": "Oração Vespertina",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-173.jpg"
+    }
+   ]
+  },
+  {
+   "num": 174,
+   "titulo": "Poderoso Salvador",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-174.jpg"
+    }
+   ]
+  },
+  {
+   "num": 175,
+   "titulo": "O Servo do Senhor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-175.jpg"
+    }
+   ]
+  },
+  {
+   "num": 176,
+   "titulo": "Fidelidade do Cristão",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-176.jpg"
+    }
+   ]
+  },
+  {
+   "num": 177,
+   "titulo": "Firme nas Promessas",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-177-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-177-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 178,
+   "titulo": "A Excelência do Amor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-178-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-178-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 179,
+   "titulo": "Saudação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-179-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-179-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-179-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 180,
+   "titulo": "Amor Fraternal",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-180-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-180-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 181,
+   "titulo": "Irmãos em Jesus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-181.jpg"
+    }
+   ]
+  },
+  {
+   "num": 182,
+   "titulo": "União Fraterna",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-182.jpg"
+    }
+   ]
+  },
+  {
+   "num": 183,
+   "titulo": "Benditos Laços",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-183.jpg"
+    }
+   ]
+  },
+  {
+   "num": 184,
+   "titulo": "Face a Face",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-184-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-184-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 185,
+   "titulo": "Glória Vindoura",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-185.jpg"
+    }
+   ]
+  },
+  {
+   "num": 186,
+   "titulo": "O Lar do Céu",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-186.jpg"
+    }
+   ]
+  },
+  {
+   "num": 187,
+   "titulo": "Cidade Celestial",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-187-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-187-2.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-187-3.jpg"
+    }
+   ]
+  },
+  {
+   "num": 188,
+   "titulo": "Clara Luz",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-188-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-188-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 189,
+   "titulo": "Jerusalém Celeste",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-189.jpg"
+    }
+   ]
+  },
+  {
+   "num": 190,
+   "titulo": "Maior que a Dor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-190.jpg"
+    }
+   ]
+  },
+  {
+   "num": 191,
+   "titulo": "Rio da Vida",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-191-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-191-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 192,
+   "titulo": "No Céu com Jesus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-192-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-192-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 193,
+   "titulo": "Aspiração do Céu",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-193.jpg"
+    }
+   ]
+  },
+  {
+   "num": 194,
+   "titulo": "Morada Feliz",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-194.jpg"
+    }
+   ]
+  },
+  {
+   "num": 195,
+   "titulo": "Dormindo no Senhor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-195-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-195-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 196,
+   "titulo": "Gozo, Esplendores, Venturas",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-196-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-196-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 197,
+   "titulo": "O Salvador Espera",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-197.jpg"
+    }
+   ]
+  },
+  {
+   "num": 198,
+   "titulo": "Salvação Graciosa",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-198.jpg"
+    }
+   ]
+  },
+  {
+   "num": 199,
+   "titulo": "Cristo Salva",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-199.jpg"
+    }
+   ]
+  },
+  {
+   "num": 200,
+   "titulo": "Palavra Abençoada",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-200-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-200-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 201,
+   "titulo": "Manso e Suave",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-201-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-201-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 202,
+   "titulo": "Palavras Preciosas",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-202-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-202-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 203,
+   "titulo": "Convite para a Salvação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-203.jpg"
+    }
+   ]
+  },
+  {
+   "num": 204,
+   "titulo": "Cristo à Porta",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-204-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-204-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 205,
+   "titulo": "O Amor que Chama",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-205-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-205-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 206,
+   "titulo": "Convite de Jesus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-206.jpg"
+    }
+   ]
+  },
+  {
+   "num": 207,
+   "titulo": "Convite ao Pecador",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-207.jpg"
+    }
+   ]
+  },
+  {
+   "num": 208,
+   "titulo": "Aproximação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-208.jpg"
+    }
+   ]
+  },
+  {
+   "num": 209,
+   "titulo": "Encorajamento",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-209.jpg"
+    }
+   ]
+  },
+  {
+   "num": 210,
+   "titulo": "O Filho Perdido",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-210-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-210-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 211,
+   "titulo": "Quase Induzido",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-211.jpg"
+    }
+   ]
+  },
+  {
+   "num": 212,
+   "titulo": "Apelo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-212.jpg"
+    }
+   ]
+  },
+  {
+   "num": 213,
+   "titulo": "A Última Hora",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-213-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-213-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 214,
+   "titulo": "Convite e Aceitação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-214-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-214-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 215,
+   "titulo": "Apelo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-215-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-215-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 216,
+   "titulo": "Perdão",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-216-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-216-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 217,
+   "titulo": "Desprendimento",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-217-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-217-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 218,
+   "titulo": "Vontade Soberana",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-218.jpg"
+    }
+   ]
+  },
+  {
+   "num": 219,
+   "titulo": "Dedicação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-219.jpg"
+    }
+   ]
+  },
+  {
+   "num": 220,
+   "titulo": "Plena Dedicação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-220-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-220-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 221,
+   "titulo": "Um Vaso de Bênção",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-221-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-221-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 222,
+   "titulo": "Mais Perto da Cruz",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-222-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-222.jpg"
+    }
+   ]
+  },
+  {
+   "num": 223,
+   "titulo": "Oração do Arrependido",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-223-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-223-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 224,
+   "titulo": "Consagração",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-224-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-224-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 225,
+   "titulo": "Dedicação Pessoal",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-225.jpg"
+    }
+   ]
+  },
+  {
+   "num": 226,
+   "titulo": "A História de Cristo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-226-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-226-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 227,
+   "titulo": "A Velha História",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-227-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-227-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 228,
+   "titulo": "De Deus, o Ungido",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-228-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-228-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 229,
+   "titulo": "Boas-novas",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-229.jpg"
+    }
+   ]
+  },
+  {
+   "num": 230,
+   "titulo": "Adoração",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-230.jpg"
+    }
+   ]
+  },
+  {
+   "num": 231,
+   "titulo": "O Primeiro Natal",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-231-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-231-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 232,
+   "titulo": "Pequena Vila de Belém",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-232-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-232-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 233,
+   "titulo": "Os Pastores no Campo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-233-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-233-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 234,
+   "titulo": "Um Pequeno a Repousar",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-234.jpg"
+    }
+   ]
+  },
+  {
+   "num": 235,
+   "titulo": "O Anjo da Paz",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-235-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-235-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 236,
+   "titulo": "Em Linda Noite",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-236-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-236-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 237,
+   "titulo": "Jesus Nasceu",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-237-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-237-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 238,
+   "titulo": "Novas de Amor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-238-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-238-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 239,
+   "titulo": "Nasce Jesus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-239-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-239-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 240,
+   "titulo": "Louvor Angelical",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-240-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-240-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 241,
+   "titulo": "O Nascimento de Jesus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-241-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-241-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 242,
+   "titulo": "Os Anjos e o Natal",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-242-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-242-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 243,
+   "titulo": "Noite de Paz",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-243.jpg"
+    }
+   ]
+  },
+  {
+   "num": 244,
+   "titulo": "Mensagem Aos Pastores",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-244.jpg"
+    }
+   ]
+  },
+  {
+   "num": 245,
+   "titulo": "Homens Sábios e de Bem",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-245.jpg"
+    }
+   ]
+  },
+  {
+   "num": 246,
+   "titulo": "Jesus, o Messias",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-246.jpg"
+    }
+   ]
+  },
+  {
+   "num": 247,
+   "titulo": "Estrela Cintilante",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-247.jpg"
+    }
+   ]
+  },
+  {
+   "num": 248,
+   "titulo": "No Humilde Presépio",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-248.jpg"
+    }
+   ]
+  },
+  {
+   "num": 249,
+   "titulo": "Na Manjedoura",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-249.jpg"
+    }
+   ]
+  },
+  {
+   "num": 250,
+   "titulo": "A Voz de Jesus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-250-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-250-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 251,
+   "titulo": "O Pão da Vida",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-251-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-251-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 252,
+   "titulo": "Pão Celestial",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-252.jpg"
+    }
+   ]
+  },
+  {
+   "num": 253,
+   "titulo": "Cristo, a Luz do Mundo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-253-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-253-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 254,
+   "titulo": "Sossegai",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-254-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-254-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 255,
+   "titulo": "A Ovelha Perdida",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-255-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-255-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 256,
+   "titulo": "Glória Singular",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-256.jpg"
+    }
+   ]
+  },
+  {
+   "num": 257,
+   "titulo": "Hosana ao Grande Rei",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-257-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-257-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 258,
+   "titulo": "Majestade",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-258.jpg"
+    }
+   ]
+  },
+  {
+   "num": 259,
+   "titulo": "Hosana e Glória",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-259.jpg"
+    }
+   ]
+  },
+  {
+   "num": 260,
+   "titulo": "Amor que Vence",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-260-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-260-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 261,
+   "titulo": "O Gólgota",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-261.jpg"
+    }
+   ]
+  },
+  {
+   "num": 262,
+   "titulo": "Contemplação da Cruz",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-262.jpg"
+    }
+   ]
+  },
+  {
+   "num": 263,
+   "titulo": "Junto à Cruz de Cristo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-263-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-263-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 264,
+   "titulo": "Fronte Ensangüentada",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-264-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-264-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 265,
+   "titulo": "Cristo Redentor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-265.jpg"
+    }
+   ]
+  },
+  {
+   "num": 266,
+   "titulo": "Rude Cruz",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-266.jpg"
+    }
+   ]
+  },
+  {
+   "num": 267,
+   "titulo": "Precioso Sangue",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-267-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-267-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-267-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 268,
+   "titulo": "Redenção",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-268.jpg"
+    }
+   ]
+  },
+  {
+   "num": 269,
+   "titulo": "Pureza no Sangue de Cristo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-269-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-269-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 270,
+   "titulo": "Desafio",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-270-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-270-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 271,
+   "titulo": "Ressurreição",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-271.jpg"
+    }
+   ]
+  },
+  {
+   "num": 272,
+   "titulo": "Aleluia ao Cristo Redivivo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-272.jpg"
+    }
+   ]
+  },
+  {
+   "num": 273,
+   "titulo": "Memórias da Ressurreição",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-273-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-273-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 274,
+   "titulo": "Morto e Ressurreto",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-274-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-274-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-274-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 275,
+   "titulo": "Cristo Venceu",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-275.jpg"
+    }
+   ]
+  },
+  {
+   "num": 276,
+   "titulo": "Amorável Convite",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-276.jpg"
+    }
+   ]
+  },
+  {
+   "num": 277,
+   "titulo": "Cristo Vive! Ressurgiu",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-277.jpg"
+    }
+   ]
+  },
+  {
+   "num": 278,
+   "titulo": "A Vitória de Jesus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-278-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-278-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 279,
+   "titulo": "O Dia Triunfal Raiou",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-279.jpg"
+    }
+   ]
+  },
+  {
+   "num": 280,
+   "titulo": "Ascensão",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-280-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-280-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 281,
+   "titulo": "Jesus Triunfante",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-281-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-281-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 282,
+   "titulo": "A Grande Comissão",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-282-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-282-2.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-282-3.jpg"
+    }
+   ]
+  },
+  {
+   "num": 283,
+   "titulo": "Desafio",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-283.jpg"
+    }
+   ]
+  },
+  {
+   "num": 284,
+   "titulo": "Obediência",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-284-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-284-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 285,
+   "titulo": "A Salvação do Brasil",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-285-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-285-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 286,
+   "titulo": "Colheita Bendita",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-286-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-286-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 287,
+   "titulo": "Igreja, Alerta",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-287-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-287-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 288,
+   "titulo": "A Mensagem Real",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-288.jpg"
+    }
+   ]
+  },
+  {
+   "num": 289,
+   "titulo": "Quem Irá?",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-289.jpg"
+    }
+   ]
+  },
+  {
+   "num": 290,
+   "titulo": "Jesus Já Vem",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-290-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-290-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 291,
+   "titulo": "Triunfante Vem",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-291-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-291-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 292,
+   "titulo": "A Vinda do Senhor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-292-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-292-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 293,
+   "titulo": "O Dia Glorioso",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-293-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-293-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 294,
+   "titulo": "O Senhor Voltará",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-294-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-294-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 295,
+   "titulo": "A Volta de Jesus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-295-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-295-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 296,
+   "titulo": "Cristo Não Tarda",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-296.jpg"
+    }
+   ]
+  },
+  {
+   "num": 297,
+   "titulo": "A Chamada Final",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-297.jpg"
+    }
+   ]
+  },
+  {
+   "num": 298,
+   "titulo": "A Pedra Fundamental",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-298-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-298-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 299,
+   "titulo": "Renovação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-299.jpg"
+    }
+   ]
+  },
+  {
+   "num": 300,
+   "titulo": "Igreja Militante",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-300.jpg"
+    }
+   ]
+  },
+  {
+   "num": 301,
+   "titulo": "O Único Salvador",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-301-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-301-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 302,
+   "titulo": "Povoam as Cidades",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-302.jpg"
+    }
+   ]
+  },
+  {
+   "num": 303,
+   "titulo": "Pendão Real",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-303-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-303-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 304,
+   "titulo": "A Voz do Evangelho",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-304-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-304-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 305,
+   "titulo": "Quem Quiser",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-305.jpg"
+    }
+   ]
+  },
+  {
+   "num": 306,
+   "titulo": "Fidelidade na Luta",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-306-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-306.jpg"
+    }
+   ]
+  },
+  {
+   "num": 307,
+   "titulo": "A Santa Peleja",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-307-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-307-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 308,
+   "titulo": "Escuridão e Luz",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-308-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-308-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 309,
+   "titulo": "Proclamação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-309-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-309-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 310,
+   "titulo": "Quem Salva É Só Jesus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-310-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-310-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 311,
+   "titulo": "Avante, Ó Crentes",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-311-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-311-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 312,
+   "titulo": "Há Trabalho Certo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-312-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-312-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 313,
+   "titulo": "Prontidão",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-313-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-313-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 314,
+   "titulo": "Diligência",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-314-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-314-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 315,
+   "titulo": "Serviço do Crente",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-315.jpg"
+    }
+   ]
+  },
+  {
+   "num": 316,
+   "titulo": "Os Intentos de Deus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-316-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-316-2.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-316-3.jpg"
+    }
+   ]
+  },
+  {
+   "num": 317,
+   "titulo": "Chamada",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-317-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-317-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 318,
+   "titulo": "Ceifeiros do Senhor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-318-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-318-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 319,
+   "titulo": "Obreiros em Marcha",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-319-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-319-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 320,
+   "titulo": "Brilha no Viver",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-320.jpg"
+    }
+   ]
+  },
+  {
+   "num": 321,
+   "titulo": "Mãos ao Trabalho",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-321.jpg"
+    }
+   ]
+  },
+  {
+   "num": 322,
+   "titulo": "Heroínas da Fé",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-322.jpg"
+    }
+   ]
+  },
+  {
+   "num": 323,
+   "titulo": "Santa Peleja",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-323.jpg"
+    }
+   ]
+  },
+  {
+   "num": 324,
+   "titulo": "Unidas e Firmes",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-324.jpg"
+    }
+   ]
+  },
+  {
+   "num": 325,
+   "titulo": "Aspiração Feminina",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-325-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-325-2.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-325-3.jpg"
+    }
+   ]
+  },
+  {
+   "num": 326,
+   "titulo": "Homens Presbiterianos",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-326-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-326-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 327,
+   "titulo": "Obreiros Cristãos",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-327-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-327-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 328,
+   "titulo": "Deus do Universo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-328-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-328-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 329,
+   "titulo": "Instalação de Pastor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-329-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-329-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 330,
+   "titulo": "A Bênção do Batismo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-330-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-330-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 331,
+   "titulo": "Oração",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-331-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-331-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 332,
+   "titulo": "Batismo Infantil",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-332-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-332-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 333,
+   "titulo": "O Batismo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-333-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-333-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 334,
+   "titulo": "A Conversão",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-334.jpg"
+    }
+   ]
+  },
+  {
+   "num": 335,
+   "titulo": "Jubilo no Céu",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-335.jpg"
+    }
+   ]
+  },
+  {
+   "num": 336,
+   "titulo": "Transformação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-336-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-336-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 337,
+   "titulo": "Profissão de Fé",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-337.jpg"
+    }
+   ]
+  },
+  {
+   "num": 338,
+   "titulo": "Dia da Profissão de Fé",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-338.jpg"
+    }
+   ]
+  },
+  {
+   "num": 339,
+   "titulo": "Dia Feliz",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-339-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-339-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 340,
+   "titulo": "Santa Comunhão",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-340-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-340-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 341,
+   "titulo": "Vera Páscoa",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-341.jpg"
+    }
+   ]
+  },
+  {
+   "num": 342,
+   "titulo": "Comunhão",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-342.jpg"
+    }
+   ]
+  },
+  {
+   "num": 343,
+   "titulo": "Em Memória",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-343-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-343-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 344,
+   "titulo": "A Ceia do Senhor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-344.jpg"
+    }
+   ]
+  },
+  {
+   "num": 345,
+   "titulo": "O Pão do Mundo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-345.jpg"
+    }
+   ]
+  },
+  {
+   "num": 346,
+   "titulo": "A Ceia do Senhor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-346-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-346-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 347,
+   "titulo": "O Justo Pelos Injustos",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-347.jpg"
+    }
+   ]
+  },
+  {
+   "num": 348,
+   "titulo": "É Este o Dia",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-348.jpg"
+    }
+   ]
+  },
+  {
+   "num": 349,
+   "titulo": "Dia do Senhor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-349.jpg"
+    }
+   ]
+  },
+  {
+   "num": 350,
+   "titulo": "A Palavra da Vida",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-350-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-350-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 351,
+   "titulo": "Belas Palavras de Vida",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-351.jpg"
+    }
+   ]
+  },
+  {
+   "num": 352,
+   "titulo": "Leitura Bendita",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-352.jpg"
+    }
+   ]
+  },
+  {
+   "num": 353,
+   "titulo": "Ao Fim dos Estudos",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-353-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-353-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 354,
+   "titulo": "A Escola Dominical",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-354-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-354-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 355,
+   "titulo": "Oração Infantil",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-355.jpg"
+    }
+   ]
+  },
+  {
+   "num": 356,
+   "titulo": "Jesus Menino",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-356-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-356-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 357,
+   "titulo": "Louvor Infantil",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-357-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-357-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 358,
+   "titulo": "Jesus e as Crianças",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-358.jpg"
+    }
+   ]
+  },
+  {
+   "num": 359,
+   "titulo": "Jesus Me Quer Bem",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-359.jpg"
+    }
+   ]
+  },
+  {
+   "num": 360,
+   "titulo": "Pequena Luz",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-360.jpg"
+    }
+   ]
+  },
+  {
+   "num": 361,
+   "titulo": "Brilhando com Jesus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-361.jpg"
+    }
+   ]
+  },
+  {
+   "num": 362,
+   "titulo": "Brilhando por Jesus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-362-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-362-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-362-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 363,
+   "titulo": "Venham as Crianças",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-363-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-363-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 364,
+   "titulo": "Graças a Deus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-364.jpg"
+    }
+   ]
+  },
+  {
+   "num": 365,
+   "titulo": "Convite Às Crianças",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-365-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-365-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 366,
+   "titulo": "Jóias Preciosas",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-366.jpg"
+    }
+   ]
+  },
+  {
+   "num": 367,
+   "titulo": "Convite Aos Meninos",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-367-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-367-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 368,
+   "titulo": "Despedida",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-368.jpg"
+    }
+   ]
+  },
+  {
+   "num": 369,
+   "titulo": "A Bíblia para Todos",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-369-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-369-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 370,
+   "titulo": "Proclamação",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-370.jpg"
+    }
+   ]
+  },
+  {
+   "num": 371,
+   "titulo": "A Bíblia",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-371-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-371-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 372,
+   "titulo": "O Crente e a Bíblia",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-372-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-372-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 373,
+   "titulo": "Ano Novo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-373-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-373-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 374,
+   "titulo": "Saudando o Ano a Novo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-374.jpg"
+    }
+   ]
+  },
+  {
+   "num": 375,
+   "titulo": "Ano Velho",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-375-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-375-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 376,
+   "titulo": "Intercessão pela Pátria",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-376-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-376-2.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-376-3.jpg"
+    }
+   ]
+  },
+  {
+   "num": 377,
+   "titulo": "A Nação para Cristo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-377-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-377-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 378,
+   "titulo": "Oração pela Pátria",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-378-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-378-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 379,
+   "titulo": "Petição pela Pátria",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-379-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-379-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 380,
+   "titulo": "Jesus Proteja a Pátria",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-380-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-380-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 381,
+   "titulo": "Intercessão pela Cidade",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-381-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-381-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 382,
+   "titulo": "Mocidade Presbiteriana",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-382-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-382-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 383,
+   "titulo": "Um Novo Mundo",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-383-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-383-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 384,
+   "titulo": "Vamos com Jesus",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-384-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-384-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 385,
+   "titulo": "O Estudante e a Bíblia",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-385-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-385-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 386,
+   "titulo": "Testemunho",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-386-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-386-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 387,
+   "titulo": "Combate",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-387-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-387-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 388,
+   "titulo": "Mocidade, Avante",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-388.jpg"
+    }
+   ]
+  },
+  {
+   "num": 389,
+   "titulo": "Avante, Mocidade",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-389-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-389-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 390,
+   "titulo": "Fiéis Soldados",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-390-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-390-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 391,
+   "titulo": "Mocidade Fiel",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-391.jpg"
+    }
+   ]
+  },
+  {
+   "num": 392,
+   "titulo": "Vida Vitoriosa",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-392-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-392-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 393,
+   "titulo": "União Vital",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-393.jpg"
+    }
+   ]
+  },
+  {
+   "num": 394,
+   "titulo": "Perfeito Amor",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-394.jpg"
+    }
+   ]
+  },
+  {
+   "num": 395,
+   "titulo": "Amor no Lar",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-395-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-395-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 396,
+   "titulo": "Graças pelo Aniversário",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-396-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-396-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 397,
+   "titulo": "Por Minha Boa Mãe",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-397-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-397-2.jpg"
+    }
+   ]
+  },
+  {
+   "num": 398,
+   "titulo": "Outra Vez Cantamos",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-398.jpg"
+    }
+   ]
+  },
+  {
+   "num": 399,
+   "titulo": "Término do Culto",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-399.jpg"
+    }
+   ]
+  },
+  {
+   "num": 400,
+   "titulo": "Oração por Proteção",
+   "paginas": [
+    {
+     "img": "/midias/cifras/hc-400.jpg"
+    }
+   ]
+  },
+  {
+   "num": 400,
+   "titulo": "Ofertório",
+   "paginas": [
+    {
+     "img": "/midias/cifras/u-400-a-1.jpg"
+    },
+    {
+     "img": "/midias/cifras/hc-400a.jpg"
+    }
+   ],
+   "rotulo": "400-A"
+  }
+ ]
 }

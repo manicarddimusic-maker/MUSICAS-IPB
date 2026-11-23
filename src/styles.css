@@ -1088,49 +1088,98 @@ body { overscroll-behavior: none; touch-action: manipulation; }
 .contagem, .barra-indice { flex: none; }
 @media (max-width: 520px) { .btn-voltar span:last-child { font-size: .85rem; } .btn-voltar { padding: 0 10px; } .topo, .barra { gap: 6px; } }
 
-/* Leitor de PDF dentro do app */
+/* Leitor de PDF dentro do app: uma folha por tela, com zoom */
 .pagina-pdf {
   display: flex;
   flex-direction: column;
   height: 100dvh;
   padding-bottom: 0;
 }
-.pdf-rolagem {
+.pdf-palco {
+  position: relative;
   flex: 1;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  min-height: 0;
+  overflow: hidden;
   background: #3a3d3a;
-  padding: 10px 0 40px;
+  display: grid;
+  place-items: center;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
-.pdf-folha {
-  width: min(100%, 980px);
-  margin: 0 auto 10px;
+.pdf-tela {
   background: #fff;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+  transform-origin: center center;
+  will-change: transform;
 }
-.pdf-folha canvas {
-  display: block;
-  width: 100%;
-}
-.pdf-carregando {
-  color: #fff;
+.pdf-carregando,
+.pdf-palco .pdf-erro {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
   text-align: center;
-  padding: 40px 16px;
-}
-.pdf-rolagem .pdf-erro {
   color: #fff;
   padding: 24px 18px;
 }
-.pdf-contador {
-  position: fixed;
-  right: 14px;
-  bottom: calc(14px + env(safe-area-inset-bottom));
-  background: rgba(20, 24, 21, 0.85);
-  color: #fff;
-  border: 1px solid rgba(201, 162, 39, 0.6);
-  border-radius: 999px;
-  padding: 6px 14px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  pointer-events: none;
+.pdf-barra {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 8px calc(10px + env(safe-area-inset-bottom));
+  background: #141815;
+  border-top: 1px solid rgba(201, 162, 39, 0.5);
 }
+.pdf-barra button {
+  min-width: 44px;
+  height: 48px;
+  padding: 0 10px;
+  border-radius: 24px;
+  border: 1px solid rgba(201, 162, 39, 0.6);
+  background: rgba(40, 46, 41, 0.95);
+  color: var(--dourado-claro, #e6cd75);
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.pdf-barra button:disabled {
+  opacity: 0.35;
+}
+.pdf-barra .pdf-pagina-btn,
+.pdf-barra .pdf-zoom-btn {
+  font-size: 0.9rem;
+  min-width: 68px;
+}
+.pdf-sep {
+  width: 1px;
+  height: 28px;
+  background: rgba(201, 162, 39, 0.4);
+  margin: 0 2px;
+}
+
+/* Abas dentro de Hinos: Partitura | Cifra */
+.abas-hinos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 10px 14px 4px;
+}
+.abas-hinos .aba {
+  text-align: center;
+  padding: 12px 8px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--oliva);
+  background: rgba(47, 68, 54, 0.08);
+  border: 1px solid rgba(47, 68, 54, 0.2);
+}
+.abas-hinos .aba.ativa {
+  color: #fff;
+  background: var(--oliva);
+  border-color: var(--oliva);
+}
+
+.botao-zoom-menos { bottom: 68px; font-size: 1.5rem; line-height: 1; min-width: 46px; }

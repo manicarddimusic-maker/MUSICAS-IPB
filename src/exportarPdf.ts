@@ -116,7 +116,7 @@ export async function gerarPdfSecao(
         doc.text('Não foi possível incluir esta página.', PL / 2, PA / 2, { align: 'center' });
       }
       const rotulo = rotuloItem(secao, item);
-      const legenda = secao.id === 'hinos' ? `Hino ${rotulo}${item.titulo ? ' – ' + item.titulo : ''}` : `${rotulo}${item.titulo ? ' – ' + item.titulo : ''}`;
+      const legenda = secao.id === 'hinos' || secao.id === 'hinoscifra' ? `Hino ${rotulo}${item.titulo ? ' – ' + item.titulo : ''}` : `${rotulo}${item.titulo ? ' – ' + item.titulo : ''}`;
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(8);
       doc.setTextColor(120, 120, 120);

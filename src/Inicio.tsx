@@ -9,6 +9,7 @@ type PromptEvento = Event & { prompt: () => Promise<void> };
 
 export const CAPAS: Record<string, string> = {
   hinos: '/midias/capas/image-1.webp',
+  hinoscifra: '/midias/capas/image-1.webp',
   canticos: '/midias/capas/image-2.webp',
   caderninho: '/midias/capas/image-1.webp',
   salmos: '/midias/capas/image-3.webp',
@@ -151,9 +152,9 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
       )}
 
       <nav className="secoes secoes-inicio">
-        {catalogo.secoes.filter((s) => s.id !== 'salmos').map((secao) => {
+        {catalogo.secoes.filter((s) => s.id !== 'salmos' && s.id !== 'hinoscifra').map((secao) => {
           const itens = ordenarItens(secao);
-          const total = secao.id === 'palavra' ? itens.length + (catalogo.secoes.find((s) => s.id === 'salmos')?.itens.length ?? 0) : itens.length;
+          const total = secao.id === 'hinos' ? itens.length + (catalogo.secoes.find((s) => s.id === 'hinoscifra')?.itens.length ?? 0) : secao.id === 'palavra' ? itens.length + (catalogo.secoes.find((s) => s.id === 'salmos')?.itens.length ?? 0) : itens.length;
           return (
             <Link key={secao.id} to={`/${secao.id}`} className={`cartao cartao-${secao.id}`}>
               <img src={caminho(CAPAS[secao.id])} alt="" className="cartao-fundo" loading="eager" />
@@ -163,7 +164,7 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
                 <span className="cartao-titulo">{secao.titulo}</span>
                 <span className="cartao-info">
                   {total === 0 ? 'Em breve' : total === 1 ? '1 música' : `${total} músicas`}
-                  {secao.id === 'palavra' ? ' · Salmos e livros da Bíblia' : secao.ordem === 'numero' ? ' · por número' : ' · A–Z'}
+                  {secao.id === 'palavra' ? ' · Salmos e livros da Bíblia' : secao.id === 'hinos' ? ' · Partitura e Cifra' : secao.ordem === 'numero' ? ' · por número' : ' · A–Z'}
                 </span>
               </span>
               <span className="cartao-seta" aria-hidden="true">

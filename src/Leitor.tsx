@@ -455,6 +455,12 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     definirZoom(ZOOMS[(i + 1) % ZOOMS.length]);
   }
 
+  function diminuirZoom() {
+    const z = vista.current.z;
+    const menores = ZOOMS.filter((v) => v < z - 0.05);
+    definirZoom(menores.length ? menores[menores.length - 1] : 1);
+  }
+
   const tomAtual = atual.tom ?? item.tom;
 
   return (
@@ -514,8 +520,13 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
             </button>
           </div>
         )}
-        <button className="botao-zoom" onClick={ciclarZoom} aria-label="Ampliar a folha" title="Ampliar (+ / −)">
-          {zoom === 1 ? '🔍' : `${Math.round(zoom * 10) / 10}×`}
+        {zoom > 1 && (
+          <button className="botao-zoom botao-zoom-menos" onClick={diminuirZoom} aria-label="Diminuir o zoom da folha" title="Diminuir (−)">
+            −
+          </button>
+        )}
+        <button className="botao-zoom" onClick={ciclarZoom} aria-label="Aumentar o zoom da folha" title="Aumentar (+)">
+          {zoom === 1 ? '🔍 +' : `${Math.round(zoom * 10) / 10}× +`}
         </button>
         {paginas.length > 1 && (
           <button className="botao-ordem" onClick={() => setReordenando(true)} aria-label="Reordenar as folhas desta música" title="Reordenar as folhas">

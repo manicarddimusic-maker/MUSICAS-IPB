@@ -218,11 +218,22 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
         <BotaoVoltar fallback={secao.id === 'salmos' || secao.id === 'palavra' ? '/palavra' : '/'} />
         <div>
           <p className="topo-sub">{livro ? 'Palavra de Deus Cantada' : secao.subtitulo}</p>
-          <h1>{livro ? livro.nome : secao.titulo}</h1>
+          <h1>{livro ? livro.nome : secao.id === 'hinos' ? 'Hinos – Partitura' : secao.titulo}</h1>
         </div>
         <MenuIr />
         <span className="contagem">{itens.length}</span>
       </header>
+
+      {(secao.id === 'hinos' || secao.id === 'hinoscifra') && (
+        <nav className="abas-hinos" aria-label="Tipo de hino">
+          <Link to="/hinos" replace className={secao.id === 'hinos' ? 'aba ativa' : 'aba'} aria-current={secao.id === 'hinos' ? 'page' : undefined}>
+            Hinos – Partitura
+          </Link>
+          <Link to="/hinoscifra" replace className={secao.id === 'hinoscifra' ? 'aba ativa' : 'aba'} aria-current={secao.id === 'hinoscifra' ? 'page' : undefined}>
+            Hinos – Cifra
+          </Link>
+        </nav>
+      )}
 
       {itens.length > 0 && (
         <div className="barra-pdf">

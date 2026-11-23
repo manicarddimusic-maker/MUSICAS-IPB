@@ -1,9 +1,9 @@
 {
- "geradoEm": "2026-11-22",
+ "geradoEm": "2026-11-23",
  "secoes": [
   {
    "id": "hinos",
-   "titulo": "Hinos",
+   "titulo": "Hinos – Partitura",
    "subtitulo": "Novo Cântico",
    "ordem": "numero",
    "itens": [
@@ -38,12 +38,16 @@
      "titulo": "A igreja em adoração",
      "paginas": [
       {
-       "img": "/midias/h003_6454_3dbbb9fc.jpg",
+       "img": "/midias/partitura2/h003-foto.jpg",
        "alt": "Hino 3 — A igreja em adoração — página 1"
       },
       {
-       "img": "/midias/h003_6458_v2_e78ab6e6.jpg",
+       "img": "/midias/h003_6454_3dbbb9fc.jpg",
        "alt": "Hino 3 — A igreja em adoração — página 2"
+      },
+      {
+       "img": "/midias/h003_6458_v2_e78ab6e6.jpg",
+       "alt": "Hino 3 — A igreja em adoração — página 3"
       }
      ],
      "num": 3
@@ -79,8 +83,12 @@
      "titulo": "Adoração à Trindade",
      "paginas": [
       {
-       "img": "/midias/h008_6362_58f5df04.jpg",
+       "img": "/midias/partitura2/h008-foto.jpg",
        "alt": "Hino 8 — Adoração à Trindade — página 1"
+      },
+      {
+       "img": "/midias/h008_6362_58f5df04.jpg",
+       "alt": "Hino 8 — Adoração à Trindade — página 2"
       }
      ],
      "num": 8
@@ -139,8 +147,12 @@
      "titulo": "Louvor",
      "paginas": [
       {
-       "img": "/midias/h014_6393_0e805f33.jpg",
+       "img": "/midias/partitura2/h014-foto.jpg",
        "alt": "Hino 14 — Louvor — página 1"
+      },
+      {
+       "img": "/midias/h014_6393_0e805f33.jpg",
+       "alt": "Hino 14 — Louvor — página 2"
       }
      ],
      "num": 14
@@ -254,12 +266,16 @@
      "titulo": "Coroação",
      "paginas": [
       {
-       "img": "/midias/h028_73e79a49.jpg",
+       "img": "/midias/partitura2/h028-foto.jpg",
        "alt": "Hino 28 — Coroação — página 1"
       },
       {
-       "img": "/midias/h028_6446_1d462d48.jpg",
+       "img": "/midias/h028_73e79a49.jpg",
        "alt": "Hino 28 — Coroação — página 2"
+      },
+      {
+       "img": "/midias/h028_6446_1d462d48.jpg",
+       "alt": "Hino 28 — Coroação — página 3"
       }
      ],
      "num": 28
@@ -633,6 +649,17 @@
      "num": 108
     },
     {
+     "id": "hino-109",
+     "titulo": "O Bom Pastor",
+     "paginas": [
+      {
+       "img": "/midias/partitura2/h109-foto.jpg",
+       "alt": "Hino 109 — O Bom Pastor — página 1"
+      }
+     ],
+     "num": 109
+    },
+    {
      "id": "hino-110",
      "titulo": "A Vida com Jesus",
      "paginas": [
@@ -797,12 +824,16 @@
      "titulo": "Mais de Cristo",
      "paginas": [
       {
-       "img": "/midias/h135_6389_ed3e79d8.jpg",
+       "img": "/midias/partitura2/h135-foto.jpg",
        "alt": "Hino 135 — Mais de Cristo — página 1"
       },
       {
-       "img": "/midias/h135_6403_ce70c28f.jpg",
+       "img": "/midias/h135_6389_ed3e79d8.jpg",
        "alt": "Hino 135 — Mais de Cristo — página 2"
+      },
+      {
+       "img": "/midias/h135_6403_ce70c28f.jpg",
+       "alt": "Hino 135 — Mais de Cristo — página 3"
       }
      ],
      "num": 135
@@ -1535,6 +1566,5426 @@
    ]
   },
   {
+   "id": "hinoscifra",
+   "titulo": "Hinos – Cifra",
+   "subtitulo": "Novo Cântico",
+   "ordem": "numero",
+   "itens": [
+    {
+     "id": "cifra-1",
+     "titulo": "Doxologia",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-001.jpg",
+       "alt": "Hino 1 (cifra) — Doxologia — página 1"
+      }
+     ],
+     "num": 1
+    },
+    {
+     "id": "cifra-2",
+     "titulo": "Reverência",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-002.jpg",
+       "alt": "Hino 2 (cifra) — Reverência — página 1"
+      }
+     ],
+     "num": 2
+    },
+    {
+     "id": "cifra-3",
+     "titulo": "A Igreja em Adoração",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-003-1.jpg",
+       "alt": "Hino 3 (cifra) — A Igreja em Adoração — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-003-2.jpg",
+       "alt": "Hino 3 (cifra) — A Igreja em Adoração — página 2"
+      }
+     ],
+     "num": 3
+    },
+    {
+     "id": "cifra-4",
+     "titulo": "Culto à Trindade",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-004-1.jpg",
+       "alt": "Hino 4 (cifra) — Culto à Trindade — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-004-2.jpg",
+       "alt": "Hino 4 (cifra) — Culto à Trindade — página 2"
+      }
+     ],
+     "num": 4
+    },
+    {
+     "id": "cifra-5",
+     "titulo": "Trindade Adorada",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-005.jpg",
+       "alt": "Hino 5 (cifra) — Trindade Adorada — página 1"
+      }
+     ],
+     "num": 5
+    },
+    {
+     "id": "cifra-6",
+     "titulo": "Doxologia",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-006.jpg",
+       "alt": "Hino 6 (cifra) — Doxologia — página 1"
+      }
+     ],
+     "num": 6
+    },
+    {
+     "id": "cifra-7",
+     "titulo": "Glória à Trindade",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-7-1.jpg",
+       "alt": "Hino 7 (cifra) — Glória à Trindade — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-007-1.jpg",
+       "alt": "Hino 7 (cifra) — Glória à Trindade — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-007-2.jpg",
+       "alt": "Hino 7 (cifra) — Glória à Trindade — página 3"
+      }
+     ],
+     "num": 7
+    },
+    {
+     "id": "cifra-8",
+     "titulo": "Adoração à Trindade",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-008-1.jpg",
+       "alt": "Hino 8 (cifra) — Adoração à Trindade — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-008-2.jpg",
+       "alt": "Hino 8 (cifra) — Adoração à Trindade — página 2"
+      }
+     ],
+     "num": 8
+    },
+    {
+     "id": "cifra-9",
+     "titulo": "Aleluia ao Deus Triúno",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-009.jpg",
+       "alt": "Hino 9 (cifra) — Aleluia ao Deus Triúno — página 1"
+      }
+     ],
+     "num": 9
+    },
+    {
+     "id": "cifra-10",
+     "titulo": "A Criação e Seu Criador",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-010-1.jpg",
+       "alt": "Hino 10 (cifra) — A Criação e Seu Criador — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-010-2.jpg",
+       "alt": "Hino 10 (cifra) — A Criação e Seu Criador — página 2"
+      }
+     ],
+     "num": 10
+    },
+    {
+     "id": "cifra-11",
+     "titulo": "Trindade Santíssima",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-11-1.jpg",
+       "alt": "Hino 11 (cifra) — Trindade Santíssima — página 1"
+      },
+      {
+       "img": "/midias/cifras/u-11-2.jpg",
+       "alt": "Hino 11 (cifra) — Trindade Santíssima — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-011.jpg",
+       "alt": "Hino 11 (cifra) — Trindade Santíssima — página 3"
+      }
+     ],
+     "num": 11
+    },
+    {
+     "id": "cifra-12",
+     "titulo": "Glória a Deus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-012.jpg",
+       "alt": "Hino 12 (cifra) — Glória a Deus — página 1"
+      }
+     ],
+     "num": 12
+    },
+    {
+     "id": "cifra-13",
+     "titulo": "Contemplação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-13-1.jpg",
+       "alt": "Hino 13 (cifra) — Contemplação — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-013.jpg",
+       "alt": "Hino 13 (cifra) — Contemplação — página 2"
+      }
+     ],
+     "num": 13
+    },
+    {
+     "id": "cifra-14",
+     "titulo": "Louvor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-014-1.jpg",
+       "alt": "Hino 14 (cifra) — Louvor — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-014-2.jpg",
+       "alt": "Hino 14 (cifra) — Louvor — página 2"
+      }
+     ],
+     "num": 14
+    },
+    {
+     "id": "cifra-15",
+     "titulo": "Doxologia",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-015.jpg",
+       "alt": "Hino 15 (cifra) — Doxologia — página 1"
+      }
+     ],
+     "num": 15
+    },
+    {
+     "id": "cifra-16",
+     "titulo": "Louvor a Deus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-016.jpg",
+       "alt": "Hino 16 (cifra) — Louvor a Deus — página 1"
+      }
+     ],
+     "num": 16
+    },
+    {
+     "id": "cifra-17",
+     "titulo": "Deus Seja Louvado",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-017.jpg",
+       "alt": "Hino 17 (cifra) — Deus Seja Louvado — página 1"
+      }
+     ],
+     "num": 17
+    },
+    {
+     "id": "cifra-18",
+     "titulo": "Deus dos Antigos",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-18-1.jpg",
+       "alt": "Hino 18 (cifra) — Deus dos Antigos — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-018.jpg",
+       "alt": "Hino 18 (cifra) — Deus dos Antigos — página 2"
+      }
+     ],
+     "num": 18
+    },
+    {
+     "id": "cifra-19",
+     "titulo": "Rei Sublime",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-019.jpg",
+       "alt": "Hino 19 (cifra) — Rei Sublime — página 1"
+      }
+     ],
+     "num": 19
+    },
+    {
+     "id": "cifra-20",
+     "titulo": "Glorificação à Trindade",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-020-1.jpg",
+       "alt": "Hino 20 (cifra) — Glorificação à Trindade — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-020-2.jpg",
+       "alt": "Hino 20 (cifra) — Glorificação à Trindade — página 2"
+      }
+     ],
+     "num": 20
+    },
+    {
+     "id": "cifra-21",
+     "titulo": "Deus de Abrão",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-021-1.jpg",
+       "alt": "Hino 21 (cifra) — Deus de Abrão — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-021-2.jpg",
+       "alt": "Hino 21 (cifra) — Deus de Abrão — página 2"
+      }
+     ],
+     "num": 21
+    },
+    {
+     "id": "cifra-22",
+     "titulo": "Os Céus Proclamam",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-22-1.jpg",
+       "alt": "Hino 22 (cifra) — Os Céus Proclamam — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-022-1.jpg",
+       "alt": "Hino 22 (cifra) — Os Céus Proclamam — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-022-2.jpg",
+       "alt": "Hino 22 (cifra) — Os Céus Proclamam — página 3"
+      }
+     ],
+     "num": 22
+    },
+    {
+     "id": "cifra-23",
+     "titulo": "Adoração ao Criador",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-023.jpg",
+       "alt": "Hino 23 (cifra) — Adoração ao Criador — página 1"
+      }
+     ],
+     "num": 23
+    },
+    {
+     "id": "cifra-24",
+     "titulo": "Convite ao Louvor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-024.jpg",
+       "alt": "Hino 24 (cifra) — Convite ao Louvor — página 1"
+      }
+     ],
+     "num": 24
+    },
+    {
+     "id": "cifra-25",
+     "titulo": "O Criador de Tudo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-025-1.jpg",
+       "alt": "Hino 25 (cifra) — O Criador de Tudo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-025-2.jpg",
+       "alt": "Hino 25 (cifra) — O Criador de Tudo — página 2"
+      }
+     ],
+     "num": 25
+    },
+    {
+     "id": "cifra-26",
+     "titulo": "Ao Deus Grandioso",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-26-1.jpg",
+       "alt": "Hino 26 (cifra) — Ao Deus Grandioso — página 1"
+      },
+      {
+       "img": "/midias/cifras/u-26-2.jpg",
+       "alt": "Hino 26 (cifra) — Ao Deus Grandioso — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-026-1.jpg",
+       "alt": "Hino 26 (cifra) — Ao Deus Grandioso — página 3"
+      },
+      {
+       "img": "/midias/cifras/hc-026-2.jpg",
+       "alt": "Hino 26 (cifra) — Ao Deus Grandioso — página 4"
+      }
+     ],
+     "num": 26
+    },
+    {
+     "id": "cifra-27",
+     "titulo": "Um Hino ao Senhor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-027-1.jpg",
+       "alt": "Hino 27 (cifra) — Um Hino ao Senhor — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-027-2.jpg",
+       "alt": "Hino 27 (cifra) — Um Hino ao Senhor — página 2"
+      }
+     ],
+     "num": 27
+    },
+    {
+     "id": "cifra-28",
+     "titulo": "Coroação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-028-1.jpg",
+       "alt": "Hino 28 (cifra) — Coroação — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-028-2.jpg",
+       "alt": "Hino 28 (cifra) — Coroação — página 2"
+      }
+     ],
+     "num": 28
+    },
+    {
+     "id": "cifra-29",
+     "titulo": "Louvor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-029-1.jpg",
+       "alt": "Hino 29 (cifra) — Louvor — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-029-2.jpg",
+       "alt": "Hino 29 (cifra) — Louvor — página 2"
+      }
+     ],
+     "num": 29
+    },
+    {
+     "id": "cifra-30",
+     "titulo": "Providência de Deus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-030-1.jpg",
+       "alt": "Hino 30 (cifra) — Providência de Deus — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-030-2.jpg",
+       "alt": "Hino 30 (cifra) — Providência de Deus — página 2"
+      }
+     ],
+     "num": 30
+    },
+    {
+     "id": "cifra-31",
+     "titulo": "Providência de Deus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-031-1.jpg",
+       "alt": "Hino 31 (cifra) — Providência de Deus — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-031-2.jpg",
+       "alt": "Hino 31 (cifra) — Providência de Deus — página 2"
+      }
+     ],
+     "num": 31
+    },
+    {
+     "id": "cifra-32",
+     "titulo": "O Deus Fiel",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-032.jpg",
+       "alt": "Hino 32 (cifra) — O Deus Fiel — página 1"
+      }
+     ],
+     "num": 32
+    },
+    {
+     "id": "cifra-33",
+     "titulo": "Maravilhas Divinas",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-033-1.jpg",
+       "alt": "Hino 33 (cifra) — Maravilhas Divinas — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-033-2.jpg",
+       "alt": "Hino 33 (cifra) — Maravilhas Divinas — página 2"
+      }
+     ],
+     "num": 33
+    },
+    {
+     "id": "cifra-34",
+     "titulo": "Convite ao Louvor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-034.jpg",
+       "alt": "Hino 34 (cifra) — Convite ao Louvor — página 1"
+      }
+     ],
+     "num": 34
+    },
+    {
+     "id": "cifra-35",
+     "titulo": "Adoração e Súplica",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-035.jpg",
+       "alt": "Hino 35 (cifra) — Adoração e Súplica — página 1"
+      }
+     ],
+     "num": 35
+    },
+    {
+     "id": "cifra-36",
+     "titulo": "Exaltação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-036.jpg",
+       "alt": "Hino 36 (cifra) — Exaltação — página 1"
+      }
+     ],
+     "num": 36
+    },
+    {
+     "id": "cifra-37",
+     "titulo": "O Santo Nome",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-037-1.jpg",
+       "alt": "Hino 37 (cifra) — O Santo Nome — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-037-2.jpg",
+       "alt": "Hino 37 (cifra) — O Santo Nome — página 2"
+      }
+     ],
+     "num": 37
+    },
+    {
+     "id": "cifra-38",
+     "titulo": "Louvores Sem Fim",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-038.jpg",
+       "alt": "Hino 38 (cifra) — Louvores Sem Fim — página 1"
+      }
+     ],
+     "num": 38
+    },
+    {
+     "id": "cifra-39",
+     "titulo": "Exaltação e Louvor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-39-1.jpg",
+       "alt": "Hino 39 (cifra) — Exaltação e Louvor — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-039.jpg",
+       "alt": "Hino 39 (cifra) — Exaltação e Louvor — página 2"
+      }
+     ],
+     "num": 39
+    },
+    {
+     "id": "cifra-40",
+     "titulo": "Cântico ao Salvador",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-040-1.jpg",
+       "alt": "Hino 40 (cifra) — Cântico ao Salvador — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-040-2.jpg",
+       "alt": "Hino 40 (cifra) — Cântico ao Salvador — página 2"
+      }
+     ],
+     "num": 40
+    },
+    {
+     "id": "cifra-41",
+     "titulo": "Louvor pela Graça Divina",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-041-1.jpg",
+       "alt": "Hino 41 (cifra) — Louvor pela Graça Divina — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-041-2.jpg",
+       "alt": "Hino 41 (cifra) — Louvor pela Graça Divina — página 2"
+      }
+     ],
+     "num": 41
+    },
+    {
+     "id": "cifra-42",
+     "titulo": "O Grande Amor de Deus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-042.jpg",
+       "alt": "Hino 42 (cifra) — O Grande Amor de Deus — página 1"
+      }
+     ],
+     "num": 42
+    },
+    {
+     "id": "cifra-43",
+     "titulo": "O Deus de Amor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-043-1.jpg",
+       "alt": "Hino 43 (cifra) — O Deus de Amor — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-043-2.jpg",
+       "alt": "Hino 43 (cifra) — O Deus de Amor — página 2"
+      }
+     ],
+     "num": 43
+    },
+    {
+     "id": "cifra-44",
+     "titulo": "Louvores ao Senhor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-044.jpg",
+       "alt": "Hino 44 (cifra) — Louvores ao Senhor — página 1"
+      }
+     ],
+     "num": 44
+    },
+    {
+     "id": "cifra-45",
+     "titulo": "Grande Redenção",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-045-1.jpg",
+       "alt": "Hino 45 (cifra) — Grande Redenção — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-045-2.jpg",
+       "alt": "Hino 45 (cifra) — Grande Redenção — página 2"
+      }
+     ],
+     "num": 45
+    },
+    {
+     "id": "cifra-46",
+     "titulo": "Altos Louvores",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-046-1.jpg",
+       "alt": "Hino 46 (cifra) — Altos Louvores — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-046-2.jpg",
+       "alt": "Hino 46 (cifra) — Altos Louvores — página 2"
+      }
+     ],
+     "num": 46
+    },
+    {
+     "id": "cifra-47",
+     "titulo": "Louvor e Glória",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-47-1.jpg",
+       "alt": "Hino 47 (cifra) — Louvor e Glória — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-047.jpg",
+       "alt": "Hino 47 (cifra) — Louvor e Glória — página 2"
+      }
+     ],
+     "num": 47
+    },
+    {
+     "id": "cifra-48",
+     "titulo": "Amor e Gratidão",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-048.jpg",
+       "alt": "Hino 48 (cifra) — Amor e Gratidão — página 1"
+      }
+     ],
+     "num": 48
+    },
+    {
+     "id": "cifra-49",
+     "titulo": "Sempre Vencendo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-049-1.jpg",
+       "alt": "Hino 49 (cifra) — Sempre Vencendo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-049-2.jpg",
+       "alt": "Hino 49 (cifra) — Sempre Vencendo — página 2"
+      }
+     ],
+     "num": 49
+    },
+    {
+     "id": "cifra-50",
+     "titulo": "Sangue Precioso",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-050.jpg",
+       "alt": "Hino 50 (cifra) — Sangue Precioso — página 1"
+      }
+     ],
+     "num": 50
+    },
+    {
+     "id": "cifra-51",
+     "titulo": "Cristo Coroado",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-51-1.jpg",
+       "alt": "Hino 51 (cifra) — Cristo Coroado — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-051.jpg",
+       "alt": "Hino 51 (cifra) — Cristo Coroado — página 2"
+      }
+     ],
+     "num": 51
+    },
+    {
+     "id": "cifra-52",
+     "titulo": "Glória e Coroação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-052.jpg",
+       "alt": "Hino 52 (cifra) — Glória e Coroação — página 1"
+      }
+     ],
+     "num": 52
+    },
+    {
+     "id": "cifra-53",
+     "titulo": "Honra, Poder, Majestade",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-053-1.jpg",
+       "alt": "Hino 53 (cifra) — Honra, Poder, Majestade — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-053-2.jpg",
+       "alt": "Hino 53 (cifra) — Honra, Poder, Majestade — página 2"
+      }
+     ],
+     "num": 53
+    },
+    {
+     "id": "cifra-54",
+     "titulo": "A Chegada do Messias",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-054.jpg",
+       "alt": "Hino 54 (cifra) — A Chegada do Messias — página 1"
+      }
+     ],
+     "num": 54
+    },
+    {
+     "id": "cifra-55",
+     "titulo": "Alegria e Gratidão",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-55-1.jpg",
+       "alt": "Hino 55 (cifra) — Alegria e Gratidão — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-055.jpg",
+       "alt": "Hino 55 (cifra) — Alegria e Gratidão — página 2"
+      }
+     ],
+     "num": 55
+    },
+    {
+     "id": "cifra-56",
+     "titulo": "Ações de Graça e Súplica",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-056.jpg",
+       "alt": "Hino 56 (cifra) — Ações de Graça e Súplica — página 1"
+      }
+     ],
+     "num": 56
+    },
+    {
+     "id": "cifra-57",
+     "titulo": "Fonte de Todo Bem",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-057.jpg",
+       "alt": "Hino 57 (cifra) — Fonte de Todo Bem — página 1"
+      }
+     ],
+     "num": 57
+    },
+    {
+     "id": "cifra-58",
+     "titulo": "Ofertas",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-058-1.jpg",
+       "alt": "Hino 58 (cifra) — Ofertas — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-058-2.jpg",
+       "alt": "Hino 58 (cifra) — Ofertas — página 2"
+      }
+     ],
+     "num": 58
+    },
+    {
+     "id": "cifra-59",
+     "titulo": "Gratidão",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-059-1.jpg",
+       "alt": "Hino 59 (cifra) — Gratidão — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-059-2.jpg",
+       "alt": "Hino 59 (cifra) — Gratidão — página 2"
+      }
+     ],
+     "num": 59
+    },
+    {
+     "id": "cifra-60",
+     "titulo": "Ofertório",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-60-1.jpg",
+       "alt": "Hino 60 (cifra) — Ofertório — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-060.jpg",
+       "alt": "Hino 60 (cifra) — Ofertório — página 2"
+      }
+     ],
+     "num": 60
+    },
+    {
+     "id": "cifra-61",
+     "titulo": "Ações de Graça",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-061-1.jpg",
+       "alt": "Hino 61 (cifra) — Ações de Graça — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-061-2.jpg",
+       "alt": "Hino 61 (cifra) — Ações de Graça — página 2"
+      }
+     ],
+     "num": 61
+    },
+    {
+     "id": "cifra-62",
+     "titulo": "Hino de Gratidão",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-062-1.jpg",
+       "alt": "Hino 62 (cifra) — Hino de Gratidão — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-062-2.jpg",
+       "alt": "Hino 62 (cifra) — Hino de Gratidão — página 2"
+      }
+     ],
+     "num": 62
+    },
+    {
+     "id": "cifra-63",
+     "titulo": "As Muitas Bênçãos",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-063.jpg",
+       "alt": "Hino 63 (cifra) — As Muitas Bênçãos — página 1"
+      }
+     ],
+     "num": 63
+    },
+    {
+     "id": "cifra-64",
+     "titulo": "Grata Memória",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-064.jpg",
+       "alt": "Hino 64 (cifra) — Grata Memória — página 1"
+      }
+     ],
+     "num": 64
+    },
+    {
+     "id": "cifra-65",
+     "titulo": "Louvor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-065.jpg",
+       "alt": "Hino 65 (cifra) — Louvor — página 1"
+      }
+     ],
+     "num": 65
+    },
+    {
+     "id": "cifra-66",
+     "titulo": "Coração Quebrantado",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-066.jpg",
+       "alt": "Hino 66 (cifra) — Coração Quebrantado — página 1"
+      }
+     ],
+     "num": 66
+    },
+    {
+     "id": "cifra-67",
+     "titulo": "Coração Quebrantado",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-067.jpg",
+       "alt": "Hino 67 (cifra) — Coração Quebrantado — página 1"
+      }
+     ],
+     "num": 67
+    },
+    {
+     "id": "cifra-68",
+     "titulo": "Necessidade",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-068.jpg",
+       "alt": "Hino 68 (cifra) — Necessidade — página 1"
+      }
+     ],
+     "num": 68
+    },
+    {
+     "id": "cifra-69",
+     "titulo": "Súplica",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-069-1.jpg",
+       "alt": "Hino 69 (cifra) — Súplica — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-069-2.jpg",
+       "alt": "Hino 69 (cifra) — Súplica — página 2"
+      }
+     ],
+     "num": 69
+    },
+    {
+     "id": "cifra-70",
+     "titulo": "Descanso em Jesus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-070.jpg",
+       "alt": "Hino 70 (cifra) — Descanso em Jesus — página 1"
+      }
+     ],
+     "num": 70
+    },
+    {
+     "id": "cifra-71",
+     "titulo": "Perdão",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-071.jpg",
+       "alt": "Hino 71 (cifra) — Perdão — página 1"
+      }
+     ],
+     "num": 71
+    },
+    {
+     "id": "cifra-72",
+     "titulo": "Purificação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-072-1.jpg",
+       "alt": "Hino 72 (cifra) — Purificação — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-072-2.jpg",
+       "alt": "Hino 72 (cifra) — Purificação — página 2"
+      }
+     ],
+     "num": 72
+    },
+    {
+     "id": "cifra-73",
+     "titulo": "Compaixão",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-073.jpg",
+       "alt": "Hino 73 (cifra) — Compaixão — página 1"
+      }
+     ],
+     "num": 73
+    },
+    {
+     "id": "cifra-74",
+     "titulo": "Sinceridade",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-074.jpg",
+       "alt": "Hino 74 (cifra) — Sinceridade — página 1"
+      }
+     ],
+     "num": 74
+    },
+    {
+     "id": "cifra-75",
+     "titulo": "Arrependimento e Súplica",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-075-1.jpg",
+       "alt": "Hino 75 (cifra) — Arrependimento e Súplica — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-075-2.jpg",
+       "alt": "Hino 75 (cifra) — Arrependimento e Súplica — página 2"
+      }
+     ],
+     "num": 75
+    },
+    {
+     "id": "cifra-76",
+     "titulo": "Compaixão",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-076-1.jpg",
+       "alt": "Hino 76 (cifra) — Compaixão — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-076-2.jpg",
+       "alt": "Hino 76 (cifra) — Compaixão — página 2"
+      }
+     ],
+     "num": 76
+    },
+    {
+     "id": "cifra-77",
+     "titulo": "Divino Perdão",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-077-1.jpg",
+       "alt": "Hino 77 (cifra) — Divino Perdão — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-077-2.jpg",
+       "alt": "Hino 77 (cifra) — Divino Perdão — página 2"
+      }
+     ],
+     "num": 77
+    },
+    {
+     "id": "cifra-78",
+     "titulo": "Perfeita Expiação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-078.jpg",
+       "alt": "Hino 78 (cifra) — Perfeita Expiação — página 1"
+      }
+     ],
+     "num": 78
+    },
+    {
+     "id": "cifra-79",
+     "titulo": "Glória ao Salvador",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-79-1.jpg",
+       "alt": "Hino 79 (cifra) — Glória ao Salvador — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-079.jpg",
+       "alt": "Hino 79 (cifra) — Glória ao Salvador — página 2"
+      }
+     ],
+     "num": 79
+    },
+    {
+     "id": "cifra-80",
+     "titulo": "O Amor de Jesus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-080-1.jpg",
+       "alt": "Hino 80 (cifra) — O Amor de Jesus — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-080-2.jpg",
+       "alt": "Hino 80 (cifra) — O Amor de Jesus — página 2"
+      }
+     ],
+     "num": 80
+    },
+    {
+     "id": "cifra-81",
+     "titulo": "Súplica ao Espírito Santo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-081-1.jpg",
+       "alt": "Hino 81 (cifra) — Súplica ao Espírito Santo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-081-2.jpg",
+       "alt": "Hino 81 (cifra) — Súplica ao Espírito Santo — página 2"
+      }
+     ],
+     "num": 81
+    },
+    {
+     "id": "cifra-82",
+     "titulo": "Divino Preceptor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-082.jpg",
+       "alt": "Hino 82 (cifra) — Divino Preceptor — página 1"
+      }
+     ],
+     "num": 82
+    },
+    {
+     "id": "cifra-83",
+     "titulo": "Divino Instruidor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-083.jpg",
+       "alt": "Hino 83 (cifra) — Divino Instruidor — página 1"
+      }
+     ],
+     "num": 83
+    },
+    {
+     "id": "cifra-84",
+     "titulo": "Santo Espírito",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-084.jpg",
+       "alt": "Hino 84 (cifra) — Santo Espírito — página 1"
+      }
+     ],
+     "num": 84
+    },
+    {
+     "id": "cifra-85",
+     "titulo": "Espírito Consolador",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-085.jpg",
+       "alt": "Hino 85 (cifra) — Espírito Consolador — página 1"
+      }
+     ],
+     "num": 85
+    },
+    {
+     "id": "cifra-86",
+     "titulo": "Espírito do Trino Deus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-086.jpg",
+       "alt": "Hino 86 (cifra) — Espírito do Trino Deus — página 1"
+      }
+     ],
+     "num": 86
+    },
+    {
+     "id": "cifra-87",
+     "titulo": "Alegria Perene",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-087-1.jpg",
+       "alt": "Hino 87 (cifra) — Alegria Perene — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-087-2.jpg",
+       "alt": "Hino 87 (cifra) — Alegria Perene — página 2"
+      }
+     ],
+     "num": 87
+    },
+    {
+     "id": "cifra-88",
+     "titulo": "Amor Perene",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-88-1.jpg",
+       "alt": "Hino 88 (cifra) — Amor Perene — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-088-1.jpg",
+       "alt": "Hino 88 (cifra) — Amor Perene — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-088-2.jpg",
+       "alt": "Hino 88 (cifra) — Amor Perene — página 3"
+      }
+     ],
+     "num": 88
+    },
+    {
+     "id": "cifra-89",
+     "titulo": "Amor Sacrificial",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-089-1.jpg",
+       "alt": "Hino 89 (cifra) — Amor Sacrificial — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-089-2.jpg",
+       "alt": "Hino 89 (cifra) — Amor Sacrificial — página 2"
+      }
+     ],
+     "num": 89
+    },
+    {
+     "id": "cifra-90",
+     "titulo": "Amor Insondável",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-090-1.jpg",
+       "alt": "Hino 90 (cifra) — Amor Insondável — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-090-2.jpg",
+       "alt": "Hino 90 (cifra) — Amor Insondável — página 2"
+      }
+     ],
+     "num": 90
+    },
+    {
+     "id": "cifra-91",
+     "titulo": "A Fé dos Antigos",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-091.jpg",
+       "alt": "Hino 91 (cifra) — A Fé dos Antigos — página 1"
+      }
+     ],
+     "num": 91
+    },
+    {
+     "id": "cifra-92",
+     "titulo": "A Fé Contemplada",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-092.jpg",
+       "alt": "Hino 92 (cifra) — A Fé Contemplada — página 1"
+      }
+     ],
+     "num": 92
+    },
+    {
+     "id": "cifra-93",
+     "titulo": "Firmeza na Fé",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-093-1.jpg",
+       "alt": "Hino 93 (cifra) — Firmeza na Fé — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-093-2.jpg",
+       "alt": "Hino 93 (cifra) — Firmeza na Fé — página 2"
+      }
+     ],
+     "num": 93
+    },
+    {
+     "id": "cifra-94",
+     "titulo": "A Porta da Salvação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-094.jpg",
+       "alt": "Hino 94 (cifra) — A Porta da Salvação — página 1"
+      }
+     ],
+     "num": 94
+    },
+    {
+     "id": "cifra-95",
+     "titulo": "Somente Cristo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-095-1.jpg",
+       "alt": "Hino 95 (cifra) — Somente Cristo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-095-2.jpg",
+       "alt": "Hino 95 (cifra) — Somente Cristo — página 2"
+      }
+     ],
+     "num": 95
+    },
+    {
+     "id": "cifra-96",
+     "titulo": "Redenção Suprema",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-096.jpg",
+       "alt": "Hino 96 (cifra) — Redenção Suprema — página 1"
+      }
+     ],
+     "num": 96
+    },
+    {
+     "id": "cifra-97",
+     "titulo": "Súplica do Redimido",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-097.jpg",
+       "alt": "Hino 97 (cifra) — Súplica do Redimido — página 1"
+      }
+     ],
+     "num": 97
+    },
+    {
+     "id": "cifra-98",
+     "titulo": "Não Há Condenação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-098.jpg",
+       "alt": "Hino 98 (cifra) — Não Há Condenação — página 1"
+      }
+     ],
+     "num": 98
+    },
+    {
+     "id": "cifra-99",
+     "titulo": "Louvor ao Redentor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-099.jpg",
+       "alt": "Hino 99 (cifra) — Louvor ao Redentor — página 1"
+      }
+     ],
+     "num": 99
+    },
+    {
+     "id": "cifra-100",
+     "titulo": "Louvores a Cristo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-100.jpg",
+       "alt": "Hino 100 (cifra) — Louvores a Cristo — página 1"
+      }
+     ],
+     "num": 100
+    },
+    {
+     "id": "cifra-101",
+     "titulo": "A Voz da Salvação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-101-1.jpg",
+       "alt": "Hino 101 (cifra) — A Voz da Salvação — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-101-2.jpg",
+       "alt": "Hino 101 (cifra) — A Voz da Salvação — página 2"
+      }
+     ],
+     "num": 101
+    },
+    {
+     "id": "cifra-102",
+     "titulo": "O Céu com Cristo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-102.jpg",
+       "alt": "Hino 102 (cifra) — O Céu com Cristo — página 1"
+      }
+     ],
+     "num": 102
+    },
+    {
+     "id": "cifra-103",
+     "titulo": "Salvação em Cristo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-103.jpg",
+       "alt": "Hino 103 (cifra) — Salvação em Cristo — página 1"
+      }
+     ],
+     "num": 103
+    },
+    {
+     "id": "cifra-104",
+     "titulo": "Linda Melodia",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-104.jpg",
+       "alt": "Hino 104 (cifra) — Linda Melodia — página 1"
+      }
+     ],
+     "num": 104
+    },
+    {
+     "id": "cifra-105",
+     "titulo": "A Certeza do Crente",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-105-1.jpg",
+       "alt": "Hino 105 (cifra) — A Certeza do Crente — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-105-2.jpg",
+       "alt": "Hino 105 (cifra) — A Certeza do Crente — página 2"
+      }
+     ],
+     "num": 105
+    },
+    {
+     "id": "cifra-106",
+     "titulo": "Fonte Carmesim",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-106.jpg",
+       "alt": "Hino 106 (cifra) — Fonte Carmesim — página 1"
+      }
+     ],
+     "num": 106
+    },
+    {
+     "id": "cifra-107",
+     "titulo": "Ao Pé da Cruz",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-107.jpg",
+       "alt": "Hino 107 (cifra) — Ao Pé da Cruz — página 1"
+      }
+     ],
+     "num": 107
+    },
+    {
+     "id": "cifra-108",
+     "titulo": "Aflição e Paz",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-108-1.jpg",
+       "alt": "Hino 108 (cifra) — Aflição e Paz — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-108-2.jpg",
+       "alt": "Hino 108 (cifra) — Aflição e Paz — página 2"
+      }
+     ],
+     "num": 108
+    },
+    {
+     "id": "cifra-109",
+     "titulo": "O Bom Pastor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-109-1.jpg",
+       "alt": "Hino 109 (cifra) — O Bom Pastor — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-109-2.jpg",
+       "alt": "Hino 109 (cifra) — O Bom Pastor — página 2"
+      }
+     ],
+     "num": 109
+    },
+    {
+     "id": "cifra-110",
+     "titulo": "A Vida com Jesus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-110-1.jpg",
+       "alt": "Hino 110 (cifra) — A Vida com Jesus — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-110-2.jpg",
+       "alt": "Hino 110 (cifra) — A Vida com Jesus — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-110-3.jpg",
+       "alt": "Hino 110 (cifra) — A Vida com Jesus — página 3"
+      }
+     ],
+     "num": 110
+    },
+    {
+     "id": "cifra-110-a",
+     "titulo": "Crer e Observar",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-110-a-1.jpg",
+       "alt": "Hino 110-A (cifra) — Crer e Observar — página 1"
+      }
+     ],
+     "num": 110,
+     "rotulo": "110-A"
+    },
+    {
+     "id": "cifra-111",
+     "titulo": "Comunhão Divina",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-111-1.jpg",
+       "alt": "Hino 111 (cifra) — Comunhão Divina — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-111-2.jpg",
+       "alt": "Hino 111 (cifra) — Comunhão Divina — página 2"
+      }
+     ],
+     "num": 111
+    },
+    {
+     "id": "cifra-112",
+     "titulo": "Rica Promessa",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-112.jpg",
+       "alt": "Hino 112 (cifra) — Rica Promessa — página 1"
+      }
+     ],
+     "num": 112
+    },
+    {
+     "id": "cifra-113",
+     "titulo": "Achei um Bom Amigo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-113-1.jpg",
+       "alt": "Hino 113 (cifra) — Achei um Bom Amigo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-113-2.jpg",
+       "alt": "Hino 113 (cifra) — Achei um Bom Amigo — página 2"
+      }
+     ],
+     "num": 113
+    },
+    {
+     "id": "cifra-114",
+     "titulo": "Brilho Celeste",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-114.jpg",
+       "alt": "Hino 114 (cifra) — Brilho Celeste — página 1"
+      }
+     ],
+     "num": 114
+    },
+    {
+     "id": "cifra-115",
+     "titulo": "Unido com Cristo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-115-1.jpg",
+       "alt": "Hino 115 (cifra) — Unido com Cristo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-115-2.jpg",
+       "alt": "Hino 115 (cifra) — Unido com Cristo — página 2"
+      }
+     ],
+     "num": 115
+    },
+    {
+     "id": "cifra-116",
+     "titulo": "União com Deus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-116.jpg",
+       "alt": "Hino 116 (cifra) — União com Deus — página 1"
+      }
+     ],
+     "num": 116
+    },
+    {
+     "id": "cifra-117",
+     "titulo": "Pastor Divino",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-117-1.jpg",
+       "alt": "Hino 117 (cifra) — Pastor Divino — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-117-1.jpg",
+       "alt": "Hino 117 (cifra) — Pastor Divino — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-117-2.jpg",
+       "alt": "Hino 117 (cifra) — Pastor Divino — página 3"
+      }
+     ],
+     "num": 117
+    },
+    {
+     "id": "cifra-118",
+     "titulo": "Esperando em Deus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-118-1.jpg",
+       "alt": "Hino 118 (cifra) — Esperando em Deus — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-118-2.jpg",
+       "alt": "Hino 118 (cifra) — Esperando em Deus — página 2"
+      }
+     ],
+     "num": 118
+    },
+    {
+     "id": "cifra-119",
+     "titulo": "Súplica pelo Culto",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-119.jpg",
+       "alt": "Hino 119 (cifra) — Súplica pelo Culto — página 1"
+      }
+     ],
+     "num": 119
+    },
+    {
+     "id": "cifra-120",
+     "titulo": "Dependência",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-120.jpg",
+       "alt": "Hino 120 (cifra) — Dependência — página 1"
+      }
+     ],
+     "num": 120
+    },
+    {
+     "id": "cifra-121",
+     "titulo": "Perfeição",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-121.jpg",
+       "alt": "Hino 121 (cifra) — Perfeição — página 1"
+      }
+     ],
+     "num": 121
+    },
+    {
+     "id": "cifra-122",
+     "titulo": "Necessitado",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-122-1.jpg",
+       "alt": "Hino 122 (cifra) — Necessitado — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-122-2.jpg",
+       "alt": "Hino 122 (cifra) — Necessitado — página 2"
+      }
+     ],
+     "num": 122
+    },
+    {
+     "id": "cifra-123",
+     "titulo": "Grande Amor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-123-1.jpg",
+       "alt": "Hino 123 (cifra) — Grande Amor — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-123-2.jpg",
+       "alt": "Hino 123 (cifra) — Grande Amor — página 2"
+      }
+     ],
+     "num": 123
+    },
+    {
+     "id": "cifra-124",
+     "titulo": "Benigna Luz",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-124-1.jpg",
+       "alt": "Hino 124 (cifra) — Benigna Luz — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-124-2.jpg",
+       "alt": "Hino 124 (cifra) — Benigna Luz — página 2"
+      }
+     ],
+     "num": 124
+    },
+    {
+     "id": "cifra-125",
+     "titulo": "Sempre Veraz",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-125.jpg",
+       "alt": "Hino 125 (cifra) — Sempre Veraz — página 1"
+      }
+     ],
+     "num": 125
+    },
+    {
+     "id": "cifra-126",
+     "titulo": "Dependência",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-126-1.jpg",
+       "alt": "Hino 126 (cifra) — Dependência — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-126-2.jpg",
+       "alt": "Hino 126 (cifra) — Dependência — página 2"
+      }
+     ],
+     "num": 126
+    },
+    {
+     "id": "cifra-127",
+     "titulo": "Hora Bendita",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-127-1.jpg",
+       "alt": "Hino 127 (cifra) — Hora Bendita — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-127-2.jpg",
+       "alt": "Hino 127 (cifra) — Hora Bendita — página 2"
+      }
+     ],
+     "num": 127
+    },
+    {
+     "id": "cifra-128",
+     "titulo": "Comunhão Preciosa",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-128-1.jpg",
+       "alt": "Hino 128 (cifra) — Comunhão Preciosa — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-128-2.jpg",
+       "alt": "Hino 128 (cifra) — Comunhão Preciosa — página 2"
+      }
+     ],
+     "num": 128
+    },
+    {
+     "id": "cifra-129",
+     "titulo": "Vigilância e Oração",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-129-1.jpg",
+       "alt": "Hino 129 (cifra) — Vigilância e Oração — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-129-1.jpg",
+       "alt": "Hino 129 (cifra) — Vigilância e Oração — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-129-2.jpg",
+       "alt": "Hino 129 (cifra) — Vigilância e Oração — página 3"
+      }
+     ],
+     "num": 129
+    },
+    {
+     "id": "cifra-130",
+     "titulo": "Oração ao Senhor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-130-1.jpg",
+       "alt": "Hino 130 (cifra) — Oração ao Senhor — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-130-2.jpg",
+       "alt": "Hino 130 (cifra) — Oração ao Senhor — página 2"
+      }
+     ],
+     "num": 130
+    },
+    {
+     "id": "cifra-131",
+     "titulo": "Vida Santificada",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-131-1.jpg",
+       "alt": "Hino 131 (cifra) — Vida Santificada — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-131.jpg",
+       "alt": "Hino 131 (cifra) — Vida Santificada — página 2"
+      }
+     ],
+     "num": 131
+    },
+    {
+     "id": "cifra-132",
+     "titulo": "Vivificação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-132.jpg",
+       "alt": "Hino 132 (cifra) — Vivificação — página 1"
+      }
+     ],
+     "num": 132
+    },
+    {
+     "id": "cifra-133",
+     "titulo": "Aspiração à Santidade",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-133.jpg",
+       "alt": "Hino 133 (cifra) — Aspiração à Santidade — página 1"
+      }
+     ],
+     "num": 133
+    },
+    {
+     "id": "cifra-134",
+     "titulo": "Riquezas do Céu",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-134-1.jpg",
+       "alt": "Hino 134 (cifra) — Riquezas do Céu — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-134-2.jpg",
+       "alt": "Hino 134 (cifra) — Riquezas do Céu — página 2"
+      }
+     ],
+     "num": 134
+    },
+    {
+     "id": "cifra-135",
+     "titulo": "Mais de Cristo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-135.jpg",
+       "alt": "Hino 135 (cifra) — Mais de Cristo — página 1"
+      }
+     ],
+     "num": 135
+    },
+    {
+     "id": "cifra-136",
+     "titulo": "Rocha Eterna",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-136-1.jpg",
+       "alt": "Hino 136 (cifra) — Rocha Eterna — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-136-2.jpg",
+       "alt": "Hino 136 (cifra) — Rocha Eterna — página 2"
+      }
+     ],
+     "num": 136
+    },
+    {
+     "id": "cifra-137",
+     "titulo": "Abrigo no Temporal",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-137-1.jpg",
+       "alt": "Hino 137 (cifra) — Abrigo no Temporal — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-137-2.jpg",
+       "alt": "Hino 137 (cifra) — Abrigo no Temporal — página 2"
+      }
+     ],
+     "num": 137
+    },
+    {
+     "id": "cifra-138",
+     "titulo": "Refúgio",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-138-1.jpg",
+       "alt": "Hino 138 (cifra) — Refúgio — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-138-2.jpg",
+       "alt": "Hino 138 (cifra) — Refúgio — página 2"
+      }
+     ],
+     "num": 138
+    },
+    {
+     "id": "cifra-139",
+     "titulo": "O Socorro do Crente",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-139-1.jpg",
+       "alt": "Hino 139 (cifra) — O Socorro do Crente — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-139-2.jpg",
+       "alt": "Hino 139 (cifra) — O Socorro do Crente — página 2"
+      }
+     ],
+     "num": 139
+    },
+    {
+     "id": "cifra-140",
+     "titulo": "Jornada do Crente",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-140.jpg",
+       "alt": "Hino 140 (cifra) — Jornada do Crente — página 1"
+      }
+     ],
+     "num": 140
+    },
+    {
+     "id": "cifra-141",
+     "titulo": "Guia Divino",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-141.jpg",
+       "alt": "Hino 141 (cifra) — Guia Divino — página 1"
+      }
+     ],
+     "num": 141
+    },
+    {
+     "id": "cifra-142",
+     "titulo": "O Fiel Pastor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-142.jpg",
+       "alt": "Hino 142 (cifra) — O Fiel Pastor — página 1"
+      }
+     ],
+     "num": 142
+    },
+    {
+     "id": "cifra-143",
+     "titulo": "Salmo 23",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-143-1.jpg",
+       "alt": "Hino 143 (cifra) — Salmo 23 — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-143-2.jpg",
+       "alt": "Hino 143 (cifra) — Salmo 23 — página 2"
+      }
+     ],
+     "num": 143
+    },
+    {
+     "id": "cifra-144",
+     "titulo": "Segurança e Alegria",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-144-1.jpg",
+       "alt": "Hino 144 (cifra) — Segurança e Alegria — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-144.jpg",
+       "alt": "Hino 144 (cifra) — Segurança e Alegria — página 2"
+      }
+     ],
+     "num": 144
+    },
+    {
+     "id": "cifra-145",
+     "titulo": "Refúgio Verdadeiro",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-145-1.jpg",
+       "alt": "Hino 145 (cifra) — Refúgio Verdadeiro — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-145-2.jpg",
+       "alt": "Hino 145 (cifra) — Refúgio Verdadeiro — página 2"
+      }
+     ],
+     "num": 145
+    },
+    {
+     "id": "cifra-146",
+     "titulo": "Segurança do Crente",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-146-1.jpg",
+       "alt": "Hino 146 (cifra) — Segurança do Crente — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-146-1.jpg",
+       "alt": "Hino 146 (cifra) — Segurança do Crente — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-146-2.jpg",
+       "alt": "Hino 146 (cifra) — Segurança do Crente — página 3"
+      }
+     ],
+     "num": 146
+    },
+    {
+     "id": "cifra-147",
+     "titulo": "Vencendo Vem Jesus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-147-1.jpg",
+       "alt": "Hino 147 (cifra) — Vencendo Vem Jesus — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-147-2.jpg",
+       "alt": "Hino 147 (cifra) — Vencendo Vem Jesus — página 2"
+      }
+     ],
+     "num": 147
+    },
+    {
+     "id": "cifra-148",
+     "titulo": "Oração Noturna",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-148.jpg",
+       "alt": "Hino 148 (cifra) — Oração Noturna — página 1"
+      }
+     ],
+     "num": 148
+    },
+    {
+     "id": "cifra-149",
+     "titulo": "Verdadeira Redenção",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-149-1.jpg",
+       "alt": "Hino 149 (cifra) — Verdadeira Redenção — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-149-2.jpg",
+       "alt": "Hino 149 (cifra) — Verdadeira Redenção — página 2"
+      }
+     ],
+     "num": 149
+    },
+    {
+     "id": "cifra-150",
+     "titulo": "Salvação Perfeita",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-150-1.jpg",
+       "alt": "Hino 150 (cifra) — Salvação Perfeita — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-150-2.jpg",
+       "alt": "Hino 150 (cifra) — Salvação Perfeita — página 2"
+      }
+     ],
+     "num": 150
+    },
+    {
+     "id": "cifra-151",
+     "titulo": "O Bom Pastor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-151-1.jpg",
+       "alt": "Hino 151 (cifra) — O Bom Pastor — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-151-2.jpg",
+       "alt": "Hino 151 (cifra) — O Bom Pastor — página 2"
+      }
+     ],
+     "num": 151
+    },
+    {
+     "id": "cifra-152",
+     "titulo": "Onisciência Divina",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-152.jpg",
+       "alt": "Hino 152 (cifra) — Onisciência Divina — página 1"
+      }
+     ],
+     "num": 152
+    },
+    {
+     "id": "cifra-153",
+     "titulo": "Amparo Divino",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-153.jpg",
+       "alt": "Hino 153 (cifra) — Amparo Divino — página 1"
+      }
+     ],
+     "num": 153
+    },
+    {
+     "id": "cifra-154",
+     "titulo": "Segurança e Paz",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-154.jpg",
+       "alt": "Hino 154 (cifra) — Segurança e Paz — página 1"
+      }
+     ],
+     "num": 154
+    },
+    {
+     "id": "cifra-155",
+     "titulo": "Castelo Forte",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-155-1.jpg",
+       "alt": "Hino 155 (cifra) — Castelo Forte — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-155-1.jpg",
+       "alt": "Hino 155 (cifra) — Castelo Forte — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-155-2.jpg",
+       "alt": "Hino 155 (cifra) — Castelo Forte — página 3"
+      }
+     ],
+     "num": 155
+    },
+    {
+     "id": "cifra-156",
+     "titulo": "Confiança em Deus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-156.jpg",
+       "alt": "Hino 156 (cifra) — Confiança em Deus — página 1"
+      }
+     ],
+     "num": 156
+    },
+    {
+     "id": "cifra-157",
+     "titulo": "Segurança em Cristo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-157-1.jpg",
+       "alt": "Hino 157 (cifra) — Segurança em Cristo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-157-2.jpg",
+       "alt": "Hino 157 (cifra) — Segurança em Cristo — página 2"
+      }
+     ],
+     "num": 157
+    },
+    {
+     "id": "cifra-158",
+     "titulo": "Conforto e Luz",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-158.jpg",
+       "alt": "Hino 158 (cifra) — Conforto e Luz — página 1"
+      }
+     ],
+     "num": 158
+    },
+    {
+     "id": "cifra-159",
+     "titulo": "Bondoso Amigo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-159.jpg",
+       "alt": "Hino 159 (cifra) — Bondoso Amigo — página 1"
+      }
+     ],
+     "num": 159
+    },
+    {
+     "id": "cifra-160",
+     "titulo": "Cristo É Tudo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-160-1.jpg",
+       "alt": "Hino 160 (cifra) — Cristo É Tudo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-160-2.jpg",
+       "alt": "Hino 160 (cifra) — Cristo É Tudo — página 2"
+      }
+     ],
+     "num": 160
+    },
+    {
+     "id": "cifra-161",
+     "titulo": "O Melhor Amigo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-161-1.jpg",
+       "alt": "Hino 161 (cifra) — O Melhor Amigo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-161-2.jpg",
+       "alt": "Hino 161 (cifra) — O Melhor Amigo — página 2"
+      }
+     ],
+     "num": 161
+    },
+    {
+     "id": "cifra-162",
+     "titulo": "A Voz de Deus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-162-1.jpg",
+       "alt": "Hino 162 (cifra) — A Voz de Deus — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-162-2.jpg",
+       "alt": "Hino 162 (cifra) — A Voz de Deus — página 2"
+      }
+     ],
+     "num": 162
+    },
+    {
+     "id": "cifra-163",
+     "titulo": "Direção Divina",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-163.jpg",
+       "alt": "Hino 163 (cifra) — Direção Divina — página 1"
+      }
+     ],
+     "num": 163
+    },
+    {
+     "id": "cifra-164",
+     "titulo": "Nome Precioso",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-164.jpg",
+       "alt": "Hino 164 (cifra) — Nome Precioso — página 1"
+      }
+     ],
+     "num": 164
+    },
+    {
+     "id": "cifra-165",
+     "titulo": "Cuidado Divino",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-165-1.jpg",
+       "alt": "Hino 165 (cifra) — Cuidado Divino — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-165-1.jpg",
+       "alt": "Hino 165 (cifra) — Cuidado Divino — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-165-2.jpg",
+       "alt": "Hino 165 (cifra) — Cuidado Divino — página 3"
+      }
+     ],
+     "num": 165
+    },
+    {
+     "id": "cifra-166",
+     "titulo": "Luz e Vida",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-166.jpg",
+       "alt": "Hino 166 (cifra) — Luz e Vida — página 1"
+      }
+     ],
+     "num": 166
+    },
+    {
+     "id": "cifra-167",
+     "titulo": "Cristo, Esperança Nossa",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-167-1.jpg",
+       "alt": "Hino 167 (cifra) — Cristo, Esperança Nossa — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-167-2.jpg",
+       "alt": "Hino 167 (cifra) — Cristo, Esperança Nossa — página 2"
+      }
+     ],
+     "num": 167
+    },
+    {
+     "id": "cifra-168",
+     "titulo": "Jesus Amado",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-168.jpg",
+       "alt": "Hino 168 (cifra) — Jesus Amado — página 1"
+      }
+     ],
+     "num": 168
+    },
+    {
+     "id": "cifra-169",
+     "titulo": "Grata Confiança",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-169-1.jpg",
+       "alt": "Hino 169 (cifra) — Grata Confiança — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-169-2.jpg",
+       "alt": "Hino 169 (cifra) — Grata Confiança — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-169-3.jpg",
+       "alt": "Hino 169 (cifra) — Grata Confiança — página 3"
+      }
+     ],
+     "num": 169
+    },
+    {
+     "id": "cifra-170",
+     "titulo": "Redentor Onipotente",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-170-1.jpg",
+       "alt": "Hino 170 (cifra) — Redentor Onipotente — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-170-2.jpg",
+       "alt": "Hino 170 (cifra) — Redentor Onipotente — página 2"
+      }
+     ],
+     "num": 170
+    },
+    {
+     "id": "cifra-171",
+     "titulo": "Deus Proverá",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-171.jpg",
+       "alt": "Hino 171 (cifra) — Deus Proverá — página 1"
+      }
+     ],
+     "num": 171
+    },
+    {
+     "id": "cifra-172",
+     "titulo": "Chuvas de Bênçãos",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-172.jpg",
+       "alt": "Hino 172 (cifra) — Chuvas de Bênçãos — página 1"
+      }
+     ],
+     "num": 172
+    },
+    {
+     "id": "cifra-173",
+     "titulo": "Oração Vespertina",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-173.jpg",
+       "alt": "Hino 173 (cifra) — Oração Vespertina — página 1"
+      }
+     ],
+     "num": 173
+    },
+    {
+     "id": "cifra-174",
+     "titulo": "Poderoso Salvador",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-174.jpg",
+       "alt": "Hino 174 (cifra) — Poderoso Salvador — página 1"
+      }
+     ],
+     "num": 174
+    },
+    {
+     "id": "cifra-175",
+     "titulo": "O Servo do Senhor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-175.jpg",
+       "alt": "Hino 175 (cifra) — O Servo do Senhor — página 1"
+      }
+     ],
+     "num": 175
+    },
+    {
+     "id": "cifra-176",
+     "titulo": "Fidelidade do Cristão",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-176.jpg",
+       "alt": "Hino 176 (cifra) — Fidelidade do Cristão — página 1"
+      }
+     ],
+     "num": 176
+    },
+    {
+     "id": "cifra-177",
+     "titulo": "Firme nas Promessas",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-177-1.jpg",
+       "alt": "Hino 177 (cifra) — Firme nas Promessas — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-177-2.jpg",
+       "alt": "Hino 177 (cifra) — Firme nas Promessas — página 2"
+      }
+     ],
+     "num": 177
+    },
+    {
+     "id": "cifra-178",
+     "titulo": "A Excelência do Amor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-178-1.jpg",
+       "alt": "Hino 178 (cifra) — A Excelência do Amor — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-178-2.jpg",
+       "alt": "Hino 178 (cifra) — A Excelência do Amor — página 2"
+      }
+     ],
+     "num": 178
+    },
+    {
+     "id": "cifra-179",
+     "titulo": "Saudação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-179-1.jpg",
+       "alt": "Hino 179 (cifra) — Saudação — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-179-1.jpg",
+       "alt": "Hino 179 (cifra) — Saudação — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-179-2.jpg",
+       "alt": "Hino 179 (cifra) — Saudação — página 3"
+      }
+     ],
+     "num": 179
+    },
+    {
+     "id": "cifra-180",
+     "titulo": "Amor Fraternal",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-180-1.jpg",
+       "alt": "Hino 180 (cifra) — Amor Fraternal — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-180-2.jpg",
+       "alt": "Hino 180 (cifra) — Amor Fraternal — página 2"
+      }
+     ],
+     "num": 180
+    },
+    {
+     "id": "cifra-181",
+     "titulo": "Irmãos em Jesus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-181.jpg",
+       "alt": "Hino 181 (cifra) — Irmãos em Jesus — página 1"
+      }
+     ],
+     "num": 181
+    },
+    {
+     "id": "cifra-182",
+     "titulo": "União Fraterna",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-182.jpg",
+       "alt": "Hino 182 (cifra) — União Fraterna — página 1"
+      }
+     ],
+     "num": 182
+    },
+    {
+     "id": "cifra-183",
+     "titulo": "Benditos Laços",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-183.jpg",
+       "alt": "Hino 183 (cifra) — Benditos Laços — página 1"
+      }
+     ],
+     "num": 183
+    },
+    {
+     "id": "cifra-184",
+     "titulo": "Face a Face",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-184-1.jpg",
+       "alt": "Hino 184 (cifra) — Face a Face — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-184-2.jpg",
+       "alt": "Hino 184 (cifra) — Face a Face — página 2"
+      }
+     ],
+     "num": 184
+    },
+    {
+     "id": "cifra-185",
+     "titulo": "Glória Vindoura",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-185.jpg",
+       "alt": "Hino 185 (cifra) — Glória Vindoura — página 1"
+      }
+     ],
+     "num": 185
+    },
+    {
+     "id": "cifra-186",
+     "titulo": "O Lar do Céu",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-186.jpg",
+       "alt": "Hino 186 (cifra) — O Lar do Céu — página 1"
+      }
+     ],
+     "num": 186
+    },
+    {
+     "id": "cifra-187",
+     "titulo": "Cidade Celestial",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-187-1.jpg",
+       "alt": "Hino 187 (cifra) — Cidade Celestial — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-187-2.jpg",
+       "alt": "Hino 187 (cifra) — Cidade Celestial — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-187-3.jpg",
+       "alt": "Hino 187 (cifra) — Cidade Celestial — página 3"
+      }
+     ],
+     "num": 187
+    },
+    {
+     "id": "cifra-188",
+     "titulo": "Clara Luz",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-188-1.jpg",
+       "alt": "Hino 188 (cifra) — Clara Luz — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-188-2.jpg",
+       "alt": "Hino 188 (cifra) — Clara Luz — página 2"
+      }
+     ],
+     "num": 188
+    },
+    {
+     "id": "cifra-189",
+     "titulo": "Jerusalém Celeste",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-189.jpg",
+       "alt": "Hino 189 (cifra) — Jerusalém Celeste — página 1"
+      }
+     ],
+     "num": 189
+    },
+    {
+     "id": "cifra-190",
+     "titulo": "Maior que a Dor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-190.jpg",
+       "alt": "Hino 190 (cifra) — Maior que a Dor — página 1"
+      }
+     ],
+     "num": 190
+    },
+    {
+     "id": "cifra-191",
+     "titulo": "Rio da Vida",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-191-1.jpg",
+       "alt": "Hino 191 (cifra) — Rio da Vida — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-191-2.jpg",
+       "alt": "Hino 191 (cifra) — Rio da Vida — página 2"
+      }
+     ],
+     "num": 191
+    },
+    {
+     "id": "cifra-192",
+     "titulo": "No Céu com Jesus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-192-1.jpg",
+       "alt": "Hino 192 (cifra) — No Céu com Jesus — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-192-2.jpg",
+       "alt": "Hino 192 (cifra) — No Céu com Jesus — página 2"
+      }
+     ],
+     "num": 192
+    },
+    {
+     "id": "cifra-193",
+     "titulo": "Aspiração do Céu",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-193.jpg",
+       "alt": "Hino 193 (cifra) — Aspiração do Céu — página 1"
+      }
+     ],
+     "num": 193
+    },
+    {
+     "id": "cifra-194",
+     "titulo": "Morada Feliz",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-194.jpg",
+       "alt": "Hino 194 (cifra) — Morada Feliz — página 1"
+      }
+     ],
+     "num": 194
+    },
+    {
+     "id": "cifra-195",
+     "titulo": "Dormindo no Senhor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-195-1.jpg",
+       "alt": "Hino 195 (cifra) — Dormindo no Senhor — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-195-2.jpg",
+       "alt": "Hino 195 (cifra) — Dormindo no Senhor — página 2"
+      }
+     ],
+     "num": 195
+    },
+    {
+     "id": "cifra-196",
+     "titulo": "Gozo, Esplendores, Venturas",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-196-1.jpg",
+       "alt": "Hino 196 (cifra) — Gozo, Esplendores, Venturas — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-196-2.jpg",
+       "alt": "Hino 196 (cifra) — Gozo, Esplendores, Venturas — página 2"
+      }
+     ],
+     "num": 196
+    },
+    {
+     "id": "cifra-197",
+     "titulo": "O Salvador Espera",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-197.jpg",
+       "alt": "Hino 197 (cifra) — O Salvador Espera — página 1"
+      }
+     ],
+     "num": 197
+    },
+    {
+     "id": "cifra-198",
+     "titulo": "Salvação Graciosa",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-198.jpg",
+       "alt": "Hino 198 (cifra) — Salvação Graciosa — página 1"
+      }
+     ],
+     "num": 198
+    },
+    {
+     "id": "cifra-199",
+     "titulo": "Cristo Salva",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-199.jpg",
+       "alt": "Hino 199 (cifra) — Cristo Salva — página 1"
+      }
+     ],
+     "num": 199
+    },
+    {
+     "id": "cifra-200",
+     "titulo": "Palavra Abençoada",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-200-1.jpg",
+       "alt": "Hino 200 (cifra) — Palavra Abençoada — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-200-2.jpg",
+       "alt": "Hino 200 (cifra) — Palavra Abençoada — página 2"
+      }
+     ],
+     "num": 200
+    },
+    {
+     "id": "cifra-201",
+     "titulo": "Manso e Suave",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-201-1.jpg",
+       "alt": "Hino 201 (cifra) — Manso e Suave — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-201-2.jpg",
+       "alt": "Hino 201 (cifra) — Manso e Suave — página 2"
+      }
+     ],
+     "num": 201
+    },
+    {
+     "id": "cifra-202",
+     "titulo": "Palavras Preciosas",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-202-1.jpg",
+       "alt": "Hino 202 (cifra) — Palavras Preciosas — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-202-2.jpg",
+       "alt": "Hino 202 (cifra) — Palavras Preciosas — página 2"
+      }
+     ],
+     "num": 202
+    },
+    {
+     "id": "cifra-203",
+     "titulo": "Convite para a Salvação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-203.jpg",
+       "alt": "Hino 203 (cifra) — Convite para a Salvação — página 1"
+      }
+     ],
+     "num": 203
+    },
+    {
+     "id": "cifra-204",
+     "titulo": "Cristo à Porta",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-204-1.jpg",
+       "alt": "Hino 204 (cifra) — Cristo à Porta — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-204-2.jpg",
+       "alt": "Hino 204 (cifra) — Cristo à Porta — página 2"
+      }
+     ],
+     "num": 204
+    },
+    {
+     "id": "cifra-205",
+     "titulo": "O Amor que Chama",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-205-1.jpg",
+       "alt": "Hino 205 (cifra) — O Amor que Chama — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-205-2.jpg",
+       "alt": "Hino 205 (cifra) — O Amor que Chama — página 2"
+      }
+     ],
+     "num": 205
+    },
+    {
+     "id": "cifra-206",
+     "titulo": "Convite de Jesus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-206.jpg",
+       "alt": "Hino 206 (cifra) — Convite de Jesus — página 1"
+      }
+     ],
+     "num": 206
+    },
+    {
+     "id": "cifra-207",
+     "titulo": "Convite ao Pecador",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-207.jpg",
+       "alt": "Hino 207 (cifra) — Convite ao Pecador — página 1"
+      }
+     ],
+     "num": 207
+    },
+    {
+     "id": "cifra-208",
+     "titulo": "Aproximação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-208.jpg",
+       "alt": "Hino 208 (cifra) — Aproximação — página 1"
+      }
+     ],
+     "num": 208
+    },
+    {
+     "id": "cifra-209",
+     "titulo": "Encorajamento",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-209.jpg",
+       "alt": "Hino 209 (cifra) — Encorajamento — página 1"
+      }
+     ],
+     "num": 209
+    },
+    {
+     "id": "cifra-210",
+     "titulo": "O Filho Perdido",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-210-1.jpg",
+       "alt": "Hino 210 (cifra) — O Filho Perdido — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-210-2.jpg",
+       "alt": "Hino 210 (cifra) — O Filho Perdido — página 2"
+      }
+     ],
+     "num": 210
+    },
+    {
+     "id": "cifra-211",
+     "titulo": "Quase Induzido",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-211.jpg",
+       "alt": "Hino 211 (cifra) — Quase Induzido — página 1"
+      }
+     ],
+     "num": 211
+    },
+    {
+     "id": "cifra-212",
+     "titulo": "Apelo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-212.jpg",
+       "alt": "Hino 212 (cifra) — Apelo — página 1"
+      }
+     ],
+     "num": 212
+    },
+    {
+     "id": "cifra-213",
+     "titulo": "A Última Hora",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-213-1.jpg",
+       "alt": "Hino 213 (cifra) — A Última Hora — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-213-2.jpg",
+       "alt": "Hino 213 (cifra) — A Última Hora — página 2"
+      }
+     ],
+     "num": 213
+    },
+    {
+     "id": "cifra-214",
+     "titulo": "Convite e Aceitação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-214-1.jpg",
+       "alt": "Hino 214 (cifra) — Convite e Aceitação — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-214-2.jpg",
+       "alt": "Hino 214 (cifra) — Convite e Aceitação — página 2"
+      }
+     ],
+     "num": 214
+    },
+    {
+     "id": "cifra-215",
+     "titulo": "Apelo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-215-1.jpg",
+       "alt": "Hino 215 (cifra) — Apelo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-215-2.jpg",
+       "alt": "Hino 215 (cifra) — Apelo — página 2"
+      }
+     ],
+     "num": 215
+    },
+    {
+     "id": "cifra-216",
+     "titulo": "Perdão",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-216-1.jpg",
+       "alt": "Hino 216 (cifra) — Perdão — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-216-2.jpg",
+       "alt": "Hino 216 (cifra) — Perdão — página 2"
+      }
+     ],
+     "num": 216
+    },
+    {
+     "id": "cifra-217",
+     "titulo": "Desprendimento",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-217-1.jpg",
+       "alt": "Hino 217 (cifra) — Desprendimento — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-217-2.jpg",
+       "alt": "Hino 217 (cifra) — Desprendimento — página 2"
+      }
+     ],
+     "num": 217
+    },
+    {
+     "id": "cifra-218",
+     "titulo": "Vontade Soberana",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-218.jpg",
+       "alt": "Hino 218 (cifra) — Vontade Soberana — página 1"
+      }
+     ],
+     "num": 218
+    },
+    {
+     "id": "cifra-219",
+     "titulo": "Dedicação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-219.jpg",
+       "alt": "Hino 219 (cifra) — Dedicação — página 1"
+      }
+     ],
+     "num": 219
+    },
+    {
+     "id": "cifra-220",
+     "titulo": "Plena Dedicação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-220-1.jpg",
+       "alt": "Hino 220 (cifra) — Plena Dedicação — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-220-2.jpg",
+       "alt": "Hino 220 (cifra) — Plena Dedicação — página 2"
+      }
+     ],
+     "num": 220
+    },
+    {
+     "id": "cifra-221",
+     "titulo": "Um Vaso de Bênção",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-221-1.jpg",
+       "alt": "Hino 221 (cifra) — Um Vaso de Bênção — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-221-2.jpg",
+       "alt": "Hino 221 (cifra) — Um Vaso de Bênção — página 2"
+      }
+     ],
+     "num": 221
+    },
+    {
+     "id": "cifra-222",
+     "titulo": "Mais Perto da Cruz",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-222-1.jpg",
+       "alt": "Hino 222 (cifra) — Mais Perto da Cruz — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-222.jpg",
+       "alt": "Hino 222 (cifra) — Mais Perto da Cruz — página 2"
+      }
+     ],
+     "num": 222
+    },
+    {
+     "id": "cifra-223",
+     "titulo": "Oração do Arrependido",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-223-1.jpg",
+       "alt": "Hino 223 (cifra) — Oração do Arrependido — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-223-2.jpg",
+       "alt": "Hino 223 (cifra) — Oração do Arrependido — página 2"
+      }
+     ],
+     "num": 223
+    },
+    {
+     "id": "cifra-224",
+     "titulo": "Consagração",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-224-1.jpg",
+       "alt": "Hino 224 (cifra) — Consagração — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-224-2.jpg",
+       "alt": "Hino 224 (cifra) — Consagração — página 2"
+      }
+     ],
+     "num": 224
+    },
+    {
+     "id": "cifra-225",
+     "titulo": "Dedicação Pessoal",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-225.jpg",
+       "alt": "Hino 225 (cifra) — Dedicação Pessoal — página 1"
+      }
+     ],
+     "num": 225
+    },
+    {
+     "id": "cifra-226",
+     "titulo": "A História de Cristo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-226-1.jpg",
+       "alt": "Hino 226 (cifra) — A História de Cristo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-226-2.jpg",
+       "alt": "Hino 226 (cifra) — A História de Cristo — página 2"
+      }
+     ],
+     "num": 226
+    },
+    {
+     "id": "cifra-227",
+     "titulo": "A Velha História",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-227-1.jpg",
+       "alt": "Hino 227 (cifra) — A Velha História — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-227-2.jpg",
+       "alt": "Hino 227 (cifra) — A Velha História — página 2"
+      }
+     ],
+     "num": 227
+    },
+    {
+     "id": "cifra-228",
+     "titulo": "De Deus, o Ungido",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-228-1.jpg",
+       "alt": "Hino 228 (cifra) — De Deus, o Ungido — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-228-2.jpg",
+       "alt": "Hino 228 (cifra) — De Deus, o Ungido — página 2"
+      }
+     ],
+     "num": 228
+    },
+    {
+     "id": "cifra-229",
+     "titulo": "Boas-novas",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-229.jpg",
+       "alt": "Hino 229 (cifra) — Boas-novas — página 1"
+      }
+     ],
+     "num": 229
+    },
+    {
+     "id": "cifra-230",
+     "titulo": "Adoração",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-230.jpg",
+       "alt": "Hino 230 (cifra) — Adoração — página 1"
+      }
+     ],
+     "num": 230
+    },
+    {
+     "id": "cifra-231",
+     "titulo": "O Primeiro Natal",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-231-1.jpg",
+       "alt": "Hino 231 (cifra) — O Primeiro Natal — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-231-2.jpg",
+       "alt": "Hino 231 (cifra) — O Primeiro Natal — página 2"
+      }
+     ],
+     "num": 231
+    },
+    {
+     "id": "cifra-232",
+     "titulo": "Pequena Vila de Belém",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-232-1.jpg",
+       "alt": "Hino 232 (cifra) — Pequena Vila de Belém — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-232-2.jpg",
+       "alt": "Hino 232 (cifra) — Pequena Vila de Belém — página 2"
+      }
+     ],
+     "num": 232
+    },
+    {
+     "id": "cifra-233",
+     "titulo": "Os Pastores no Campo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-233-1.jpg",
+       "alt": "Hino 233 (cifra) — Os Pastores no Campo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-233-2.jpg",
+       "alt": "Hino 233 (cifra) — Os Pastores no Campo — página 2"
+      }
+     ],
+     "num": 233
+    },
+    {
+     "id": "cifra-234",
+     "titulo": "Um Pequeno a Repousar",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-234.jpg",
+       "alt": "Hino 234 (cifra) — Um Pequeno a Repousar — página 1"
+      }
+     ],
+     "num": 234
+    },
+    {
+     "id": "cifra-235",
+     "titulo": "O Anjo da Paz",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-235-1.jpg",
+       "alt": "Hino 235 (cifra) — O Anjo da Paz — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-235-2.jpg",
+       "alt": "Hino 235 (cifra) — O Anjo da Paz — página 2"
+      }
+     ],
+     "num": 235
+    },
+    {
+     "id": "cifra-236",
+     "titulo": "Em Linda Noite",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-236-1.jpg",
+       "alt": "Hino 236 (cifra) — Em Linda Noite — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-236-2.jpg",
+       "alt": "Hino 236 (cifra) — Em Linda Noite — página 2"
+      }
+     ],
+     "num": 236
+    },
+    {
+     "id": "cifra-237",
+     "titulo": "Jesus Nasceu",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-237-1.jpg",
+       "alt": "Hino 237 (cifra) — Jesus Nasceu — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-237-2.jpg",
+       "alt": "Hino 237 (cifra) — Jesus Nasceu — página 2"
+      }
+     ],
+     "num": 237
+    },
+    {
+     "id": "cifra-238",
+     "titulo": "Novas de Amor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-238-1.jpg",
+       "alt": "Hino 238 (cifra) — Novas de Amor — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-238-2.jpg",
+       "alt": "Hino 238 (cifra) — Novas de Amor — página 2"
+      }
+     ],
+     "num": 238
+    },
+    {
+     "id": "cifra-239",
+     "titulo": "Nasce Jesus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-239-1.jpg",
+       "alt": "Hino 239 (cifra) — Nasce Jesus — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-239-2.jpg",
+       "alt": "Hino 239 (cifra) — Nasce Jesus — página 2"
+      }
+     ],
+     "num": 239
+    },
+    {
+     "id": "cifra-240",
+     "titulo": "Louvor Angelical",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-240-1.jpg",
+       "alt": "Hino 240 (cifra) — Louvor Angelical — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-240-2.jpg",
+       "alt": "Hino 240 (cifra) — Louvor Angelical — página 2"
+      }
+     ],
+     "num": 240
+    },
+    {
+     "id": "cifra-241",
+     "titulo": "O Nascimento de Jesus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-241-1.jpg",
+       "alt": "Hino 241 (cifra) — O Nascimento de Jesus — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-241-2.jpg",
+       "alt": "Hino 241 (cifra) — O Nascimento de Jesus — página 2"
+      }
+     ],
+     "num": 241
+    },
+    {
+     "id": "cifra-242",
+     "titulo": "Os Anjos e o Natal",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-242-1.jpg",
+       "alt": "Hino 242 (cifra) — Os Anjos e o Natal — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-242-2.jpg",
+       "alt": "Hino 242 (cifra) — Os Anjos e o Natal — página 2"
+      }
+     ],
+     "num": 242
+    },
+    {
+     "id": "cifra-243",
+     "titulo": "Noite de Paz",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-243.jpg",
+       "alt": "Hino 243 (cifra) — Noite de Paz — página 1"
+      }
+     ],
+     "num": 243
+    },
+    {
+     "id": "cifra-244",
+     "titulo": "Mensagem Aos Pastores",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-244.jpg",
+       "alt": "Hino 244 (cifra) — Mensagem Aos Pastores — página 1"
+      }
+     ],
+     "num": 244
+    },
+    {
+     "id": "cifra-245",
+     "titulo": "Homens Sábios e de Bem",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-245.jpg",
+       "alt": "Hino 245 (cifra) — Homens Sábios e de Bem — página 1"
+      }
+     ],
+     "num": 245
+    },
+    {
+     "id": "cifra-246",
+     "titulo": "Jesus, o Messias",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-246.jpg",
+       "alt": "Hino 246 (cifra) — Jesus, o Messias — página 1"
+      }
+     ],
+     "num": 246
+    },
+    {
+     "id": "cifra-247",
+     "titulo": "Estrela Cintilante",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-247.jpg",
+       "alt": "Hino 247 (cifra) — Estrela Cintilante — página 1"
+      }
+     ],
+     "num": 247
+    },
+    {
+     "id": "cifra-248",
+     "titulo": "No Humilde Presépio",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-248.jpg",
+       "alt": "Hino 248 (cifra) — No Humilde Presépio — página 1"
+      }
+     ],
+     "num": 248
+    },
+    {
+     "id": "cifra-249",
+     "titulo": "Na Manjedoura",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-249.jpg",
+       "alt": "Hino 249 (cifra) — Na Manjedoura — página 1"
+      }
+     ],
+     "num": 249
+    },
+    {
+     "id": "cifra-250",
+     "titulo": "A Voz de Jesus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-250-1.jpg",
+       "alt": "Hino 250 (cifra) — A Voz de Jesus — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-250-2.jpg",
+       "alt": "Hino 250 (cifra) — A Voz de Jesus — página 2"
+      }
+     ],
+     "num": 250
+    },
+    {
+     "id": "cifra-251",
+     "titulo": "O Pão da Vida",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-251-1.jpg",
+       "alt": "Hino 251 (cifra) — O Pão da Vida — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-251-2.jpg",
+       "alt": "Hino 251 (cifra) — O Pão da Vida — página 2"
+      }
+     ],
+     "num": 251
+    },
+    {
+     "id": "cifra-252",
+     "titulo": "Pão Celestial",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-252.jpg",
+       "alt": "Hino 252 (cifra) — Pão Celestial — página 1"
+      }
+     ],
+     "num": 252
+    },
+    {
+     "id": "cifra-253",
+     "titulo": "Cristo, a Luz do Mundo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-253-1.jpg",
+       "alt": "Hino 253 (cifra) — Cristo, a Luz do Mundo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-253-2.jpg",
+       "alt": "Hino 253 (cifra) — Cristo, a Luz do Mundo — página 2"
+      }
+     ],
+     "num": 253
+    },
+    {
+     "id": "cifra-254",
+     "titulo": "Sossegai",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-254-1.jpg",
+       "alt": "Hino 254 (cifra) — Sossegai — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-254-2.jpg",
+       "alt": "Hino 254 (cifra) — Sossegai — página 2"
+      }
+     ],
+     "num": 254
+    },
+    {
+     "id": "cifra-255",
+     "titulo": "A Ovelha Perdida",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-255-1.jpg",
+       "alt": "Hino 255 (cifra) — A Ovelha Perdida — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-255-2.jpg",
+       "alt": "Hino 255 (cifra) — A Ovelha Perdida — página 2"
+      }
+     ],
+     "num": 255
+    },
+    {
+     "id": "cifra-256",
+     "titulo": "Glória Singular",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-256.jpg",
+       "alt": "Hino 256 (cifra) — Glória Singular — página 1"
+      }
+     ],
+     "num": 256
+    },
+    {
+     "id": "cifra-257",
+     "titulo": "Hosana ao Grande Rei",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-257-1.jpg",
+       "alt": "Hino 257 (cifra) — Hosana ao Grande Rei — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-257-2.jpg",
+       "alt": "Hino 257 (cifra) — Hosana ao Grande Rei — página 2"
+      }
+     ],
+     "num": 257
+    },
+    {
+     "id": "cifra-258",
+     "titulo": "Majestade",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-258.jpg",
+       "alt": "Hino 258 (cifra) — Majestade — página 1"
+      }
+     ],
+     "num": 258
+    },
+    {
+     "id": "cifra-259",
+     "titulo": "Hosana e Glória",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-259.jpg",
+       "alt": "Hino 259 (cifra) — Hosana e Glória — página 1"
+      }
+     ],
+     "num": 259
+    },
+    {
+     "id": "cifra-260",
+     "titulo": "Amor que Vence",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-260-1.jpg",
+       "alt": "Hino 260 (cifra) — Amor que Vence — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-260-2.jpg",
+       "alt": "Hino 260 (cifra) — Amor que Vence — página 2"
+      }
+     ],
+     "num": 260
+    },
+    {
+     "id": "cifra-261",
+     "titulo": "O Gólgota",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-261.jpg",
+       "alt": "Hino 261 (cifra) — O Gólgota — página 1"
+      }
+     ],
+     "num": 261
+    },
+    {
+     "id": "cifra-262",
+     "titulo": "Contemplação da Cruz",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-262.jpg",
+       "alt": "Hino 262 (cifra) — Contemplação da Cruz — página 1"
+      }
+     ],
+     "num": 262
+    },
+    {
+     "id": "cifra-263",
+     "titulo": "Junto à Cruz de Cristo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-263-1.jpg",
+       "alt": "Hino 263 (cifra) — Junto à Cruz de Cristo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-263-2.jpg",
+       "alt": "Hino 263 (cifra) — Junto à Cruz de Cristo — página 2"
+      }
+     ],
+     "num": 263
+    },
+    {
+     "id": "cifra-264",
+     "titulo": "Fronte Ensangüentada",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-264-1.jpg",
+       "alt": "Hino 264 (cifra) — Fronte Ensangüentada — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-264-2.jpg",
+       "alt": "Hino 264 (cifra) — Fronte Ensangüentada — página 2"
+      }
+     ],
+     "num": 264
+    },
+    {
+     "id": "cifra-265",
+     "titulo": "Cristo Redentor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-265.jpg",
+       "alt": "Hino 265 (cifra) — Cristo Redentor — página 1"
+      }
+     ],
+     "num": 265
+    },
+    {
+     "id": "cifra-266",
+     "titulo": "Rude Cruz",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-266.jpg",
+       "alt": "Hino 266 (cifra) — Rude Cruz — página 1"
+      }
+     ],
+     "num": 266
+    },
+    {
+     "id": "cifra-267",
+     "titulo": "Precioso Sangue",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-267-1.jpg",
+       "alt": "Hino 267 (cifra) — Precioso Sangue — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-267-1.jpg",
+       "alt": "Hino 267 (cifra) — Precioso Sangue — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-267-2.jpg",
+       "alt": "Hino 267 (cifra) — Precioso Sangue — página 3"
+      }
+     ],
+     "num": 267
+    },
+    {
+     "id": "cifra-268",
+     "titulo": "Redenção",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-268.jpg",
+       "alt": "Hino 268 (cifra) — Redenção — página 1"
+      }
+     ],
+     "num": 268
+    },
+    {
+     "id": "cifra-269",
+     "titulo": "Pureza no Sangue de Cristo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-269-1.jpg",
+       "alt": "Hino 269 (cifra) — Pureza no Sangue de Cristo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-269-2.jpg",
+       "alt": "Hino 269 (cifra) — Pureza no Sangue de Cristo — página 2"
+      }
+     ],
+     "num": 269
+    },
+    {
+     "id": "cifra-270",
+     "titulo": "Desafio",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-270-1.jpg",
+       "alt": "Hino 270 (cifra) — Desafio — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-270-2.jpg",
+       "alt": "Hino 270 (cifra) — Desafio — página 2"
+      }
+     ],
+     "num": 270
+    },
+    {
+     "id": "cifra-271",
+     "titulo": "Ressurreição",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-271.jpg",
+       "alt": "Hino 271 (cifra) — Ressurreição — página 1"
+      }
+     ],
+     "num": 271
+    },
+    {
+     "id": "cifra-272",
+     "titulo": "Aleluia ao Cristo Redivivo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-272.jpg",
+       "alt": "Hino 272 (cifra) — Aleluia ao Cristo Redivivo — página 1"
+      }
+     ],
+     "num": 272
+    },
+    {
+     "id": "cifra-273",
+     "titulo": "Memórias da Ressurreição",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-273-1.jpg",
+       "alt": "Hino 273 (cifra) — Memórias da Ressurreição — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-273-2.jpg",
+       "alt": "Hino 273 (cifra) — Memórias da Ressurreição — página 2"
+      }
+     ],
+     "num": 273
+    },
+    {
+     "id": "cifra-274",
+     "titulo": "Morto e Ressurreto",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-274-1.jpg",
+       "alt": "Hino 274 (cifra) — Morto e Ressurreto — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-274-1.jpg",
+       "alt": "Hino 274 (cifra) — Morto e Ressurreto — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-274-2.jpg",
+       "alt": "Hino 274 (cifra) — Morto e Ressurreto — página 3"
+      }
+     ],
+     "num": 274
+    },
+    {
+     "id": "cifra-275",
+     "titulo": "Cristo Venceu",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-275.jpg",
+       "alt": "Hino 275 (cifra) — Cristo Venceu — página 1"
+      }
+     ],
+     "num": 275
+    },
+    {
+     "id": "cifra-276",
+     "titulo": "Amorável Convite",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-276.jpg",
+       "alt": "Hino 276 (cifra) — Amorável Convite — página 1"
+      }
+     ],
+     "num": 276
+    },
+    {
+     "id": "cifra-277",
+     "titulo": "Cristo Vive! Ressurgiu",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-277.jpg",
+       "alt": "Hino 277 (cifra) — Cristo Vive! Ressurgiu — página 1"
+      }
+     ],
+     "num": 277
+    },
+    {
+     "id": "cifra-278",
+     "titulo": "A Vitória de Jesus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-278-1.jpg",
+       "alt": "Hino 278 (cifra) — A Vitória de Jesus — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-278-2.jpg",
+       "alt": "Hino 278 (cifra) — A Vitória de Jesus — página 2"
+      }
+     ],
+     "num": 278
+    },
+    {
+     "id": "cifra-279",
+     "titulo": "O Dia Triunfal Raiou",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-279.jpg",
+       "alt": "Hino 279 (cifra) — O Dia Triunfal Raiou — página 1"
+      }
+     ],
+     "num": 279
+    },
+    {
+     "id": "cifra-280",
+     "titulo": "Ascensão",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-280-1.jpg",
+       "alt": "Hino 280 (cifra) — Ascensão — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-280-2.jpg",
+       "alt": "Hino 280 (cifra) — Ascensão — página 2"
+      }
+     ],
+     "num": 280
+    },
+    {
+     "id": "cifra-281",
+     "titulo": "Jesus Triunfante",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-281-1.jpg",
+       "alt": "Hino 281 (cifra) — Jesus Triunfante — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-281-2.jpg",
+       "alt": "Hino 281 (cifra) — Jesus Triunfante — página 2"
+      }
+     ],
+     "num": 281
+    },
+    {
+     "id": "cifra-282",
+     "titulo": "A Grande Comissão",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-282-1.jpg",
+       "alt": "Hino 282 (cifra) — A Grande Comissão — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-282-2.jpg",
+       "alt": "Hino 282 (cifra) — A Grande Comissão — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-282-3.jpg",
+       "alt": "Hino 282 (cifra) — A Grande Comissão — página 3"
+      }
+     ],
+     "num": 282
+    },
+    {
+     "id": "cifra-283",
+     "titulo": "Desafio",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-283.jpg",
+       "alt": "Hino 283 (cifra) — Desafio — página 1"
+      }
+     ],
+     "num": 283
+    },
+    {
+     "id": "cifra-284",
+     "titulo": "Obediência",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-284-1.jpg",
+       "alt": "Hino 284 (cifra) — Obediência — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-284-2.jpg",
+       "alt": "Hino 284 (cifra) — Obediência — página 2"
+      }
+     ],
+     "num": 284
+    },
+    {
+     "id": "cifra-285",
+     "titulo": "A Salvação do Brasil",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-285-1.jpg",
+       "alt": "Hino 285 (cifra) — A Salvação do Brasil — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-285-2.jpg",
+       "alt": "Hino 285 (cifra) — A Salvação do Brasil — página 2"
+      }
+     ],
+     "num": 285
+    },
+    {
+     "id": "cifra-286",
+     "titulo": "Colheita Bendita",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-286-1.jpg",
+       "alt": "Hino 286 (cifra) — Colheita Bendita — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-286-2.jpg",
+       "alt": "Hino 286 (cifra) — Colheita Bendita — página 2"
+      }
+     ],
+     "num": 286
+    },
+    {
+     "id": "cifra-287",
+     "titulo": "Igreja, Alerta",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-287-1.jpg",
+       "alt": "Hino 287 (cifra) — Igreja, Alerta — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-287-2.jpg",
+       "alt": "Hino 287 (cifra) — Igreja, Alerta — página 2"
+      }
+     ],
+     "num": 287
+    },
+    {
+     "id": "cifra-288",
+     "titulo": "A Mensagem Real",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-288.jpg",
+       "alt": "Hino 288 (cifra) — A Mensagem Real — página 1"
+      }
+     ],
+     "num": 288
+    },
+    {
+     "id": "cifra-289",
+     "titulo": "Quem Irá?",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-289.jpg",
+       "alt": "Hino 289 (cifra) — Quem Irá? — página 1"
+      }
+     ],
+     "num": 289
+    },
+    {
+     "id": "cifra-290",
+     "titulo": "Jesus Já Vem",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-290-1.jpg",
+       "alt": "Hino 290 (cifra) — Jesus Já Vem — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-290-2.jpg",
+       "alt": "Hino 290 (cifra) — Jesus Já Vem — página 2"
+      }
+     ],
+     "num": 290
+    },
+    {
+     "id": "cifra-291",
+     "titulo": "Triunfante Vem",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-291-1.jpg",
+       "alt": "Hino 291 (cifra) — Triunfante Vem — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-291-2.jpg",
+       "alt": "Hino 291 (cifra) — Triunfante Vem — página 2"
+      }
+     ],
+     "num": 291
+    },
+    {
+     "id": "cifra-292",
+     "titulo": "A Vinda do Senhor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-292-1.jpg",
+       "alt": "Hino 292 (cifra) — A Vinda do Senhor — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-292-2.jpg",
+       "alt": "Hino 292 (cifra) — A Vinda do Senhor — página 2"
+      }
+     ],
+     "num": 292
+    },
+    {
+     "id": "cifra-293",
+     "titulo": "O Dia Glorioso",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-293-1.jpg",
+       "alt": "Hino 293 (cifra) — O Dia Glorioso — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-293-2.jpg",
+       "alt": "Hino 293 (cifra) — O Dia Glorioso — página 2"
+      }
+     ],
+     "num": 293
+    },
+    {
+     "id": "cifra-294",
+     "titulo": "O Senhor Voltará",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-294-1.jpg",
+       "alt": "Hino 294 (cifra) — O Senhor Voltará — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-294-2.jpg",
+       "alt": "Hino 294 (cifra) — O Senhor Voltará — página 2"
+      }
+     ],
+     "num": 294
+    },
+    {
+     "id": "cifra-295",
+     "titulo": "A Volta de Jesus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-295-1.jpg",
+       "alt": "Hino 295 (cifra) — A Volta de Jesus — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-295-2.jpg",
+       "alt": "Hino 295 (cifra) — A Volta de Jesus — página 2"
+      }
+     ],
+     "num": 295
+    },
+    {
+     "id": "cifra-296",
+     "titulo": "Cristo Não Tarda",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-296.jpg",
+       "alt": "Hino 296 (cifra) — Cristo Não Tarda — página 1"
+      }
+     ],
+     "num": 296
+    },
+    {
+     "id": "cifra-297",
+     "titulo": "A Chamada Final",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-297.jpg",
+       "alt": "Hino 297 (cifra) — A Chamada Final — página 1"
+      }
+     ],
+     "num": 297
+    },
+    {
+     "id": "cifra-298",
+     "titulo": "A Pedra Fundamental",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-298-1.jpg",
+       "alt": "Hino 298 (cifra) — A Pedra Fundamental — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-298-2.jpg",
+       "alt": "Hino 298 (cifra) — A Pedra Fundamental — página 2"
+      }
+     ],
+     "num": 298
+    },
+    {
+     "id": "cifra-299",
+     "titulo": "Renovação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-299.jpg",
+       "alt": "Hino 299 (cifra) — Renovação — página 1"
+      }
+     ],
+     "num": 299
+    },
+    {
+     "id": "cifra-300",
+     "titulo": "Igreja Militante",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-300.jpg",
+       "alt": "Hino 300 (cifra) — Igreja Militante — página 1"
+      }
+     ],
+     "num": 300
+    },
+    {
+     "id": "cifra-301",
+     "titulo": "O Único Salvador",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-301-1.jpg",
+       "alt": "Hino 301 (cifra) — O Único Salvador — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-301-2.jpg",
+       "alt": "Hino 301 (cifra) — O Único Salvador — página 2"
+      }
+     ],
+     "num": 301
+    },
+    {
+     "id": "cifra-302",
+     "titulo": "Povoam as Cidades",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-302.jpg",
+       "alt": "Hino 302 (cifra) — Povoam as Cidades — página 1"
+      }
+     ],
+     "num": 302
+    },
+    {
+     "id": "cifra-303",
+     "titulo": "Pendão Real",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-303-1.jpg",
+       "alt": "Hino 303 (cifra) — Pendão Real — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-303-2.jpg",
+       "alt": "Hino 303 (cifra) — Pendão Real — página 2"
+      }
+     ],
+     "num": 303
+    },
+    {
+     "id": "cifra-304",
+     "titulo": "A Voz do Evangelho",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-304-1.jpg",
+       "alt": "Hino 304 (cifra) — A Voz do Evangelho — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-304-2.jpg",
+       "alt": "Hino 304 (cifra) — A Voz do Evangelho — página 2"
+      }
+     ],
+     "num": 304
+    },
+    {
+     "id": "cifra-305",
+     "titulo": "Quem Quiser",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-305.jpg",
+       "alt": "Hino 305 (cifra) — Quem Quiser — página 1"
+      }
+     ],
+     "num": 305
+    },
+    {
+     "id": "cifra-306",
+     "titulo": "Fidelidade na Luta",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-306-1.jpg",
+       "alt": "Hino 306 (cifra) — Fidelidade na Luta — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-306.jpg",
+       "alt": "Hino 306 (cifra) — Fidelidade na Luta — página 2"
+      }
+     ],
+     "num": 306
+    },
+    {
+     "id": "cifra-307",
+     "titulo": "A Santa Peleja",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-307-1.jpg",
+       "alt": "Hino 307 (cifra) — A Santa Peleja — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-307-2.jpg",
+       "alt": "Hino 307 (cifra) — A Santa Peleja — página 2"
+      }
+     ],
+     "num": 307
+    },
+    {
+     "id": "cifra-308",
+     "titulo": "Escuridão e Luz",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-308-1.jpg",
+       "alt": "Hino 308 (cifra) — Escuridão e Luz — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-308-2.jpg",
+       "alt": "Hino 308 (cifra) — Escuridão e Luz — página 2"
+      }
+     ],
+     "num": 308
+    },
+    {
+     "id": "cifra-309",
+     "titulo": "Proclamação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-309-1.jpg",
+       "alt": "Hino 309 (cifra) — Proclamação — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-309-2.jpg",
+       "alt": "Hino 309 (cifra) — Proclamação — página 2"
+      }
+     ],
+     "num": 309
+    },
+    {
+     "id": "cifra-310",
+     "titulo": "Quem Salva É Só Jesus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-310-1.jpg",
+       "alt": "Hino 310 (cifra) — Quem Salva É Só Jesus — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-310-2.jpg",
+       "alt": "Hino 310 (cifra) — Quem Salva É Só Jesus — página 2"
+      }
+     ],
+     "num": 310
+    },
+    {
+     "id": "cifra-311",
+     "titulo": "Avante, Ó Crentes",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-311-1.jpg",
+       "alt": "Hino 311 (cifra) — Avante, Ó Crentes — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-311-2.jpg",
+       "alt": "Hino 311 (cifra) — Avante, Ó Crentes — página 2"
+      }
+     ],
+     "num": 311
+    },
+    {
+     "id": "cifra-312",
+     "titulo": "Há Trabalho Certo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-312-1.jpg",
+       "alt": "Hino 312 (cifra) — Há Trabalho Certo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-312-2.jpg",
+       "alt": "Hino 312 (cifra) — Há Trabalho Certo — página 2"
+      }
+     ],
+     "num": 312
+    },
+    {
+     "id": "cifra-313",
+     "titulo": "Prontidão",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-313-1.jpg",
+       "alt": "Hino 313 (cifra) — Prontidão — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-313-2.jpg",
+       "alt": "Hino 313 (cifra) — Prontidão — página 2"
+      }
+     ],
+     "num": 313
+    },
+    {
+     "id": "cifra-314",
+     "titulo": "Diligência",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-314-1.jpg",
+       "alt": "Hino 314 (cifra) — Diligência — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-314-2.jpg",
+       "alt": "Hino 314 (cifra) — Diligência — página 2"
+      }
+     ],
+     "num": 314
+    },
+    {
+     "id": "cifra-315",
+     "titulo": "Serviço do Crente",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-315.jpg",
+       "alt": "Hino 315 (cifra) — Serviço do Crente — página 1"
+      }
+     ],
+     "num": 315
+    },
+    {
+     "id": "cifra-316",
+     "titulo": "Os Intentos de Deus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-316-1.jpg",
+       "alt": "Hino 316 (cifra) — Os Intentos de Deus — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-316-2.jpg",
+       "alt": "Hino 316 (cifra) — Os Intentos de Deus — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-316-3.jpg",
+       "alt": "Hino 316 (cifra) — Os Intentos de Deus — página 3"
+      }
+     ],
+     "num": 316
+    },
+    {
+     "id": "cifra-317",
+     "titulo": "Chamada",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-317-1.jpg",
+       "alt": "Hino 317 (cifra) — Chamada — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-317-2.jpg",
+       "alt": "Hino 317 (cifra) — Chamada — página 2"
+      }
+     ],
+     "num": 317
+    },
+    {
+     "id": "cifra-318",
+     "titulo": "Ceifeiros do Senhor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-318-1.jpg",
+       "alt": "Hino 318 (cifra) — Ceifeiros do Senhor — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-318-2.jpg",
+       "alt": "Hino 318 (cifra) — Ceifeiros do Senhor — página 2"
+      }
+     ],
+     "num": 318
+    },
+    {
+     "id": "cifra-319",
+     "titulo": "Obreiros em Marcha",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-319-1.jpg",
+       "alt": "Hino 319 (cifra) — Obreiros em Marcha — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-319-2.jpg",
+       "alt": "Hino 319 (cifra) — Obreiros em Marcha — página 2"
+      }
+     ],
+     "num": 319
+    },
+    {
+     "id": "cifra-320",
+     "titulo": "Brilha no Viver",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-320.jpg",
+       "alt": "Hino 320 (cifra) — Brilha no Viver — página 1"
+      }
+     ],
+     "num": 320
+    },
+    {
+     "id": "cifra-321",
+     "titulo": "Mãos ao Trabalho",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-321.jpg",
+       "alt": "Hino 321 (cifra) — Mãos ao Trabalho — página 1"
+      }
+     ],
+     "num": 321
+    },
+    {
+     "id": "cifra-322",
+     "titulo": "Heroínas da Fé",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-322.jpg",
+       "alt": "Hino 322 (cifra) — Heroínas da Fé — página 1"
+      }
+     ],
+     "num": 322
+    },
+    {
+     "id": "cifra-323",
+     "titulo": "Santa Peleja",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-323.jpg",
+       "alt": "Hino 323 (cifra) — Santa Peleja — página 1"
+      }
+     ],
+     "num": 323
+    },
+    {
+     "id": "cifra-324",
+     "titulo": "Unidas e Firmes",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-324.jpg",
+       "alt": "Hino 324 (cifra) — Unidas e Firmes — página 1"
+      }
+     ],
+     "num": 324
+    },
+    {
+     "id": "cifra-325",
+     "titulo": "Aspiração Feminina",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-325-1.jpg",
+       "alt": "Hino 325 (cifra) — Aspiração Feminina — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-325-2.jpg",
+       "alt": "Hino 325 (cifra) — Aspiração Feminina — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-325-3.jpg",
+       "alt": "Hino 325 (cifra) — Aspiração Feminina — página 3"
+      }
+     ],
+     "num": 325
+    },
+    {
+     "id": "cifra-326",
+     "titulo": "Homens Presbiterianos",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-326-1.jpg",
+       "alt": "Hino 326 (cifra) — Homens Presbiterianos — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-326-2.jpg",
+       "alt": "Hino 326 (cifra) — Homens Presbiterianos — página 2"
+      }
+     ],
+     "num": 326
+    },
+    {
+     "id": "cifra-327",
+     "titulo": "Obreiros Cristãos",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-327-1.jpg",
+       "alt": "Hino 327 (cifra) — Obreiros Cristãos — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-327-2.jpg",
+       "alt": "Hino 327 (cifra) — Obreiros Cristãos — página 2"
+      }
+     ],
+     "num": 327
+    },
+    {
+     "id": "cifra-328",
+     "titulo": "Deus do Universo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-328-1.jpg",
+       "alt": "Hino 328 (cifra) — Deus do Universo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-328-2.jpg",
+       "alt": "Hino 328 (cifra) — Deus do Universo — página 2"
+      }
+     ],
+     "num": 328
+    },
+    {
+     "id": "cifra-329",
+     "titulo": "Instalação de Pastor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-329-1.jpg",
+       "alt": "Hino 329 (cifra) — Instalação de Pastor — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-329-2.jpg",
+       "alt": "Hino 329 (cifra) — Instalação de Pastor — página 2"
+      }
+     ],
+     "num": 329
+    },
+    {
+     "id": "cifra-330",
+     "titulo": "A Bênção do Batismo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-330-1.jpg",
+       "alt": "Hino 330 (cifra) — A Bênção do Batismo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-330-2.jpg",
+       "alt": "Hino 330 (cifra) — A Bênção do Batismo — página 2"
+      }
+     ],
+     "num": 330
+    },
+    {
+     "id": "cifra-331",
+     "titulo": "Oração",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-331-1.jpg",
+       "alt": "Hino 331 (cifra) — Oração — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-331-2.jpg",
+       "alt": "Hino 331 (cifra) — Oração — página 2"
+      }
+     ],
+     "num": 331
+    },
+    {
+     "id": "cifra-332",
+     "titulo": "Batismo Infantil",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-332-1.jpg",
+       "alt": "Hino 332 (cifra) — Batismo Infantil — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-332-2.jpg",
+       "alt": "Hino 332 (cifra) — Batismo Infantil — página 2"
+      }
+     ],
+     "num": 332
+    },
+    {
+     "id": "cifra-333",
+     "titulo": "O Batismo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-333-1.jpg",
+       "alt": "Hino 333 (cifra) — O Batismo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-333-2.jpg",
+       "alt": "Hino 333 (cifra) — O Batismo — página 2"
+      }
+     ],
+     "num": 333
+    },
+    {
+     "id": "cifra-334",
+     "titulo": "A Conversão",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-334.jpg",
+       "alt": "Hino 334 (cifra) — A Conversão — página 1"
+      }
+     ],
+     "num": 334
+    },
+    {
+     "id": "cifra-335",
+     "titulo": "Jubilo no Céu",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-335.jpg",
+       "alt": "Hino 335 (cifra) — Jubilo no Céu — página 1"
+      }
+     ],
+     "num": 335
+    },
+    {
+     "id": "cifra-336",
+     "titulo": "Transformação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-336-1.jpg",
+       "alt": "Hino 336 (cifra) — Transformação — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-336-2.jpg",
+       "alt": "Hino 336 (cifra) — Transformação — página 2"
+      }
+     ],
+     "num": 336
+    },
+    {
+     "id": "cifra-337",
+     "titulo": "Profissão de Fé",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-337.jpg",
+       "alt": "Hino 337 (cifra) — Profissão de Fé — página 1"
+      }
+     ],
+     "num": 337
+    },
+    {
+     "id": "cifra-338",
+     "titulo": "Dia da Profissão de Fé",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-338.jpg",
+       "alt": "Hino 338 (cifra) — Dia da Profissão de Fé — página 1"
+      }
+     ],
+     "num": 338
+    },
+    {
+     "id": "cifra-339",
+     "titulo": "Dia Feliz",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-339-1.jpg",
+       "alt": "Hino 339 (cifra) — Dia Feliz — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-339-2.jpg",
+       "alt": "Hino 339 (cifra) — Dia Feliz — página 2"
+      }
+     ],
+     "num": 339
+    },
+    {
+     "id": "cifra-340",
+     "titulo": "Santa Comunhão",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-340-1.jpg",
+       "alt": "Hino 340 (cifra) — Santa Comunhão — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-340-2.jpg",
+       "alt": "Hino 340 (cifra) — Santa Comunhão — página 2"
+      }
+     ],
+     "num": 340
+    },
+    {
+     "id": "cifra-341",
+     "titulo": "Vera Páscoa",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-341.jpg",
+       "alt": "Hino 341 (cifra) — Vera Páscoa — página 1"
+      }
+     ],
+     "num": 341
+    },
+    {
+     "id": "cifra-342",
+     "titulo": "Comunhão",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-342.jpg",
+       "alt": "Hino 342 (cifra) — Comunhão — página 1"
+      }
+     ],
+     "num": 342
+    },
+    {
+     "id": "cifra-343",
+     "titulo": "Em Memória",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-343-1.jpg",
+       "alt": "Hino 343 (cifra) — Em Memória — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-343-2.jpg",
+       "alt": "Hino 343 (cifra) — Em Memória — página 2"
+      }
+     ],
+     "num": 343
+    },
+    {
+     "id": "cifra-344",
+     "titulo": "A Ceia do Senhor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-344.jpg",
+       "alt": "Hino 344 (cifra) — A Ceia do Senhor — página 1"
+      }
+     ],
+     "num": 344
+    },
+    {
+     "id": "cifra-345",
+     "titulo": "O Pão do Mundo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-345.jpg",
+       "alt": "Hino 345 (cifra) — O Pão do Mundo — página 1"
+      }
+     ],
+     "num": 345
+    },
+    {
+     "id": "cifra-346",
+     "titulo": "A Ceia do Senhor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-346-1.jpg",
+       "alt": "Hino 346 (cifra) — A Ceia do Senhor — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-346-2.jpg",
+       "alt": "Hino 346 (cifra) — A Ceia do Senhor — página 2"
+      }
+     ],
+     "num": 346
+    },
+    {
+     "id": "cifra-347",
+     "titulo": "O Justo Pelos Injustos",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-347.jpg",
+       "alt": "Hino 347 (cifra) — O Justo Pelos Injustos — página 1"
+      }
+     ],
+     "num": 347
+    },
+    {
+     "id": "cifra-348",
+     "titulo": "É Este o Dia",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-348.jpg",
+       "alt": "Hino 348 (cifra) — É Este o Dia — página 1"
+      }
+     ],
+     "num": 348
+    },
+    {
+     "id": "cifra-349",
+     "titulo": "Dia do Senhor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-349.jpg",
+       "alt": "Hino 349 (cifra) — Dia do Senhor — página 1"
+      }
+     ],
+     "num": 349
+    },
+    {
+     "id": "cifra-350",
+     "titulo": "A Palavra da Vida",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-350-1.jpg",
+       "alt": "Hino 350 (cifra) — A Palavra da Vida — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-350-2.jpg",
+       "alt": "Hino 350 (cifra) — A Palavra da Vida — página 2"
+      }
+     ],
+     "num": 350
+    },
+    {
+     "id": "cifra-351",
+     "titulo": "Belas Palavras de Vida",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-351.jpg",
+       "alt": "Hino 351 (cifra) — Belas Palavras de Vida — página 1"
+      }
+     ],
+     "num": 351
+    },
+    {
+     "id": "cifra-352",
+     "titulo": "Leitura Bendita",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-352.jpg",
+       "alt": "Hino 352 (cifra) — Leitura Bendita — página 1"
+      }
+     ],
+     "num": 352
+    },
+    {
+     "id": "cifra-353",
+     "titulo": "Ao Fim dos Estudos",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-353-1.jpg",
+       "alt": "Hino 353 (cifra) — Ao Fim dos Estudos — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-353-2.jpg",
+       "alt": "Hino 353 (cifra) — Ao Fim dos Estudos — página 2"
+      }
+     ],
+     "num": 353
+    },
+    {
+     "id": "cifra-354",
+     "titulo": "A Escola Dominical",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-354-1.jpg",
+       "alt": "Hino 354 (cifra) — A Escola Dominical — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-354-2.jpg",
+       "alt": "Hino 354 (cifra) — A Escola Dominical — página 2"
+      }
+     ],
+     "num": 354
+    },
+    {
+     "id": "cifra-355",
+     "titulo": "Oração Infantil",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-355.jpg",
+       "alt": "Hino 355 (cifra) — Oração Infantil — página 1"
+      }
+     ],
+     "num": 355
+    },
+    {
+     "id": "cifra-356",
+     "titulo": "Jesus Menino",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-356-1.jpg",
+       "alt": "Hino 356 (cifra) — Jesus Menino — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-356-2.jpg",
+       "alt": "Hino 356 (cifra) — Jesus Menino — página 2"
+      }
+     ],
+     "num": 356
+    },
+    {
+     "id": "cifra-357",
+     "titulo": "Louvor Infantil",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-357-1.jpg",
+       "alt": "Hino 357 (cifra) — Louvor Infantil — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-357-2.jpg",
+       "alt": "Hino 357 (cifra) — Louvor Infantil — página 2"
+      }
+     ],
+     "num": 357
+    },
+    {
+     "id": "cifra-358",
+     "titulo": "Jesus e as Crianças",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-358.jpg",
+       "alt": "Hino 358 (cifra) — Jesus e as Crianças — página 1"
+      }
+     ],
+     "num": 358
+    },
+    {
+     "id": "cifra-359",
+     "titulo": "Jesus Me Quer Bem",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-359.jpg",
+       "alt": "Hino 359 (cifra) — Jesus Me Quer Bem — página 1"
+      }
+     ],
+     "num": 359
+    },
+    {
+     "id": "cifra-360",
+     "titulo": "Pequena Luz",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-360.jpg",
+       "alt": "Hino 360 (cifra) — Pequena Luz — página 1"
+      }
+     ],
+     "num": 360
+    },
+    {
+     "id": "cifra-361",
+     "titulo": "Brilhando com Jesus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-361.jpg",
+       "alt": "Hino 361 (cifra) — Brilhando com Jesus — página 1"
+      }
+     ],
+     "num": 361
+    },
+    {
+     "id": "cifra-362",
+     "titulo": "Brilhando por Jesus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-362-1.jpg",
+       "alt": "Hino 362 (cifra) — Brilhando por Jesus — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-362-1.jpg",
+       "alt": "Hino 362 (cifra) — Brilhando por Jesus — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-362-2.jpg",
+       "alt": "Hino 362 (cifra) — Brilhando por Jesus — página 3"
+      }
+     ],
+     "num": 362
+    },
+    {
+     "id": "cifra-363",
+     "titulo": "Venham as Crianças",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-363-1.jpg",
+       "alt": "Hino 363 (cifra) — Venham as Crianças — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-363-2.jpg",
+       "alt": "Hino 363 (cifra) — Venham as Crianças — página 2"
+      }
+     ],
+     "num": 363
+    },
+    {
+     "id": "cifra-364",
+     "titulo": "Graças a Deus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-364.jpg",
+       "alt": "Hino 364 (cifra) — Graças a Deus — página 1"
+      }
+     ],
+     "num": 364
+    },
+    {
+     "id": "cifra-365",
+     "titulo": "Convite Às Crianças",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-365-1.jpg",
+       "alt": "Hino 365 (cifra) — Convite Às Crianças — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-365-2.jpg",
+       "alt": "Hino 365 (cifra) — Convite Às Crianças — página 2"
+      }
+     ],
+     "num": 365
+    },
+    {
+     "id": "cifra-366",
+     "titulo": "Jóias Preciosas",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-366.jpg",
+       "alt": "Hino 366 (cifra) — Jóias Preciosas — página 1"
+      }
+     ],
+     "num": 366
+    },
+    {
+     "id": "cifra-367",
+     "titulo": "Convite Aos Meninos",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-367-1.jpg",
+       "alt": "Hino 367 (cifra) — Convite Aos Meninos — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-367-2.jpg",
+       "alt": "Hino 367 (cifra) — Convite Aos Meninos — página 2"
+      }
+     ],
+     "num": 367
+    },
+    {
+     "id": "cifra-368",
+     "titulo": "Despedida",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-368.jpg",
+       "alt": "Hino 368 (cifra) — Despedida — página 1"
+      }
+     ],
+     "num": 368
+    },
+    {
+     "id": "cifra-369",
+     "titulo": "A Bíblia para Todos",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-369-1.jpg",
+       "alt": "Hino 369 (cifra) — A Bíblia para Todos — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-369-2.jpg",
+       "alt": "Hino 369 (cifra) — A Bíblia para Todos — página 2"
+      }
+     ],
+     "num": 369
+    },
+    {
+     "id": "cifra-370",
+     "titulo": "Proclamação",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-370.jpg",
+       "alt": "Hino 370 (cifra) — Proclamação — página 1"
+      }
+     ],
+     "num": 370
+    },
+    {
+     "id": "cifra-371",
+     "titulo": "A Bíblia",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-371-1.jpg",
+       "alt": "Hino 371 (cifra) — A Bíblia — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-371-2.jpg",
+       "alt": "Hino 371 (cifra) — A Bíblia — página 2"
+      }
+     ],
+     "num": 371
+    },
+    {
+     "id": "cifra-372",
+     "titulo": "O Crente e a Bíblia",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-372-1.jpg",
+       "alt": "Hino 372 (cifra) — O Crente e a Bíblia — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-372-2.jpg",
+       "alt": "Hino 372 (cifra) — O Crente e a Bíblia — página 2"
+      }
+     ],
+     "num": 372
+    },
+    {
+     "id": "cifra-373",
+     "titulo": "Ano Novo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-373-1.jpg",
+       "alt": "Hino 373 (cifra) — Ano Novo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-373-2.jpg",
+       "alt": "Hino 373 (cifra) — Ano Novo — página 2"
+      }
+     ],
+     "num": 373
+    },
+    {
+     "id": "cifra-374",
+     "titulo": "Saudando o Ano a Novo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-374.jpg",
+       "alt": "Hino 374 (cifra) — Saudando o Ano a Novo — página 1"
+      }
+     ],
+     "num": 374
+    },
+    {
+     "id": "cifra-375",
+     "titulo": "Ano Velho",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-375-1.jpg",
+       "alt": "Hino 375 (cifra) — Ano Velho — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-375-2.jpg",
+       "alt": "Hino 375 (cifra) — Ano Velho — página 2"
+      }
+     ],
+     "num": 375
+    },
+    {
+     "id": "cifra-376",
+     "titulo": "Intercessão pela Pátria",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-376-1.jpg",
+       "alt": "Hino 376 (cifra) — Intercessão pela Pátria — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-376-2.jpg",
+       "alt": "Hino 376 (cifra) — Intercessão pela Pátria — página 2"
+      },
+      {
+       "img": "/midias/cifras/hc-376-3.jpg",
+       "alt": "Hino 376 (cifra) — Intercessão pela Pátria — página 3"
+      }
+     ],
+     "num": 376
+    },
+    {
+     "id": "cifra-377",
+     "titulo": "A Nação para Cristo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-377-1.jpg",
+       "alt": "Hino 377 (cifra) — A Nação para Cristo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-377-2.jpg",
+       "alt": "Hino 377 (cifra) — A Nação para Cristo — página 2"
+      }
+     ],
+     "num": 377
+    },
+    {
+     "id": "cifra-378",
+     "titulo": "Oração pela Pátria",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-378-1.jpg",
+       "alt": "Hino 378 (cifra) — Oração pela Pátria — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-378-2.jpg",
+       "alt": "Hino 378 (cifra) — Oração pela Pátria — página 2"
+      }
+     ],
+     "num": 378
+    },
+    {
+     "id": "cifra-379",
+     "titulo": "Petição pela Pátria",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-379-1.jpg",
+       "alt": "Hino 379 (cifra) — Petição pela Pátria — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-379-2.jpg",
+       "alt": "Hino 379 (cifra) — Petição pela Pátria — página 2"
+      }
+     ],
+     "num": 379
+    },
+    {
+     "id": "cifra-380",
+     "titulo": "Jesus Proteja a Pátria",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-380-1.jpg",
+       "alt": "Hino 380 (cifra) — Jesus Proteja a Pátria — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-380-2.jpg",
+       "alt": "Hino 380 (cifra) — Jesus Proteja a Pátria — página 2"
+      }
+     ],
+     "num": 380
+    },
+    {
+     "id": "cifra-381",
+     "titulo": "Intercessão pela Cidade",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-381-1.jpg",
+       "alt": "Hino 381 (cifra) — Intercessão pela Cidade — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-381-2.jpg",
+       "alt": "Hino 381 (cifra) — Intercessão pela Cidade — página 2"
+      }
+     ],
+     "num": 381
+    },
+    {
+     "id": "cifra-382",
+     "titulo": "Mocidade Presbiteriana",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-382-1.jpg",
+       "alt": "Hino 382 (cifra) — Mocidade Presbiteriana — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-382-2.jpg",
+       "alt": "Hino 382 (cifra) — Mocidade Presbiteriana — página 2"
+      }
+     ],
+     "num": 382
+    },
+    {
+     "id": "cifra-383",
+     "titulo": "Um Novo Mundo",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-383-1.jpg",
+       "alt": "Hino 383 (cifra) — Um Novo Mundo — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-383-2.jpg",
+       "alt": "Hino 383 (cifra) — Um Novo Mundo — página 2"
+      }
+     ],
+     "num": 383
+    },
+    {
+     "id": "cifra-384",
+     "titulo": "Vamos com Jesus",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-384-1.jpg",
+       "alt": "Hino 384 (cifra) — Vamos com Jesus — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-384-2.jpg",
+       "alt": "Hino 384 (cifra) — Vamos com Jesus — página 2"
+      }
+     ],
+     "num": 384
+    },
+    {
+     "id": "cifra-385",
+     "titulo": "O Estudante e a Bíblia",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-385-1.jpg",
+       "alt": "Hino 385 (cifra) — O Estudante e a Bíblia — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-385-2.jpg",
+       "alt": "Hino 385 (cifra) — O Estudante e a Bíblia — página 2"
+      }
+     ],
+     "num": 385
+    },
+    {
+     "id": "cifra-386",
+     "titulo": "Testemunho",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-386-1.jpg",
+       "alt": "Hino 386 (cifra) — Testemunho — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-386-2.jpg",
+       "alt": "Hino 386 (cifra) — Testemunho — página 2"
+      }
+     ],
+     "num": 386
+    },
+    {
+     "id": "cifra-387",
+     "titulo": "Combate",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-387-1.jpg",
+       "alt": "Hino 387 (cifra) — Combate — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-387-2.jpg",
+       "alt": "Hino 387 (cifra) — Combate — página 2"
+      }
+     ],
+     "num": 387
+    },
+    {
+     "id": "cifra-388",
+     "titulo": "Mocidade, Avante",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-388.jpg",
+       "alt": "Hino 388 (cifra) — Mocidade, Avante — página 1"
+      }
+     ],
+     "num": 388
+    },
+    {
+     "id": "cifra-389",
+     "titulo": "Avante, Mocidade",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-389-1.jpg",
+       "alt": "Hino 389 (cifra) — Avante, Mocidade — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-389-2.jpg",
+       "alt": "Hino 389 (cifra) — Avante, Mocidade — página 2"
+      }
+     ],
+     "num": 389
+    },
+    {
+     "id": "cifra-390",
+     "titulo": "Fiéis Soldados",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-390-1.jpg",
+       "alt": "Hino 390 (cifra) — Fiéis Soldados — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-390-2.jpg",
+       "alt": "Hino 390 (cifra) — Fiéis Soldados — página 2"
+      }
+     ],
+     "num": 390
+    },
+    {
+     "id": "cifra-391",
+     "titulo": "Mocidade Fiel",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-391.jpg",
+       "alt": "Hino 391 (cifra) — Mocidade Fiel — página 1"
+      }
+     ],
+     "num": 391
+    },
+    {
+     "id": "cifra-392",
+     "titulo": "Vida Vitoriosa",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-392-1.jpg",
+       "alt": "Hino 392 (cifra) — Vida Vitoriosa — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-392-2.jpg",
+       "alt": "Hino 392 (cifra) — Vida Vitoriosa — página 2"
+      }
+     ],
+     "num": 392
+    },
+    {
+     "id": "cifra-393",
+     "titulo": "União Vital",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-393.jpg",
+       "alt": "Hino 393 (cifra) — União Vital — página 1"
+      }
+     ],
+     "num": 393
+    },
+    {
+     "id": "cifra-394",
+     "titulo": "Perfeito Amor",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-394.jpg",
+       "alt": "Hino 394 (cifra) — Perfeito Amor — página 1"
+      }
+     ],
+     "num": 394
+    },
+    {
+     "id": "cifra-395",
+     "titulo": "Amor no Lar",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-395-1.jpg",
+       "alt": "Hino 395 (cifra) — Amor no Lar — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-395-2.jpg",
+       "alt": "Hino 395 (cifra) — Amor no Lar — página 2"
+      }
+     ],
+     "num": 395
+    },
+    {
+     "id": "cifra-396",
+     "titulo": "Graças pelo Aniversário",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-396-1.jpg",
+       "alt": "Hino 396 (cifra) — Graças pelo Aniversário — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-396-2.jpg",
+       "alt": "Hino 396 (cifra) — Graças pelo Aniversário — página 2"
+      }
+     ],
+     "num": 396
+    },
+    {
+     "id": "cifra-397",
+     "titulo": "Por Minha Boa Mãe",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-397-1.jpg",
+       "alt": "Hino 397 (cifra) — Por Minha Boa Mãe — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-397-2.jpg",
+       "alt": "Hino 397 (cifra) — Por Minha Boa Mãe — página 2"
+      }
+     ],
+     "num": 397
+    },
+    {
+     "id": "cifra-398",
+     "titulo": "Outra Vez Cantamos",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-398.jpg",
+       "alt": "Hino 398 (cifra) — Outra Vez Cantamos — página 1"
+      }
+     ],
+     "num": 398
+    },
+    {
+     "id": "cifra-399",
+     "titulo": "Término do Culto",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-399.jpg",
+       "alt": "Hino 399 (cifra) — Término do Culto — página 1"
+      }
+     ],
+     "num": 399
+    },
+    {
+     "id": "cifra-400",
+     "titulo": "Oração por Proteção",
+     "paginas": [
+      {
+       "img": "/midias/cifras/hc-400.jpg",
+       "alt": "Hino 400 (cifra) — Oração por Proteção — página 1"
+      }
+     ],
+     "num": 400
+    },
+    {
+     "id": "cifra-400-a",
+     "titulo": "Ofertório",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-400-a-1.jpg",
+       "alt": "Hino 400-A (cifra) — Ofertório — página 1"
+      },
+      {
+       "img": "/midias/cifras/hc-400a.jpg",
+       "alt": "Hino 400-A (cifra) — Ofertório — página 2"
+      }
+     ],
+     "num": 400,
+     "rotulo": "400-A"
+    }
+   ]
+  },
+  {
    "id": "canticos",
    "titulo": "Cânticos Espirituais",
    "subtitulo": "Ordem alfabética",
@@ -1597,18 +7048,22 @@
      "titulo": "Ao Nosso Deus",
      "paginas": [
       {
-       "img": "/midias/canticos/ao-nosso-deus-i15.jpg",
-       "alt": "Ao Nosso Deus — página 1",
-       "tom": "A"
+       "img": "/midias/extras/u-cantico-ao-nosso-deus-1.jpg",
+       "alt": "Ao Nosso Deus — página 1"
       },
       {
-       "img": "/midias/canticos/ao-nosso-deus-i36.jpg",
+       "img": "/midias/canticos/ao-nosso-deus-i15.jpg",
        "alt": "Ao Nosso Deus — página 2",
        "tom": "A"
       },
       {
-       "img": "/midias/canticos/ao-nosso-deus-i17.jpg",
+       "img": "/midias/canticos/ao-nosso-deus-i36.jpg",
        "alt": "Ao Nosso Deus — página 3",
+       "tom": "A"
+      },
+      {
+       "img": "/midias/canticos/ao-nosso-deus-i17.jpg",
+       "alt": "Ao Nosso Deus — página 4",
        "tom": "C"
       }
      ]
@@ -1639,13 +7094,17 @@
      "titulo": "Alfa e Ômega",
      "paginas": [
       {
+       "img": "/midias/extras/u-cantico-alfa-e-omega-1.jpg",
+       "alt": "Alfa e Ômega — página 1"
+      },
+      {
        "img": "/midias/canticos/alfa-e-omega-i19.jpg",
-       "alt": "Alfa e Ômega — página 1",
+       "alt": "Alfa e Ômega — página 2",
        "tom": "G"
       },
       {
        "img": "/midias/canticos/alfa-e-omega-i29.jpg",
-       "alt": "Alfa e Ômega — página 2",
+       "alt": "Alfa e Ômega — página 3",
        "tom": "A"
       }
      ]
@@ -1694,18 +7153,22 @@
      "titulo": "Jesus Em Tua Presença",
      "paginas": [
       {
-       "img": "/midias/canticos/jesus-em-tua-presenca-i7.jpg",
-       "alt": "Jesus Em Tua Presença — página 1",
-       "tom": "D"
+       "img": "/midias/extras/u-cantico-jesus-em-tua-presenca-1.jpg",
+       "alt": "Jesus Em Tua Presença — página 1"
       },
       {
-       "img": "/midias/canticos/jesus-em-tua-presenca-i82.jpg",
+       "img": "/midias/canticos/jesus-em-tua-presenca-i7.jpg",
        "alt": "Jesus Em Tua Presença — página 2",
        "tom": "D"
       },
       {
-       "img": "/midias/canticos/jesus-em-tua-presenca-i78.jpg",
+       "img": "/midias/canticos/jesus-em-tua-presenca-i82.jpg",
        "alt": "Jesus Em Tua Presença — página 3",
+       "tom": "D"
+      },
+      {
+       "img": "/midias/canticos/jesus-em-tua-presenca-i78.jpg",
+       "alt": "Jesus Em Tua Presença — página 4",
        "tom": "E"
       }
      ]
@@ -1743,12 +7206,16 @@
      "titulo": "Tu És Soberano",
      "paginas": [
       {
-       "img": "/midias/canticos/tu-es-soberano-i11.jpg",
+       "img": "/midias/extras/u-cantico-tu-es-soberano-1.jpg",
        "alt": "Tu És Soberano — página 1"
       },
       {
-       "img": "/midias/canticos/tu-es-soberano-i66.jpg",
+       "img": "/midias/canticos/tu-es-soberano-i11.jpg",
        "alt": "Tu És Soberano — página 2"
+      },
+      {
+       "img": "/midias/canticos/tu-es-soberano-i66.jpg",
+       "alt": "Tu És Soberano — página 3"
       }
      ]
     },
@@ -1785,12 +7252,16 @@
      "titulo": "Glória Pra Sempre",
      "paginas": [
       {
-       "img": "/midias/canticos/gloria-pra-sempre-i18.jpg",
+       "img": "/midias/extras/u-cantico-gloria-pra-sempre-1.jpg",
        "alt": "Glória Pra Sempre — página 1"
       },
       {
-       "img": "/midias/canticos/gloria-pra-sempre-i60.jpg",
+       "img": "/midias/canticos/gloria-pra-sempre-i18.jpg",
        "alt": "Glória Pra Sempre — página 2"
+      },
+      {
+       "img": "/midias/canticos/gloria-pra-sempre-i60.jpg",
+       "alt": "Glória Pra Sempre — página 3"
       }
      ]
     },
@@ -1895,12 +7366,16 @@
      "titulo": "Rei das Nações",
      "paginas": [
       {
-       "img": "/midias/canticos/rei-das-nacoes-i39.jpg",
+       "img": "/midias/extras/u-cantico-rei-das-nacoes-1.jpg",
        "alt": "Rei das Nações — página 1"
       },
       {
-       "img": "/midias/canticos/rei-das-nacoes-i45.jpg",
+       "img": "/midias/canticos/rei-das-nacoes-i39.jpg",
        "alt": "Rei das Nações — página 2"
+      },
+      {
+       "img": "/midias/canticos/rei-das-nacoes-i45.jpg",
+       "alt": "Rei das Nações — página 3"
       }
      ]
     },
@@ -1909,12 +7384,16 @@
      "titulo": "Jesus, Profeta, Sacerdote e Rei",
      "paginas": [
       {
-       "img": "/midias/canticos/jesus-profeta-sacerdote-e-rei-i42.jpg",
+       "img": "/midias/extras/u-cantico-jesus-profeta-sacerdote-e-rei-1.jpg",
        "alt": "Jesus, Profeta, Sacerdote e Rei — página 1"
       },
       {
-       "img": "/midias/canticos/jesus-profeta-sacerdote-e-rei-i53.jpg",
+       "img": "/midias/canticos/jesus-profeta-sacerdote-e-rei-i42.jpg",
        "alt": "Jesus, Profeta, Sacerdote e Rei — página 2"
+      },
+      {
+       "img": "/midias/canticos/jesus-profeta-sacerdote-e-rei-i53.jpg",
+       "alt": "Jesus, Profeta, Sacerdote e Rei — página 3"
       }
      ]
     },
@@ -1939,12 +7418,16 @@
      "titulo": "Maravilhosa Graça",
      "paginas": [
       {
-       "img": "/midias/canticos/maravilhosa-graca-i44.jpg",
+       "img": "/midias/extras/u-cantico-maravilhosa-graca-1.jpg",
        "alt": "Maravilhosa Graça — página 1"
       },
       {
-       "img": "/midias/canticos/maravilhosa-graca-i49.jpg",
+       "img": "/midias/canticos/maravilhosa-graca-i44.jpg",
        "alt": "Maravilhosa Graça — página 2"
+      },
+      {
+       "img": "/midias/canticos/maravilhosa-graca-i49.jpg",
+       "alt": "Maravilhosa Graça — página 3"
       }
      ]
     },
@@ -5213,8 +10696,12 @@
      "titulo": "Salmo 96",
      "paginas": [
       {
-       "img": "/midias/salmos/s096.jpg",
+       "img": "/midias/extras/u-salmo-96-1.jpg",
        "alt": "Salmo 96 — Salmo 96 — página 1"
+      },
+      {
+       "img": "/midias/salmos/s096.jpg",
+       "alt": "Salmo 96 — Salmo 96 — página 2"
       }
      ],
      "num": 96,
@@ -5290,12 +10777,22 @@
      "titulo": "Com a minha voz clamo ao Senhor",
      "paginas": [
       {
+       "img": "/midias/extras/u-salmo-142-C1.jpg",
+       "alt": "Salmo 142 — Com a minha voz clamo ao Senhor — página 1",
+       "tom": "C"
+      },
+      {
+       "img": "/midias/extras/u-salmo-142-D1.jpg",
+       "alt": "Salmo 142 — Com a minha voz clamo ao Senhor — página 2",
+       "tom": "D"
+      },
+      {
        "img": "/midias/salmos/s142-a.jpg",
-       "alt": "Salmo 142 — Com a minha voz clamo ao Senhor — página 1"
+       "alt": "Salmo 142 — Com a minha voz clamo ao Senhor — página 3"
       },
       {
        "img": "/midias/salmos/s142-b.jpg",
-       "alt": "Salmo 142 — Com a minha voz clamo ao Senhor — página 2"
+       "alt": "Salmo 142 — Com a minha voz clamo ao Senhor — página 4"
       }
      ],
      "num": 142
@@ -5419,8 +10916,12 @@
      "titulo": "Quem Nos Separará?",
      "paginas": [
       {
-       "img": "/midias/palavra/quem-nos-separara-i59.jpg",
+       "img": "/midias/extras/u-palavra-quem-nos-separara-1.jpg",
        "alt": "Quem Nos Separará? — página 1"
+      },
+      {
+       "img": "/midias/palavra/quem-nos-separara-i59.jpg",
+       "alt": "Quem Nos Separará? — página 2"
       }
      ],
      "livro": "Romanos"
