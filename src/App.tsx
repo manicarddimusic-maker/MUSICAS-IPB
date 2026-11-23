@@ -70,6 +70,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Inicio catalogo={catalogo} />} />
+      <Route path="/hinario" element={<HubHinos catalogo={catalogo} />} />
       <Route path="/livro/:livroSlug" element={<SecaoPage catalogo={catalogo} />} />
       <Route path="/rascunhos" element={<Rascunhos />} />
       <Route path="/lavras/arquivos-pdf" element={<ArquivosPdf catalogo={catalogo} />} />
@@ -125,6 +126,45 @@ function Hub({ catalogo }: { catalogo: Catalogo }) {
               </span>
             </Link>
           ))}
+        </nav>
+      </div>
+    </div>
+  );
+}
+
+function HubHinos({ catalogo }: { catalogo: Catalogo }) {
+  const cartoes = [
+    { secao: acharSecao(catalogo, 'hinos'), nome: 'Hinos – Partitura', capa: 'hinos', sub: 'Novo Cântico' },
+    { secao: acharSecao(catalogo, 'hinoscifra'), nome: 'Hinos – Cifra', capa: 'canticos', sub: 'Novo Cântico' },
+  ];
+  return (
+    <div className="pagina">
+      <header className="topo topo-hinos">
+        <BotaoVoltar fallback="/" />
+        <div>
+          <p className="topo-sub">Novo Cântico</p>
+          <h1>Hinos</h1>
+        </div>
+        <MenuIr />
+      </header>
+      <div className="inicio hub">
+        <nav className="secoes">
+          {cartoes.map((c) =>
+            c.secao ? (
+              <Link key={c.secao.id} to={`/${c.secao.id}`} className={`cartao cartao-${c.secao.id}`}>
+                <img src={caminho(CAPAS[c.capa])} alt="" className="cartao-fundo" loading="eager" />
+                <span className="cartao-veu" />
+                <span className="cartao-conteudo">
+                  <span className="cartao-sub">{c.sub}</span>
+                  <span className="cartao-titulo">{c.nome}</span>
+                  <span className="cartao-info">{c.secao.itens.length} hinos · por número</span>
+                </span>
+                <span className="cartao-seta" aria-hidden="true">
+                  ›
+                </span>
+              </Link>
+            ) : null,
+          )}
         </nav>
       </div>
     </div>
@@ -215,7 +255,7 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
   return (
     <div className="pagina">
       <header className={`topo topo-${secao.id}`}>
-        <BotaoVoltar fallback={secao.id === 'salmos' || secao.id === 'palavra' ? '/palavra' : '/'} />
+        <BotaoVoltar fallback={secao.id === 'salmos' || secao.id === 'palavra' ? '/palavra' : secao.id === 'hinos' || secao.id === 'hinoscifra' ? '/hinario' : '/'} />
         <div>
           <p className="topo-sub">{livro ? 'Palavra de Deus Cantada' : secao.subtitulo}</p>
           <h1>{livro ? livro.nome : secao.id === 'hinos' ? 'Hinos – Partitura' : secao.titulo}</h1>

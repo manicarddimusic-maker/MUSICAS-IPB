@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const LUGARES: { para: string; nome: string; icone: string }[] = [
   { para: '/', nome: 'Início', icone: '⌂' },
+  { para: '/hinario', nome: 'Hinos', icone: '♪' },
   { para: '/hinos', nome: 'Hinos – Partitura', icone: '♪' },
   { para: '/hinoscifra', nome: 'Hinos – Cifra', icone: '♪' },
   { para: '/canticos', nome: 'Cânticos Espirituais', icone: '♪' },

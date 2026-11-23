@@ -3,7 +3,7 @@
  "secoes": [
   {
    "id": "hinos",
-   "titulo": "Hinos – Partitura",
+   "titulo": "Hinos",
    "subtitulo": "Novo Cântico",
    "ordem": "numero",
    "itens": [
@@ -1568,7 +1568,7 @@
   {
    "id": "hinoscifra",
    "titulo": "Hinos – Cifra",
-   "subtitulo": "Novo Cântico",
+   "subtitulo": "Cifras do hinário",
    "ordem": "numero",
    "itens": [
     {

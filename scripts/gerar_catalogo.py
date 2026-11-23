@@ -14,7 +14,7 @@ FONTE = RAIZ / "dados" / "fonte.json"
 SAIDA = RAIZ / "public" / "data" / "catalogo.json"
 
 SECOES = [
-    ("hinos", "Hinos", "Partitura", "numero"),
+    ("hinos", "Hinos", "Novo Cântico", "numero"),
     ("hinoscifra", "Hinos – Cifra", "Cifras do hinário", "numero"),
     ("canticos", "Cânticos Espirituais", "Ordem alfabética", "alfabeto"),
     ("caderninho", "Cânticos Antigos IPB", "Do nosso acervo", "numero"),

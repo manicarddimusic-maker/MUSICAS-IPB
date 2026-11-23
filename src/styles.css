@@ -1183,3 +1183,6 @@ body { overscroll-behavior: none; touch-action: manipulation; }
 }
 
 .botao-zoom-menos { bottom: 68px; font-size: 1.5rem; line-height: 1; min-width: 46px; }
+
+/* telas com cartões (Palavra, Hinos): o fundo verde preenche a tela toda */
+.inicio.hub { min-height: calc(100dvh - 78px); }
