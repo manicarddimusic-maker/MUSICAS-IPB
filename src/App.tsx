@@ -111,7 +111,7 @@ function Hub({ catalogo }: { catalogo: Catalogo }) {
         <span className="contagem">{cartoes.reduce((t, c) => t + c.itens.length, 0)}</span>
       </header>
       <div className="inicio hub">
-        <nav className="secoes">
+        <nav className="secoes secoes-inicio">
           {cartoes.map((c) => (
             <Link key={c.para} to={c.para} className={`cartao cartao-${c.capa}`}>
               <img src={caminho(CAPAS[c.capa])} alt="" className="cartao-fundo" loading="eager" />
