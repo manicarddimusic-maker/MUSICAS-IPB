@@ -13,7 +13,25 @@ type Props = {
   proximo?: Item;
 };
 
-const ZOOMS = [1, 2, 3.5];
+const PASSO_ZOOM = 0.25;
+const CHAVE_ZOOM = 'hinario-zoom';
+/** O zoom escolhido fica "travado": vale para todas as folhas até a pessoa mudar. */
+function lerZoomSalvo(): number {
+  try {
+    const z = Number(localStorage.getItem(CHAVE_ZOOM));
+    return Number.isFinite(z) && z >= 1.03 ? Math.min(5, z) : 1;
+  } catch {
+    return 1;
+  }
+}
+function guardarZoom(z: number) {
+  try {
+    localStorage.setItem(CHAVE_ZOOM, String(z < 1.03 ? 1 : Math.round(z * 100) / 100));
+  } catch {
+    /* sem armazenamento */
+  }
+}
+const arredondar = (z: number) => Math.round(z * 4) / 4;
 
 const chaveOrdem = (secaoId: string, itemId: string) => `hinario-ordem:${secaoId}:${itemId}`;
 function lerOrdem(secaoId: string, itemId: string): string[] | null {
@@ -27,7 +45,7 @@ function lerOrdem(secaoId: string, itemId: string): string[] | null {
 
 export default function Leitor({ secao, item, anterior, proximo }: Props) {
   const [pagina, setPagina] = useState(0);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(lerZoomSalvo);
   const [desloc, setDesloc] = useState({ x: 0, y: 0 });
   const [rotacao, setRotacao] = useState(0);
   const [areaTam, setAreaTam] = useState({ w: 0, h: 0 });
@@ -45,7 +63,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   const ponteiros = useRef(new Map<number, { x: number; y: number }>());
   const gesto = useRef({ distancia: 0, z0: 1, p0x: 0, p0y: 0, t0x: 0, t0y: 0, x: 0, y: 0, dx: 0, dy: 0, pan: false, x0: 0, y0: 0, t0: 0, mexeu: false });
   // posição "ao vivo" da folha: mexe direto no elemento (sem re-render), por isso acompanha o dedo na hora
-  const vista = useRef({ z: 1, x: 0, y: 0 });
+  const vista = useRef({ z: lerZoomSalvo(), x: 0, y: 0 });
   const rotRef = useRef(0);
   rotRef.current = rotacao;
   const quadro = useRef(0);
@@ -183,6 +201,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     const { z, x, y } = vista.current;
     setZoom(z);
     setDesloc({ x, y });
+    guardarZoom(z);
     fimGesto.current = window.setTimeout(() => imagem.current?.classList.remove('em-gesto'), 180);
   }
 
@@ -201,12 +220,23 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     setPagina(0);
   }, [item.id]);
 
+  // ao virar a folha o zoom escolhido continua; só volta ao topo da folha
   useEffect(() => {
-    vista.current = { z: 1, x: 0, y: 0 };
-    setZoom(1);
+    const z = lerZoomSalvo();
+    vista.current = { z, x: 0, y: 0 };
+    setZoom(z);
     setDesloc({ x: 0, y: 0 });
     setFalhou(false);
   }, [pagina, item.id]);
+
+  function irAoTopo() {
+    const z = vista.current.z;
+    if (z <= 1) return;
+    const lim = limitar(0, 1e9, z);
+    vista.current = { z, x: lim.x, y: lim.y };
+    setDesloc({ x: lim.x, y: lim.y });
+    aplicar();
+  }
 
   // lembra a rotação escolhida para cada folha (por aparelho)
   useEffect(() => {
@@ -300,8 +330,8 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
         e.preventDefault();
         anteriorPagina();
       } else if (e.key === 'Escape') navigate(-1);
-      else if (e.key === '+' || e.key === '=') definirZoom(vista.current.z + 0.5);
-      else if (e.key === '-') definirZoom(vista.current.z - 0.5);
+      else if (e.key === '+' || e.key === '=') definirZoom(arredondar(vista.current.z + PASSO_ZOOM));
+      else if (e.key === '-') definirZoom(arredondar(vista.current.z - PASSO_ZOOM));
       else if (e.key === 'r' || e.key === 'R') girar();
     };
     window.addEventListener('keydown', aoTeclar);
@@ -357,10 +387,16 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
 
   function tocar(x: number, alvo?: Element | null) {
     if (alvo?.closest('button')) return;
-    if (vista.current.z > 1) return;
     const r = area.current?.getBoundingClientRect();
-    const meio = (r?.left ?? 0) + (r?.width ?? window.innerWidth) / 2;
-    if (x > meio) proxima();
+    const esq = r?.left ?? 0;
+    const larg = r?.width ?? window.innerWidth;
+    if (vista.current.z > 1) {
+      // com zoom travado: só as bordas viram a folha (o resto é para arrastar)
+      if (x > esq + larg * 0.88) proxima();
+      else if (x < esq + larg * 0.12) anteriorPagina();
+      return;
+    }
+    if (x > esq + larg / 2) proxima();
     else anteriorPagina();
   }
 
@@ -450,15 +486,12 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     }
   }
 
-  function ciclarZoom() {
-    const i = ZOOMS.findIndex((z) => Math.abs(z - vista.current.z) < 0.05);
-    definirZoom(ZOOMS[(i + 1) % ZOOMS.length]);
+  function aumentarZoom() {
+    definirZoom(arredondar(vista.current.z + PASSO_ZOOM));
   }
 
   function diminuirZoom() {
-    const z = vista.current.z;
-    const menores = ZOOMS.filter((v) => v < z - 0.05);
-    definirZoom(menores.length ? menores[menores.length - 1] : 1);
+    definirZoom(arredondar(vista.current.z - PASSO_ZOOM));
   }
 
   const tomAtual = atual.tom ?? item.tom;
@@ -494,7 +527,10 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
           alt={atual.alt}
           className="folha"
           draggable={false}
-          onLoad={() => setFalhou(false)}
+          onLoad={() => {
+            setFalhou(false);
+            irAoTopo();
+          }}
           onError={() => setFalhou(true)}
           style={{
             width: lateral && areaTam.w ? areaTam.h : undefined,
@@ -520,13 +556,13 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
             </button>
           </div>
         )}
-        {zoom > 1 && (
+        {zoom > 1.01 && (
           <button className="botao-zoom botao-zoom-menos" onClick={diminuirZoom} aria-label="Diminuir o zoom da folha" title="Diminuir (−)">
             −
           </button>
         )}
-        <button className="botao-zoom" onClick={ciclarZoom} aria-label="Aumentar o zoom da folha" title="Aumentar (+)">
-          {zoom === 1 ? '🔍 +' : `${Math.round(zoom * 10) / 10}× +`}
+        <button className="botao-zoom" onClick={aumentarZoom} aria-label="Aumentar o zoom da folha" title="Aumentar (+)">
+          {zoom <= 1.01 ? '🔍 +' : `${Math.round(zoom * 100) / 100}× +`}
         </button>
         {paginas.length > 1 && (
           <button className="botao-ordem" onClick={() => setReordenando(true)} aria-label="Reordenar as folhas desta música" title="Reordenar as folhas">

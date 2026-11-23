@@ -21,7 +21,18 @@ async function abrirPdf(url: string): Promise<Doc> {
 }
 
 const ZMIN = 1;
-const ZMAX = 6;
+const ZMAX = 5;
+const PASSO = 0.25;
+const CHAVE_ZOOM = 'hinario-zoom';
+const arredondar = (z: number) => Math.round(z * 4) / 4;
+function lerZoomSalvo(): number {
+  try {
+    const z = Number(localStorage.getItem(CHAVE_ZOOM));
+    return Number.isFinite(z) && z >= 1.03 ? Math.min(ZMAX, z) : 1;
+  } catch {
+    return 1;
+  }
+}
 
 export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
   const { n: nArq } = useParams();
@@ -32,11 +43,12 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
   const [doc, setDoc] = useState<Doc | null>(null);
   const [erro, setErro] = useState('');
   const [pag, setPag] = useState(() => Math.max(1, Number(localStorage.getItem(chave) || 1)));
-  const [zoom, setZoomEstado] = useState(1);
+  const [zoom, setZoomEstado] = useState(lerZoomSalvo);
 
   const palco = useRef<HTMLDivElement>(null);
   const tela = useRef<HTMLCanvasElement>(null);
-  const vista = useRef({ z: 1, x: 0, y: 0 });
+  const vista = useRef({ z: lerZoomSalvo(), x: 0, y: 0 });
+  const topoPendente = useRef(true);
   const tam = useRef({ w: 0, h: 0 }); // tamanho (css) da folha ajustada ao palco
   const tarefa = useRef<{ cancel: () => void } | null>(null);
   const nitidez = useRef<number | undefined>(undefined);
@@ -87,6 +99,12 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
       const base = pagina.getViewport({ scale: 1 });
       const ajuste = Math.min(p.clientWidth / base.width, p.clientHeight / base.height);
       tam.current = { w: base.width * ajuste, h: base.height * ajuste };
+      if (topoPendente.current) {
+        // folha nova com zoom travado: começa pelo topo
+        topoPendente.current = false;
+        const l0 = limitar(0, 1e9, vista.current.z);
+        vista.current = { ...vista.current, x: l0.x, y: l0.y };
+      }
       const dpr = Math.min(window.devicePixelRatio || 1, 3);
       let escala = ajuste * dpr * Math.max(1, vista.current.z);
       const maior = Math.max(base.width, base.height) * escala;
@@ -121,8 +139,9 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
   // troca de página: volta ao ajuste inicial
   useEffect(() => {
     if (!doc) return;
-    vista.current = { z: 1, x: 0, y: 0 };
-    setZoomEstado(1);
+    vista.current = { z: lerZoomSalvo(), x: 0, y: 0 };
+    topoPendente.current = true;
+    setZoomEstado(vista.current.z);
     void desenhar(pag);
     try {
       localStorage.setItem(chave, String(pag));
@@ -156,6 +175,11 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
       const lim = novo === 1 ? { x: 0, y: 0 } : limitar(cx - (cx - v.x) * k, cy - (cy - v.y) * k, novo);
       vista.current = { z: novo, x: lim.x, y: lim.y };
       setZoomEstado(novo);
+      try {
+        localStorage.setItem(CHAVE_ZOOM, String(novo < 1.03 ? 1 : Math.round(novo * 100) / 100));
+      } catch {
+        /* ignora */
+      }
       aplicar();
       refinar();
     },
@@ -222,7 +246,7 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
       if (agora - ultimoToque.current < 320) {
         const c = centro(e);
         if (vista.current.z > 1.05) definirZoom(1);
-        else definirZoom(2.5, c.x, c.y);
+        else definirZoom(1.75, c.x, c.y);
         ultimoToque.current = 0;
       } else ultimoToque.current = agora;
     } else if (g.d0 === 0 && vista.current.z <= 1.05 && Math.abs(dx) > 60 && Math.abs(dy) < 90 && agora - g.t < 700) {
@@ -252,8 +276,8 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
     const tecla = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight' || e.key === 'PageDown') irPara(pag + 1);
       else if (e.key === 'ArrowLeft' || e.key === 'PageUp') irPara(pag - 1);
-      else if (e.key === '+' || e.key === '=') definirZoom(vista.current.z * 1.5);
-      else if (e.key === '-') definirZoom(vista.current.z / 1.5);
+      else if (e.key === '+' || e.key === '=') definirZoom(arredondar(vista.current.z + PASSO));
+      else if (e.key === '-') definirZoom(arredondar(vista.current.z - PASSO));
       else if (e.key === '0') definirZoom(1);
     };
     window.addEventListener('keydown', tecla);
@@ -311,13 +335,13 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
             ›
           </button>
           <span className="pdf-sep" aria-hidden="true" />
-          <button onClick={() => definirZoom(vista.current.z / 1.5)} disabled={zoom <= ZMIN} aria-label="Diminuir o zoom">
+          <button onClick={() => definirZoom(arredondar(vista.current.z - PASSO))} disabled={zoom <= ZMIN} aria-label="Diminuir o zoom">
             −
           </button>
           <button className="pdf-zoom-btn" onClick={() => definirZoom(1)} aria-label="Ajustar a folha na tela">
-            {zoom <= 1.01 ? 'Ajustar' : `${Math.round(zoom * 10) / 10}×`}
+            {zoom <= 1.01 ? 'Ajustar' : `${Math.round(zoom * 100) / 100}×`}
           </button>
-          <button onClick={() => definirZoom(vista.current.z * 1.5)} disabled={zoom >= ZMAX} aria-label="Aumentar o zoom">
+          <button onClick={() => definirZoom(arredondar(vista.current.z + PASSO))} disabled={zoom >= ZMAX} aria-label="Aumentar o zoom">
             +
           </button>
         </div>
