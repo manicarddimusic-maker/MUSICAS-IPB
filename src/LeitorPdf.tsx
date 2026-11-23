@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { BotaoVoltar, MenuIr } from './Navegar';
 import { caminho } from './ambiente';
@@ -34,6 +34,170 @@ function lerZoomSalvo(): number {
   }
 }
 
+const FOLGA = 10; // espaço entre as folhas no modo "rolar"
+
+/** Modo rolagem: todas as folhas uma embaixo da outra; é só arrastar para cima/baixo, como numa página da internet. */
+function Rolagem({
+  doc,
+  pagInicial,
+  zoom,
+  aoMudarPagina,
+  irRef,
+}: {
+  doc: Doc;
+  pagInicial: number;
+  zoom: number;
+  aoMudarPagina: (n: number) => void;
+  irRef: React.MutableRefObject<((n: number) => void) | null>;
+}) {
+  const cont = useRef<HTMLDivElement>(null);
+  const [larg, setLarg] = useState(0);
+  const [aspecto, setAspecto] = useState(1.414);
+  const feitas = useRef(new Map<number, number>());
+  const proximas = useRef(new Set<number>());
+  const ocupado = useRef(false);
+  const atual = useRef(pagInicial);
+  const largPag = Math.max(160, (larg - 16) * zoom);
+  const altPag = largPag * aspecto;
+  const largRef = useRef(largPag);
+  largRef.current = largPag;
+
+  useEffect(() => {
+    const el = cont.current;
+    if (!el) return;
+    const medir = () => setLarg(el.clientWidth);
+    medir();
+    const ro = new ResizeObserver(medir);
+    ro.observe(el);
+    void doc.getPage(1).then((pg) => {
+      const b = pg.getViewport({ scale: 1 });
+      if (b.width > 0) setAspecto(b.height / b.width);
+    });
+    return () => ro.disconnect();
+  }, [doc]);
+
+  const processar = useCallback(async () => {
+    if (ocupado.current) return;
+    ocupado.current = true;
+    try {
+      for (;;) {
+        const alvo = [...proximas.current]
+          .filter((n) => feitas.current.get(n) !== largRef.current)
+          .sort((a, b) => Math.abs(a - atual.current) - Math.abs(b - atual.current))[0];
+        if (alvo === undefined) break;
+        const caixa = cont.current?.querySelector<HTMLDivElement>(`[data-n="${alvo}"]`);
+        const canvas = caixa?.querySelector('canvas');
+        if (!caixa || !canvas) {
+          proximas.current.delete(alvo);
+          continue;
+        }
+        const largura = largRef.current;
+        const pagina = await doc.getPage(alvo);
+        const base = pagina.getViewport({ scale: 1 });
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        let escala = (largura / base.width) * dpr;
+        const maior = Math.max(base.width, base.height) * escala;
+        if (maior > 4096) escala *= 4096 / maior;
+        const vp = pagina.getViewport({ scale: escala });
+        const fora = document.createElement('canvas');
+        fora.width = Math.floor(vp.width);
+        fora.height = Math.floor(vp.height);
+        const ctx = fora.getContext('2d');
+        if (!ctx) break;
+        await pagina.render({ canvasContext: ctx, viewport: vp }).promise;
+        if (largura !== largRef.current || !proximas.current.has(alvo)) continue; // mudou enquanto desenhava
+        canvas.width = fora.width;
+        canvas.height = fora.height;
+        canvas.getContext('2d')?.drawImage(fora, 0, 0);
+        feitas.current.set(alvo, largura);
+      }
+    } catch {
+      /* próxima tentativa acontece ao rolar */
+    } finally {
+      ocupado.current = false;
+    }
+  }, [doc]);
+
+  // desenha só as folhas perto da tela; as distantes são liberadas para não pesar a memória
+  useEffect(() => {
+    const el = cont.current;
+    if (!el || !larg) return;
+    const io = new IntersectionObserver(
+      (ents) => {
+        for (const e of ents) {
+          const n = Number((e.target as HTMLElement).dataset.n);
+          if (e.isIntersecting) proximas.current.add(n);
+          else {
+            proximas.current.delete(n);
+            const c = (e.target as HTMLElement).querySelector('canvas');
+            if (c && feitas.current.has(n)) {
+              c.width = 0;
+              c.height = 0;
+              feitas.current.delete(n);
+            }
+          }
+        }
+        void processar();
+      },
+      { root: el, rootMargin: '150% 0px' },
+    );
+    el.querySelectorAll('[data-n]').forEach((x) => io.observe(x));
+    return () => io.disconnect();
+  }, [larg, doc, processar]);
+
+  // largura nova (zoom ou girar a tela): refaz as folhas e mantém a mesma folha na tela
+  const pagAntes = useRef(pagInicial);
+  const primeira = useRef(true);
+  useLayoutEffect(() => {
+    const el = cont.current;
+    if (!el || !larg) return;
+    feitas.current.clear();
+    const n = primeira.current ? pagInicial : pagAntes.current;
+    primeira.current = false;
+    el.scrollTop = (n - 1) * (altPag + FOLGA);
+    void processar();
+  }, [larg, largPag, altPag, pagInicial, processar]);
+
+  const quadro = useRef(0);
+  function aoRolar() {
+    if (quadro.current) return;
+    quadro.current = requestAnimationFrame(() => {
+      quadro.current = 0;
+      const el = cont.current;
+      if (!el) return;
+      const n = Math.min(doc.numPages, Math.max(1, Math.floor((el.scrollTop + el.clientHeight / 2) / (altPag + FOLGA)) + 1));
+      pagAntes.current = n;
+      if (n !== atual.current) {
+        atual.current = n;
+        aoMudarPagina(n);
+        void processar();
+      }
+    });
+  }
+
+  useEffect(() => {
+    irRef.current = (n: number) => {
+      const el = cont.current;
+      if (el) el.scrollTop = (Math.min(Math.max(1, n), doc.numPages) - 1) * (altPag + FOLGA);
+    };
+    return () => {
+      irRef.current = null;
+    };
+  }, [altPag, doc, irRef]);
+
+  return (
+    <div className="pdf-rolagem" ref={cont} onScroll={aoRolar}>
+      <div className="pdf-rolagem-lista">
+        {Array.from({ length: doc.numPages }, (_, i) => (
+          <div key={i} data-n={i + 1} className="pdf-folha" style={{ width: largPag, height: altPag }}>
+            <canvas />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
   const { n: nArq } = useParams();
   const secao = catalogo.secoes.find((s) => s.id === 'lavras');
@@ -44,6 +208,15 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
   const [erro, setErro] = useState('');
   const [pag, setPag] = useState(() => Math.max(1, Number(localStorage.getItem(chave) || 1)));
   const [zoom, setZoomEstado] = useState(lerZoomSalvo);
+  const [rolar, setRolar] = useState(() => {
+    try {
+      return localStorage.getItem('pdf-modo') === 'rolar';
+    } catch {
+      return false;
+    }
+  });
+  const [pagVista, setPagVista] = useState(pag);
+  const irRolagem = useRef<((n: number) => void) | null>(null);
 
   const palco = useRef<HTMLDivElement>(null);
   const tela = useRef<HTMLCanvasElement>(null);
@@ -138,7 +311,7 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
 
   // troca de página: volta ao ajuste inicial
   useEffect(() => {
-    if (!doc) return;
+    if (!doc || rolar) return;
     vista.current = { z: lerZoomSalvo(), x: 0, y: 0 };
     topoPendente.current = true;
     setZoomEstado(vista.current.z);
@@ -148,14 +321,15 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
     } catch {
       /* ignora */
     }
-  }, [doc, pag, desenhar, chave]);
+  }, [doc, pag, desenhar, chave, rolar]);
 
   // girar o aparelho / mudar o tamanho da janela
   useEffect(() => {
+    if (rolar) return;
     const aoRedimensionar = () => void desenhar(pag);
     window.addEventListener('resize', aoRedimensionar);
     return () => window.removeEventListener('resize', aoRedimensionar);
-  }, [desenhar, pag]);
+  }, [desenhar, pag, rolar]);
 
   // depois de mexer no zoom, refaz a página mais nítida
   const timer = useRef<number | undefined>(undefined);
@@ -187,7 +361,43 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
   );
 
   const total = doc?.numPages ?? 0;
-  const irPara = useCallback((n: number) => setPag((p) => Math.min(Math.max(1, n), total || p)), [total]);
+  const irPara = useCallback(
+    (n: number) => {
+      const alvo = Math.min(Math.max(1, n), total || 1);
+      if (rolar) irRolagem.current?.(alvo);
+      else setPag(alvo);
+    },
+    [total, rolar],
+  );
+
+  // o mesmo + e − serve nos dois modos
+  const mudarZoom = useCallback(
+    (z: number) => {
+      if (!rolar) return definirZoom(z);
+      const novo = Math.min(ZMAX, Math.max(ZMIN, z));
+      setZoomEstado(novo);
+      try {
+        localStorage.setItem(CHAVE_ZOOM, String(novo < 1.03 ? 1 : Math.round(novo * 100) / 100));
+      } catch {
+        /* ignora */
+      }
+    },
+    [rolar, definirZoom],
+  );
+
+  function alternarModo() {
+    const vaiRolar = !rolar;
+    if (vaiRolar) setPagVista(pag);
+    else setPag(pagVista);
+    setRolar(vaiRolar);
+    try {
+      localStorage.setItem('pdf-modo', vaiRolar ? 'rolar' : 'folha');
+    } catch {
+      /* ignora */
+    }
+  }
+
+  const paginaMostrada = rolar ? pagVista : pag;
 
   function centro(e: { clientX: number; clientY: number }) {
     const r = palco.current!.getBoundingClientRect();
@@ -270,10 +480,11 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
     };
     p.addEventListener('wheel', roda, { passive: false });
     return () => p.removeEventListener('wheel', roda);
-  }, [definirZoom, limitar, aplicar, doc]);
+  }, [definirZoom, limitar, aplicar, doc, rolar]);
 
   useEffect(() => {
     const tecla = (e: KeyboardEvent) => {
+      if (rolar) return; // no modo rolar, as setas e o PageDown já rolam sozinhos
       if (e.key === 'ArrowRight' || e.key === 'PageDown') irPara(pag + 1);
       else if (e.key === 'ArrowLeft' || e.key === 'PageUp') irPara(pag - 1);
       else if (e.key === '+' || e.key === '=') definirZoom(arredondar(vista.current.z + PASSO));
@@ -282,10 +493,10 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
     };
     window.addEventListener('keydown', tecla);
     return () => window.removeEventListener('keydown', tecla);
-  }, [pag, irPara, definirZoom]);
+  }, [pag, irPara, definirZoom, rolar]);
 
   function perguntarPagina() {
-    const r = window.prompt(`Ir para a página (1 a ${total}):`, String(pag));
+    const r = window.prompt(`Ir para a página (1 a ${total}):`, String(paginaMostrada));
     const n = Number(r);
     if (r && Number.isFinite(n)) irPara(Math.round(n));
   }
@@ -311,38 +522,64 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
         </div>
         <MenuIr />
       </header>
-      <div
-        className="pdf-palco"
-        ref={palco}
-        onPointerDown={aoPressionar}
-        onPointerMove={aoMover}
-        onPointerUp={aoSoltar}
-        onPointerCancel={aoSoltar}
-      >
-        {erro && <p className="pdf-erro">{erro}</p>}
-        {!doc && !erro && <p className="pdf-carregando">Abrindo o PDF…</p>}
-        <canvas ref={tela} className="pdf-tela" />
-      </div>
+      {rolar && doc ? (
+        <Rolagem
+          doc={doc}
+          pagInicial={pag}
+          zoom={zoom}
+          irRef={irRolagem}
+          aoMudarPagina={(n) => {
+            setPagVista(n);
+            try {
+              localStorage.setItem(chave, String(n));
+            } catch {
+              /* ignora */
+            }
+          }}
+        />
+      ) : (
+        <div
+          className="pdf-palco"
+          ref={palco}
+          onPointerDown={aoPressionar}
+          onPointerMove={aoMover}
+          onPointerUp={aoSoltar}
+          onPointerCancel={aoSoltar}
+        >
+          {erro && <p className="pdf-erro">{erro}</p>}
+          {!doc && !erro && <p className="pdf-carregando">Abrindo o PDF…</p>}
+          <canvas ref={tela} className="pdf-tela" />
+        </div>
+      )}
       {doc && (
         <div className="pdf-barra" role="toolbar" aria-label="Controles do PDF">
-          <button onClick={() => irPara(pag - 1)} disabled={pag <= 1} aria-label="Página anterior">
+          <button onClick={() => irPara(paginaMostrada - 1)} disabled={paginaMostrada <= 1} aria-label="Página anterior">
             ‹
           </button>
           <button className="pdf-pagina-btn" onClick={perguntarPagina} aria-label="Ir para uma página">
-            {pag} de {total}
+            {paginaMostrada} de {total}
           </button>
-          <button onClick={() => irPara(pag + 1)} disabled={pag >= total} aria-label="Próxima página">
+          <button onClick={() => irPara(paginaMostrada + 1)} disabled={paginaMostrada >= total} aria-label="Próxima página">
             ›
           </button>
           <span className="pdf-sep" aria-hidden="true" />
-          <button onClick={() => definirZoom(arredondar(vista.current.z - PASSO))} disabled={zoom <= ZMIN} aria-label="Diminuir o zoom">
+          <button onClick={() => mudarZoom(arredondar(zoom - PASSO))} disabled={zoom <= ZMIN} aria-label="Diminuir o zoom">
             −
           </button>
-          <button className="pdf-zoom-btn" onClick={() => definirZoom(1)} aria-label="Ajustar a folha na tela">
+          <button className="pdf-zoom-btn" onClick={() => mudarZoom(1)} aria-label="Ajustar a folha na tela">
             {zoom <= 1.01 ? 'Ajustar' : `${Math.round(zoom * 100) / 100}×`}
           </button>
-          <button onClick={() => definirZoom(arredondar(vista.current.z + PASSO))} disabled={zoom >= ZMAX} aria-label="Aumentar o zoom">
+          <button onClick={() => mudarZoom(arredondar(zoom + PASSO))} disabled={zoom >= ZMAX} aria-label="Aumentar o zoom">
             +
+          </button>
+          <span className="pdf-sep" aria-hidden="true" />
+          <button
+            className={`pdf-modo-btn${rolar ? ' ativo' : ''}`}
+            onClick={alternarModo}
+            aria-pressed={rolar}
+            aria-label={rolar ? 'Voltar a uma folha por vez' : 'Rolar as páginas para cima e para baixo'}
+          >
+            ↕
           </button>
         </div>
       )}
