@@ -23,6 +23,26 @@ function guardarMensagem(m: string) {
   }
 }
 
+/**
+ * Pergunta ao servidor (sem usar nada guardado) se já existe versão nova do aplicativo ou da lista de músicas.
+ * Devolve false quando está sem internet ou quando não deu para saber.
+ */
+export async function existeVersaoNova(): Promise<boolean> {
+  if (!navigator.onLine) return false;
+  try {
+    const sw = await fetch('/sw.js?v=' + Date.now(), { cache: 'no-store' });
+    if (sw.ok) {
+      const v = /const VERSAO = '([^']+)'/.exec(await sw.text())?.[1];
+      if (v && typeof __VERSAO__ === 'string' && v !== __VERSAO__) return true;
+    }
+    const cat = await fetch('/data/catalogo.json?v=' + Date.now(), { cache: 'no-store' });
+    if (cat.ok && assinaturaAtual && assinar(await cat.text()) !== assinaturaAtual) return true;
+  } catch {
+    /* sem rede: não avisa */
+  }
+  return false;
+}
+
 function esperar(ms: number) {
   return new Promise((r) => setTimeout(r, ms));
 }

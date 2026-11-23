@@ -1186,3 +1186,16 @@ body { overscroll-behavior: none; touch-action: manipulation; }
 
 /* telas com cartões (Palavra, Hinos): o fundo verde preenche a tela toda */
 .inicio.hub { min-height: calc(100dvh - 78px); }
+
+/* Nova versão: o botão Atualizar pisca para avisar */
+.botao-atualizar.nova-versao {
+  background: var(--dourado, #c9a227);
+  border-color: var(--dourado-claro, #e6cd75);
+  color: #1d2a22;
+  font-weight: 700;
+  animation: pisca-versao 1s ease-in-out infinite;
+}
+@keyframes pisca-versao {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(230, 205, 117, 0.9); }
+  50% { opacity: 0.45; box-shadow: 0 0 0 9px rgba(230, 205, 117, 0); }
+}

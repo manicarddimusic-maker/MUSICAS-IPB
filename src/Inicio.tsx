@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Catalogo, ordenarItens } from './catalogo';
 import { caminho, ARTEFATO } from './ambiente';
 import { folhasSalvas, limparMidiasAntigas, salvarTudo, urlsDeFolhas } from './offline';
-import { atualizarApp, lerMensagemAtualizacao } from './atualizar';
+import { atualizarApp, existeVersaoNova, lerMensagemAtualizacao } from './atualizar';
 
 type PromptEvento = Event & { prompt: () => Promise<void> };
 
@@ -51,6 +51,27 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
       setAtualizando(false);
     }
   }
+
+  // avisa quando existe versão nova: o botão Atualizar pisca e escreve "Nova versão"
+  const [versaoNova, setVersaoNova] = useState(false);
+  useEffect(() => {
+    if (ARTEFATO) return;
+    let vivo = true;
+    const checar = () => {
+      existeVersaoNova().then((n) => vivo && n && setVersaoNova(true));
+    };
+    checar();
+    const t = window.setInterval(checar, 60000);
+    const aoVoltar = () => document.visibilityState === 'visible' && checar();
+    document.addEventListener('visibilitychange', aoVoltar);
+    window.addEventListener('online', checar);
+    return () => {
+      vivo = false;
+      window.clearInterval(t);
+      document.removeEventListener('visibilitychange', aoVoltar);
+      window.removeEventListener('online', checar);
+    };
+  }, []);
 
   const faltam = salvas === null ? 0 : urls.length - salvas;
 
@@ -100,14 +121,14 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
           <span aria-hidden="true">✎</span>
           <span>Rascunhos</span>
         </Link>
-        <button className={`botao-atualizar${atualizando ? ' girando' : ''}`} onClick={atualizar} disabled={atualizando} aria-label="Atualizar o aplicativo">
+        <button className={`botao-atualizar${atualizando ? ' girando' : ''}${versaoNova && !atualizando ? ' nova-versao' : ''}`} onClick={atualizar} disabled={atualizando} aria-label={versaoNova ? 'Nova versão disponível: toque para atualizar' : 'Atualizar o aplicativo'}>
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M20 11a8 8 0 0 0-14.4-4.8L4 8" />
             <path d="M4 4v4h4" />
             <path d="M4 13a8 8 0 0 0 14.4 4.8L20 16" />
             <path d="M20 20v-4h-4" />
           </svg>
-          <span>{atualizando ? 'Atualizando…' : 'Atualizar'}</span>
+          <span>{atualizando ? 'Atualizando…' : versaoNova ? 'Nova versão' : 'Atualizar'}</span>
         </button>
         </>
       )}
