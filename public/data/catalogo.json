@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-11-23",
+ "geradoEm": "2026-11-27",
  "secoes": [
   {
    "id": "hinos",
@@ -677,6 +677,22 @@
       }
      ],
      "num": 110
+    },
+    {
+     "id": "hino-110-2",
+     "titulo": "Crer e Observar",
+     "paginas": [
+      {
+       "img": "/midias/cifras/u-110-a-1.jpg",
+       "alt": "Hino 110 — Crer e Observar — página 1"
+      },
+      {
+       "img": "/midias/h110_6423_ae154fba.jpg",
+       "alt": "Hino 110 — Crer e Observar — página 2"
+      }
+     ],
+     "num": 110,
+     "rotulo": "110-A"
     },
     {
      "id": "hino-111",
