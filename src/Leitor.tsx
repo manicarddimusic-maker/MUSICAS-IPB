@@ -1,10 +1,14 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Item, Secao, rotaLista, rotuloCompleto } from './catalogo';
 import Reordenar from './Reordenar';
 import { BotaoVoltar, MenuIr } from './Navegar';
 import Anotar from './Anotar';
 import { FolhaDef, Traco, achatar, apagarAnot, gravarAnot, gravarRascunho, lerAnot, novoId } from './anotacoes';
+import CifrasSobre from './CifrasSobre';
+import PainelTom from './PainelTom';
+import { FolhaCifras, carregarCifras, fontesProntas, guardarSemitons, lerSemitons, tomDaFolha, transpositorDaFolha } from './cifras';
+import { nomeTom, tomTransposto } from './tom';
 
 type Props = {
   secao: Secao;
@@ -33,6 +37,31 @@ function guardarZoom(z: number) {
 }
 const arredondar = (z: number) => Math.round(z * 4) / 4;
 
+/**
+ * A posição em que a pessoa girou cada folha fica guardada no aparelho.
+ * Guarda pelo nome do arquivo e também pela música + número da folha, para não se perder
+ * quando uma imagem é trocada por uma versão melhor.
+ */
+const nomeArquivo = (img: string) => img.split('/').pop() || img;
+function lerRotacao(img: string, secaoId: string, itemId: string, indice: number): number {
+  try {
+    const v = localStorage.getItem('rot:' + nomeArquivo(img)) ?? localStorage.getItem('rot:' + img) ?? localStorage.getItem(`rot:${secaoId}/${itemId}#${indice}`);
+    const r = Number(v) || 0;
+    return r === 90 || r === 180 || r === 270 ? r : 0;
+  } catch {
+    return 0;
+  }
+}
+function guardarRotacao(img: string, secaoId: string, itemId: string, indice: number, r: number) {
+  try {
+    localStorage.setItem('rot:' + nomeArquivo(img), String(r));
+    localStorage.setItem(`rot:${secaoId}/${itemId}#${indice}`, String(r));
+    localStorage.removeItem('rot:' + img);
+  } catch {
+    /* sem armazenamento */
+  }
+}
+
 const chaveOrdem = (secaoId: string, itemId: string) => `hinario-ordem:${secaoId}:${itemId}`;
 function lerOrdem(secaoId: string, itemId: string): string[] | null {
   try {
@@ -56,6 +85,12 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   const [versaoAnot, setVersaoAnot] = useState(0);
   const [reordenando, setReordenando] = useState(false);
   const [ordemSalva, setOrdemSalva] = useState<string[] | null>(() => lerOrdem(secao.id, item.id));
+  // mudança de tom: onde estão as cifras de cada folha, quantos semitons e se o painel está aberto
+  const [cifras, setCifras] = useState<Record<string, FolhaCifras> | null>(null);
+  const [semitons, setSemitons] = useState(() => lerSemitons(secao.id, item.id));
+  const [painelTom, setPainelTom] = useState(false);
+  const [versaoFontes, setVersaoFontes] = useState(0);
+  const sobre = useRef<SVGSVGElement>(null);
   useEffect(() => setOrdemSalva(lerOrdem(secao.id, item.id)), [secao.id, item.id]);
   const navigate = useNavigate();
   const area = useRef<HTMLDivElement>(null);
@@ -172,6 +207,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     im.style.transition = 'none';
     im.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px) scale(${z})${rotRef.current ? ` rotate(${rotRef.current}deg)` : ''}`;
     im.style.cursor = z > 1 ? 'grab' : 'pointer';
+    if (sobre.current) sobre.current.style.transform = im.style.transform; // as cifras novas andam junto com a folha
     if (animar) fimAnim.current = window.setTimeout(() => im.style.removeProperty('transition'), 200);
   }
 
@@ -187,6 +223,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   function preparar() {
     window.clearTimeout(fimGesto.current);
     imagem.current?.classList.add('em-gesto');
+    sobre.current?.classList.add('em-gesto');
   }
 
   function concluir() {
@@ -202,7 +239,10 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     setZoom(z);
     setDesloc({ x, y });
     guardarZoom(z);
-    fimGesto.current = window.setTimeout(() => imagem.current?.classList.remove('em-gesto'), 180);
+    fimGesto.current = window.setTimeout(() => {
+      imagem.current?.classList.remove('em-gesto');
+      sobre.current?.classList.remove('em-gesto');
+    }, 180);
   }
 
   function definirZoom(z: number) {
@@ -238,16 +278,42 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     aplicar();
   }
 
-  // lembra a rotação escolhida para cada folha (por aparelho)
+  // lembra a posição em que cada folha foi girada (por aparelho), para a próxima vez
+  const indiceOriginal = item.paginas.findIndex((p) => p.img === atual.img);
+  useLayoutEffect(() => {
+    setRotacao(lerRotacao(atual.img, secao.id, item.id, indiceOriginal));
+  }, [atual.img, secao.id, item.id, indiceOriginal]);
+
+  // ---- mudança de tom ----
   useEffect(() => {
-    let r = 0;
-    try {
-      r = Number(localStorage.getItem('rot:' + atual.img)) || 0;
-    } catch {
-      /* sem armazenamento */
-    }
-    setRotacao(r);
-  }, [atual.img]);
+    let vivo = true;
+    setCifras(null);
+    carregarCifras(secao.id).then((c) => vivo && setCifras(c));
+    return () => {
+      vivo = false;
+    };
+  }, [secao.id]);
+  useEffect(() => {
+    setSemitons(lerSemitons(secao.id, item.id));
+  }, [secao.id, item.id]);
+  useEffect(() => {
+    let vivo = true;
+    fontesProntas().then(() => vivo && setVersaoFontes((v) => v + 1));
+    return () => {
+      vivo = false;
+    };
+  }, []);
+  const folhaCifras = cifras?.[atual.img];
+  const folhasDoItem = useMemo(() => (cifras ? item.paginas.map((p) => cifras[p.img]).filter((f): f is FolhaCifras => !!f) : []), [cifras, item.paginas]);
+  const temCifras = !!folhaCifras && folhaCifras.c.some((c) => c[4] !== '?');
+  const ilegiveis = folhaCifras ? folhaCifras.c.filter((c) => c[4] === '?').length : 0;
+  const tomOriginal = useMemo(() => tomDaFolha(atual.tom ?? item.tom, folhaCifras, folhasDoItem), [atual.tom, item.tom, folhaCifras, folhasDoItem]);
+  const transpor = useMemo(() => transpositorDaFolha(semitons, tomOriginal, folhaCifras), [semitons, tomOriginal, folhaCifras]);
+  function mudarTom(n: number) {
+    setSemitons(n);
+    guardarSemitons(secao.id, item.id, n);
+  }
+  const nomeTomAtual = tomOriginal ? nomeTom(tomTransposto(tomOriginal, semitons)) : null;
 
   function girar() {
     const nova = (rotacao + 90) % 360;
@@ -255,11 +321,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     vista.current = { z: 1, x: 0, y: 0 };
     setZoom(1);
     setDesloc({ x: 0, y: 0 });
-    try {
-      localStorage.setItem('rot:' + atual.img, String(nova));
-    } catch {
-      /* sem armazenamento */
-    }
+    guardarRotacao(atual.img, secao.id, item.id, indiceOriginal, nova);
   }
 
   useEffect(() => {
@@ -494,7 +556,12 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     definirZoom(arredondar(vista.current.z - PASSO_ZOOM));
   }
 
-  const tomAtual = atual.tom ?? item.tom;
+  const tomAtual = semitons !== 0 && nomeTomAtual ? nomeTomAtual : (atual.tom ?? item.tom);
+  const estiloFolha = {
+    width: lateral && areaTam.w ? areaTam.h : undefined,
+    height: lateral && areaTam.w ? areaTam.w : undefined,
+    transform: `translate(-50%, -50%) translate(${desloc.x}px, ${desloc.y}px) scale(${zoom})${rotacao ? ` rotate(${rotacao}deg)` : ''}`,
+  };
 
   return (
     <div className="leitor">
@@ -532,16 +599,11 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
             irAoTopo();
           }}
           onError={() => setFalhou(true)}
-          style={{
-            width: lateral && areaTam.w ? areaTam.h : undefined,
-            height: lateral && areaTam.w ? areaTam.w : undefined,
-            objectFit: 'contain',
-            transform: `translate(-50%, -50%) translate(${desloc.x}px, ${desloc.y}px) scale(${zoom})${
-              rotacao ? ` rotate(${rotacao}deg)` : ''
-            }`,
-            cursor: zoom > 1 ? 'grab' : 'pointer',
-          }}
+          style={{ ...estiloFolha, objectFit: 'contain', cursor: zoom > 1 ? 'grab' : 'pointer' }}
         />
+        {semitons !== 0 && temCifras && folhaCifras && !falhou && (
+          <CifrasSobre ref={sobre} key={`cifras:${atual.img}`} folha={folhaCifras} transpor={transpor} versao={versaoFontes} className="folha folha-cifras" style={estiloFolha} />
+        )}
         {falhou && (
           <div className="folha-erro" role="alert">
             <p>Esta folha ainda não foi salva neste aparelho e não há internet agora.</p>
@@ -580,6 +642,17 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
         <button className="botao-girar" onClick={girar} aria-label="Girar a folha" title="Girar a folha (R)">
           ⟳
         </button>
+        <button
+          className={`botao-tom${semitons !== 0 ? ' ativo' : ''}${paginas.length > 1 ? ' com-setas' : ''}`}
+          onClick={() => setPainelTom((v) => !v)}
+          aria-expanded={painelTom}
+          aria-label="Mudar o tom das cifras"
+          title="Mudar o tom das cifras"
+        >
+          <span aria-hidden="true">♯♭</span>
+          {semitons !== 0 || nomeTomAtual ? ` ${nomeTomAtual ?? (semitons > 0 ? '+' : '−') + Math.abs(semitons) / 2}` : ' Tom'}
+        </button>
+        {painelTom && <PainelTom tom={tomOriginal} semitons={semitons} temCifras={temCifras} ilegiveis={ilegiveis} duvidosa={folhaCifras?.q === 1} aoMudar={mudarTom} aoFechar={() => setPainelTom(false)} />}
         {paginas.length > 1 && (
           <>
             <button className="pagina-seta esq" onClick={anteriorPagina} aria-label="Página anterior" disabled={pagina === 0}>

@@ -14,6 +14,9 @@ importers:
       '@fontsource/libre-baskerville':
         specifier: ^5.3.0
         version: 5.3.0
+      '@fontsource/roboto-condensed':
+        specifier: ^5.3.0
+        version: 5.3.0
       jspdf:
         specifier: ^4.2.1
         version: 4.2.1
@@ -278,6 +281,9 @@ packages:
 
   '@fontsource/libre-baskerville@5.3.0':
     resolution: {integrity: sha512-IA6OLq36/JWMX70Fha15sri2qWsijFh7hgdDXCRZHjKUHtWarLQoiGilvm7iMqm7HiYFEv9acF3+IuRHO9kUiA==}
+
+  '@fontsource/roboto-condensed@5.3.0':
+    resolution: {integrity: sha512-Vbh5pesre/M/Jspd10btdKRqLSTe3yn4l6B2tXHGElCeASfA7Pgdpu1mb8wTG8E72J4Xk6FUfqnSe46UN2QAog==}
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -973,6 +979,8 @@ snapshots:
   '@fontsource/inter@5.3.0': {}
 
   '@fontsource/libre-baskerville@5.3.0': {}
+
+  '@fontsource/roboto-condensed@5.3.0': {}
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:

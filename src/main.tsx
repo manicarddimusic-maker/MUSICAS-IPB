@@ -10,6 +10,8 @@ import '@fontsource/libre-baskerville/700.css';
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
+import '@fontsource/inter/latin-700.css';
+import '@fontsource/roboto-condensed/latin-700.css';
 import './styles.css';
 
 /** Se o app quebrar por arquivo antigo em cache, recarrega uma vez sozinho. */

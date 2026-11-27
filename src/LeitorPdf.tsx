@@ -1,8 +1,35 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { BotaoVoltar, MenuIr } from './Navegar';
 import { caminho } from './ambiente';
 import type { Catalogo } from './catalogo';
+import CifrasSobre from './CifrasSobre';
+import PainelTom from './PainelTom';
+import { FolhaCifras, carregarCifras, fontesProntas, tomDaFolha, transpositorDaFolha } from './cifras';
+import { nomeTom, tomTransposto } from './tom';
+
+type CifrasPdf = Record<string, FolhaCifras>;
+const SEM_TONS: Record<number, number> = {};
+
+/** Camada das cifras no novo tom por cima de uma página do PDF. */
+const SobrePagina = memo(function SobrePagina({
+  folha,
+  semitons,
+  versao,
+  className,
+  style,
+  aoMontar,
+}: {
+  folha: FolhaCifras;
+  semitons: number;
+  versao: number;
+  className?: string;
+  style?: React.CSSProperties;
+  aoMontar?: (el: SVGSVGElement | null) => void;
+}) {
+  const transpor = useMemo(() => transpositorDaFolha(semitons, tomDaFolha(undefined, folha, []), folha), [semitons, folha]);
+  return <CifrasSobre ref={aoMontar} folha={folha} transpor={transpor} versao={versao} className={className} style={style} />;
+});
 
 type Pagina = {
   getViewport: (o: { scale: number }) => { width: number; height: number };
@@ -43,12 +70,18 @@ function Rolagem({
   zoom,
   aoMudarPagina,
   irRef,
+  cifras,
+  tons,
+  versaoFontes,
 }: {
   doc: Doc;
   pagInicial: number;
   zoom: number;
   aoMudarPagina: (n: number) => void;
   irRef: React.MutableRefObject<((n: number) => void) | null>;
+  cifras: CifrasPdf | null;
+  tons: Record<number, number>;
+  versaoFontes: number;
 }) {
   const cont = useRef<HTMLDivElement>(null);
   const [larg, setLarg] = useState(0);
@@ -191,6 +224,9 @@ function Rolagem({
         {Array.from({ length: doc.numPages }, (_, i) => (
           <div key={i} data-n={i + 1} className="pdf-folha" style={{ width: largPag, height: altPag }}>
             <canvas />
+            {tons[i + 1] && cifras?.[i + 1] ? (
+              <SobrePagina folha={cifras[i + 1]} semitons={tons[i + 1]} versao={versaoFontes} className="pdf-cifras" />
+            ) : null}
           </div>
         ))}
       </div>
@@ -199,8 +235,9 @@ function Rolagem({
 }
 
 export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
-  const { n: nArq } = useParams();
-  const secao = catalogo.secoes.find((s) => s.id === 'lavras');
+  const { n: nArq, secaoId } = useParams();
+  const secao = catalogo.secoes.find((s) => s.id === (secaoId ?? 'lavras'));
+  const voltarPara = `/${secao?.id ?? 'lavras'}/arquivos-pdf`;
   const arq = secao?.arquivos?.[Number(nArq)];
   const chave = `pdf-pagina:${arq?.url ?? ''}`;
 
@@ -217,6 +254,34 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
   });
   const [pagVista, setPagVista] = useState(pag);
   const irRolagem = useRef<((n: number) => void) | null>(null);
+
+  // ---- mudança de tom (cada página do PDF guarda o seu) ----
+  const nomeCifras = arq ? 'pdf-' + (arq.url.split('/').pop() ?? '').replace(/\.pdf$/i, '') : '';
+  const chaveTons = `hinario-tom:${nomeCifras}`;
+  const [cifras, setCifras] = useState<CifrasPdf | null>(null);
+  const [tons, setTons] = useState<Record<number, number>>(SEM_TONS);
+  const [painelTom, setPainelTom] = useState(false);
+  const [versaoFontes, setVersaoFontes] = useState(0);
+  const [tamCss, setTamCss] = useState({ w: 0, h: 0 });
+  const sobre = useRef<SVGSVGElement | null>(null);
+  useEffect(() => {
+    if (!nomeCifras) return;
+    let vivo = true;
+    setCifras(null);
+    carregarCifras(nomeCifras).then((c) => vivo && setCifras(c));
+    try {
+      const j = JSON.parse(localStorage.getItem(chaveTons) || '{}') as Record<string, number>;
+      const limpo: Record<number, number> = {};
+      for (const [k, v] of Object.entries(j)) if (Number.isFinite(v) && v) limpo[Number(k)] = Math.max(-6, Math.min(6, Math.round(v)));
+      setTons(limpo);
+    } catch {
+      setTons(SEM_TONS);
+    }
+    fontesProntas().then(() => vivo && setVersaoFontes((v) => v + 1));
+    return () => {
+      vivo = false;
+    };
+  }, [nomeCifras, chaveTons]);
 
   const palco = useRef<HTMLDivElement>(null);
   const tela = useRef<HTMLCanvasElement>(null);
@@ -260,6 +325,7 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
     if (!c) return;
     const v = vista.current;
     c.style.transform = `translate(${v.x}px, ${v.y}px) scale(${v.z})`;
+    if (sobre.current) sobre.current.style.transform = c.style.transform;
   }, []);
 
   // desenha a página inteira ajustada ao palco, com a nitidez pedida (mais nítida quando há zoom)
@@ -301,6 +367,7 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
       c.getContext('2d')?.drawImage(fora, 0, 0);
       c.style.width = `${tam.current.w}px`;
       c.style.height = `${tam.current.h}px`;
+      setTamCss((t) => (Math.abs(t.w - tam.current.w) < 0.5 && Math.abs(t.h - tam.current.h) < 0.5 ? t : { w: tam.current.w, h: tam.current.h }));
       nitidez.current = vista.current.z;
       const lim = limitar(vista.current.x, vista.current.y, vista.current.z);
       vista.current = { ...vista.current, ...lim };
@@ -398,6 +465,26 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
   }
 
   const paginaMostrada = rolar ? pagVista : pag;
+  const folhaCifras = cifras?.[paginaMostrada];
+  const temCifras = !!folhaCifras && folhaCifras.c.some((c) => c[4] !== '?');
+  const semitons = tons[paginaMostrada] ?? 0;
+  const tomOriginal = useMemo(() => tomDaFolha(undefined, folhaCifras, []), [folhaCifras]);
+  const nomeTomAtual = tomOriginal ? nomeTom(tomTransposto(tomOriginal, semitons)) : null;
+  const ilegiveis = folhaCifras ? folhaCifras.c.filter((c) => c[4] === '?').length : 0;
+  function mudarTom(n: number) {
+    setTons((antes) => {
+      const novo = { ...antes };
+      if (n === 0) delete novo[paginaMostrada];
+      else novo[paginaMostrada] = n;
+      try {
+        if (Object.keys(novo).length) localStorage.setItem(chaveTons, JSON.stringify(novo));
+        else localStorage.removeItem(chaveTons);
+      } catch {
+        /* sem armazenamento */
+      }
+      return novo;
+    });
+  }
 
   function centro(e: { clientX: number; clientY: number }) {
     const r = palco.current!.getBoundingClientRect();
@@ -505,7 +592,7 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
     return (
       <div className="aviso">
         <h1>PDF não encontrado</h1>
-        <Link className="botao" to="/lavras/arquivos-pdf">
+        <Link className="botao" to={voltarPara}>
           Voltar aos arquivos PDF
         </Link>
       </div>
@@ -515,7 +602,7 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
   return (
     <div className="pagina pagina-pdf">
       <header className="topo topo-lavras">
-        <BotaoVoltar fallback="/lavras/arquivos-pdf" />
+        <BotaoVoltar fallback={voltarPara} />
         <div>
           <p className="topo-sub">Arquivos PDF</p>
           <h1>{arq.nome}</h1>
@@ -528,6 +615,9 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
           pagInicial={pag}
           zoom={zoom}
           irRef={irRolagem}
+          cifras={cifras}
+          tons={tons}
+          versaoFontes={versaoFontes}
           aoMudarPagina={(n) => {
             setPagVista(n);
             try {
@@ -549,6 +639,19 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
           {erro && <p className="pdf-erro">{erro}</p>}
           {!doc && !erro && <p className="pdf-carregando">Abrindo o PDF…</p>}
           <canvas ref={tela} className="pdf-tela" />
+          {doc && semitons !== 0 && folhaCifras && tamCss.w > 0 && (
+            <SobrePagina
+              key={`cifras:${pag}`}
+              folha={folhaCifras}
+              semitons={semitons}
+              versao={versaoFontes}
+              className="pdf-tela pdf-cifras"
+              style={{ width: tamCss.w, height: tamCss.h, transform: `translate(${vista.current.x}px, ${vista.current.y}px) scale(${vista.current.z})` }}
+              aoMontar={(el) => {
+                sobre.current = el;
+              }}
+            />
+          )}
         </div>
       )}
       {doc && (
@@ -581,7 +684,27 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
           >
             ↕
           </button>
+          <button
+            className={`pdf-tom-btn${semitons !== 0 ? ' ativo' : ''}`}
+            onClick={() => setPainelTom((v) => !v)}
+            aria-expanded={painelTom}
+            aria-label="Mudar o tom das cifras desta página"
+          >
+            ♯♭{semitons !== 0 && nomeTomAtual ? ` ${nomeTomAtual}` : ''}
+          </button>
         </div>
+      )}
+      {doc && painelTom && (
+        <PainelTom
+          className="painel-tom-pdf"
+          tom={tomOriginal}
+          semitons={semitons}
+          temCifras={temCifras}
+          ilegiveis={ilegiveis}
+          duvidosa={folhaCifras?.q === 1}
+          aoMudar={mudarTom}
+          aoFechar={() => setPainelTom(false)}
+        />
       )}
     </div>
   );

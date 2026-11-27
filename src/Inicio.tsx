@@ -10,7 +10,7 @@ type PromptEvento = Event & { prompt: () => Promise<void> };
 export const CAPAS: Record<string, string> = {
   hinos: '/midias/capas/image-1.webp',
   hinoscifra: '/midias/capas/image-1.webp',
-  novocantico: '/midias/capas/novo-cantico.webp',
+  novocantico: '/midias/capas/novo-cantico-2.webp',
   canticos: '/midias/capas/image-2.webp',
   caderninho: '/midias/capas/image-1.webp',
   salmos: '/midias/capas/image-3.webp',

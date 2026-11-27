@@ -73,8 +73,8 @@ export default function App() {
       <Route path="/hinario" element={<HubHinos catalogo={catalogo} />} />
       <Route path="/livro/:livroSlug" element={<SecaoPage catalogo={catalogo} />} />
       <Route path="/rascunhos" element={<Rascunhos />} />
-      <Route path="/lavras/arquivos-pdf" element={<ArquivosPdf catalogo={catalogo} />} />
-      <Route path="/lavras/arquivos-pdf/:n" element={<LeitorPdf catalogo={catalogo} />} />
+      <Route path="/:secaoId/arquivos-pdf" element={<ArquivosPdf catalogo={catalogo} />} />
+      <Route path="/:secaoId/arquivos-pdf/:n" element={<LeitorPdf catalogo={catalogo} />} />
       <Route path="/:secaoId" element={<SecaoPage catalogo={catalogo} />} />
       <Route path="/:secaoId/:itemId" element={<LeitorPage catalogo={catalogo} />} />
       <Route path="*" element={<NaoEncontrado />} />
@@ -156,15 +156,9 @@ function HubHinos({ catalogo }: { catalogo: Catalogo }) {
                 <img src={caminho(CAPAS[c.capa])} alt="" className="cartao-fundo" loading="eager" />
                 <span className="cartao-veu" />
                 <span className="cartao-conteudo">
-                  {c.capa === 'novocantico' ? (
-                    <span className="cartao-info">{c.secao.itens.length ? `${c.secao.itens.length} hinos · por número` : 'Partitura e cifra · em breve'}</span>
-                  ) : (
-                    <>
-                      <span className="cartao-sub">{c.sub}</span>
-                      <span className="cartao-titulo">{c.nome}</span>
-                      <span className="cartao-info">{c.secao.itens.length} hinos · por número</span>
-                    </>
-                  )}
+                  <span className="cartao-sub">{c.sub}</span>
+                  <span className="cartao-titulo">{c.nome}</span>
+                  <span className="cartao-info">{c.secao.itens.length ? `${c.secao.itens.length} hinos · por número` : 'em breve'}</span>
                 </span>
                 <span className="cartao-seta" aria-hidden="true">
                   ›
@@ -338,7 +332,7 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
           <span className="arquivos-icone" aria-hidden="true">PDF</span>
           <span className="arquivos-texto">
             <strong>Arquivos PDF</strong>
-            <small>Os {secao.arquivos.length} PDFs originais, do jeito que foram enviados</small>
+            <small>{secao.id === 'novocantico' ? 'O hinário inteiro num arquivo só, com todos os hinos em ordem' : `Os ${secao.arquivos.length} PDFs originais, do jeito que foram enviados`}</small>
           </span>
           <span aria-hidden="true">›</span>
         </Link>
@@ -382,7 +376,8 @@ function tamanhoLegivel(bytes?: number | null): string {
 }
 
 function ArquivosPdf({ catalogo }: { catalogo: Catalogo }) {
-  const secao = acharSecao(catalogo, 'lavras');
+  const { secaoId } = useParams();
+  const secao = acharSecao(catalogo, secaoId);
   const arquivos: ArquivoPdf[] = secao?.arquivos ?? [];
   if (!secao) return <NaoEncontrado />;
   return (
@@ -396,11 +391,15 @@ function ArquivosPdf({ catalogo }: { catalogo: Catalogo }) {
         <MenuIr />
         <span className="contagem">{arquivos.length}</span>
       </header>
-      <p className="arquivos-nota">Os PDFs originais, sem nenhuma alteração. Depois de baixar as músicas no aparelho, eles abrem também sem internet.</p>
+      <p className="arquivos-nota">
+        {secao.id === 'novocantico'
+          ? 'O hinário completo, página por página, na ordem do livro. Depois de baixar as músicas no aparelho, ele abre também sem internet.'
+          : 'Os PDFs originais, sem nenhuma alteração. Depois de baixar as músicas no aparelho, eles abrem também sem internet.'}
+      </p>
       <ol className="lista">
         {arquivos.map((a, i) => (
           <li key={a.url}>
-            <Link className="linha linha-pdf" to={`/lavras/arquivos-pdf/${i}`}>
+            <Link className="linha linha-pdf" to={`/${secao.id}/arquivos-pdf/${i}`}>
               <span className="numero">PDF</span>
               <span className="titulo-item">
                 {a.nome}

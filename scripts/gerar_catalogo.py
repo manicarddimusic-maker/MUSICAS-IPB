@@ -42,6 +42,9 @@ def montar_item(secao: str, dado: dict) -> dict:
     if secao == "hinos":
         ident = f"hino-{num}"
         alt_base = f"Hino {num} — {titulo}"
+    elif secao == "novocantico":
+        ident = f"nc-{slug(dado.get('rotulo') or str(num))}"
+        alt_base = f"Hino {dado.get('rotulo') or num} (Novo Cântico) — {titulo}"
     elif secao == "hinoscifra":
         ident = f"cifra-{slug(dado.get('rotulo') or str(num))}"
         alt_base = f"Hino {dado.get('rotulo') or num} (cifra) — {titulo}"
