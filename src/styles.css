@@ -1256,3 +1256,16 @@ body { overscroll-behavior: none; touch-action: manipulation; }
     margin: 0;
   }
 }
+
+/* Card do Hinário Novo Cântico: a própria capa do livro */
+.cartao-novocantico .cartao-fundo {
+  object-fit: cover;
+  object-position: 50% 46%;
+  transform: none;
+}
+.cartao-novocantico .cartao-veu {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7) 100%);
+}
+.abas-hinos {
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}

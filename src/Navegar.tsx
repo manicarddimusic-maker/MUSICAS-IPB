@@ -6,6 +6,7 @@ const LUGARES: { para: string; nome: string; icone: string }[] = [
   { para: '/hinario', nome: 'Hinos', icone: '♪' },
   { para: '/hinos', nome: 'Hinos – Partitura', icone: '♪' },
   { para: '/hinoscifra', nome: 'Hinos – Cifra', icone: '♪' },
+  { para: '/novocantico', nome: 'Hinário Novo Cântico', icone: '♪' },
   { para: '/canticos', nome: 'Cânticos Espirituais', icone: '♪' },
   { para: '/caderninho', nome: 'Cânticos Antigos IPB', icone: '♪' },
   { para: '/palavra', nome: 'Palavra de Deus Cantada', icone: '✦' },

@@ -10,6 +10,7 @@ type PromptEvento = Event & { prompt: () => Promise<void> };
 export const CAPAS: Record<string, string> = {
   hinos: '/midias/capas/image-1.webp',
   hinoscifra: '/midias/capas/image-1.webp',
+  novocantico: '/midias/capas/novo-cantico.webp',
   canticos: '/midias/capas/image-2.webp',
   caderninho: '/midias/capas/image-1.webp',
   salmos: '/midias/capas/image-3.webp',
@@ -173,9 +174,9 @@ export default function Inicio({ catalogo }: { catalogo: Catalogo }) {
       )}
 
       <nav className="secoes secoes-inicio">
-        {catalogo.secoes.filter((s) => s.id !== 'salmos' && s.id !== 'hinoscifra').map((secao) => {
+        {catalogo.secoes.filter((s) => s.id !== 'salmos' && s.id !== 'hinoscifra' && s.id !== 'novocantico').map((secao) => {
           const itens = ordenarItens(secao);
-          const total = secao.id === 'hinos' ? itens.length + (catalogo.secoes.find((s) => s.id === 'hinoscifra')?.itens.length ?? 0) : secao.id === 'palavra' ? itens.length + (catalogo.secoes.find((s) => s.id === 'salmos')?.itens.length ?? 0) : itens.length;
+          const total = secao.id === 'hinos' ? itens.length + (catalogo.secoes.find((s) => s.id === 'hinoscifra')?.itens.length ?? 0) + (catalogo.secoes.find((s) => s.id === 'novocantico')?.itens.length ?? 0) : secao.id === 'palavra' ? itens.length + (catalogo.secoes.find((s) => s.id === 'salmos')?.itens.length ?? 0) : itens.length;
           return (
             <Link key={secao.id} to={secao.id === 'hinos' ? '/hinario' : `/${secao.id}`} className={`cartao cartao-${secao.id}`}>
               <img src={caminho(CAPAS[secao.id])} alt="" className="cartao-fundo" loading="eager" />

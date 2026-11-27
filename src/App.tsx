@@ -136,6 +136,7 @@ function HubHinos({ catalogo }: { catalogo: Catalogo }) {
   const cartoes = [
     { secao: acharSecao(catalogo, 'hinos'), nome: 'Hinos – Partitura', capa: 'hinos', sub: 'Novo Cântico' },
     { secao: acharSecao(catalogo, 'hinoscifra'), nome: 'Hinos – Cifra', capa: 'canticos', sub: 'Novo Cântico' },
+    { secao: acharSecao(catalogo, 'novocantico'), nome: 'Hinário Novo Cântico', capa: 'novocantico', sub: 'Partitura e cifra' },
   ];
   return (
     <div className="pagina">
@@ -155,9 +156,15 @@ function HubHinos({ catalogo }: { catalogo: Catalogo }) {
                 <img src={caminho(CAPAS[c.capa])} alt="" className="cartao-fundo" loading="eager" />
                 <span className="cartao-veu" />
                 <span className="cartao-conteudo">
-                  <span className="cartao-sub">{c.sub}</span>
-                  <span className="cartao-titulo">{c.nome}</span>
-                  <span className="cartao-info">{c.secao.itens.length} hinos · por número</span>
+                  {c.capa === 'novocantico' ? (
+                    <span className="cartao-info">{c.secao.itens.length ? `${c.secao.itens.length} hinos · por número` : 'Partitura e cifra · em breve'}</span>
+                  ) : (
+                    <>
+                      <span className="cartao-sub">{c.sub}</span>
+                      <span className="cartao-titulo">{c.nome}</span>
+                      <span className="cartao-info">{c.secao.itens.length} hinos · por número</span>
+                    </>
+                  )}
                 </span>
                 <span className="cartao-seta" aria-hidden="true">
                   ›
@@ -255,7 +262,7 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
   return (
     <div className="pagina">
       <header className={`topo topo-${secao.id}`}>
-        <BotaoVoltar fallback={secao.id === 'salmos' || secao.id === 'palavra' ? '/palavra' : secao.id === 'hinos' || secao.id === 'hinoscifra' ? '/hinario' : '/'} />
+        <BotaoVoltar fallback={secao.id === 'salmos' || secao.id === 'palavra' ? '/palavra' : secao.id === 'hinos' || secao.id === 'hinoscifra' || secao.id === 'novocantico' ? '/hinario' : '/'} />
         <div>
           <p className="topo-sub">{livro ? 'Palavra de Deus Cantada' : secao.subtitulo}</p>
           <h1>{livro ? livro.nome : secao.id === 'hinos' ? 'Hinos – Partitura' : secao.titulo}</h1>
@@ -264,13 +271,16 @@ function SecaoPage({ catalogo }: { catalogo: Catalogo }) {
         <span className="contagem">{itens.length}</span>
       </header>
 
-      {(secao.id === 'hinos' || secao.id === 'hinoscifra') && (
+      {(secao.id === 'hinos' || secao.id === 'hinoscifra' || secao.id === 'novocantico') && (
         <nav className="abas-hinos" aria-label="Tipo de hino">
           <Link to="/hinos" replace className={secao.id === 'hinos' ? 'aba ativa' : 'aba'} aria-current={secao.id === 'hinos' ? 'page' : undefined}>
             Hinos – Partitura
           </Link>
           <Link to="/hinoscifra" replace className={secao.id === 'hinoscifra' ? 'aba ativa' : 'aba'} aria-current={secao.id === 'hinoscifra' ? 'page' : undefined}>
             Hinos – Cifra
+          </Link>
+          <Link to="/novocantico" replace className={secao.id === 'novocantico' ? 'aba ativa' : 'aba'} aria-current={secao.id === 'novocantico' ? 'page' : undefined}>
+            Novo Cântico
           </Link>
         </nav>
       )}
