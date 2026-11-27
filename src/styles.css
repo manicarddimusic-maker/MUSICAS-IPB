@@ -1325,3 +1325,9 @@ body { overscroll-behavior: none; touch-action: manipulation; }
   .pdf-barra .pdf-tom-btn { padding: 0 7px; font-size: 0.82rem; }
   .pdf-sep { display: none; }
 }
+
+.painel-tom-tabela { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; font-size: 1rem; }
+.painel-tom-tabela span { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 40px; border-radius: 10px; background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(201, 162, 39, 0.35); }
+.painel-tom-tabela i { opacity: 0.6; font-style: normal; }
+.painel-tom-tabela b { color: var(--dourado-claro); }
+@media (max-width: 620px) { .painel-tom-tabela { grid-template-columns: repeat(3, 1fr); } }

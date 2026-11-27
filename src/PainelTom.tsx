@@ -1,4 +1,6 @@
-import { Tom, nomeTom, normalizarSemitons, tomTransposto, tonsPossiveis } from './tom';
+import { Tom, criarTranspositor, nomeTom, normalizarSemitons, tomTransposto, tonsPossiveis } from './tom';
+
+const NOTAS = ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B'];
 
 type Props = {
   /** tom original da folha (se foi possível saber) */
@@ -36,7 +38,39 @@ export default function PainelTom({ tom, semitons, temCifras, aoMudar, aoFechar,
         </button>
       </div>
       {!temCifras ? (
-        <p className="painel-tom-aviso">Nesta folha o aplicativo ainda não reconheceu as cifras (foto fora de foco ou cifra escrita à mão), por isso não dá para trocar o tom aqui.</p>
+        <>
+          <p className="painel-tom-aviso">
+            Nesta folha o aplicativo ainda não conseguiu ler as cifras (escritas à mão ou foto sem nitidez), então ele não troca direto na folha. Enquanto isso, use a
+            tabela: escolha quanto subir ou descer e veja em que acorde cada nota se transforma.
+          </p>
+          <div className="painel-tom-linha">
+            <button onClick={() => mudar(semitons - 2)} aria-label="Descer um tom">
+              −1
+            </button>
+            <button onClick={() => mudar(semitons - 1)} aria-label="Descer meio tom">
+              −½
+            </button>
+            <div className="painel-tom-atual" aria-live="polite">
+              <b>{semitons === 0 ? '0' : (semitons > 0 ? '+' : '−') + String(Math.abs(semitons) / 2).replace('.5', '½').replace(/^0½/, '½')}</b>
+              <small>{textoDiferenca(semitons)}</small>
+            </div>
+            <button onClick={() => mudar(semitons + 1)} aria-label="Subir meio tom">
+              +½
+            </button>
+            <button onClick={() => mudar(semitons + 2)} aria-label="Subir um tom">
+              +1
+            </button>
+          </div>
+          {semitons !== 0 && (
+            <div className="painel-tom-tabela" aria-label="Tabela de conversão das notas">
+              {NOTAS.map((n) => (
+                <span key={n}>
+                  {n} <i>→</i> <b>{criarTranspositor(semitons, null, semitons < 0)(n)}</b>
+                </span>
+              ))}
+            </div>
+          )}
+        </>
       ) : (
         <>
           <div className="painel-tom-linha">

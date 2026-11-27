@@ -21,6 +21,8 @@ export type FolhaCifras = {
   k?: string;
   /** 1 = foto fora de foco: a leitura das cifras pode ter falhas */
   q?: 1;
+  /** foto tirada deitada: as posições estão na folha girada (90, 180 ou 270 graus no sentido horário) */
+  r?: 90 | 180 | 270;
   c: Cifra[];
 };
 
@@ -124,6 +126,7 @@ export function planejar(folha: FolhaCifras, transpor: Transpositor): CifraPront
   const peso = pesoDaFolha(folha);
   const lista = folha.c;
   const prontas: CifraPronta[] = new Array(lista.length);
+  const larguraUtil = folha.r === 90 || folha.r === 270 ? folha.h : folha.w;
   // linhas: cifras com a mesma linha de base, da esquerda para a direita
   const ordem = lista.map((_, i) => i).sort((a, b) => lista[a][1] - lista[b][1] || lista[a][0] - lista[b][0]);
   const linhas: number[][] = [];
@@ -142,7 +145,7 @@ export function planejar(folha: FolhaCifras, transpor: Transpositor): CifraPront
       const txt = ilegivel ? '' : transpor(original);
       const folga = fs * 0.24;
       const ultimo = k + 1 >= linha.length;
-      const limite = ultimo ? folha.w - fs * 0.1 : lista[linha[k + 1]][0] - folga;
+      const limite = ultimo ? larguraUtil - fs * 0.1 : lista[linha[k + 1]][0] - folga;
       const xi = ilegivel ? x : Math.max(x, cursor);
       const natural = ilegivel ? w : medir(txt, fonte, peso) * fs;
       const livre = Math.max(limite - xi, x + w - xi, fs * 0.4);
@@ -207,4 +210,12 @@ export function guardarSemitons(secaoId: string, itemId: string, n: number) {
   } catch {
     /* sem armazenamento */
   }
+}
+
+/** Transformação (SVG) que leva as posições da folha girada de volta para a imagem original. */
+export function giroDaFolha(folha: FolhaCifras): string | undefined {
+  if (folha.r === 90) return `matrix(0,-1,1,0,0,${folha.h})`;
+  if (folha.r === 270) return `matrix(0,1,-1,0,${folha.w},0)`;
+  if (folha.r === 180) return `matrix(-1,0,0,-1,${folha.w},${folha.h})`;
+  return undefined;
 }

@@ -1,5 +1,5 @@
 import { CSSProperties, forwardRef, useMemo } from 'react';
-import { FONTES, FolhaCifras, pesoDaFolha, planejar } from './cifras';
+import { FONTES, FolhaCifras, giroDaFolha, pesoDaFolha, planejar } from './cifras';
 import type { Transpositor } from './tom';
 
 type Props = {
@@ -29,6 +29,7 @@ const CifrasSobre = forwardRef<SVGSVGElement, Props>(function CifrasSobre({ folh
       aria-hidden="true"
       focusable="false"
     >
+      <g transform={giroDaFolha(folha)}>
       {prontas.map((c, i) =>
         c.ilegivel ? (
           <rect key={`r${i}`} x={c.rx} y={c.ry} width={c.rw} height={c.rh} fill="rgba(214, 40, 40, 0.16)" stroke="#c62828" strokeWidth={Math.max(1, c.fs * 0.06)} rx={c.fs * 0.12} />
@@ -52,6 +53,7 @@ const CifrasSobre = forwardRef<SVGSVGElement, Props>(function CifrasSobre({ folh
             </text>
           ),
         )}
+      </g>
       </g>
     </svg>
   );

@@ -196,8 +196,18 @@ export function criarTranspositor(semitons: number, tom: Tom | null, usaBemol = 
  * Conta os acordes que pertencem a cada tom e dá peso ao último e ao primeiro acorde.
  */
 export function estimarTom(acordes: string[]): Tom | null {
-  const lidos = acordes.map(lerAcorde).filter((x): x is AcordeLido => !!x);
+  const pares = acordes.map((t) => ({ t, ac: lerAcorde(t) })).filter((x): x is { t: string; ac: AcordeLido } => !!x.ac);
+  const lidos = pares.map((x) => x.ac);
   if (!lidos.length) return null;
+  // cadências V7 → I (C7 → F): cada uma aponta para o tom de chegada
+  const cadencias: { a: number; menor: boolean }[] = [];
+  for (let i = 0; i + 1 < pares.length; i++) {
+    const x = pares[i];
+    const y = pares[i + 1].ac;
+    if (!x.ac.menor && !x.ac.dim && /^\(?[A-G][#b]?7(?!M)/.test(x.t) && mod(altura(y.raiz) - altura(x.ac.raiz), 12) === 5 && !y.dim) {
+      cadencias.push({ a: altura(y.raiz), menor: y.menor });
+    }
+  }
   const primeiro = lidos[0];
   const ultimo = lidos[lidos.length - 1];
   // graus do tom maior: I ii iii IV V vi vii°  (semitons e se é menor)
@@ -216,8 +226,9 @@ export function estimarTom(acordes: string[]): Tom | null {
         if (d === 0 && tipo(ac) === (menor ? 'm' : 'M')) pontos += 0.35; // a tônica costuma aparecer bastante
       }
       const ehTonica = (ac: AcordeLido) => mod(altura(ac.raiz) - a, 12) === 0 && tipo(ac) === (menor ? 'm' : 'M');
-      if (ehTonica(ultimo)) pontos += Math.max(2.5, lidos.length * 0.2);
-      if (ehTonica(primeiro)) pontos += Math.max(1.5, lidos.length * 0.1);
+      if (ehTonica(ultimo)) pontos += Math.max(2.5, lidos.length * 0.1);
+      if (ehTonica(primeiro)) pontos += Math.max(1, lidos.length * 0.04);
+      pontos += 0.6 * cadencias.filter((c) => c.a === a && c.menor === menor).length;
       if (!menor) pontos += 0.01; // empate: maior
       if (!melhor || pontos > melhor.pontos) melhor = { pontos, a, menor };
     }
