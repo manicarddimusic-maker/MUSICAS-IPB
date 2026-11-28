@@ -4,6 +4,10 @@ export type Pagina = {
   img: string;
   alt: string;
   tom?: string;
+  /** nome da folha quando ela é outra versão da música (ex.: "versão da igreja") */
+  nome?: string;
+  /** a folha guarda a troca de tom dela à parte da música (outra melodia, outro tom) */
+  tomProprio?: boolean;
 };
 
 export type Item = {

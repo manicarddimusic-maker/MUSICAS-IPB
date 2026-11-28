@@ -68,11 +68,16 @@ def montar_item(secao: str, dado: dict) -> dict:
     for i, pg in enumerate(dado.get("paginas", []), start=1):
         img = pg["img"] if isinstance(pg, dict) else pg
         tom = pg.get("tom") if isinstance(pg, dict) else None
+        # folha que é outra versão da música (ex.: a versão da igreja): tem nome e guarda o tom à parte
+        nome = pg.get("nome") if isinstance(pg, dict) else None
+        proprio = bool(pg.get("tomProprio")) if isinstance(pg, dict) else False
         paginas.append(
             {
                 "img": img,
-                "alt": f"{alt_base} — página {i}",
+                "alt": f"{alt_base} — página {i}" + (f" ({nome})" if nome else ""),
                 **({"tom": tom} if tom else {}),
+                **({"nome": nome} if nome else {}),
+                **({"tomProprio": True} if proprio else {}),
             }
         )
 

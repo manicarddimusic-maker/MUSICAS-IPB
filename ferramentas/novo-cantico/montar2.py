@@ -61,6 +61,16 @@ def work(j):
 if __name__=='__main__':
     with Pool(2) as p: res=p.map(work,jobs,chunksize=8)
     json.dump(res,open('/tmp/nc/final/folhas.json','w'),ensure_ascii=False,indent=0)
+    # folhas extras, fora do livro (versões da igreja montadas à parte; ver /tmp/nc/extras/extras.json):
+    # a imagem tem o mesmo quadro de uma página do livro (pg_cifras), de onde vêm as cifras para a troca de tom
+    extras=[]
+    if os.path.exists('/tmp/nc/extras/extras.json'):
+        for x in json.load(open('/tmp/nc/extras/extras.json')):
+            im=cv2.imread(x['arquivo'],0); r,s=fit(im,min(HP,im.shape[0]))
+            salvar(r,f"{OUT}/{x['nome']}")
+            extras.append(dict(nome=x['nome'],rot=x['rot'],w=int(r.shape[1]),h=int(r.shape[0]),pages=[dict(pg=x['pg_cifras'],x0=0,s=s,w=int(r.shape[1]))],
+                               bytes=os.path.getsize(f"{OUT}/{x['nome']}"),extra=True,rotulo=x.get('rotulo')))
+    json.dump(extras,open('/tmp/nc/final/folhas_extras.json','w'),ensure_ascii=False,indent=0)
     tot=sum(r['bytes'] for r in res)
     print(len(res),'folhas;',round(tot/1e6,1),'MB; media',round(tot/len(res)/1024),'KB')
     # entradas do catálogo
@@ -69,8 +79,10 @@ if __name__=='__main__':
         if rot not in byh: continue
         fl=[r for r in res if r['rot']==rot]
         d=dict(num=NUM[rot],titulo=TIT[rot],paginas=[f"/midias/nc/{r['nome']}" for r in fl])
+        # as extras entram depois das folhas do livro, com nome próprio e tom guardado à parte
+        d['paginas']+=[dict(img=f"/midias/nc/{x['nome']}",nome=x.get('rotulo') or 'outra versão',tomProprio=True) for x in extras if x['rot']==rot]
         if rot.endswith('-A'): d['rotulo']=rot
         itens.append(d)
     json.dump(itens,open('/tmp/nc/final/fonte_nc.json','w'),ensure_ascii=False,indent=1)
-    print(len(itens),'hinos; folhas por hino:',collections.Counter(len(i['paginas']) for i in itens))
+    print(len(itens),'hinos; folhas por hino:',collections.Counter(len(i['paginas']) for i in itens),'| extras:',[x['nome'] for x in extras])
     print('sem foto:',[r for r in ORD if r not in byh])

@@ -6290,6 +6290,12 @@
       {
        "img": "/midias/nc/nc-009-1.png",
        "alt": "Hino 9 (Novo Cântico) — Aleluia ao Deus Trino — página 1"
+      },
+      {
+       "img": "/midias/nc/nc-009-igreja.png",
+       "alt": "Hino 9 (Novo Cântico) — Aleluia ao Deus Trino — página 2 (versão da igreja)",
+       "nome": "versão da igreja",
+       "tomProprio": true
       }
      ],
      "num": 9

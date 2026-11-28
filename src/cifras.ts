@@ -201,22 +201,24 @@ export function transpositorDaFolha(semitons: number, tom: Tom | null, folha: Fo
   return criarTranspositor(semitons, tom, folha ? prefereBemol(folha.c.map((c) => c[4])) : false);
 }
 
-const chaveTom = (secaoId: string, itemId: string) => `hinario-tom:${secaoId}:${itemId}`;
+// O tom fica guardado por música. Uma folha que é outra versão da música (outra melodia, outro tom)
+// guarda o seu à parte: "folha" é o nome do arquivo dela.
+const chaveTom = (secaoId: string, itemId: string, folha?: string) => `hinario-tom:${secaoId}:${itemId}${folha ? ':' + folha : ''}`;
 
 /** Quantos semitons a pessoa deixou esta música (fica guardado no aparelho). */
-export function lerSemitons(secaoId: string, itemId: string): number {
+export function lerSemitons(secaoId: string, itemId: string, folha?: string): number {
   try {
-    const n = Number(localStorage.getItem(chaveTom(secaoId, itemId)));
+    const n = Number(localStorage.getItem(chaveTom(secaoId, itemId, folha)));
     return Number.isFinite(n) ? Math.max(-6, Math.min(6, Math.round(n))) : 0;
   } catch {
     return 0;
   }
 }
 
-export function guardarSemitons(secaoId: string, itemId: string, n: number) {
+export function guardarSemitons(secaoId: string, itemId: string, n: number, folha?: string) {
   try {
-    if (n === 0) localStorage.removeItem(chaveTom(secaoId, itemId));
-    else localStorage.setItem(chaveTom(secaoId, itemId), String(n));
+    if (n === 0) localStorage.removeItem(chaveTom(secaoId, itemId, folha));
+    else localStorage.setItem(chaveTom(secaoId, itemId, folha), String(n));
   } catch {
     /* sem armazenamento */
   }

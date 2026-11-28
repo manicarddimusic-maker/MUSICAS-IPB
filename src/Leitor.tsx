@@ -293,9 +293,11 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
       vivo = false;
     };
   }, [secao.id]);
-  useEffect(() => {
-    setSemitons(lerSemitons(secao.id, item.id));
-  }, [secao.id, item.id]);
+  // a folha que é outra versão da música (ex.: a versão da igreja) guarda o tom dela à parte
+  const folhaTom = atual.tomProprio ? nomeArquivo(atual.img) : undefined;
+  useLayoutEffect(() => {
+    setSemitons(lerSemitons(secao.id, item.id, folhaTom));
+  }, [secao.id, item.id, folhaTom]);
   useEffect(() => {
     let vivo = true;
     fontesProntas().then(() => vivo && setVersaoFontes((v) => v + 1));
@@ -311,7 +313,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   const transpor = useMemo(() => transpositorDaFolha(semitons, tomOriginal, folhaCifras), [semitons, tomOriginal, folhaCifras]);
   function mudarTom(n: number) {
     setSemitons(n);
-    guardarSemitons(secao.id, item.id, n);
+    guardarSemitons(secao.id, item.id, n, folhaTom);
   }
   const nomeTomAtual = tomOriginal ? nomeTom(tomTransposto(tomOriginal, semitons)) : null;
 
@@ -723,7 +725,10 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
         ) : (
           <span className="nav-item vazio" />
         )}
-        <span className="nav-pos">{paginas.length > 1 ? `${pagina + 1} / ${paginas.length}` : ''}</span>
+        <span className="nav-pos">
+          {paginas.length > 1 ? `${pagina + 1} / ${paginas.length}` : ''}
+          {atual.nome && <small>{atual.nome}</small>}
+        </span>
         {proximo ? (
           <Link to={`/${secao.id}/${proximo.id}`} replace className="nav-item direita">
             <span>{rotuloCompleto(secao, proximo)} ›</span>

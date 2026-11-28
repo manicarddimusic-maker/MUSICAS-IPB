@@ -5,6 +5,7 @@ import numpy as np
 from nccomum import PAG
 R='/home/claude/musicas-ipb/public/data/cifras/'
 FOL=json.load(open('/tmp/nc/final/folhas.json'))
+if os.path.exists('/tmp/nc/final/folhas_extras.json'): FOL=FOL+json.load(open('/tmp/nc/final/folhas_extras.json'))      # versões da igreja
 PMAP={int(k):v for k,v in json.load(open('/tmp/nc/final/pdf_map.json')).items()}
 from nc_decidir import decidir,em_linhas
 from acordes import estimar_tom

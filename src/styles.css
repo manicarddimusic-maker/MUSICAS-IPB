@@ -572,6 +572,16 @@ a {
   font-family: var(--serif);
   color: rgba(247, 242, 230, 0.5);
   font-size: 0.85rem;
+  text-align: center;
+}
+
+/* nome da folha quando ela é outra versão da música (ex.: "versão da igreja") */
+.nav-pos small {
+  display: block;
+  margin-top: 2px;
+  color: var(--dourado-claro);
+  font-size: 0.72rem;
+  white-space: nowrap;
 }
 
 /* ---------- Estados ---------- */

@@ -13351,7 +13351,12 @@
    "num": 9,
    "titulo": "Aleluia ao Deus Trino",
    "paginas": [
-    "/midias/nc/nc-009-1.png"
+    "/midias/nc/nc-009-1.png",
+    {
+     "img": "/midias/nc/nc-009-igreja.png",
+     "nome": "versão da igreja",
+     "tomProprio": true
+    }
    ]
   },
   {
