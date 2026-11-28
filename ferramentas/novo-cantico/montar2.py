@@ -59,8 +59,12 @@ def work(j):
     salvar(tela,f"{OUT}/{j['nome']}")
     return dict(nome=j['nome'],rot=j['rot'],w=int(tela.shape[1]),h=int(tela.shape[0]),pages=info,bytes=os.path.getsize(f"{OUT}/{j['nome']}"))
 if __name__=='__main__':
-    with Pool(2) as p: res=p.map(work,jobs,chunksize=8)
-    json.dump(res,open('/tmp/nc/final/folhas.json','w'),ensure_ascii=False,indent=0)
+    import sys
+    if len(sys.argv)>1 and sys.argv[1]=='extras':        # "python3 montar2.py extras": só refaz as folhas extras; as do livro ficam como estão
+        res=json.load(open('/tmp/nc/final/folhas.json'))
+    else:
+        with Pool(2) as p: res=p.map(work,jobs,chunksize=8)
+        json.dump(res,open('/tmp/nc/final/folhas.json','w'),ensure_ascii=False,indent=0)
     # folhas extras, fora do livro (versões da igreja montadas à parte; ver /tmp/nc/extras/extras.json):
     # a imagem tem o mesmo quadro de uma página do livro (pg_cifras), de onde vêm as cifras para a troca de tom
     extras=[]
@@ -69,7 +73,7 @@ if __name__=='__main__':
             im=cv2.imread(x['arquivo'],0); r,s=fit(im,min(HP,im.shape[0]))
             salvar(r,f"{OUT}/{x['nome']}")
             extras.append(dict(nome=x['nome'],rot=x['rot'],w=int(r.shape[1]),h=int(r.shape[0]),pages=[dict(pg=x['pg_cifras'],x0=0,s=s,w=int(r.shape[1]))],
-                               bytes=os.path.getsize(f"{OUT}/{x['nome']}"),extra=True,rotulo=x.get('rotulo')))
+                               bytes=os.path.getsize(f"{OUT}/{x['nome']}"),extra=True,rotulo=x.get('rotulo'),chave=x.get('chave')))
     json.dump(extras,open('/tmp/nc/final/folhas_extras.json','w'),ensure_ascii=False,indent=0)
     tot=sum(r['bytes'] for r in res)
     print(len(res),'folhas;',round(tot/1e6,1),'MB; media',round(tot/len(res)/1024),'KB')
@@ -80,7 +84,9 @@ if __name__=='__main__':
         fl=[r for r in res if r['rot']==rot]
         d=dict(num=NUM[rot],titulo=TIT[rot],paginas=[f"/midias/nc/{r['nome']}" for r in fl])
         # as extras entram depois das folhas do livro, com nome próprio e tom guardado à parte
-        d['paginas']+=[dict(img=f"/midias/nc/{x['nome']}",nome=x.get('rotulo') or 'outra versão',tomProprio=True) for x in extras if x['rot']==rot]
+        # "chave": o nome com que a folha foi publicada pela 1ª vez — o tom e as anotações guardados no aparelho ficam presos a ele,
+        # então a folha pode ganhar arquivo novo (-v2, -v3...) sem o músico perder o que já fez
+        d['paginas']+=[dict(img=f"/midias/nc/{x['nome']}",nome=x.get('rotulo') or 'outra versão',tomProprio=True,**({'chave':x['chave']} if x.get('chave') else {})) for x in extras if x['rot']==rot]
         if rot.endswith('-A'): d['rotulo']=rot
         itens.append(d)
     json.dump(itens,open('/tmp/nc/final/fonte_nc.json','w'),ensure_ascii=False,indent=1)

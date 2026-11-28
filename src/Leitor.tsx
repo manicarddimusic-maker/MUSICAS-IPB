@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Item, Secao, chaveDaFolha, rotaLista, rotuloCompleto } from './catalogo';
+import { Item, Secao, chaveDaFolha, chaveTomDaFolha, rotaLista, rotuloCompleto } from './catalogo';
 import Reordenar from './Reordenar';
 import { BotaoVoltar, MenuIr } from './Navegar';
 import Anotar from './Anotar';
+import PdfMusica from './PdfMusica';
 import { FolhaDef, Traco, achatar, apagarAnot, gravarAnot, gravarRascunho, lerAnotDaFolha, novoId } from './anotacoes';
 import CifrasSobre from './CifrasSobre';
 import PainelTom from './PainelTom';
-import { FolhaCifras, carregarCifras, fontesProntas, guardarSemitons, lerSemitons, tomDaFolha, transpositorDaFolha } from './cifras';
+import { FolhaCifras, camadaDeCifras, carregarCifras, fontesProntas, fonteDasCifras, guardarSemitons, lerSemitons, tomDaFolha, transpositorDaFolha } from './cifras';
 import { nomeTom, tomTransposto } from './tom';
 
 type Props = {
@@ -83,6 +84,12 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   const [verOriginal, setVerOriginal] = useState(false);
   const [anotando, setAnotando] = useState<FolhaDef[] | null>(null);
   const [versaoAnot, setVersaoAnot] = useState(0);
+  // traços das anotações salvas (por caminho da imagem) — servem para refazer a folha anotada em outro tom
+  const [anotTracos, setAnotTracos] = useState<Record<string, Traco[]>>({});
+  // folha anotada já refeita no tom escolhido: imagem + cifras trocadas + traços por cima de tudo
+  const [composto, setComposto] = useState<{ img: string; semitons: number; versao: number; url: string } | null>(null);
+  const [pdfAberto, setPdfAberto] = useState(false);
+  const imgMostrada = useRef('');
   const [reordenando, setReordenando] = useState(false);
   const [ordemSalva, setOrdemSalva] = useState<string[] | null>(() => lerOrdem(secao.id, item.id));
   // mudança de tom: onde estão as cifras de cada folha, quantos semitons e se o painel está aberto
@@ -135,14 +142,17 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     Promise.all(paginas.map((p) => lerAnotDaFolha(p).catch(() => undefined))).then((lista) => {
       if (!vivo) return;
       const m: Record<string, string> = {};
+      const t: Record<string, Traco[]> = {};
       lista.forEach((a, i) => {
         if (a) {
           const u = URL.createObjectURL(a.flat);
           urls.push(u);
           m[paginas[i].img] = u;
+          t[paginas[i].img] = a.tracos as Traco[];
         }
       });
       setAnotUrl(m);
+      setAnotTracos(t);
     });
     return () => {
       vivo = false;
@@ -295,7 +305,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     };
   }, [secao.id]);
   // a folha que é outra versão da música (ex.: a versão da igreja) guarda o tom dela à parte
-  const folhaTom = atual.tomProprio ? nomeArquivo(chaveDaFolha(atual)) : undefined;
+  const folhaTom = chaveTomDaFolha(atual);
   useLayoutEffect(() => {
     setSemitons(lerSemitons(secao.id, item.id, folhaTom));
   }, [secao.id, item.id, folhaTom]);
@@ -317,6 +327,30 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     guardarSemitons(secao.id, item.id, n, folhaTom);
   }
   const nomeTomAtual = tomOriginal ? nomeTom(tomTransposto(tomOriginal, semitons)) : null;
+
+  // Folha com anotações num tom diferente do original: refaz a folha com as cifras trocadas e os traços POR CIMA delas
+  // (igual ao que a pessoa viu ao anotar); sem anotações, as cifras novas continuam sendo a camada vetorial de sempre.
+  useEffect(() => {
+    const tracos = anotTracos[atual.img];
+    if (verOriginal || semitons === 0 || !temCifras || !folhaCifras || !tracos?.length) {
+      setComposto(null);
+      return;
+    }
+    let vivo = true;
+    let url: string | undefined;
+    (async () => {
+      await fonteDasCifras(folhaCifras);
+      const blob = await achatar({ src: atual.img, tracos: [] }, tracos, 0, camadaDeCifras(folhaCifras, transpor));
+      if (!vivo) return;
+      url = URL.createObjectURL(blob);
+      setComposto({ img: atual.img, semitons, versao: versaoAnot, url });
+    })().catch(() => undefined);
+    return () => {
+      vivo = false;
+      if (url) URL.revokeObjectURL(url);
+    };
+  }, [atual.img, anotTracos, semitons, temCifras, folhaCifras, transpor, verOriginal, versaoAnot]);
+  const usaComposto = !!composto && composto.img === atual.img && composto.semitons === semitons && composto.versao === versaoAnot && !verOriginal;
 
   function girar() {
     const nova = (rotacao + 90) % 360;
@@ -592,19 +626,23 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
       >
         <img
           key={atual.img}
-          src={anotUrl[atual.img] && !verOriginal ? anotUrl[atual.img] : atual.img}
+          src={usaComposto ? composto!.url : anotUrl[atual.img] && !verOriginal ? anotUrl[atual.img] : atual.img}
           ref={imagem}
           alt={atual.alt}
           className="folha"
           draggable={false}
           onLoad={() => {
             setFalhou(false);
-            irAoTopo();
+            // só na 1ª vez que a folha aparece: trocar a imagem por dentro (anotações, tom) não pode jogar o zoom para o topo
+            if (imgMostrada.current !== atual.img) {
+              imgMostrada.current = atual.img;
+              irAoTopo();
+            }
           }}
           onError={() => setFalhou(true)}
           style={{ ...estiloFolha, objectFit: 'contain', cursor: zoom > 1 ? 'grab' : 'pointer' }}
         />
-        {semitons !== 0 && temCifras && folhaCifras && !falhou && (
+        {semitons !== 0 && temCifras && folhaCifras && !falhou && !usaComposto && (
           <CifrasSobre ref={sobre} key={`cifras:${atual.img}`} folha={folhaCifras} transpor={transpor} versao={versaoFontes} className="folha folha-cifras" style={estiloFolha} />
         )}
         {falhou && (
@@ -628,6 +666,9 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
         )}
         <button className="botao-zoom" onClick={aumentarZoom} aria-label="Aumentar o zoom da folha" title="Aumentar (+)">
           {zoom <= 1.01 ? '🔍 +' : `${Math.round(zoom * 100) / 100}× +`}
+        </button>
+        <button className="botao-pdf-musica" onClick={() => setPdfAberto(true)} aria-label="Exportar o PDF desta música" title="Exportar o PDF só desta música">
+          ⇪ PDF
         </button>
         {paginas.length > 1 && (
           <button className="botao-ordem" onClick={() => setReordenando(true)} aria-label="Reordenar as folhas desta música" title="Reordenar as folhas">
@@ -714,8 +755,18 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
             setVersaoAnot((v) => v + 1);
           }}
           onFechar={() => setAnotando(null)}
+          tom={{
+            secaoId: secao.id,
+            itemId: item.id,
+            tomDoItem: item.tom,
+            cifras,
+            paginas: paginas.map((p) => ({ img: p.img, tom: p.tom, folhaTom: chaveTomDaFolha(p) })),
+            aoMudar: () => setSemitons(lerSemitons(secao.id, item.id, folhaTom)),
+          }}
         />
       )}
+
+      {pdfAberto && <PdfMusica secao={secao} item={item} paginas={paginas} cifras={cifras} anotTracos={anotTracos} aoFechar={() => setPdfAberto(false)} />}
 
       <nav className="navegacao">
         {anterior ? (

@@ -1,18 +1,20 @@
 import type { jsPDF as JsPDFTipo } from 'jspdf';
-import { Item, Secao, rotuloItem } from './catalogo';
+import { Item, Pagina, Secao, rotuloItem } from './catalogo';
 import { ARTEFATO } from './ambiente';
+import { CamadaPapel, FolhaDef, Traco, pintarBase, prepararBase } from './anotacoes';
 
 const VERDE: [number, number, number] = [47, 68, 54];
 const DOURADO: [number, number, number] = [201, 162, 39];
 const PAPEL: [number, number, number] = [247, 242, 230];
 
 /** Baixa a imagem e reduz para caber bem no PDF (mantém legibilidade e tamanho de arquivo razoável). */
-async function imagemParaPdf(url: string): Promise<{ dados: string; larg: number; alt: number }> {
+type ImagemPdf = { dados: string; larg: number; alt: number };
+
+async function imagemParaPdf(url: string, maxLado = 1500, qualidade = 0.85): Promise<ImagemPdf> {
   const resp = await fetch(url, { cache: 'force-cache' });
   if (!resp.ok) throw new Error('Falha ao baixar ' + url);
   const blob = await resp.blob();
   const bitmap = await createImageBitmap(blob);
-  const maxLado = 1500;
   const escala = Math.min(1, maxLado / Math.max(bitmap.width, bitmap.height));
   const larg = Math.round(bitmap.width * escala);
   const alt = Math.round(bitmap.height * escala);
@@ -25,7 +27,7 @@ async function imagemParaPdf(url: string): Promise<{ dados: string; larg: number
   ctx.imageSmoothingQuality = 'high';
   ctx.drawImage(bitmap, 0, 0, larg, alt);
   bitmap.close?.();
-  return { dados: canvas.toDataURL('image/jpeg', 0.85), larg, alt };
+  return { dados: canvas.toDataURL('image/jpeg', qualidade), larg, alt };
 }
 
 function capa(doc: JsPDFTipo, secao: Secao, total: number) {
@@ -67,6 +69,43 @@ function capa(doc: JsPDFTipo, secao: Secao, total: number) {
   doc.text(hoje, L / 2, A * 0.86, { align: 'center' });
 }
 
+/** Uma folha por página do PDF (em pé ou deitada, conforme o formato da imagem), com a legenda embaixo. */
+function paginaDaFolha(doc: JsPDFTipo, img: ImagemPdf | null, legenda: string) {
+  const larg = img?.larg ?? 1;
+  const alt = img?.alt ?? 1;
+  const paisagem = larg > alt;
+  const [PL, PA] = paisagem ? [297, 210] : [210, 297];
+  doc.addPage([PL, PA], paisagem ? 'landscape' : 'portrait');
+  const margem = paisagem ? 4 : 8;
+  const rodape = paisagem ? 7 : 9;
+  const dispL = PL - margem * 2;
+  const dispA = PA - margem * 2 - rodape;
+  const escala = Math.min(dispL / larg, dispA / alt);
+  const w = larg * escala;
+  const h = alt * escala;
+  const x = (PL - w) / 2;
+  const y = margem + (dispA - h) / 2;
+  doc.setFillColor(255, 255, 255);
+  doc.rect(0, 0, PL, PA, 'F');
+  if (img) {
+    doc.addImage(img.dados, 'JPEG', x, y, w, h, undefined, 'FAST');
+  } else {
+    doc.setTextColor(120, 120, 120);
+    doc.setFontSize(12);
+    doc.text('Não foi possível incluir esta página.', PL / 2, PA / 2, { align: 'center' });
+  }
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(8);
+  doc.setTextColor(120, 120, 120);
+  doc.text(legenda, PL / 2, PA - 5, { align: 'center' });
+}
+
+/** "Hino 9 – Aleluia ao Deus Trino" (legenda de cada página). */
+function legendaDoItem(secao: Secao, item: Item): string {
+  const rotulo = rotuloItem(secao, item);
+  return secao.id === 'hinos' || secao.id === 'hinoscifra' ? `Hino ${rotulo}${item.titulo ? ' – ' + item.titulo : ''}` : `${rotulo}${item.titulo ? ' – ' + item.titulo : ''}`;
+}
+
 /** Gera o PDF da seção inteira (na ordem da lista) e devolve o arquivo como Blob. */
 export async function gerarPdfSecao(
   secao: Secao,
@@ -94,39 +133,81 @@ export async function gerarPdfSecao(
       } catch {
         dados = null;
       }
-      const paisagem = larg > alt;
-      const [PL, PA] = paisagem ? [297, 210] : [210, 297];
-      doc.addPage([PL, PA], paisagem ? 'landscape' : 'portrait');
-      const margem = paisagem ? 4 : 8;
-      const rodape = paisagem ? 7 : 9;
-      const dispL = PL - margem * 2;
-      const dispA = PA - margem * 2 - rodape;
-      const escala = Math.min(dispL / larg, dispA / alt);
-      const w = larg * escala;
-      const h = alt * escala;
-      const x = (PL - w) / 2;
-      const y = margem + (dispA - h) / 2;
-      doc.setFillColor(255, 255, 255);
-      doc.rect(0, 0, PL, PA, 'F');
-      if (dados) {
-        doc.addImage(dados, 'JPEG', x, y, w, h, undefined, 'FAST');
-      } else {
-        doc.setTextColor(120, 120, 120);
-        doc.setFontSize(12);
-        doc.text('Não foi possível incluir esta página.', PL / 2, PA / 2, { align: 'center' });
-      }
-      const rotulo = rotuloItem(secao, item);
-      const legenda = secao.id === 'hinos' || secao.id === 'hinoscifra' ? `Hino ${rotulo}${item.titulo ? ' – ' + item.titulo : ''}` : `${rotulo}${item.titulo ? ' – ' + item.titulo : ''}`;
-      doc.setFont('helvetica', 'normal');
-      doc.setFontSize(8);
-      doc.setTextColor(120, 120, 120);
-      doc.text(legenda, PL / 2, PA - 5, { align: 'center' });
+      paginaDaFolha(doc, dados ? { dados, larg, alt } : null, legendaDoItem(secao, item));
       feitos += 1;
       aoProgredir?.(feitos, total);
       await new Promise((r) => setTimeout(r, 0));
     }
   }
   return doc.output('blob');
+}
+
+/** Uma folha da música a incluir no PDF, já com o que deve aparecer nela. */
+export type FolhaParaPdf = {
+  pagina: Pagina;
+  /** anotações a desenhar por cima (vazio = folha sem anotações) */
+  tracos?: Traco[];
+  /** cifras no tom escolhido (vazio = tom original) */
+  camada?: CamadaPapel;
+  /** nome do tom, para a legenda (ex.: "D") */
+  tom?: string;
+};
+
+const LADO_MAXIMO_MUSICA = 2400;
+
+/** A folha como vai para o PDF: a imagem, as cifras no tom escolhido e as anotações por cima. */
+async function folhaParaPdf(f: FolhaParaPdf): Promise<ImagemPdf> {
+  if (!f.camada && !f.tracos?.length) return imagemParaPdf(f.pagina.img, LADO_MAXIMO_MUSICA, 0.92);
+  const def: FolhaDef = { src: f.pagina.img, tracos: [] };
+  const base = await prepararBase(def);
+  pintarBase(base, def, f.tracos ?? [], f.camada);
+  const k = Math.min(1, LADO_MAXIMO_MUSICA / Math.max(base.W, base.H));
+  let tela = base.canvas;
+  if (k < 1) {
+    tela = document.createElement('canvas');
+    tela.width = Math.round(base.W * k);
+    tela.height = Math.round(base.H * k);
+    const c = tela.getContext('2d')!;
+    c.imageSmoothingQuality = 'high';
+    c.drawImage(base.canvas, 0, 0, tela.width, tela.height);
+  }
+  return { dados: tela.toDataURL('image/jpeg', 0.92), larg: tela.width, alt: tela.height };
+}
+
+/** PDF de uma música só: todas as folhas dela, na ordem em que aparecem, sem capa. */
+export async function gerarPdfMusica(
+  secao: Secao,
+  item: Item,
+  folhas: FolhaParaPdf[],
+  aoProgredir?: (feitos: number, total: number) => void,
+): Promise<Blob> {
+  const { jsPDF } = await import('jspdf');
+  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
+  const base = legendaDoItem(secao, item);
+  aoProgredir?.(0, folhas.length);
+  let feitos = 0;
+  for (const f of folhas) {
+    let img: ImagemPdf | null = null;
+    try {
+      img = await folhaParaPdf(f);
+    } catch {
+      img = null;
+    }
+    const legenda = base + (f.pagina.nome ? ` (${f.pagina.nome})` : '') + (f.tom ? ` · Tom: ${f.tom}` : '');
+    paginaDaFolha(doc, img, legenda);
+    feitos += 1;
+    aoProgredir?.(feitos, folhas.length);
+    await new Promise((r) => setTimeout(r, 0));
+  }
+  doc.deletePage(1); // a página em branco que o jsPDF cria ao começar
+  return doc.output('blob');
+}
+
+/** "Novo Cântico - 9 - Aleluia ao Deus Trino.pdf" */
+export function nomeArquivoPdfMusica(secao: Secao, item: Item): string {
+  const rotulo = rotuloItem(secao, item);
+  const partes = [secao.titulo, rotulo !== item.titulo ? rotulo : '', item.titulo].filter(Boolean);
+  return partes.join(' - ').replace(/[\\/:*?"<>|]+/g, ' ').replace(/\s+/g, ' ').trim() + '.pdf';
 }
 
 export function nomeArquivoPdf(secao: Secao): string {

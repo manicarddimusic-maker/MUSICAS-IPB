@@ -94,6 +94,18 @@
      "num": 8
     },
     {
+     "id": "hino-9",
+     "titulo": "Aleluia ao Deus Trino",
+     "paginas": [
+      {
+       "img": "/midias/nc/nc-009-igreja-v2.png",
+       "alt": "Hino 9 — Aleluia ao Deus Trino — página 1 (versão da igreja)",
+       "nome": "versão da igreja"
+      }
+     ],
+     "num": 9
+    },
+    {
      "id": "hino-10",
      "titulo": "Vós, criaturas de Deus Pai",
      "paginas": [

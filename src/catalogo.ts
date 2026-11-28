@@ -18,6 +18,13 @@ export type Pagina = {
 /** Caminho com que o tom e as anotações da folha são guardados no aparelho. */
 export const chaveDaFolha = (p: Pagina) => p.chave ?? p.img;
 
+/** Nome com que o tom da folha é guardado à parte (só para folhas que são outra versão da música). */
+export const chaveTomDaFolha = (p: Pagina): string | undefined => {
+  if (!p.tomProprio) return undefined;
+  const c = chaveDaFolha(p);
+  return c.split('/').pop() || c;
+};
+
 export type Item = {
   id: string;
   num?: number;
@@ -74,7 +81,12 @@ export function carregarCatalogo(): Promise<Catalogo> {
         } catch {
           /* ok */
         }
-        for (const sec of c.secoes) for (const it of sec.itens) for (const pg of it.paginas) pg.img = caminho(pg.img);
+        for (const sec of c.secoes)
+          for (const it of sec.itens)
+            for (const pg of it.paginas) {
+              pg.img = caminho(pg.img);
+              if (pg.chave) pg.chave = caminho(pg.chave); // a chave tem de ficar escrita do mesmo jeito que o caminho da imagem
+            }
         return c;
       })
       .catch((e) => {

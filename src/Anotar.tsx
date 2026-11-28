@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Base,
+  CamadaPapel,
   FolhaDef,
   Ferramenta,
   FundoBranco,
@@ -10,6 +11,23 @@ import {
   pintarBase,
   prepararBase,
 } from './anotacoes';
+import PainelTom from './PainelTom';
+import { FolhaCifras, camadaDeCifras, fonteDasCifras, guardarSemitons, lerSemitons, situacaoDoTom } from './cifras';
+import { nomeTom, tomTransposto } from './tom';
+
+/** Para anotar com as cifras já no tom que a pessoa escolheu (o mesmo que o leitor mostra). */
+export type TomDoEditor = {
+  secaoId: string;
+  itemId: string;
+  /** tom escrito no item (se houver) */
+  tomDoItem?: string;
+  /** cifras reconhecidas, por caminho de imagem (null enquanto carregam) */
+  cifras: Record<string, FolhaCifras> | null;
+  /** uma por folha do editor, na mesma ordem; "folhaTom" = nome com que a folha guarda o tom à parte (outra versão da música) */
+  paginas: { img: string; tom?: string; folhaTom?: string }[];
+  /** o tom de alguma folha mudou aqui dentro: o leitor precisa reler */
+  aoMudar?: () => void;
+};
 
 type Props = {
   titulo: string;
@@ -20,6 +38,8 @@ type Props = {
   onDuplicar?: (folhas: FolhaDef[], titulo: string) => Promise<void>;
   onRemoverTudo?: () => Promise<void>;
   onFechar: () => void;
+  /** se vier, o editor mostra as cifras no tom escolhido e tem o botão de tom */
+  tom?: TomDoEditor;
 };
 
 const CORES = ['#111111', '#d32f2f', '#1565c0', '#2e7d32', '#ef6c00', '#6a1b9a'];
@@ -120,7 +140,7 @@ function atinge(t: Traco, x: number, y: number, r: number, W: number, H: number)
   return false;
 }
 
-export default function Anotar({ titulo, folhas, inicial = 0, rascunho, onSalvar, onDuplicar, onRemoverTudo, onFechar }: Props) {
+export default function Anotar({ titulo, folhas, inicial = 0, rascunho, onSalvar, onDuplicar, onRemoverTudo, onFechar, tom }: Props) {
   const [fol, setFol] = useState<FolhaDef[]>(() => copiar(folhas));
   const [pi, setPi] = useState(Math.min(inicial, folhas.length - 1));
   const [ferr, setFerr] = useState<Ferramenta>('caneta');
@@ -140,11 +160,21 @@ export default function Anotar({ titulo, folhas, inicial = 0, rascunho, onSalvar
   const [hex, setHex] = useState('#1565c0');
   const [editTexto, setEditTexto] = useState<{ x: number; y: number } | null>(null);
   const [zv, setZv] = useState(1);
+  const [painelTom, setPainelTom] = useState(false);
+  // semitons de cada folha (lidos do que o leitor guardou)
+  const lerTons = (t: TomDoEditor | undefined) => (t ? t.paginas.map((p) => lerSemitons(t.secaoId, t.itemId, p.folhaTom)) : []);
+  const [tons, setTons] = useState<number[]>(() => lerTons(tom));
 
   const rolagem = useRef<HTMLDivElement>(null);
   const caixa = useRef<HTMLDivElement>(null);
   const tela = useRef<HTMLCanvasElement>(null);
   const base = useRef<Base | null>(null);
+  const baseDe = useRef(-1); // de qual folha é o papel que está na tela
+  const camadaRef = useRef<CamadaPapel | undefined>(undefined); // cifras no tom escolhido, por baixo da caneta
+  const tomRef = useRef(tom);
+  tomRef.current = tom;
+  const tonsRef = useRef(tons);
+  tonsRef.current = tons;
   const folRef = useRef(fol);
   folRef.current = fol;
   const piRef = useRef(pi);
@@ -187,10 +217,20 @@ export default function Anotar({ titulo, folhas, inicial = 0, rascunho, onSalvar
 
   const reconstruir = useCallback(() => {
     const b = base.current;
-    if (!b) return;
-    pintarBase(b, folRef.current[piRef.current], folRef.current[piRef.current].tracos);
+    if (!b || baseDe.current !== piRef.current) return; // a folha nova ainda está abrindo: ela se pinta sozinha
+    pintarBase(b, folRef.current[piRef.current], folRef.current[piRef.current].tracos, camadaRef.current);
     pintarTela();
   }, [pintarTela]);
+
+  /** As cifras de uma folha no tom n (sem camada quando é o tom original ou a folha não tem cifras lidas). */
+  async function camadaDaFolha(i: number, n: number): Promise<CamadaPapel | undefined> {
+    const t = tomRef.current;
+    if (!t || n === 0 || i >= t.paginas.length) return undefined;
+    const sit = situacaoDoTom(t.cifras, t.paginas, i, t.tomDoItem, n);
+    if (!sit.folha || !sit.temCifras) return undefined;
+    await fonteDasCifras(sit.folha);
+    return camadaDeCifras(sit.folha, sit.transpor);
+  }
 
   const aplicarLargura = useCallback((z: number) => {
     const b = base.current;
@@ -230,15 +270,18 @@ export default function Anotar({ titulo, folhas, inicial = 0, rascunho, onSalvar
     setErro(null);
     setEditTexto(null);
     prepararBase(folRef.current[pi])
-      .then((b) => {
+      .then(async (b) => {
+        const camada = await camadaDaFolha(pi, tonsRef.current[pi] ?? 0).catch(() => undefined);
         if (!vivo) return;
         base.current = b;
+        baseDe.current = pi;
+        camadaRef.current = camada;
         const c = tela.current;
         if (c) {
           c.width = b.W;
           c.height = b.H;
         }
-        pintarBase(b, folRef.current[pi], folRef.current[pi].tracos);
+        pintarBase(b, folRef.current[pi], folRef.current[pi].tracos, camada);
         aplicarLargura(1);
         pintarTela();
         if (rolagem.current) {
@@ -257,6 +300,28 @@ export default function Anotar({ titulo, folhas, inicial = 0, rascunho, onSalvar
       vivo = false;
     };
   }, [pi, aplicarLargura, pintarTela]);
+
+  // mudou o tom desta folha (ou as cifras acabaram de chegar): refaz o papel, sem mexer no zoom nem na posição
+  const semitons = tons[pi] ?? 0;
+  const cifrasChegaram = !!tom?.cifras;
+  useEffect(() => {
+    let vivo = true;
+    camadaDaFolha(pi, semitons)
+      .then((camada) => {
+        if (!vivo) return;
+        camadaRef.current = camada;
+        const b = base.current;
+        if (b && baseDe.current === pi) {
+          pintarBase(b, folRef.current[pi], folRef.current[pi].tracos, camada);
+          pintarTela();
+        }
+      })
+      .catch(() => undefined);
+    return () => {
+      vivo = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pi, semitons, cifrasChegaram, pintarTela]);
 
   useEffect(() => {
     const aoRedimensionar = () => aplicarLargura(zoom.current);
@@ -482,11 +547,20 @@ export default function Anotar({ titulo, folhas, inicial = 0, rascunho, onSalvar
     window.setTimeout(() => setMsg(null), 2800);
   }
 
+  function mudarTomAqui(n: number) {
+    const t = tomRef.current;
+    const p = t?.paginas[piRef.current];
+    if (!t || !p) return;
+    guardarSemitons(t.secaoId, t.itemId, n, p.folhaTom);
+    setTons(lerTons(t)); // folhas que dividem o tom da música (a maioria) mudam juntas
+    t.aoMudar?.();
+  }
+
   async function exportar() {
     setMenu(false);
     try {
       setMsg('Gerando imagem…');
-      const blob = await achatar(folRef.current[piRef.current], folRef.current[piRef.current].tracos);
+      const blob = await achatar(folRef.current[piRef.current], folRef.current[piRef.current].tracos, 0, camadaRef.current);
       const arq = new File([blob], `${nome.replace(/[^\w\-]+/g, '_') || 'folha'}-${piRef.current + 1}.jpg`, { type: 'image/jpeg' });
       const nav = navigator as Navigator & { canShare?: (d: ShareData) => boolean };
       if (nav.canShare?.({ files: [arq] })) {
@@ -554,6 +628,13 @@ export default function Anotar({ titulo, folhas, inicial = 0, rascunho, onSalvar
     }
   }
 
+  const sit = useMemo(
+    () => (tom && pi < tom.paginas.length ? situacaoDoTom(tom.cifras, tom.paginas, pi, tom.tomDoItem, semitons) : null),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [tom?.cifras, tom?.paginas.length, pi, semitons],
+  );
+  const nomeTomAqui = sit?.tomOriginal ? nomeTom(tomTransposto(sit.tomOriginal, semitons)) : null;
+  const rotuloTom = semitons !== 0 || nomeTomAqui ? (nomeTomAqui ?? (semitons > 0 ? '+' : '−') + Math.abs(semitons) / 2) : 'Tom';
   const podeDesfazer = hist.current.length > 0;
   const podeRefazer = refazer.current.length > 0;
   const paleta = ferr === 'marca' ? MARCAS : CORES;
@@ -738,22 +819,48 @@ export default function Anotar({ titulo, folhas, inicial = 0, rascunho, onSalvar
         {erro && <p className="anot-aviso erro">{erro}</p>}
       </div>
 
+      {painelTom && sit && (
+        <PainelTom
+          className="painel-tom-pdf"
+          tom={sit.tomOriginal}
+          semitons={semitons}
+          temCifras={sit.temCifras}
+          ilegiveis={sit.ilegiveis}
+          duvidosa={sit.duvidosa}
+          aoMudar={mudarTomAqui}
+          aoFechar={() => setPainelTom(false)}
+        />
+      )}
+
       <footer className="anot-pe">
-        {fol.length > 1 ? (
-          <>
-            <button className="anot-btn" onClick={() => setPi(Math.max(0, pi - 1))} disabled={pi === 0} aria-label="Folha anterior">
-              ‹
-            </button>
-            <span>
-              Folha {pi + 1} de {fol.length}
-            </span>
-            <button className="anot-btn" onClick={() => setPi(Math.min(fol.length - 1, pi + 1))} disabled={pi === fol.length - 1} aria-label="Próxima folha">
-              ›
-            </button>
-          </>
-        ) : (
-          <span>{rascunho ? 'Rascunho' : 'Anotações ficam guardadas só neste aparelho'}</span>
+        {sit && (
+          <button
+            className={`anot-btn anot-tom${semitons !== 0 ? ' ativo' : ''}`}
+            onClick={() => setPainelTom((v) => !v)}
+            aria-expanded={painelTom}
+            aria-label="Anotar no tom que você quiser: mudar o tom das cifras"
+            title="Mudar o tom das cifras (a folha aparece no tom escolhido)"
+          >
+            <span aria-hidden="true">♯♭</span> {rotuloTom}
+          </button>
         )}
+        <div className="anot-pe-meio">
+          {fol.length > 1 ? (
+            <>
+              <button className="anot-btn" onClick={() => setPi(Math.max(0, pi - 1))} disabled={pi === 0} aria-label="Folha anterior">
+                ‹
+              </button>
+              <span>
+                Folha {pi + 1} de {fol.length}
+              </span>
+              <button className="anot-btn" onClick={() => setPi(Math.min(fol.length - 1, pi + 1))} disabled={pi === fol.length - 1} aria-label="Próxima folha">
+                ›
+              </button>
+            </>
+          ) : (
+            <span>{rascunho ? 'Rascunho' : sit ? 'Anotações ficam só neste aparelho' : 'Anotações ficam guardadas só neste aparelho'}</span>
+          )}
+        </div>
         {msg && <em className="anot-msg" role="status">{msg}</em>}
       </footer>
     </div>

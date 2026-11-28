@@ -227,12 +227,16 @@ export async function prepararBase(f: FolhaDef): Promise<Base> {
   return { canvas, W: b.w, H: b.h, papel: '#fffefa' };
 }
 
-export function pintarBase(base: Base, f: FolhaDef, tracos: Traco[]) {
+/** Camada extra entre o papel e os traços (as cifras no tom escolhido): quem desenha é a cifras.ts. */
+export type CamadaPapel = (ctx: CanvasRenderingContext2D, W: number, H: number) => void;
+
+export function pintarBase(base: Base, f: FolhaDef, tracos: Traco[], camada?: CamadaPapel) {
   const ctx = base.canvas.getContext('2d')!;
   ctx.globalCompositeOperation = 'source-over';
   ctx.globalAlpha = 1;
   if (base.im) ctx.drawImage(base.im, 0, 0);
   else desenharFundoBranco(ctx, base.W, base.H, f.branco?.fundo ?? 'branca');
+  camada?.(ctx, base.W, base.H); // as cifras trocadas ficam por baixo da caneta
   for (const t of tracos) desenharTraco(ctx, t, base.W, base.papel);
 }
 
@@ -240,9 +244,9 @@ export function paraBlob(canvas: HTMLCanvasElement, tipo = 'image/jpeg', q = 0.9
   return new Promise((ok, erro) => canvas.toBlob((b) => (b ? ok(b) : erro(new Error('Não foi possível gerar a imagem.'))), tipo, q));
 }
 
-export async function achatar(f: FolhaDef, tracos: Traco[], maxLado = 0): Promise<Blob> {
+export async function achatar(f: FolhaDef, tracos: Traco[], maxLado = 0, camada?: CamadaPapel): Promise<Blob> {
   const base = await prepararBase(f);
-  pintarBase(base, f, tracos);
+  pintarBase(base, f, tracos, camada);
   if (!maxLado || Math.max(base.W, base.H) <= maxLado) return paraBlob(base.canvas);
   const k = maxLado / Math.max(base.W, base.H);
   const c = document.createElement('canvas');

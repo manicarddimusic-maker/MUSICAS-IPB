@@ -224,10 +224,120 @@ export function guardarSemitons(secaoId: string, itemId: string, n: number, folh
   }
 }
 
+/** Matriz (a, b, c, d, e, f — a mesma do SVG e do canvas) que leva as posições da folha girada de volta para a imagem original. */
+export function matrizDaFolha(folha: FolhaCifras): [number, number, number, number, number, number] | null {
+  if (folha.r === 90) return [0, -1, 1, 0, 0, folha.h];
+  if (folha.r === 270) return [0, 1, -1, 0, folha.w, 0];
+  if (folha.r === 180) return [-1, 0, 0, -1, folha.w, folha.h];
+  return null;
+}
+
 /** Transformação (SVG) que leva as posições da folha girada de volta para a imagem original. */
 export function giroDaFolha(folha: FolhaCifras): string | undefined {
-  if (folha.r === 90) return `matrix(0,-1,1,0,0,${folha.h})`;
-  if (folha.r === 270) return `matrix(0,1,-1,0,${folha.w},0)`;
-  if (folha.r === 180) return `matrix(-1,0,0,-1,${folha.w},${folha.h})`;
-  return undefined;
+  const m = matrizDaFolha(folha);
+  return m ? `matrix(${m.join(',')})` : undefined;
+}
+
+/* ---------- as cifras no tom escolhido, desenhadas em canvas (editor, folha anotada, PDF) ---------- */
+
+/** Desenha, por cima da imagem já posta no canvas (W × H), a camada de cifras de uma folha. */
+export type Camada = (ctx: CanvasRenderingContext2D, W: number, H: number) => void;
+
+/** As letras das cifras desta folha já chegaram? Em canvas, sem elas o desenho sairia com letra trocada. */
+export function fonteDasCifras(folha: FolhaCifras): Promise<void> {
+  const f = (document as Document & { fonts?: FontFaceSet }).fonts;
+  if (!f) return Promise.resolve();
+  return f
+    .load(`${pesoDaFolha(folha)} 20px ${FONTES[folha.f ?? 's']}`)
+    .then(() => {
+      larguras.clear();
+    })
+    .catch(() => undefined);
+}
+
+/** Mesmo desenho do CifrasSobre (SVG): tapa a cifra original com a cor do papel e escreve a nova, no mesmo lugar e tamanho. */
+export function pintarCifras(ctx: CanvasRenderingContext2D, folha: FolhaCifras, prontas: CifraPronta[], W: number, H: number) {
+  ctx.save();
+  ctx.globalCompositeOperation = 'source-over';
+  ctx.globalAlpha = 1;
+  ctx.scale(W / folha.w, H / folha.h);
+  const m = matrizDaFolha(folha);
+  if (m) ctx.transform(...m);
+  for (const c of prontas) {
+    if (c.ilegivel) {
+      ctx.fillStyle = 'rgba(214, 40, 40, 0.16)';
+      ctx.strokeStyle = '#c62828';
+      ctx.lineWidth = Math.max(1, c.fs * 0.06);
+      ctx.beginPath();
+      const r = c.fs * 0.12;
+      if (typeof ctx.roundRect === 'function') ctx.roundRect(c.rx, c.ry, c.rw, c.rh, r);
+      else ctx.rect(c.rx, c.ry, c.rw, c.rh);
+      ctx.fill();
+      ctx.stroke();
+    } else {
+      ctx.fillStyle = c.fundo;
+      ctx.fillRect(c.rx, c.ry, c.rw, c.rh);
+    }
+  }
+  const fonte = FONTES[folha.f ?? 's'];
+  const peso = pesoDaFolha(folha);
+  ctx.textBaseline = 'alphabetic';
+  ctx.textAlign = 'left';
+  for (const c of prontas) {
+    if (c.ilegivel || !c.txt) continue;
+    ctx.font = `${peso} ${c.fs}px ${fonte}`;
+    ctx.fillStyle = c.tinta;
+    if (c.larg) {
+      // cifra nova mais comprida que o espaço: aperta as letras até caber (igual ao textLength do SVG)
+      const natural = ctx.measureText(c.txt).width;
+      ctx.save();
+      ctx.translate(c.x, c.base);
+      ctx.scale(natural ? c.larg / natural : 1, 1);
+      ctx.fillText(c.txt, 0, 0);
+      ctx.restore();
+    } else {
+      ctx.fillText(c.txt, c.x, c.base);
+    }
+  }
+  ctx.restore();
+}
+
+/** A camada de cifras de uma folha num tom: já mede e planeja tudo; chame depois de fonteDasCifras. */
+export function camadaDeCifras(folha: FolhaCifras, transpor: Transpositor): Camada {
+  const prontas = planejar(folha, transpor);
+  return (ctx, W, H) => pintarCifras(ctx, folha, prontas, W, H);
+}
+
+/** Tudo o que se precisa saber do tom de uma folha: as cifras dela, o tom original e como trocar. */
+export type SituacaoTom = {
+  folha?: FolhaCifras;
+  tomOriginal: Tom | null;
+  transpor: Transpositor;
+  /** a folha tem cifras que o aplicativo sabe trocar */
+  temCifras: boolean;
+  /** quantas cifras o aplicativo não conseguiu ler */
+  ilegiveis: number;
+  /** a foto está fora de foco: a leitura pode ter falhas */
+  duvidosa: boolean;
+};
+
+export function situacaoDoTom(
+  cifras: Record<string, FolhaCifras> | null | undefined,
+  paginas: { img: string; tom?: string }[],
+  i: number,
+  tomDoItem: string | undefined,
+  semitons: number,
+): SituacaoTom {
+  const p = paginas[i];
+  const folha = p ? cifras?.[p.img] : undefined;
+  const todas = cifras ? paginas.map((q) => cifras[q.img]).filter((f): f is FolhaCifras => !!f) : [];
+  const tomOriginal = tomDaFolha(p?.tom ?? tomDoItem, folha, todas);
+  return {
+    folha,
+    tomOriginal,
+    transpor: transpositorDaFolha(semitons, tomOriginal, folha),
+    temCifras: !!folha && folha.c.some((c) => c[4] !== '?' && c[4] !== ''),
+    ilegiveis: folha ? folha.c.filter((c) => c[4] === '?').length : 0,
+    duvidosa: folha?.q === 1,
+  };
 }

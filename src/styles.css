@@ -1019,6 +1019,10 @@ body { overscroll-behavior: none; touch-action: manipulation; }
 .anot-aviso.erro { color: #f1c9a0; padding: 0 24px; }
 .anot-pe { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 6px 10px max(8px, env(safe-area-inset-bottom)); background: #1f2b22; font-size: .85rem; min-height: 44px; position: relative; }
 .anot-msg { position: absolute; right: 12px; font-style: normal; color: var(--dourado-claro); }
+.anot-pe-meio { display: flex; align-items: center; justify-content: center; gap: 12px; flex: 1; min-width: 0; text-align: center; }
+.anot-tom { position: relative; z-index: 1; flex: none; padding: 0 12px; font-size: .95rem; font-weight: 700; color: var(--dourado-claro); white-space: nowrap; }
+.anot-tom.ativo { background: var(--dourado); color: #1d2a22; border-color: var(--dourado-claro); }
+.anot-pe:has(.anot-tom) .anot-msg { top: -30px; right: 12px; background: rgba(31,43,34,.96); padding: 3px 10px; border-radius: 12px; }
 
 .topo-rascunhos { background: linear-gradient(135deg, #3b2f4a, #2a3a4a); }
 .rasc-novo { margin: 14px clamp(14px, 4vw, 32px); padding: 14px; border-radius: 14px; background: rgba(47, 68, 54, 0.08); border: 1px solid rgba(47, 68, 54, 0.18); }
@@ -1341,3 +1345,27 @@ body { overscroll-behavior: none; touch-action: manipulation; }
 .painel-tom-tabela i { opacity: 0.6; font-style: normal; }
 .painel-tom-tabela b { color: var(--dourado-claro); }
 @media (max-width: 620px) { .painel-tom-tabela { grid-template-columns: repeat(3, 1fr); } }
+
+
+/* ---------- PDF de uma música só ---------- */
+.botao-pdf-musica {
+  position: absolute; top: 14px; left: 14px; height: 46px; padding: 0 14px; border-radius: 23px; z-index: 3;
+  border: 1px solid rgba(201, 162, 39, 0.6); background: rgba(16, 18, 16, 0.72); color: var(--dourado-claro);
+  font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; cursor: pointer; backdrop-filter: blur(2px);
+}
+.pdf-musica-fundo { position: fixed; inset: 0; z-index: 80; background: rgba(0, 0, 0, 0.55); display: flex; align-items: flex-end; justify-content: center; padding: 12px 12px max(12px, env(safe-area-inset-bottom)); }
+.pdf-musica {
+  width: min(460px, 100%); display: grid; gap: 12px; padding: 14px 16px 16px; border-radius: 18px; background: #1f2b22; color: #f3eee0;
+  border: 1px solid rgba(201, 162, 39, 0.7); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+.pdf-musica header { display: flex; align-items: center; justify-content: space-between; font-family: var(--serif); font-size: 1.1rem; }
+.pdf-musica-nome { margin: 0; opacity: 0.85; font-size: 0.9rem; }
+.pdf-musica-opcoes { display: grid; gap: 8px; }
+.pdf-musica-opcoes label { display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 12px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(201, 162, 39, 0.35); cursor: pointer; }
+.pdf-musica-opcoes input { width: 22px; height: 22px; accent-color: var(--dourado, #c9a227); flex: none; }
+.pdf-musica-estado { margin: 0; font-size: 0.95rem; color: var(--dourado-claro); }
+.pdf-musica-estado.erro { color: #ffd7c9; }
+.pdf-musica-aviso { margin: 0; font-size: 0.82rem; line-height: 1.4; opacity: 0.9; }
+.pdf-musica-botoes { display: grid; gap: 8px; }
+.pdf-musica-botoes button { min-height: 48px; padding: 0 16px; border-radius: 14px; border: 1px solid rgba(201, 162, 39, 0.6); background: transparent; color: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; }
+.pdf-musica-botoes button.principal { background: var(--dourado, #c9a227); color: #1d2a22; border-color: var(--dourado-claro); }

@@ -20,9 +20,10 @@ ESTROFES=[
  ["A ti, ó Deus, Es-pí-ri-to de_a-mor,","De nos-sas al-mas san-ti-fi-ca-dor.","Mes-tre di-vi-no, bom Con-so-la-dor,"],
  ["Ó Deus tri-ú-no, vem-nos con-ce-der","A ple-ni-tu-de do re-al po-der","E_as nos-sas al-mas vêm, a-qui, re-ger."],
 ]
-# 4ª linha: 8 sílabas em 10 notas — o "le" do 1º Aleluia e o "lu" do 2º valem duas notas (notas 3 e 9 sem sílaba)
-ALELUIA=[(1,'A',True),(2,'le',True),(4,'lu',True),(5,'ia!',False),(6,'A',True),(7,'le',True),(8,'lu',True),(10,'ia!',False)]
-MELISMA={2:3,8:9}                       # sílaba na nota 2 se estende pela 3; a da 8 pela 9
+# 4ª linha, como a igreja canta (Guilherme, 28/11): o 1º Aleluia ocupa 6 notas e termina no Bm (no tom de Ré:
+# A [A/G]  le [D/F#, segura no A7/E]  lu [D]  i [A7]  a [Bm]); o 2º ocupa as 4 últimas (A [G6] le [D/A] lu [A7] ia [D])
+ALELUIA=[(1,'A',True),(2,'le',True),(4,'lu',True),(5,'i',True),(6,'a!',False),(7,'A',True),(8,'le',True),(9,'lu',True),(10,'ia!',False)]
+MELISMA={2:3}                           # a sílaba da nota 2 se estende pela 3 (nota sem sílaba embaixo)
 def silabas(linha):
     """'A ti, ó Deus, al-tís-si-mo' -> [(nota, texto, tem_hifen_depois)]"""
     out=[]; n=0
