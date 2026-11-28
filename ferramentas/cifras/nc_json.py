@@ -21,7 +21,11 @@ for f in glob.glob('/tmp/cif/bruto/p*.json'):
         if valor(r2)>valor(r): r=r2; troca+=1
     LID[pg]=r
 print('páginas em que a 2ª leitura ficou melhor:',troca)
-json.dump(LID,open('/tmp/cif/nc_decidido.json','w'))
+# páginas novas (fotos de 28/11): leitura conferida palavra por palavra (nc_palavras.py)
+if os.path.exists('/tmp/cif/nc_palavras.json') and not os.environ.get('SEM_PALAVRAS'):
+    for k,c in json.load(open('/tmp/cif/nc_palavras.json')).items():
+        if int(k) in LID: LID[int(k)]=dict(LID[int(k)],c=c,conferida=True)
+json.dump(LID,open('/tmp/cif/nc_decidido.json' if not any(v.get('conferida') for v in LID.values()) else '/tmp/cif/nc_decidido_final.json','w'))
 def confiavel(r):
     """a leitura desta página merece confiança? devolve (usa, duvidosa)"""
     c=r['c']; ok=[x for x in c if x[4]!='?']
@@ -81,6 +85,6 @@ for i,pg in enumerate(pgs):
     if tom: D['k']=tom
     if d: D['q']=1
     fp[str(i+1)]=D
-json.dump(dict(v=1,folhas=fp),open(R+'pdf-hinario-novo-cantico.json','w'),ensure_ascii=False,separators=(',',':'))
-print('pdf: páginas com cifras',len(fp),os.path.getsize(R+'pdf-hinario-novo-cantico.json')//1024,'KB')
+json.dump(dict(v=1,folhas=fp),open(R+'pdf-hinario-novo-cantico-v2.json','w'),ensure_ascii=False,separators=(',',':'))
+print('pdf: páginas com cifras',len(fp),os.path.getsize(R+'pdf-hinario-novo-cantico-v2.json')//1024,'KB')
 json.dump(dict(pag_sem=sorted(set(rel['pag_sem']))),open('/tmp/cif/nc_rel.json','w'))

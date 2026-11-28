@@ -1,0 +1,471 @@
+[
+{
+"i": 0,
+"src": "9b4fbe15-image.jpg",
+"arq": "/tmp/nn/fotos/00.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 1,
+"src": "b0fff8b1-image.jpg",
+"arq": "/tmp/nn/fotos/01.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 2,
+"src": "ea920061-image.jpg",
+"arq": "/tmp/nn/fotos/02.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 3,
+"src": "4669eeda-image.jpg",
+"arq": "/tmp/nn/fotos/03.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 4,
+"src": "4930213f-image.jpg",
+"arq": "/tmp/nn/fotos/04.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 5,
+"src": "8d512afe-image.jpg",
+"arq": "/tmp/nn/fotos/05.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 6,
+"src": "a7e96245-image.jpg",
+"arq": "/tmp/nn/fotos/06.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 7,
+"src": "44bedaef-image.jpg",
+"arq": "/tmp/nn/fotos/07.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 8,
+"src": "d8a1beaa-image.jpg",
+"arq": "/tmp/nn/fotos/08.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 9,
+"src": "abc1a7bd-image.jpg",
+"arq": "/tmp/nn/fotos/09.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 10,
+"src": "0e2bbab5-image.jpg",
+"arq": "/tmp/nn/fotos/10.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 11,
+"src": "614289a0-image.jpg",
+"arq": "/tmp/nn/fotos/11.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 12,
+"src": "6910d6bc-image.jpg",
+"arq": "/tmp/nn/fotos/12.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 13,
+"src": "f8473e68-image.jpg",
+"arq": "/tmp/nn/fotos/13.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 14,
+"src": "45812168-image.jpg",
+"arq": "/tmp/nn/fotos/14.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 15,
+"src": "f5a39da9-image.jpg",
+"arq": "/tmp/nn/fotos/15.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 16,
+"src": "f10b823f-image.jpg",
+"arq": "/tmp/nn/fotos/16.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 17,
+"src": "077c92a0-image.jpg",
+"arq": "/tmp/nn/fotos/17.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 18,
+"src": "e6793ee3-image.jpg",
+"arq": "/tmp/nn/fotos/18.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 19,
+"src": "87a43e1f-image.jpg",
+"arq": "/tmp/nn/fotos/19.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 20,
+"src": "0f1bb993-image.jpg",
+"arq": "/tmp/nn/fotos/20.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 21,
+"src": "833e1b9c-image.jpg",
+"arq": "/tmp/nn/fotos/21.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 22,
+"src": "5a1c8779-image.jpg",
+"arq": "/tmp/nn/fotos/22.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 23,
+"src": "804589d6-image.jpg",
+"arq": "/tmp/nn/fotos/23.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 24,
+"src": "5adcdb38-image.jpg",
+"arq": "/tmp/nn/fotos/24.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 25,
+"src": "99fc2083-image.jpg",
+"arq": "/tmp/nn/fotos/25.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 26,
+"src": "b524824f-image.jpg",
+"arq": "/tmp/nn/fotos/26.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 27,
+"src": "e98b2123-image.jpg",
+"arq": "/tmp/nn/fotos/27.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 28,
+"src": "37a7594f-image.jpg",
+"arq": "/tmp/nn/fotos/28.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 29,
+"src": "e771732e-image.jpg",
+"arq": "/tmp/nn/fotos/29.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 30,
+"src": "a95d85c6-image.jpg",
+"arq": "/tmp/nn/fotos/30.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 31,
+"src": "e8057683-image.jpg",
+"arq": "/tmp/nn/fotos/31.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 32,
+"src": "db060c1d-image.jpg",
+"arq": "/tmp/nn/fotos/32.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 33,
+"src": "bbd9cc70-image.jpg",
+"arq": "/tmp/nn/fotos/33.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 34,
+"src": "e03420b8-image.jpg",
+"arq": "/tmp/nn/fotos/34.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 35,
+"src": "5a2adfed-image.jpg",
+"arq": "/tmp/nn/fotos/35.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 36,
+"src": "8310f35d-image.jpg",
+"arq": "/tmp/nn/fotos/36.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 37,
+"src": "2a5a73b2-image.jpg",
+"arq": "/tmp/nn/fotos/37.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 38,
+"src": "801879cf-image.jpg",
+"arq": "/tmp/nn/fotos/38.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 39,
+"src": "7f5cd894-image.jpg",
+"arq": "/tmp/nn/fotos/39.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 40,
+"src": "aad1cc5c-image.jpg",
+"arq": "/tmp/nn/fotos/40.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 41,
+"src": "85d9706a-image.jpg",
+"arq": "/tmp/nn/fotos/41.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 42,
+"src": "349c3a11-image.jpg",
+"arq": "/tmp/nn/fotos/42.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 43,
+"src": "1c8d8d33-image.jpg",
+"arq": "/tmp/nn/fotos/43.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 44,
+"src": "934ace55-image.jpg",
+"arq": "/tmp/nn/fotos/44.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 45,
+"src": "4ea8c988-image.jpg",
+"arq": "/tmp/nn/fotos/45.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 46,
+"src": "51698686-image.jpg",
+"arq": "/tmp/nn/fotos/46.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 47,
+"src": "716e3432-image.jpg",
+"arq": "/tmp/nn/fotos/47.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 48,
+"src": "efca950e-image.jpg",
+"arq": "/tmp/nn/fotos/48.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 49,
+"src": "7678225f-image.jpg",
+"arq": "/tmp/nn/fotos/49.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 50,
+"src": "41e5e217-image.jpg",
+"arq": "/tmp/nn/fotos/50.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 51,
+"src": "28fb0d47-image.jpg",
+"arq": "/tmp/nn/fotos/51.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 52,
+"src": "24b0ca9c-image.jpg",
+"arq": "/tmp/nn/fotos/52.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 53,
+"src": "c0edf8c2-image.jpg",
+"arq": "/tmp/nn/fotos/53.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 54,
+"src": "02a109a6-image.jpg",
+"arq": "/tmp/nn/fotos/54.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 55,
+"src": "d4d1bf09-image.jpg",
+"arq": "/tmp/nn/fotos/55.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 56,
+"src": "951a005c-image.jpg",
+"arq": "/tmp/nn/fotos/56.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 57,
+"src": "ceddbf58-image.jpg",
+"arq": "/tmp/nn/fotos/57.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 58,
+"src": "f661b9b9-image.jpg",
+"arq": "/tmp/nn/fotos/58.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 59,
+"src": "8ce2c463-image.jpg",
+"arq": "/tmp/nn/fotos/59.jpg",
+"w": 1932,
+"h": 2576
+},
+{
+"i": 60,
+"src": "e7bd7ce1-image.jpg",
+"arq": "/tmp/nn/fotos/60.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 61,
+"src": "4ddb55fe-image.jpg",
+"arq": "/tmp/nn/fotos/61.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 62,
+"src": "9242985e-image.jpg",
+"arq": "/tmp/nn/fotos/62.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 63,
+"src": "cf017d42-image.jpg",
+"arq": "/tmp/nn/fotos/63.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 64,
+"src": "b7ff19a6-image.jpg",
+"arq": "/tmp/nn/fotos/64.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 65,
+"src": "530c55e9-image.jpg",
+"arq": "/tmp/nn/fotos/65.jpg",
+"w": 2576,
+"h": 1932
+},
+{
+"i": 66,
+"src": "cc7c67be-image.jpg",
+"arq": "/tmp/nn/fotos/66.jpg",
+"w": 2576,
+"h": 1932
+}
+]

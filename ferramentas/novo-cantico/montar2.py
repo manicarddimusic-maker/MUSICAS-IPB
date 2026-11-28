@@ -40,7 +40,8 @@ for rot,ss in byh.items():
         for i in range(0,len(pgs),2):
             k+=1; par=pgs[i:i+2]
             tag=rot.lower().replace('-a','a')
-            nome=f"nc-{int(NUM[rot]):03d}{'a' if rot.endswith('-A') else ''}-{k}.png"
+            ver=max(P[pg].get('ver',0) for pg in par)       # folha refeita com foto nova ganha outro nome (o app guarda as imagens pelo nome)
+            nome=f"nc-{int(NUM[rot]):03d}{'a' if rot.endswith('-A') else ''}-{k}{'' if ver==0 else '-v%d'%(ver+1)}.png"
             jobs.append(dict(rot=rot,nome=nome,par=par))
 def work(j):
     ims=[cv2.imread(f'/tmp/nc/final/p{pg:03d}.png',0) for pg in j['par']]

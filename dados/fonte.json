@@ -9530,9 +9530,9 @@
   "novocantico": [
    {
     "nome": "Novo Cântico – hinário completo",
-    "arquivo": "hinario-novo-cantico.pdf",
-    "paginas": 622,
-    "bytes": 41508230
+    "arquivo": "hinario-novo-cantico-v2.pdf",
+    "paginas": 624,
+    "bytes": 40648124
    }
   ]
  },
@@ -13476,7 +13476,7 @@
    "num": 26,
    "titulo": "Ao Deus Grandioso",
    "paginas": [
-    "/midias/nc/nc-026-1.png"
+    "/midias/nc/nc-026-1-v2.png"
    ]
   },
   {
@@ -13603,7 +13603,7 @@
    "num": 44,
    "titulo": "Louvores ao Senhor",
    "paginas": [
-    "/midias/nc/nc-044-1.png"
+    "/midias/nc/nc-044-1-v2.png"
    ]
   },
   {
@@ -13811,7 +13811,7 @@
    "num": 73,
    "titulo": "Compaixão",
    "paginas": [
-    "/midias/nc/nc-073-1.png"
+    "/midias/nc/nc-073-1-v2.png"
    ]
   },
   {
@@ -13868,7 +13868,7 @@
    "num": 81,
    "titulo": "Súplica ao Espírito Santo",
    "paginas": [
-    "/midias/nc/nc-081-1.png"
+    "/midias/nc/nc-081-1-v2.png"
    ]
   },
   {
@@ -13882,7 +13882,7 @@
    "num": 83,
    "titulo": "Divino Instruidor",
    "paginas": [
-    "/midias/nc/nc-083-1.png"
+    "/midias/nc/nc-083-1-v2.png"
    ]
   },
   {
@@ -13945,7 +13945,7 @@
    "num": 92,
    "titulo": "A Fé Contemplada",
    "paginas": [
-    "/midias/nc/nc-092-1.png"
+    "/midias/nc/nc-092-1-v2.png"
    ]
   },
   {
@@ -13959,7 +13959,7 @@
    "num": 94,
    "titulo": "A Porta da Salvação",
    "paginas": [
-    "/midias/nc/nc-094-1.png"
+    "/midias/nc/nc-094-1-v2.png"
    ]
   },
   {
@@ -13973,7 +13973,7 @@
    "num": 96,
    "titulo": "Redenção Suprema",
    "paginas": [
-    "/midias/nc/nc-096-1.png"
+    "/midias/nc/nc-096-1-v2.png"
    ]
   },
   {
@@ -13987,7 +13987,7 @@
    "num": 98,
    "titulo": "Não Há Condenação",
    "paginas": [
-    "/midias/nc/nc-098-1.png"
+    "/midias/nc/nc-098-1-v2.png"
    ]
   },
   {
@@ -14038,7 +14038,7 @@
    "num": 105,
    "titulo": "A Certeza do Crente",
    "paginas": [
-    "/midias/nc/nc-105-1.png"
+    "/midias/nc/nc-105-1-v2.png"
    ]
   },
   {
@@ -14088,7 +14088,7 @@
    "num": 111,
    "titulo": "Comunhão Divina",
    "paginas": [
-    "/midias/nc/nc-111-1.png"
+    "/midias/nc/nc-111-1-v2.png"
    ]
   },
   {
@@ -14102,7 +14102,7 @@
    "num": 113,
    "titulo": "Achei um Bom Amigo",
    "paginas": [
-    "/midias/nc/nc-113-1.png"
+    "/midias/nc/nc-113-1-v2.png"
    ]
   },
   {
@@ -14116,7 +14116,7 @@
    "num": 115,
    "titulo": "Unido com Cristo",
    "paginas": [
-    "/midias/nc/nc-115-1.png"
+    "/midias/nc/nc-115-1-v2.png"
    ]
   },
   {
@@ -14251,7 +14251,7 @@
    "num": 134,
    "titulo": "Riquezas do Céu",
    "paginas": [
-    "/midias/nc/nc-134-1.png"
+    "/midias/nc/nc-134-1-v2.png"
    ]
   },
   {
@@ -14265,7 +14265,7 @@
    "num": 136,
    "titulo": "Rocha Eterna",
    "paginas": [
-    "/midias/nc/nc-136-1.png"
+    "/midias/nc/nc-136-1-v2.png"
    ]
   },
   {
@@ -14331,7 +14331,7 @@
    "num": 145,
    "titulo": "Refúgio Verdadeiro",
    "paginas": [
-    "/midias/nc/nc-145-1.png"
+    "/midias/nc/nc-145-1-v2.png"
    ]
   },
   {
@@ -14345,7 +14345,21 @@
    "num": 147,
    "titulo": "Vencendo Vem Jesus",
    "paginas": [
-    "/midias/nc/nc-147-1.png"
+    "/midias/nc/nc-147-1-v2.png"
+   ]
+  },
+  {
+   "num": 148,
+   "titulo": "Oração Noturna",
+   "paginas": [
+    "/midias/nc/nc-148-1.png"
+   ]
+  },
+  {
+   "num": 149,
+   "titulo": "Verdadeira Redenção",
+   "paginas": [
+    "/midias/nc/nc-149-1.png"
    ]
   },
   {
@@ -14359,7 +14373,7 @@
    "num": 151,
    "titulo": "O Bom Pastor",
    "paginas": [
-    "/midias/nc/nc-151-1.png"
+    "/midias/nc/nc-151-1-v2.png"
    ]
   },
   {
@@ -14388,7 +14402,7 @@
    "num": 155,
    "titulo": "Castelo Forte",
    "paginas": [
-    "/midias/nc/nc-155-1.png"
+    "/midias/nc/nc-155-1-v2.png"
    ]
   },
   {
@@ -14409,7 +14423,7 @@
    "num": 158,
    "titulo": "Conforto e Luz",
    "paginas": [
-    "/midias/nc/nc-158-1.png"
+    "/midias/nc/nc-158-1-v2.png"
    ]
   },
   {
@@ -14451,14 +14465,14 @@
    "num": 164,
    "titulo": "Nome Precioso",
    "paginas": [
-    "/midias/nc/nc-164-1.png"
+    "/midias/nc/nc-164-1-v2.png"
    ]
   },
   {
    "num": 165,
    "titulo": "Cuidado Divino",
    "paginas": [
-    "/midias/nc/nc-165-1.png"
+    "/midias/nc/nc-165-1-v2.png"
    ]
   },
   {
@@ -14472,7 +14486,7 @@
    "num": 167,
    "titulo": "Cristo, Esperança Nossa",
    "paginas": [
-    "/midias/nc/nc-167-1.png"
+    "/midias/nc/nc-167-1-v2.png"
    ]
   },
   {
@@ -14486,14 +14500,14 @@
    "num": 169,
    "titulo": "Grata Confiança",
    "paginas": [
-    "/midias/nc/nc-169-1.png"
+    "/midias/nc/nc-169-1-v2.png"
    ]
   },
   {
    "num": 170,
    "titulo": "Redentor Onipotente",
    "paginas": [
-    "/midias/nc/nc-170-1.png"
+    "/midias/nc/nc-170-1-v2.png"
    ]
   },
   {
@@ -14529,7 +14543,7 @@
    "num": 175,
    "titulo": "O Servo do Senhor",
    "paginas": [
-    "/midias/nc/nc-175-1.png"
+    "/midias/nc/nc-175-1-v2.png"
    ]
   },
   {
@@ -14557,7 +14571,7 @@
    "num": 179,
    "titulo": "Saudação",
    "paginas": [
-    "/midias/nc/nc-179-1.png"
+    "/midias/nc/nc-179-1-v2.png"
    ]
   },
   {
@@ -14613,7 +14627,7 @@
    "num": 187,
    "titulo": "Cidade Celestial",
    "paginas": [
-    "/midias/nc/nc-187-1.png"
+    "/midias/nc/nc-187-1-v2.png"
    ]
   },
   {
@@ -14642,7 +14656,7 @@
    "num": 191,
    "titulo": "Rio da Vida",
    "paginas": [
-    "/midias/nc/nc-191-1.png"
+    "/midias/nc/nc-191-1-v2.png"
    ]
   },
   {
@@ -14684,7 +14698,7 @@
    "num": 197,
    "titulo": "O Salvador Espera",
    "paginas": [
-    "/midias/nc/nc-197-1.png"
+    "/midias/nc/nc-197-1-v2.png"
    ]
   },
   {
@@ -14712,7 +14726,7 @@
    "num": 201,
    "titulo": "Manso e Suave",
    "paginas": [
-    "/midias/nc/nc-201-1.png"
+    "/midias/nc/nc-201-1-v2.png"
    ]
   },
   {
@@ -14775,7 +14789,7 @@
    "num": 210,
    "titulo": "O Filho Perdido",
    "paginas": [
-    "/midias/nc/nc-210-1.png"
+    "/midias/nc/nc-210-1-v2.png"
    ]
   },
   {
@@ -14817,7 +14831,7 @@
    "num": 216,
    "titulo": "Perdão",
    "paginas": [
-    "/midias/nc/nc-216-1.png"
+    "/midias/nc/nc-216-1-v2.png"
    ]
   },
   {
@@ -14911,7 +14925,7 @@
    "num": 229,
    "titulo": "Boas-novas",
    "paginas": [
-    "/midias/nc/nc-229-1.png"
+    "/midias/nc/nc-229-1-v2.png"
    ]
   },
   {
@@ -14925,7 +14939,7 @@
    "num": 231,
    "titulo": "O Primeiro Natal",
    "paginas": [
-    "/midias/nc/nc-231-1.png"
+    "/midias/nc/nc-231-1-v2.png"
    ]
   },
   {
@@ -14983,7 +14997,7 @@
    "num": 238,
    "titulo": "Novas de Amor",
    "paginas": [
-    "/midias/nc/nc-238-1.png"
+    "/midias/nc/nc-238-1-v2.png"
    ]
   },
   {
@@ -15018,21 +15032,21 @@
    "num": 243,
    "titulo": "Noite de Paz",
    "paginas": [
-    "/midias/nc/nc-243-1.png"
+    "/midias/nc/nc-243-1-v2.png"
    ]
   },
   {
    "num": 244,
    "titulo": "Mensagem Aos Pastores",
    "paginas": [
-    "/midias/nc/nc-244-1.png"
+    "/midias/nc/nc-244-1-v2.png"
    ]
   },
   {
    "num": 245,
    "titulo": "Homens Sábios e de Bem",
    "paginas": [
-    "/midias/nc/nc-245-1.png"
+    "/midias/nc/nc-245-1-v2.png"
    ]
   },
   {
@@ -15046,7 +15060,7 @@
    "num": 247,
    "titulo": "Estrela Cintilante",
    "paginas": [
-    "/midias/nc/nc-247-1.png"
+    "/midias/nc/nc-247-1-v2.png"
    ]
   },
   {
@@ -15179,7 +15193,7 @@
    "num": 266,
    "titulo": "Rude Cruz",
    "paginas": [
-    "/midias/nc/nc-266-1.png"
+    "/midias/nc/nc-266-1-v2.png"
    ]
   },
   {
@@ -15235,7 +15249,7 @@
    "num": 274,
    "titulo": "Morto e Ressurreto",
    "paginas": [
-    "/midias/nc/nc-274-1.png"
+    "/midias/nc/nc-274-1-v2.png"
    ]
   },
   {
@@ -15349,7 +15363,7 @@
    "num": 289,
    "titulo": "Quem Irá?",
    "paginas": [
-    "/midias/nc/nc-289-1.png"
+    "/midias/nc/nc-289-1-v2.png"
    ]
   },
   {
@@ -15447,7 +15461,7 @@
    "num": 303,
    "titulo": "Pendão Real",
    "paginas": [
-    "/midias/nc/nc-303-1.png"
+    "/midias/nc/nc-303-1-v2.png"
    ]
   },
   {
@@ -15482,7 +15496,7 @@
    "num": 308,
    "titulo": "Escuridão e Luz",
    "paginas": [
-    "/midias/nc/nc-308-1.png"
+    "/midias/nc/nc-308-1-v2.png"
    ]
   },
   {
@@ -15539,7 +15553,7 @@
    "num": 316,
    "titulo": "Os Intentos de Deus",
    "paginas": [
-    "/midias/nc/nc-316-1.png"
+    "/midias/nc/nc-316-1-v2.png"
    ]
   },
   {
@@ -15588,7 +15602,7 @@
    "num": 323,
    "titulo": "Santa Peleja",
    "paginas": [
-    "/midias/nc/nc-323-1.png"
+    "/midias/nc/nc-323-1-v2.png"
    ]
   },
   {
@@ -15609,7 +15623,7 @@
    "num": 325,
    "titulo": "Jesus Cristo é o Senhor",
    "paginas": [
-    "/midias/nc/nc-325a-1.png"
+    "/midias/nc/nc-325a-1-v2.png"
    ],
    "rotulo": "325-A"
   },
@@ -15673,7 +15687,7 @@
    "num": 334,
    "titulo": "A Conversão",
    "paginas": [
-    "/midias/nc/nc-334-1.png"
+    "/midias/nc/nc-334-1-v2.png"
    ]
   },
   {
@@ -15687,7 +15701,7 @@
    "num": 336,
    "titulo": "Transformação",
    "paginas": [
-    "/midias/nc/nc-336-1.png"
+    "/midias/nc/nc-336-1-v2.png"
    ]
   },
   {
@@ -15708,7 +15722,7 @@
    "num": 339,
    "titulo": "Dia Feliz",
    "paginas": [
-    "/midias/nc/nc-339-1.png"
+    "/midias/nc/nc-339-1-v2.png"
    ]
   },
   {
@@ -15744,14 +15758,14 @@
    "num": 344,
    "titulo": "A Ceia do Senhor",
    "paginas": [
-    "/midias/nc/nc-344-1.png"
+    "/midias/nc/nc-344-1-v2.png"
    ]
   },
   {
    "num": 345,
    "titulo": "O Pão do Mundo",
    "paginas": [
-    "/midias/nc/nc-345-1.png"
+    "/midias/nc/nc-345-1-v2.png"
    ]
   },
   {
@@ -15832,21 +15846,21 @@
    "num": 355,
    "titulo": "Oração Infantil",
    "paginas": [
-    "/midias/nc/nc-355-1.png"
+    "/midias/nc/nc-355-1-v2.png"
    ]
   },
   {
    "num": 356,
    "titulo": "Jesus Menino",
    "paginas": [
-    "/midias/nc/nc-356-1.png"
+    "/midias/nc/nc-356-1-v2.png"
    ]
   },
   {
    "num": 357,
    "titulo": "Louvor Infantil",
    "paginas": [
-    "/midias/nc/nc-357-1.png"
+    "/midias/nc/nc-357-1-v2.png"
    ]
   },
   {
@@ -15874,7 +15888,7 @@
    "num": 361,
    "titulo": "Brilhando com Jesus",
    "paginas": [
-    "/midias/nc/nc-361-1.png"
+    "/midias/nc/nc-361-1-v2.png"
    ]
   },
   {
@@ -15944,21 +15958,21 @@
    "num": 371,
    "titulo": "A Bíblia",
    "paginas": [
-    "/midias/nc/nc-371-1.png"
+    "/midias/nc/nc-371-1-v2.png"
    ]
   },
   {
    "num": 372,
    "titulo": "O Crente e a Bíblia",
    "paginas": [
-    "/midias/nc/nc-372-1.png"
+    "/midias/nc/nc-372-1-v2.png"
    ]
   },
   {
    "num": 373,
    "titulo": "Ano Novo",
    "paginas": [
-    "/midias/nc/nc-373-1.png"
+    "/midias/nc/nc-373-1-v2.png"
    ]
   },
   {
@@ -16036,7 +16050,7 @@
    "num": 384,
    "titulo": "Vamos com Jesus",
    "paginas": [
-    "/midias/nc/nc-384-1.png"
+    "/midias/nc/nc-384-1-v2.png"
    ]
   },
   {
@@ -16064,7 +16078,7 @@
    "num": 388,
    "titulo": "Mocidade, Avante",
    "paginas": [
-    "/midias/nc/nc-388-1.png"
+    "/midias/nc/nc-388-1-v2.png"
    ]
   },
   {
@@ -16099,7 +16113,7 @@
    "num": 393,
    "titulo": "União Vital",
    "paginas": [
-    "/midias/nc/nc-393-1.png"
+    "/midias/nc/nc-393-1-v2.png"
    ]
   },
   {
@@ -16120,7 +16134,7 @@
    "num": 396,
    "titulo": "Graças pelo Aniversário",
    "paginas": [
-    "/midias/nc/nc-396-1.png"
+    "/midias/nc/nc-396-1-v2.png"
    ]
   },
   {
@@ -16134,7 +16148,7 @@
    "num": 398,
    "titulo": "Outra Vez Cantamos",
    "paginas": [
-    "/midias/nc/nc-398-1.png"
+    "/midias/nc/nc-398-1-v2.png"
    ]
   },
   {

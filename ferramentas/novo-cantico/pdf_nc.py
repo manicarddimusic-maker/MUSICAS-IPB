@@ -21,6 +21,6 @@ if __name__=='__main__':
     with Pool(2) as p: res=p.map(work,pgs,chunksize=8)
     layout=img2pdf.get_layout_fun((img2pdf.in_to_pt(6),img2pdf.in_to_pt(9)))
     pdf=img2pdf.convert([r[1] for r in res],layout_fun=layout,title='Novo Cântico – Hinário Presbiteriano',author='')
-    open('/tmp/nc/final/hinario-novo-cantico.pdf','wb').write(pdf)
+    open('/tmp/nc/final/hinario-novo-cantico-v2.pdf','wb').write(pdf)
     json.dump({r[0]:r[2] for r in res},open('/tmp/nc/final/pdf_map.json','w'))
     print(len(res),'paginas;',round(len(pdf)/1e6,1),'MB')
