@@ -1,0 +1,5 @@
+L0 add 375 D
+L1 add 30 A
+L1 add 205 E/G#
+L1 add 300 F#m
+L2 x 980

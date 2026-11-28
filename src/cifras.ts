@@ -8,7 +8,7 @@ import { Tom, Transpositor, criarTranspositor, estimarTom, lerTom, prefereBemol 
  * (só vem quando foge do comum: expoentes, índices, letras recortadas de fotos).
  * Texto "?" = cifra que existe na folha mas não foi possível ler: fica marcada, sem trocar.
  */
-export type Cifra = [number, number, number, number, string, (string | 0)?, (string | 0)?, number?, number?];
+export type Cifra = [number, number, number, number, string, (string | 0 | null)?, (string | 0)?, number?, number?];
 
 export type FolhaCifras = {
   w: number;
@@ -128,7 +128,17 @@ export function planejar(folha: FolhaCifras, transpor: Transpositor): CifraPront
   const prontas: CifraPronta[] = new Array(lista.length);
   const larguraUtil = folha.r === 90 || folha.r === 270 ? folha.h : folha.w;
   // linhas: cifras com a mesma linha de base, da esquerda para a direita
-  const ordem = lista.map((_, i) => i).sort((a, b) => lista[a][1] - lista[b][1] || lista[a][0] - lista[b][0]);
+  // "borrachas": entradas sem texto só cobrem um pedaço da folha (letra da caneta, riscos) quando o tom muda
+  for (let i = 0; i < lista.length; i++) {
+    if (lista[i][4] !== '') continue;
+    const [x, base, w, fs, , fundo, , sobe, desce] = lista[i];
+    const cima = sobe || fs;
+    prontas[i] = { txt: '', x, base, fs, tinta: COR_TRANSPOSTA, rx: x - 1, ry: base - cima - 1, rw: w + 2, rh: cima + (desce || 0) + 2, fundo: fundo ? '#' + fundo : '#ffffff' };
+  }
+  const ordem = lista
+    .map((_, i) => i)
+    .filter((i) => lista[i][4] !== '')
+    .sort((a, b) => lista[a][1] - lista[b][1] || lista[a][0] - lista[b][0]);
   const linhas: number[][] = [];
   for (const i of ordem) {
     const ult = linhas[linhas.length - 1];

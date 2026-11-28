@@ -466,7 +466,7 @@ export function LeitorPdf({ catalogo }: { catalogo: Catalogo }) {
 
   const paginaMostrada = rolar ? pagVista : pag;
   const folhaCifras = cifras?.[paginaMostrada];
-  const temCifras = !!folhaCifras && folhaCifras.c.some((c) => c[4] !== '?');
+  const temCifras = !!folhaCifras && folhaCifras.c.some((c) => c[4] !== '?' && c[4] !== '');
   const semitons = tons[paginaMostrada] ?? 0;
   const tomOriginal = useMemo(() => tomDaFolha(undefined, folhaCifras, []), [folhaCifras]);
   const nomeTomAtual = tomOriginal ? nomeTom(tomTransposto(tomOriginal, semitons)) : null;

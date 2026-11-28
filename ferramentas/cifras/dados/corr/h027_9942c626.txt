@@ -1,0 +1,8 @@
+L0 set 652 D/A
+L0 del 678
+L0 x 630
+L5 set 535 C#7/F#
+L5 set 732 B7
+L7 set 790 D/E
+set 393 270 Adim
+add 172 275 A

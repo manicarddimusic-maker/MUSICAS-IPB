@@ -1,0 +1,11 @@
+L0 set 285 G
+L0 set 1185 D
+L0 set 1395 D
+L1 set 225 G
+L1 set 955 D
+L4 set 1035 G
+L4 set 1390 D
+set 385 1490 G
+set 855 1470 D
+set 1115 1465 A
+delq 212 1488 262 1528

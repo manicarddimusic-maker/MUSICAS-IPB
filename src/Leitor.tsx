@@ -305,7 +305,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   }, []);
   const folhaCifras = cifras?.[atual.img];
   const folhasDoItem = useMemo(() => (cifras ? item.paginas.map((p) => cifras[p.img]).filter((f): f is FolhaCifras => !!f) : []), [cifras, item.paginas]);
-  const temCifras = !!folhaCifras && folhaCifras.c.some((c) => c[4] !== '?');
+  const temCifras = !!folhaCifras && folhaCifras.c.some((c) => c[4] !== '?' && c[4] !== '');
   const ilegiveis = folhaCifras ? folhaCifras.c.filter((c) => c[4] === '?').length : 0;
   const tomOriginal = useMemo(() => tomDaFolha(atual.tom ?? item.tom, folhaCifras, folhasDoItem), [atual.tom, item.tom, folhaCifras, folhasDoItem]);
   const transpor = useMemo(() => transpositorDaFolha(semitons, tomOriginal, folhaCifras), [semitons, tomOriginal, folhaCifras]);

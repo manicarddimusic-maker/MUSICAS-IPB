@@ -1,0 +1,33 @@
+L0 del 365 borr
+L0 del 440 borr
+L0 del 540 borr
+L0 del 710 borr
+L0 del 810 borr
+L0 del 1040 borr
+L1 del 1005 borr
+L1 del 1075 borr
+L2 del 985 borr
+L2 del 1065 borr
+L2 set 1130 Bm/A
+L2 x 75
+L3 del 390 borr
+L3 del 485 borr
+L3 set 725 Bm
+L4 del 285 borr
+L5 add 30 A
+L5 add 83 Adim
+L5 add 122 A
+L5 add 173 Adim
+L5 add 212 A
+L5 add 328 D6
+L5 add 406 Bm
+L5 add 463 E7
+L5 x 587
+L5 x 632
+L5 x 687
+L6 add 21 A
+L6 add 381 A
+L6 add 449 Adim
+L6 add 502 A
+L6 add 642 A/C#
+add 1705 685 A

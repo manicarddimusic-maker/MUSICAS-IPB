@@ -1,0 +1,6 @@
+set 650 368 F#m
+del 508 722 borr
+set 588 722 C#m
+del 510 1443 borr
+set 587 1443 C#m
+era 948 1430 985 1450
