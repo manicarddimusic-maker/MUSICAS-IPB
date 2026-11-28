@@ -8,7 +8,15 @@ export type Pagina = {
   nome?: string;
   /** a folha guarda a troca de tom dela à parte da música (outra melodia, outro tom) */
   tomProprio?: boolean;
+  /**
+   * Identidade da folha no aparelho quando o arquivo dela muda (ex.: nc-009-igreja.png → nc-009-igreja-v2.png):
+   * o tom e as anotações guardados ficam presos a este caminho, então nada se perde na troca.
+   */
+  chave?: string;
 };
+
+/** Caminho com que o tom e as anotações da folha são guardados no aparelho. */
+export const chaveDaFolha = (p: Pagina) => p.chave ?? p.img;
 
 export type Item = {
   id: string;

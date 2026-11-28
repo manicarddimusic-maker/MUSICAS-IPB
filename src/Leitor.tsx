@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Item, Secao, rotaLista, rotuloCompleto } from './catalogo';
+import { Item, Secao, chaveDaFolha, rotaLista, rotuloCompleto } from './catalogo';
 import Reordenar from './Reordenar';
 import { BotaoVoltar, MenuIr } from './Navegar';
 import Anotar from './Anotar';
-import { FolhaDef, Traco, achatar, apagarAnot, gravarAnot, gravarRascunho, lerAnot, novoId } from './anotacoes';
+import { FolhaDef, Traco, achatar, apagarAnot, gravarAnot, gravarRascunho, lerAnotDaFolha, novoId } from './anotacoes';
 import CifrasSobre from './CifrasSobre';
 import PainelTom from './PainelTom';
 import { FolhaCifras, carregarCifras, fontesProntas, guardarSemitons, lerSemitons, tomDaFolha, transpositorDaFolha } from './cifras';
@@ -132,7 +132,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     let vivo = true;
     const urls: string[] = [];
     setVerOriginal(false);
-    Promise.all(paginas.map((p) => lerAnot(p.img).catch(() => undefined))).then((lista) => {
+    Promise.all(paginas.map((p) => lerAnotDaFolha(p).catch(() => undefined))).then((lista) => {
       if (!vivo) return;
       const m: Record<string, string> = {};
       lista.forEach((a, i) => {
@@ -153,7 +153,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
   async function abrirAnotacao() {
     const folhas: FolhaDef[] = [];
     for (const p of paginas) {
-      const a = await lerAnot(p.img).catch(() => undefined);
+      const a = await lerAnotDaFolha(p).catch(() => undefined);
       folhas.push({ src: p.img, tracos: (a?.tracos ?? []) as Traco[] });
     }
     setAnotando(folhas);
@@ -161,8 +161,9 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
 
   async function salvarAnotacoes(f: FolhaDef[]) {
     for (let i = 0; i < f.length; i++) {
-      const key = paginas[i].img;
-      if (f[i].tracos.length) await gravarAnot({ key, tracos: f[i].tracos, flat: await achatar({ src: key, tracos: [] }, f[i].tracos), em: Date.now() });
+      const p = paginas[i];
+      const key = chaveDaFolha(p);
+      if (f[i].tracos.length) await gravarAnot({ key, tracos: f[i].tracos, flat: await achatar({ src: p.img, tracos: [] }, f[i].tracos), em: Date.now(), src: p.img });
       else await apagarAnot(key);
     }
     setVersaoAnot((v) => v + 1);
@@ -294,7 +295,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
     };
   }, [secao.id]);
   // a folha que é outra versão da música (ex.: a versão da igreja) guarda o tom dela à parte
-  const folhaTom = atual.tomProprio ? nomeArquivo(atual.img) : undefined;
+  const folhaTom = atual.tomProprio ? nomeArquivo(chaveDaFolha(atual)) : undefined;
   useLayoutEffect(() => {
     setSemitons(lerSemitons(secao.id, item.id, folhaTom));
   }, [secao.id, item.id, folhaTom]);
@@ -709,7 +710,7 @@ export default function Leitor({ secao, item, anterior, proximo }: Props) {
           onSalvar={(f) => salvarAnotacoes(f)}
           onDuplicar={(f, nome) => duplicarComoRascunho(f, nome)}
           onRemoverTudo={async () => {
-            for (const p of paginas) await apagarAnot(p.img);
+            for (const p of paginas) await apagarAnot(chaveDaFolha(p));
             setVersaoAnot((v) => v + 1);
           }}
           onFechar={() => setAnotando(null)}

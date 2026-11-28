@@ -71,6 +71,8 @@ def montar_item(secao: str, dado: dict) -> dict:
         # folha que é outra versão da música (ex.: a versão da igreja): tem nome e guarda o tom à parte
         nome = pg.get("nome") if isinstance(pg, dict) else None
         proprio = bool(pg.get("tomProprio")) if isinstance(pg, dict) else False
+        # "chave": nome com que a folha foi publicada pela 1ª vez; o tom e as anotações guardados no aparelho ficam presos a ele
+        chave = pg.get("chave") if isinstance(pg, dict) else None
         paginas.append(
             {
                 "img": img,
@@ -78,6 +80,7 @@ def montar_item(secao: str, dado: dict) -> dict:
                 **({"tom": tom} if tom else {}),
                 **({"nome": nome} if nome else {}),
                 **({"tomProprio": True} if proprio else {}),
+                **({"chave": chave} if chave else {}),
             }
         )
 

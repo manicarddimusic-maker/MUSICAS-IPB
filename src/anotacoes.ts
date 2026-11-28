@@ -50,12 +50,31 @@ async function tx<T>(loja: 'anot' | 'rasc', modo: IDBTransactionMode, fn: (s: ID
   });
 }
 
-export type Anot = { key: string; tracos: Traco[]; flat: Blob; em: number };
+/** "key" é a identidade da folha (ver Pagina.chave); "src" é o arquivo de imagem em que "flat" foi feito (se faltar, é o próprio "key"). */
+export type Anot = { key: string; tracos: Traco[]; flat: Blob; em: number; src?: string };
 
 export const lerAnot = (key: string) => tx<Anot | undefined>('anot', 'readonly', (s) => s.get(key));
 export const gravarAnot = (a: Anot) => tx('anot', 'readwrite', (s) => s.put(a));
 export const apagarAnot = (key: string) => tx('anot', 'readwrite', (s) => s.delete(key));
 export const todasAnot = () => tx<Anot[]>('anot', 'readonly', (s) => s.getAll());
+
+/**
+ * Anotações de uma folha do livro. Ficam presas à "chave" da folha, não ao nome do arquivo:
+ * se o arquivo foi refeito (ex.: nc-009-igreja.png → nc-009-igreja-v2.png, mesmo enquadramento),
+ * os traços continuam valendo e a imagem achatada é refeita em cima do arquivo novo.
+ */
+export async function lerAnotDaFolha(p: { img: string; chave?: string }): Promise<Anot | undefined> {
+  const a = await lerAnot(p.chave ?? p.img);
+  if (!a) return undefined;
+  if ((a.src ?? a.key) === p.img) return a;
+  try {
+    const nova: Anot = { ...a, flat: await achatar({ src: p.img, tracos: [] }, a.tracos), src: p.img };
+    await gravarAnot(nova);
+    return nova;
+  } catch {
+    return a; // sem a imagem nova agora (ex.: sem internet): continua como estava e tenta de novo na próxima vez
+  }
+}
 
 export type Rascunho = {
   id: string;

@@ -13353,9 +13353,10 @@
    "paginas": [
     "/midias/nc/nc-009-1.png",
     {
-     "img": "/midias/nc/nc-009-igreja.png",
+     "img": "/midias/nc/nc-009-igreja-v2.png",
      "nome": "versão da igreja",
-     "tomProprio": true
+     "tomProprio": true,
+     "chave": "/midias/nc/nc-009-igreja.png"
     }
    ]
   },
